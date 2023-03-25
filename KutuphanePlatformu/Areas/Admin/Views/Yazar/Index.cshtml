@@ -1,0 +1,67 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@using KutuphanePlatformu.Models.EntityFramework
+@model IPagedList<Yazar>
+@{
+    ViewBag.Title = "Yazar";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/css/table-style.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/css/basictable.css" />
+
+<!-- breadcrumbs -->
+<div class="w3l_agileits_breadcrumbs">
+    <div class="w3l_agileits_breadcrumbs_inner">
+        <ul>
+            <li><a href="main-page.html">Anasayfa</a><span>«</span></li>
+
+            <li>Kategoriler</li>
+        </ul>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+
+<div class="inner_content_w3_agile_info two_in">
+    <h2 class="w3_inner_tittle">Yazarlar</h2>
+    <!-- tables -->
+
+    <div class="agile-tables">
+        <div class="w3l-table-info agile_info_shadow">
+            <h3 class="w3_inner_tittle two">@*Kategoriler*@</h3>
+            <table id="tblDepartmanlar">
+                <thead>
+                    <tr>
+                        <th>Ad Soyad</th>
+                        <th>Detay</th>
+                        <th>Guncelle</th>
+                        <th>Sil</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var yazar in Model)
+                    {
+                        <tr>
+                            <td>@yazar.Ad @yazar.Soyad</td>
+                            <td>@yazar.Detay</td>
+                            <td><a href="/Admin/Yazar/Guncelle/@yazar.Id" class="btn btn-success">Guncelle</a></td>
+                            <td><a class="btn btn-danger" onclick="if (confirm('Yazari Silmek Istiyor musunuz?')){return true;}else{event.stopPropagation(); event.preventDefault();};" href="/Admin/Yazar/Sil/@yazar.Id">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+
+
+            </table>
+
+            @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Yazar", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
+
+            <a class="btn btn-success" href="/Admin/Yazar/Yeni">Yeni Yazar</a>
+
+
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/js/jquery.basictable.min.js"></script>
