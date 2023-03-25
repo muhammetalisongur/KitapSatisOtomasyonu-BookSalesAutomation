@@ -28,70 +28,38 @@
 
     <div class="agile-tables">
         <div class="w3l-table-info agile_info_shadow">
-            <h3 class="w3_inner_tittle two">@*Kategoriler*@</h3>
-            <table id="table">
-                <thead>
-                    <tr>
-                        <th>Ad</th>
-                        <th>Guncelle</th>
-                        <th>Sil</th>
-
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @foreach (var kategori in Model)
-                    {
+            <h3 class="w3_inner_tittle two">@*Kategoriler*@</h3>      
+                <table id="tblDepartmanlar">
+                    <thead>
                         <tr>
-                            <td>@kategori.Ad</td>
-                            <td><button type="button" class="btn btn-success" href="#">Guncelle</button></td>
-                            <td><button type="button" class="btn btn-danger" href="#">Sil</button></td>
+                            <th>Ad</th>
+                            <th>Guncelle</th>
+                            <th>Sil</th>
+
                         </tr>
-                    }
-                </tbody>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var kategori in Model)
+                        {
+                            <tr>
+                                <td>@kategori.Ad</td>
+                                <td><a href="/Admin/Kategori/Guncelle/@kategori.Id" class="btn btn-success">Guncelle</a></td>
+                                <td><a class="btn btn-danger" onclick="if (confirm('Kategori Silmek Istiyor musunuz?')){return true;}else{event.stopPropagation(); event.preventDefault();};" href="/Admin/Kategori/Sil/@kategori.Id">Sil</a></td>
+                            </tr>
+                        }
+                    </tbody>
 
 
-            </table>
+                </table>
+   
             @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Kategori", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
 
+            <a class="btn btn-success" href="/Admin/Kategori/Yeni">Yeni Kategori</a>
 
-
-            @*<code class="js">
-                    $('#table').basictable();
-                </code>*@
+        
         </div>
 
     </div>
 </div>
-
-
-<!-- tables -->
-
 <script type="text/javascript" src="~/Scripts/js/jquery.basictable.min.js"></script>
-@*<script type="text/javascript">
-        $(document).ready(function () {
-            $('#table').basictable();
-
-            $('#table-breakpoint').basictable({
-                breakpoint: 768
-            });
-
-            $('#table-swap-axis').basictable({
-                swapAxis: true
-            });
-
-            $('#table-force-off').basictable({
-                forceResponsive: false
-            });
-
-            $('#table-no-resize').basictable({
-                noResize: true
-            });
-
-            $('#table-two-axis').basictable();
-
-            $('#table-max-height').basictable({
-                tableWrapper: true
-            });
-        });
-    </script>*@

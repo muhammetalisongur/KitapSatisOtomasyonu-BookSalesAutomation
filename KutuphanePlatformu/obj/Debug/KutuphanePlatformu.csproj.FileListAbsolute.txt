@@ -63,6 +63,6 @@ C:\Users\MAS\source\repos\KutuphanePlatformu\KutuphanePlatformu\obj\Debug\Kutuph
 C:\Users\MAS\source\repos\KutuphanePlatformu\KutuphanePlatformu\obj\Debug\KutuphanePlatformu.dll
 C:\Users\MAS\source\repos\KutuphanePlatformu\KutuphanePlatformu\obj\Debug\KutuphanePlatformu.pdb
 C:\Users\MAS\source\repos\KutuphanePlatformu\KutuphanePlatformu\bin\PagedList.dll
-C:\Users\MAS\source\repos\KutuphanePlatformu\KutuphanePlatformu\bin\PagedList.Mvc.dll
 C:\Users\MAS\source\repos\KutuphanePlatformu\KutuphanePlatformu\bin\PagedList.xml
+C:\Users\MAS\source\repos\KutuphanePlatformu\KutuphanePlatformu\bin\PagedList.Mvc.dll
 C:\Users\MAS\source\repos\KutuphanePlatformu\KutuphanePlatformu\bin\PagedList.Mvc.xml
