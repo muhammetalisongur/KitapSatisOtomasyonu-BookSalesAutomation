@@ -1,6 +1,7 @@
-﻿
+﻿@using KutuphanePlatformu.Models.EntityFramework
+@model List<Kategori>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Kategori";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -25,74 +26,43 @@
 
     <div class="agile-tables">
         <div class="w3l-table-info agile_info_shadow">
-            <h3 class="w3_inner_tittle two">Basic Implementation</h3>
+            <h3 class="w3_inner_tittle two">@*Kategoriler*@</h3>
             <table id="table">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Gender</th>
-                        <th>Height</th>
-                        <th>Province</th>
-                        <th>Sport</th>
+                        <th>Ad</th>
+                        <th>Guncelle</th>
+                        <th>Sil</th>
+
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr>
-                        <td>Jill Smith</td>
-                        <td>25</td>
-                        <td>Female</td>
-                        <td>5'4</td>
-                        <td>British Columbia</td>
-                        <td>Volleyball</td>
-                    </tr>
-                    <tr>
-                        <td>John Stone</td>
-                        <td>30</td>
-                        <td>Male</td>
-                        <td>5'9</td>
-                        <td>Ontario</td>
-                        <td>Badminton</td>
-                    </tr>
-                    <tr>
-                        <td>Jane Strip</td>
-                        <td>29</td>
-                        <td>Female</td>
-                        <td>5'6</td>
-                        <td>Manitoba</td>
-                        <td>Hockey</td>
-                    </tr>
-                    <tr>
-                        <td>Gary Mountain</td>
-                        <td>21</td>
-                        <td>Male</td>
-                        <td>5'8</td>
-                        <td>Alberta</td>
-                        <td>Curling</td>
-                    </tr>
-                    <tr>
-                        <td>James Camera</td>
-                        <td>31</td>
-                        <td>Male</td>
-                        <td>6'1</td>
-                        <td>British Columbia</td>
-                        <td>Hiking</td>
-                    </tr>
+                    @foreach (var kategori in Model)
+                    {
+                        <tr>
+                            <td>@kategori.Ad</td>
+                            <td><a href="#" class="btn btn-success">Guncelle</a></td>
+                            <td><a href="#" class="btn btn-danger">Sil</a></td>
+                        </tr>
+                    }
                 </tbody>
+
             </table>
 
-            <code class="js">
+            @*<code class="js">
                 $('#table').basictable();
-            </code>
+            </code>*@
         </div>
 
     </div>
 </div>
 
+
 <!-- tables -->
 
 <script type="text/javascript" src="~/Scripts/js/jquery.basictable.min.js"></script>
-<script type="text/javascript">
+@*<script type="text/javascript">
     $(document).ready(function () {
         $('#table').basictable();
 
@@ -118,4 +88,4 @@
             tableWrapper: true
         });
     });
-</script>
+</script>*@
