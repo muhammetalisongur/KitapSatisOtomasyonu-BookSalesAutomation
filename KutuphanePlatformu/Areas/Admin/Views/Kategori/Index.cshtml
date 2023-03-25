@@ -1,5 +1,7 @@
-﻿@using KutuphanePlatformu.Models.EntityFramework
-@model List<Kategori>
+﻿@using PagedList
+@using PagedList.Mvc
+@using KutuphanePlatformu.Models.EntityFramework
+@model IPagedList<Kategori>
 @{
     ViewBag.Title = "Kategori";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -42,17 +44,21 @@
                     {
                         <tr>
                             <td>@kategori.Ad</td>
-                            <td><a href="#" class="btn btn-success">Guncelle</a></td>
-                            <td><a href="#" class="btn btn-danger">Sil</a></td>
+                            <td><button type="button" class="btn btn-success" href="#">Guncelle</button></td>
+                            <td><button type="button" class="btn btn-danger" href="#">Sil</button></td>
                         </tr>
                     }
                 </tbody>
 
+
             </table>
+            @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Kategori", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
+
+
 
             @*<code class="js">
-                $('#table').basictable();
-            </code>*@
+                    $('#table').basictable();
+                </code>*@
         </div>
 
     </div>
@@ -63,29 +69,29 @@
 
 <script type="text/javascript" src="~/Scripts/js/jquery.basictable.min.js"></script>
 @*<script type="text/javascript">
-    $(document).ready(function () {
-        $('#table').basictable();
+        $(document).ready(function () {
+            $('#table').basictable();
 
-        $('#table-breakpoint').basictable({
-            breakpoint: 768
+            $('#table-breakpoint').basictable({
+                breakpoint: 768
+            });
+
+            $('#table-swap-axis').basictable({
+                swapAxis: true
+            });
+
+            $('#table-force-off').basictable({
+                forceResponsive: false
+            });
+
+            $('#table-no-resize').basictable({
+                noResize: true
+            });
+
+            $('#table-two-axis').basictable();
+
+            $('#table-max-height').basictable({
+                tableWrapper: true
+            });
         });
-
-        $('#table-swap-axis').basictable({
-            swapAxis: true
-        });
-
-        $('#table-force-off').basictable({
-            forceResponsive: false
-        });
-
-        $('#table-no-resize').basictable({
-            noResize: true
-        });
-
-        $('#table-two-axis').basictable();
-
-        $('#table-max-height').basictable({
-            tableWrapper: true
-        });
-    });
-</script>*@
+    </script>*@

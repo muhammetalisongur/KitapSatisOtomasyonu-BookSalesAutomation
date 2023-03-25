@@ -1,9 +1,11 @@
 ﻿using KutuphanePlatformu.Models.EntityFramework;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace KutuphanePlatformu.Areas.Admin.Controllers
 {
@@ -11,9 +13,10 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
     {
         // GET: Admin/Kategori
         KutuphanePlatformDbEntities db = new KutuphanePlatformDbEntities();
-        public ActionResult Index()
+        public ActionResult Index(int? SayfaNo)
         {
-           var listele= db.Kategori.ToList();
+            int _sayfaNo = SayfaNo ?? 1;
+            var listele= db.Kategori.OrderByDescending(m => m.Id).ToPagedList<Kategori>(_sayfaNo, 10);
             return View(listele);
         }
     }
