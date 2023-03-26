@@ -18,5 +18,17 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
             var listele = db.YayinEvi.OrderByDescending(x => x.Id).ToPagedList(_sayfaNo, 10);
             return View(listele);
         }
+        [HttpGet]
+        public ActionResult Yeni()
+        {
+            return View("YayinEviForm", new YayinEvi());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Kaydet(int id)
+        {
+            return View("YayinEviForm");
+        }
     }
 }
