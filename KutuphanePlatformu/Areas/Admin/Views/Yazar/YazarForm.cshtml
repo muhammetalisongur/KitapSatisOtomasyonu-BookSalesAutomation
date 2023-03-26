@@ -32,17 +32,19 @@
             {
                 @Html.AntiForgeryToken()
         <div class="form-group">
-            @Html.LabelFor(m => m.Ad)
-            @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
-            @Html.ValidationMessageFor(x => x.Ad)
+            
+                @Html.LabelFor(m => m.Ad)
+                @Html.TextBoxFor(m => m.Ad, new { @class = "form-control"})
+                @Html.ValidationMessageFor(x => x.Ad)
+ 
+                @Html.LabelFor(m => m.Soyad)
+                @Html.TextBoxFor(m => m.Soyad, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Soyad)
 
-            @Html.LabelFor(m => m.Soyad)
-            @Html.TextBoxFor(m => m.Soyad, new { @class = "form-control" })
-            @Html.ValidationMessageFor(x => x.Soyad)
-
-            @Html.LabelFor(m => m.Detay)
-            @Html.TextAreaFor(m => m.Detay, new { @class = "form-control" })
-            @Html.ValidationMessageFor(x => x.Detay)
+                @Html.LabelFor(m => m.Detay)
+                @Html.TextAreaFor(m => m.Detay, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Detay)
+            
         </div>
 
                 @Html.HiddenFor(x => x.Id)

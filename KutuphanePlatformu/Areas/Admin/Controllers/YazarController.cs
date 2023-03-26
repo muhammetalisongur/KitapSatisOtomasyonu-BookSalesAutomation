@@ -66,7 +66,7 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
 
         public ActionResult Guncelle(int id)
         {
-            var model = db.Kategori.Find(id);
+            var model = db.Yazar.Find(id);
             if (model == null)
                 return HttpNotFound();
             return View("YazarForm", model);
@@ -74,10 +74,10 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
 
         public ActionResult Sil(int id)
         {
-            var silinecekKategori = db.Kategori.Find(id);
-            if (silinecekKategori == null)
+            var silinecekYazar = db.Yazar.Find(id);
+            if (silinecekYazar == null)
                 return HttpNotFound();
-            db.Kategori.Remove(silinecekKategori);
+            db.Yazar.Remove(silinecekYazar);
             db.SaveChanges();
             return RedirectToAction("Index", "Yazar");
 

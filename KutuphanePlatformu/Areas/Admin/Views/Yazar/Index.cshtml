@@ -44,7 +44,7 @@
                     @foreach (var yazar in Model)
                     {
                         <tr>
-                            <td>@yazar.Ad @yazar.Soyad</td>
+                            <td><div style="width:150px">@yazar.Ad @yazar.Soyad</div></td>
                             <td>@yazar.Detay</td>
                             <td><a href="/Admin/Yazar/Guncelle/@yazar.Id" class="btn btn-success">Guncelle</a></td>
                             <td><a class="btn btn-danger" onclick="if (confirm('Yazari Silmek Istiyor musunuz?')){return true;}else{event.stopPropagation(); event.preventDefault();};" href="/Admin/Yazar/Sil/@yazar.Id">Sil</a></td>
