@@ -55,6 +55,7 @@
    
             @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Kategori", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
 
+            @Html.ActionLink("Yeni Kategori","Yeni",null,new {@class="btn btn-success"})
             <a class="btn btn-success" href="/Admin/Kategori/Yeni">Yeni Kategori</a>
 
         

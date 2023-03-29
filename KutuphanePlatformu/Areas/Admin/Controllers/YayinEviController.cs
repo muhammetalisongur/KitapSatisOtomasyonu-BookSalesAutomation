@@ -13,6 +13,7 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
     {
         // GET: Admin/YayinEvi
         KutuphanePlatformDbEntities db = new KutuphanePlatformDbEntities();
+        [Route("YayinEvi")]
         public ActionResult Index(int? sayfaNo)
         {
             int _sayfaNo = sayfaNo ?? 1;
@@ -59,7 +60,7 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
             db.SaveChanges();
             model.Status = true;
             model.LinkText = "YayinEvi Listesi";
-            model.Url = "/Admin/Yazar";
+            model.Url = "/Admin/YayinEvi";
             return View("_Mesaj", model);
         }
 
