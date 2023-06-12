@@ -59,8 +59,6 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
             }
             db.SaveChanges();
             model.Status = true;
-            model.LinkText = "Yazar Listesi";
-            model.Url = "/Admin/Yazar";
             return View("_Mesaj", model);
         }
 

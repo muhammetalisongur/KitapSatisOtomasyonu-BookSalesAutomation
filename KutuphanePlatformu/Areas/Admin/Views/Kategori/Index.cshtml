@@ -1,10 +1,13 @@
 ﻿@using PagedList
 @using PagedList.Mvc
 @using KutuphanePlatformu.Models.EntityFramework
+
 @model IPagedList<Kategori>
 @{
     ViewBag.Title = "Kategori";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    var mesajKategori = (KutuphanePlatformu.ViewModels.MesajViewModel)TempData["mesaj"];
 }
 
 <link rel="stylesheet" type="text/css" href="~/Content/css/table-style.css" />
@@ -27,37 +30,54 @@
     <!-- tables -->
 
     <div class="agile-tables">
+        @if (TempData["mesaj"] != null)
+        {
+            if (mesajKategori.Status)
+            {
+
+                <div class="alert alert-success">
+                    <b> @mesajKategori.Mesaj </b>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger">
+                    <b>  @mesajKategori.Mesaj</b>
+                </div>
+            }
+        }
         <div class="w3l-table-info agile_info_shadow">
-            <h3 class="w3_inner_tittle two">@*Kategoriler*@</h3>      
-                <table id="tblDepartmanlar">
-                    <thead>
+            <h3 class="w3_inner_tittle two">
+                <a class="btn btn-success" href="/Admin/Kategori/Yeni">Yeni Kategori</a>
+            </h3>
+            <table id="tblDepartmanlar">
+                <thead>
+                    <tr>
+                        <th>Ad</th>
+                        <th>Guncelle</th>
+                        <th>Sil</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var kategori in Model)
+                    {
                         <tr>
-                            <th>Ad</th>
-                            <th>Guncelle</th>
-                            <th>Sil</th>
-
+                            <td>@kategori.Ad</td>
+                            <td><a href="/Admin/Kategori/Guncelle/@kategori.Id" class="btn btn-success">Guncelle</a></td>
+                            <td><a class="btn btn-danger" onclick="if (confirm('Kategori Silmek Istiyor musunuz?')){return true;}else{event.stopPropagation(); event.preventDefault();};" href="/Admin/Kategori/Sil/@kategori.Id">Sil</a></td>
                         </tr>
-                    </thead>
-
-                    <tbody>
-                        @foreach (var kategori in Model)
-                        {
-                            <tr>
-                                <td>@kategori.Ad</td>
-                                <td><a href="/Admin/Kategori/Guncelle/@kategori.Id" class="btn btn-success">Guncelle</a></td>
-                                <td><a class="btn btn-danger" onclick="if (confirm('Kategori Silmek Istiyor musunuz?')){return true;}else{event.stopPropagation(); event.preventDefault();};" href="/Admin/Kategori/Sil/@kategori.Id">Sil</a></td>
-                            </tr>
-                        }
-                    </tbody>
+                    }
+                </tbody>
 
 
-                </table>
-   
+            </table>
+
             @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Kategori", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
 
-            <a class="btn btn-success" href="/Admin/Kategori/Yeni">Yeni Kategori</a>
 
-        
+
         </div>
 
     </div>

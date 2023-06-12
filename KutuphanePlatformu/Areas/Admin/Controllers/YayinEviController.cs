@@ -59,8 +59,6 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
             }
             db.SaveChanges();
             model.Status = true;
-            model.LinkText = "YayinEvi Listesi";
-            model.Url = "/Admin/YayinEvi";
             return View("_Mesaj", model);
         }
 

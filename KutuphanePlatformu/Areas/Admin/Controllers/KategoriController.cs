@@ -14,8 +14,10 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
     {
         // GET: Admin/Kategori
         KutuphanePlatformDbEntities db = new KutuphanePlatformDbEntities();
+
         public ActionResult Index(int? SayfaNo)
         {
+
             int _sayfaNo = SayfaNo ?? 1;
             var listele = db.Kategori.OrderByDescending(m => m.Id).ToPagedList<Kategori>(_sayfaNo, 10);
             return View(listele);
@@ -24,7 +26,7 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Yeni()
         {
-            return View("KategoriForm",new Kategori());
+            return View("KategoriForm", new Kategori());
         }
 
         [HttpPost]
@@ -35,11 +37,27 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
             {
                 return View("KategoriForm");
             }
-            MesajViewModel model = new MesajViewModel();
+
+            MesajViewModel mesajViewModel = new MesajViewModel();
+
             if (kategori.Id == 0)
             {
+               var kategoriAd = db.Kategori.ToList();
+                foreach (var item in kategoriAd)
+                {
+                    if (kategori.Ad == item.Ad)
+                    {
+                        mesajViewModel.Status = false;
+                        mesajViewModel.LinkText = "Kategori Listesi";
+                        mesajViewModel.Url = "/Admin/Kategori";
+                        mesajViewModel.Mesaj = "Bu kategori zaten mevcut...";
+                        TempData["mesaj"] = mesajViewModel;
+
+                        return View("KategoriForm");
+                    }
+                }
                 db.Kategori.Add(kategori);
-                model.Mesaj = kategori.Ad + " başarıyle eklendi...";
+                mesajViewModel.Mesaj = kategori.Ad + " başarıyle eklendi...";
             }
             else
             {
@@ -48,15 +66,30 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
                 {
                     return HttpNotFound();
                 }
-                guncellenecekKategori.Ad = kategori.Ad;
-                model.Mesaj = kategori.Ad + " başarıyla güncellendi...";
+                var eskiKategoriAd = guncellenecekKategori.Ad;
 
+                if (kategori.Ad == eskiKategoriAd)
+                {
+                    mesajViewModel.Status = false;
+                    mesajViewModel.LinkText = "Kategori Listesi";
+                    mesajViewModel.Url = "/Admin/Kategori";
+                    mesajViewModel.Mesaj = "Herhangi bir değişiklik yapılmadı...";
+                    TempData["mesaj"] = mesajViewModel;
+                    return View("KategoriForm");
+
+                }
+                else
+                {
+
+                    guncellenecekKategori.Ad = kategori.Ad;
+                    mesajViewModel.Mesaj = eskiKategoriAd + " => " + kategori.Ad + " olarak başarıyla güncellendi...";
+
+                }
             }
             db.SaveChanges();
-            model.Status = true;
-            model.LinkText = "Kategori Listesi";
-            model.Url = "/Admin/Kategori";
-            return View("_Mesaj", model);
+            mesajViewModel.Status = true;
+            TempData["mesaj"] = mesajViewModel;
+            return RedirectToAction("Index", "Kategori");
         }
 
         public ActionResult Guncelle(int id)
