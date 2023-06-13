@@ -1,0 +1,12 @@
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\DataAccess.dll.config
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\DataAccess.dll
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\DataAccess.pdb
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\EntityFramework.dll
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\EntityFramework.xml
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\OneDrive\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+D:\OneDrive\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+D:\OneDrive\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+D:\OneDrive\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.dll
+D:\OneDrive\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.pdb

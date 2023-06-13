@@ -1,0 +1,6 @@
+D:\OneDrive\source\repos\BookStore\Core\bin\Debug\Core.dll
+D:\OneDrive\source\repos\BookStore\Core\bin\Debug\Core.pdb
+D:\OneDrive\source\repos\BookStore\Core\obj\Debug\Core.csproj.AssemblyReference.cache
+D:\OneDrive\source\repos\BookStore\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+D:\OneDrive\source\repos\BookStore\Core\obj\Debug\Core.dll
+D:\OneDrive\source\repos\BookStore\Core\obj\Debug\Core.pdb
