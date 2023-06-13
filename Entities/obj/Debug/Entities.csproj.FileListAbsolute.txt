@@ -7,9 +7,9 @@ D:\OneDrive\source\repos\BookStore\Entities\bin\Debug\Core.dll
 D:\OneDrive\source\repos\BookStore\Entities\bin\Debug\EntityFramework.dll
 D:\OneDrive\source\repos\BookStore\Entities\bin\Debug\EntityFramework.SqlServer.dll
 D:\OneDrive\source\repos\BookStore\Entities\bin\Debug\Core.pdb
+D:\OneDrive\source\repos\BookStore\Entities\bin\Debug\Core.dll.config
 D:\OneDrive\source\repos\BookStore\Entities\bin\Debug\EntityFramework.xml
 D:\OneDrive\source\repos\BookStore\Entities\bin\Debug\EntityFramework.SqlServer.xml
 D:\OneDrive\source\repos\BookStore\Entities\obj\Debug\Entities.csproj.CopyComplete
 D:\OneDrive\source\repos\BookStore\Entities\obj\Debug\Entities.dll
 D:\OneDrive\source\repos\BookStore\Entities\obj\Debug\Entities.pdb
-D:\OneDrive\source\repos\BookStore\Entities\bin\Debug\Core.dll.config
