@@ -134,15 +134,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\KategoriController.cs" />
-    <Compile Include="Areas\Admin\Controllers\KitapController.cs" />
-    <Compile Include="Areas\Admin\Controllers\YayinEviController.cs" />
-    <Compile Include="Areas\Admin\Controllers\YazarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202306130612552_CreateCategoryTable.cs" />
+    <Compile Include="Migrations\202306130612552_CreateCategoryTable.designer.cs">
+      <DependentUpon>202306130612552_CreateCategoryTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
-    <Compile Include="Models\EntityFramework\Kategoriler.cs" />
+    <Compile Include="Models\EntityFramework\Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Areas\Admin\ViewModel\MesajViewModel.cs" />
   </ItemGroup>
@@ -548,6 +549,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202306130612552_CreateCategoryTable.resx">
+      <DependentUpon>202306130612552_CreateCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

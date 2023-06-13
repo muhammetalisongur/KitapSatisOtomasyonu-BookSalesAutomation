@@ -1,8 +1,7 @@
 ﻿@using PagedList
 @using PagedList.Mvc
 @using KutuphanePlatformu.Models.EntityFramework
-
-@model IPagedList<Kategoriler>
+@model IPagedList<Category>
 @{
     ViewBag.Title = "Kategori";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -17,7 +16,7 @@
 <div class="w3l_agileits_breadcrumbs">
     <div class="w3l_agileits_breadcrumbs_inner">
         <ul>
-            <li><a href="main-page.html">Anasayfa</a><span>«</span></li>
+            <li><a href="/Admin/Kategori">Anasayfa</a><span>«</span></li>
 
             <li>Kategoriler</li>
         </ul>
@@ -61,12 +60,12 @@
                 </thead>
 
                 <tbody>
-                    @foreach (var kategori in Model)
+                    @foreach (var category in Model)
                     {
                         <tr>
-                            <td>@kategori.Ad</td>
-                            <td><a href="/Admin/Kategori/Guncelle/@kategori.Id" class="btn btn-success">Guncelle</a></td>
-                            <td><a class="btn btn-danger" onclick="if (confirm('Kategori Silmek Istiyor musunuz?')){return true;}else{event.stopPropagation(); event.preventDefault();};" href="/Admin/Kategori/Sil/@kategori.Id">Sil</a></td>
+                            <td>@category.KategoriAdi</td>
+                            <td><a href="/Admin/Kategori/Guncelle/@category.Id" class="btn btn-success">Guncelle</a></td>
+                            <td><a class="btn btn-danger" onclick="if (confirm('Kategori Silmek Istiyor musunuz?')){return true;}else{event.stopPropagation(); event.preventDefault();};" href="/Admin/Kategori/Sil/@category.Id">Sil</a></td>
                         </tr>
                     }
                 </tbody>

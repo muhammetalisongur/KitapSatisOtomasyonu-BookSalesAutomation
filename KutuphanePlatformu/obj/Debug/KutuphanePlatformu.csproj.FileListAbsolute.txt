@@ -202,5 +202,5 @@ D:\OneDrive\source\repos\KutuphanePlatformu\KutuphanePlatformu\obj\Debug\Kutupha
 D:\OneDrive\source\repos\KutuphanePlatformu\KutuphanePlatformu\obj\Debug\KutuphanePlatformu.csproj.CopyComplete
 D:\OneDrive\source\repos\KutuphanePlatformu\KutuphanePlatformu\obj\Debug\KutuphanePlatformu.dll
 D:\OneDrive\source\repos\KutuphanePlatformu\KutuphanePlatformu\obj\Debug\KutuphanePlatformu.pdb
-D:\OneDrive\source\repos\KutuphanePlatformu\KutuphanePlatformu\obj\Debug\KutuphanePlatformu.Migrations.CreateTable.resources
+D:\OneDrive\source\repos\KutuphanePlatformu\KutuphanePlatformu\obj\Debug\KutuphanePlatformu.Migrations.CreateCategoryTable.resources
 D:\OneDrive\source\repos\KutuphanePlatformu\KutuphanePlatformu\obj\Debug\KutuphanePlatformu.csproj.GenerateResource.cache

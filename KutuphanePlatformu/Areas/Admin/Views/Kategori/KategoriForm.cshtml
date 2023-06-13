@@ -1,4 +1,4 @@
-﻿@model KutuphanePlatformu.Models.EntityFramework.Kategori
+﻿@model KutuphanePlatformu.Models.EntityFramework.Category
 @{
     ViewBag.Title = "KategoriForm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -12,7 +12,7 @@
 <div class="w3l_agileits_breadcrumbs">
     <div class="w3l_agileits_breadcrumbs_inner">
         <ul>
-            <li><a href="main-page.html">Anasayfa</a><span>«</span></li>
+            <li><a href="/Admin/Kategori">Anasayfa</a><span>«</span></li>
 
             <li>Kategoriler</li>
         </ul>
@@ -46,12 +46,12 @@
             {
                 @Html.AntiForgeryToken()
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Ad)
-                    @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
-                    <b style="color:red;"> @Html.ValidationMessageFor(x => x.Ad)</b>
+                    @Html.LabelFor(m => m.KategoriAdi)
+                    @Html.TextBoxFor(m => m.KategoriAdi, new { @class = "form-control" })
+                    <b style="color:red;"> @Html.ValidationMessageFor(x => x.KategoriAdi)</b>
                 </div>
 
-                @Html.HiddenFor(x => x.Id)
+               @Html.HiddenFor(m => m.Id)
                 <button type="submit" class="btn btn-success">Kaydet</button>
 
             }
