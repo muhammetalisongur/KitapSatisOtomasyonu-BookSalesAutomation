@@ -10,3 +10,9 @@ D:\OneDrive\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CoreCo
 D:\OneDrive\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 D:\OneDrive\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.dll
 D:\OneDrive\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.pdb
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\Entities.dll
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\Core.dll
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\Entities.pdb
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\Entities.dll.config
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\Core.pdb
+D:\OneDrive\source\repos\BookStore\DataAccess\bin\Debug\Core.dll.config
