@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Entities
+namespace Entities.Concrete
 {
     public class Category : IEntity
     {

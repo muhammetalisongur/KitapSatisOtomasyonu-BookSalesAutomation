@@ -4,3 +4,15 @@ D:\OneDrive\source\repos\BookStore\Business\obj\Debug\Business.csproj.AssemblyRe
 D:\OneDrive\source\repos\BookStore\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
 D:\OneDrive\source\repos\BookStore\Business\obj\Debug\Business.dll
 D:\OneDrive\source\repos\BookStore\Business\obj\Debug\Business.pdb
+D:\OneDrive\source\repos\BookStore\Business\bin\Debug\DataAccess.dll
+D:\OneDrive\source\repos\BookStore\Business\bin\Debug\Entities.dll
+D:\OneDrive\source\repos\BookStore\Business\bin\Debug\EntityFramework.dll
+D:\OneDrive\source\repos\BookStore\Business\bin\Debug\Core.dll
+D:\OneDrive\source\repos\BookStore\Business\bin\Debug\DataAccess.pdb
+D:\OneDrive\source\repos\BookStore\Business\bin\Debug\DataAccess.dll.config
+D:\OneDrive\source\repos\BookStore\Business\bin\Debug\Entities.pdb
+D:\OneDrive\source\repos\BookStore\Business\bin\Debug\Entities.dll.config
+D:\OneDrive\source\repos\BookStore\Business\bin\Debug\EntityFramework.xml
+D:\OneDrive\source\repos\BookStore\Business\bin\Debug\Core.pdb
+D:\OneDrive\source\repos\BookStore\Business\bin\Debug\Core.dll.config
+D:\OneDrive\source\repos\BookStore\Business\obj\Debug\Business.csproj.CopyComplete
