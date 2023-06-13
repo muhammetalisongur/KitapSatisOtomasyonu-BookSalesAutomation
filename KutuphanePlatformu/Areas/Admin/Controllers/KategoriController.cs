@@ -13,25 +13,25 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
     public class KategoriController : Controller
     {
         // GET: Admin/Kategori
-        KutuphanePlatformDbEntities db = new KutuphanePlatformDbEntities();
+        Context db = new Context();
 
         public ActionResult Index(int? SayfaNo)
         {
 
             int _sayfaNo = SayfaNo ?? 1;
-            var listele = db.Kategori.OrderByDescending(m => m.Id).ToPagedList<Kategori>(_sayfaNo, 10);
+            var listele = db.Kategoriler.OrderByDescending(m => m.KategoriId).ToPagedList<Kategoriler>(_sayfaNo, 10);
             return View(listele);
         }
 
         [HttpGet]
         public ActionResult Yeni()
         {
-            return View("KategoriForm", new Kategori());
+            return View("KategoriForm", new Kategoriler());
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Kaydet(Kategori kategori)
+        public ActionResult Kaydet(Kategoriler kategori)
         {
             if (!ModelState.IsValid)
             {
@@ -40,9 +40,9 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
 
             MesajViewModel mesajViewModel = new MesajViewModel();
 
-            if (kategori.Id == 0)
+            if (kategori.KategoriId == 0)
             {
-               var kategoriAd = db.Kategori.ToList();
+               var kategoriAd = db.Kategoriler.ToList();
                 foreach (var item in kategoriAd)
                 {
                     if (kategori.Ad == item.Ad)
@@ -56,12 +56,12 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
                         return View("KategoriForm");
                     }
                 }
-                db.Kategori.Add(kategori);
+                db.Kategoriler.Add(kategori);
                 mesajViewModel.Mesaj = kategori.Ad + " başarıyle eklendi...";
             }
             else
             {
-                var guncellenecekKategori = db.Kategori.Find(kategori.Id);
+                var guncellenecekKategori = db.Kategoriler.Find(kategori.KategoriId);
                 if (guncellenecekKategori == null)
                 {
                     return HttpNotFound();
@@ -94,7 +94,7 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
 
         public ActionResult Guncelle(int id)
         {
-            var model = db.Kategori.Find(id);
+            var model = db.Kategoriler.Find(id);
             if (model == null)
                 return HttpNotFound();
             return View("KategoriForm", model);
@@ -102,10 +102,10 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
 
         public ActionResult Sil(int id)
         {
-            var silinecekKategori = db.Kategori.Find(id);
+            var silinecekKategori = db.Kategoriler.Find(id);
             if (silinecekKategori == null)
                 return HttpNotFound();
-            db.Kategori.Remove(silinecekKategori);
+            db.Kategoriler.Remove(silinecekKategori);
             db.SaveChanges();
             return RedirectToAction("Index", "Kategori");
 

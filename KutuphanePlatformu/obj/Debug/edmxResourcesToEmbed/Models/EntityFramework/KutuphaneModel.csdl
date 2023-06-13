@@ -6,8 +6,8 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Uye" Type="Int32" />
-    <Property Name="BaslangicTarihi" Type="DateTime" Precision="0" />
-    <Property Name="BitisTarihi" Type="DateTime" Precision="0" />
+    <Property Name="BaslangicTarihi" Type="DateTime" Precision="3" />
+    <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
     <Property Name="Para" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="KitapHareket" Type="Int32" />
     <NavigationProperty Name="KitapHareket1" Relationship="Self.FK_Cezalar_KitapHareket" FromRole="Cezalar" ToRole="KitapHareket" />
@@ -18,7 +18,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Tarih" Type="DateTime" Precision="0" />
+    <Property Name="Tarih" Type="DateTime" Precision="3" />
     <Property Name="Tutar" Type="Decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="Kategori">
@@ -26,7 +26,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Kitap" Relationship="Self.FK_Kitap_Kategori" FromRole="Kategori" ToRole="Kitap" />
   </EntityType>
   <EntityType Name="Kitap">
@@ -54,8 +54,8 @@
     <Property Name="Kitap" Type="Int32" />
     <Property Name="Uye" Type="Int32" />
     <Property Name="Personel" Type="Int32" />
-    <Property Name="AlisTarihi" Type="DateTime" Precision="0" />
-    <Property Name="TeslimTarihi" Type="DateTime" Precision="0" />
+    <Property Name="AlisTarihi" Type="DateTime" Precision="3" />
+    <Property Name="TeslimTarihi" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Cezalar" Relationship="Self.FK_Cezalar_KitapHareket" FromRole="KitapHareket" ToRole="Cezalar" />
     <NavigationProperty Name="Kitap1" Relationship="Self.FK_KitapHareket_Kitap" FromRole="KitapHareket" ToRole="Kitap" />
     <NavigationProperty Name="Uyeler" Relationship="Self.FK_KitapHareket_Uyeler" FromRole="KitapHareket" ToRole="Uyeler" />

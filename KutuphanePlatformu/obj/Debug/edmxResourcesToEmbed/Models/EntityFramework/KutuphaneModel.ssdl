@@ -6,8 +6,8 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Uye" Type="int" />
-    <Property Name="BaslangicTarihi" Type="smalldatetime" />
-    <Property Name="BitisTarihi" Type="smalldatetime" />
+    <Property Name="BaslangicTarihi" Type="datetime" />
+    <Property Name="BitisTarihi" Type="datetime" />
     <Property Name="Para" Type="decimal" Precision="18" Scale="2" />
     <Property Name="KitapHareket" Type="int" />
   </EntityType>
@@ -16,7 +16,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Tarih" Type="smalldatetime" />
+    <Property Name="Tarih" Type="datetime" />
     <Property Name="Tutar" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="Kategori">
@@ -24,7 +24,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Ad" Type="varchar" MaxLength="50" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Kitap">
     <Key>
@@ -47,8 +47,8 @@
     <Property Name="Kitap" Type="int" />
     <Property Name="Uye" Type="int" />
     <Property Name="Personel" Type="int" />
-    <Property Name="AlisTarihi" Type="smalldatetime" />
-    <Property Name="TeslimTarihi" Type="smalldatetime" />
+    <Property Name="AlisTarihi" Type="datetime" />
+    <Property Name="TeslimTarihi" Type="datetime" />
   </EntityType>
   <EntityType Name="Personel">
     <Key>

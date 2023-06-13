@@ -11,11 +11,11 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
     public class KitapController : Controller
     {
         // GET: Admin/Kitap
-        KutuphanePlatformDbEntities db = new KutuphanePlatformDbEntities();
+        Context db = new Context();
         public ActionResult Index(int? sayfaNo)
         {
             int _sayfaNo = sayfaNo ?? 1;
-            var listele = db.Kitap.OrderByDescending(x=>x.Id).ToPagedList<Kitap>(_sayfaNo,10);
+            var listele = db.Kitaplar.OrderByDescending(x=>x.KategoriId).ToPagedList<Kitaplar>(_sayfaNo,10);
             return View(listele);
         }
     }

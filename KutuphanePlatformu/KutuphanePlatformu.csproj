@@ -140,48 +140,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\EntityFramework\Cezalar.cs">
-      <DependentUpon>KutuphaneModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\Kasa.cs">
-      <DependentUpon>KutuphaneModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\Kategori.cs">
-      <DependentUpon>KutuphaneModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\Kitap.cs">
-      <DependentUpon>KutuphaneModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\KitapHareket.cs">
-      <DependentUpon>KutuphaneModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\KutuphaneModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KutuphaneModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\KutuphaneModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KutuphaneModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\KutuphaneModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KutuphaneModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\Personel.cs">
-      <DependentUpon>KutuphaneModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\Uyeler.cs">
-      <DependentUpon>KutuphaneModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\YayinEvi.cs">
-      <DependentUpon>KutuphaneModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\Yazar.cs">
-      <DependentUpon>KutuphaneModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\EntityFramework\Kategoriler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Areas\Admin\ViewModel\MesajViewModel.cs" />
   </ItemGroup>
@@ -389,16 +350,6 @@
     <Content Include="Content\site.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Models\EntityFramework\KutuphaneModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KutuphaneModel.edmx</DependentUpon>
-      <LastGenOutput>KutuphaneModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\EntityFramework\KutuphaneModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KutuphaneModel.edmx</DependentUpon>
-      <LastGenOutput>KutuphaneModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -407,13 +358,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\EntityFramework\KutuphaneModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>KutuphaneModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\EntityFramework\KutuphaneModel.edmx.diagram">
-      <DependentUpon>KutuphaneModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
