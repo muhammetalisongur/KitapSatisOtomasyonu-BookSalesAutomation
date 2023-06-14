@@ -10,3 +10,15 @@ D:\OneDrive\source\repos\BookStore\Core\obj\Debug\Core.csproj.CoreCompileInputs.
 D:\OneDrive\source\repos\BookStore\Core\obj\Debug\Core.csproj.CopyComplete
 D:\OneDrive\source\repos\BookStore\Core\obj\Debug\Core.dll
 D:\OneDrive\source\repos\BookStore\Core\obj\Debug\Core.pdb
+\\Mac\Home\Documents\GitHub\BookStore\Core\bin\Debug\Core.dll.config
+\\Mac\Home\Documents\GitHub\BookStore\Core\bin\Debug\Core.dll
+\\Mac\Home\Documents\GitHub\BookStore\Core\bin\Debug\Core.pdb
+\\Mac\Home\Documents\GitHub\BookStore\Core\bin\Debug\EntityFramework.dll
+\\Mac\Home\Documents\GitHub\BookStore\Core\bin\Debug\EntityFramework.SqlServer.dll
+\\Mac\Home\Documents\GitHub\BookStore\Core\bin\Debug\EntityFramework.xml
+\\Mac\Home\Documents\GitHub\BookStore\Core\bin\Debug\EntityFramework.SqlServer.xml
+\\Mac\Home\Documents\GitHub\BookStore\Core\obj\Debug\Core.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\GitHub\BookStore\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GitHub\BookStore\Core\obj\Debug\Core.csproj.CopyComplete
+\\Mac\Home\Documents\GitHub\BookStore\Core\obj\Debug\Core.dll
+\\Mac\Home\Documents\GitHub\BookStore\Core\obj\Debug\Core.pdb
