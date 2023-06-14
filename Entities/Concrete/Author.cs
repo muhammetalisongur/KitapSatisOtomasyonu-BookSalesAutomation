@@ -51,7 +51,7 @@ namespace Entities.Concrete
 
 
         // Navigation Property
-        //public virtual ICollection<Book> Books { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
 
     }
 }

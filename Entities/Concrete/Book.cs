@@ -50,7 +50,7 @@ namespace Entities.Concrete
 
         [Required(ErrorMessage = "Kitap çevirmeni boş geçilemez!")]
         [Display(Name = "Kitap Çevirmeni")]
-        [ForeignKey("Translator")]
+        [ForeignKey("BookTranslator")]
         public int BookTranslatorID { get; set; }
 
         [Required(ErrorMessage = "Kitap sayfa sayısı boş geçilemez!")]

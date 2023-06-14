@@ -34,3 +34,5 @@ D:\OneDrive\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.pdb
 \\Mac\Home\Documents\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 \\Mac\Home\Documents\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.dll
 \\Mac\Home\Documents\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.pdb
+\\Mac\Home\Documents\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.CreateDatabaseTable.resources
+\\Mac\Home\Documents\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.cache

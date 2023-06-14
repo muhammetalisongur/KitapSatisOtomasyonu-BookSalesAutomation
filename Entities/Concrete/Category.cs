@@ -21,6 +21,6 @@ namespace Entities.Concrete
         public string CategoryName { get; set; }
 
         // Navigation Property
-        //public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }
