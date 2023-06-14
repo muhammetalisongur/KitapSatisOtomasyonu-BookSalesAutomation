@@ -17,6 +17,7 @@ namespace KutuphanePlatformu.Areas.Admin.Controllers
             _categoryService = categoryService;
         }
 
+        [Route("/")]
         public ActionResult Index(int? SayfaNo)
         {
 
