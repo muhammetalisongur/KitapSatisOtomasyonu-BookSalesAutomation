@@ -11,15 +11,15 @@ using System.Web.Mvc;
 
 namespace BookStore.Areas.Admin.Controllers
 {
-    [RouteArea("Yazar")]
+    [RouteArea("Admin")]
     public class AuthorController : Controller
     {
         // GET: Admin/Author
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         MessageViewModel messageViewModel = new MessageViewModel();
 
-        [Route("Kategori")]
-        [Route("Kategori/Index")]
+        [Route("Yazar")]
+        [Route("Yazar/Index")]
         public ActionResult Index(int? SayfaNo)
         {
             int _sayfaNo = SayfaNo ?? 1;
