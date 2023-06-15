@@ -5,17 +5,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A5B0168-D674-446C-B030-897A0C7D2F5E}</ProjectGuid>
+    <ProjectGuid>{0020A896-62C6-45ED-B47F-5507436DC6D1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DataAccess</RootNamespace>
     <AssemblyName>DataAccess</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,9 +53,9 @@
   <ItemGroup>
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Concrete\Context.cs" />
-    <Compile Include="Migrations\202306141113007_CreateDatabaseTable.cs" />
-    <Compile Include="Migrations\202306141113007_CreateDatabaseTable.designer.cs">
-      <DependentUpon>202306141113007_CreateDatabaseTable.cs</DependentUpon>
+    <Compile Include="Migrations\202306150705030_CreateDatabaseTable.cs" />
+    <Compile Include="Migrations\202306150705030_CreateDatabaseTable.designer.cs">
+      <DependentUpon>202306150705030_CreateDatabaseTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,17 +66,17 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{B2B8CCE3-9D57-4F9B-8CBC-E3E5ADD09A91}</Project>
+      <Project>{80244E1D-7690-4FBD-89E9-F79B20B7B91B}</Project>
       <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
-      <Project>{9C189D3D-9450-4153-B786-79F960F4281E}</Project>
+      <Project>{D4A5457E-C42E-49EB-A112-8D54AC1B4D15}</Project>
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202306141113007_CreateDatabaseTable.resx">
-      <DependentUpon>202306141113007_CreateDatabaseTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202306150705030_CreateDatabaseTable.resx">
+      <DependentUpon>202306150705030_CreateDatabaseTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

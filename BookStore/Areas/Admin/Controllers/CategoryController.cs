@@ -1,30 +1,33 @@
-﻿using BookStore.Areas.Admin.ViewModel;
-using Business.Abstract;
+﻿using Business.Abstract;
 using Entities.Concrete;
 using PagedList;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
-namespace KutuphanePlatformu.Areas.Admin.Controllers
+namespace BookStore.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
-        // GET: Admin/Category
-       private readonly ICategoryService _categoryService;
-        
+
+        private readonly ICategoryService _categoryService;
+
         public CategoryController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
         }
 
-        [Route("/")]
+
+        // GET: Admin/Category
         public ActionResult Index(int? SayfaNo)
         {
-
-            int _sayfaNo = SayfaNo ?? 1;
-            var result = _categoryService.GetAll().OrderByDescending(x=>x.ID).ToPagedList<Category>(_sayfaNo,5);
+            int id = SayfaNo ?? 1;
+            var result = _categoryService.GetAll().OrderByDescending(x => x.ID).ToPagedList<Category>(id, 5);
             return View(result);
         }
+
 
         /*
 

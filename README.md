@@ -1,2 +1,0 @@
-# BookStore
-Kitap Satış Platformu
