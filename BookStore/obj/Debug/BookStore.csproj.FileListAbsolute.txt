@@ -168,3 +168,5 @@ C:\Users\mas\source\repos\BookStore\BookStore\bin\EntityFramework.xml
 \\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 \\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\System.Runtime.CompilerServices.Unsafe.xml
 \\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\System.Threading.Tasks.Extensions.xml
+\\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\EntityFramework.SqlServer.dll
+\\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\EntityFramework.SqlServer.xml

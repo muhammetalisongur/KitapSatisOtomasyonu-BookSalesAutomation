@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using PagedList;
 using System;
@@ -12,19 +14,13 @@ namespace BookStore.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
 
-        private readonly ICategoryService _categoryService;
-
-        public CategoryController(ICategoryService categoryService)
-        {
-            _categoryService = categoryService;
-        }
-
+        CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
         // GET: Admin/Category
         public ActionResult Index(int? SayfaNo)
         {
-            int id = SayfaNo ?? 1;
-            var result = _categoryService.GetAll().OrderByDescending(x => x.ID).ToPagedList<Category>(id, 5);
+            int id = SayfaNo ?? 1; 
+            var result = categoryManager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Category>(id, 5);
             return View(result);
         }
 
