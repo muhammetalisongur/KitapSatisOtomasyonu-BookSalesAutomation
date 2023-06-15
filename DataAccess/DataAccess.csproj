@@ -51,9 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAuthorDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\IPublisherDal.cs" />
     <Compile Include="Concrete\Context.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAuthorDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfPublisherDal.cs" />
     <Compile Include="Migrations\202306150705030_CreateDatabaseTable.cs" />
     <Compile Include="Migrations\202306150705030_CreateDatabaseTable.designer.cs">
       <DependentUpon>202306150705030_CreateDatabaseTable.cs</DependentUpon>

@@ -11,7 +11,7 @@ namespace Business.Concrete
 {
     public class CategoryManager : ICategoryService
     {
-         ICategoryDal _categoryDal;
+        private readonly ICategoryDal _categoryDal;
 
         public CategoryManager(ICategoryDal categoryDal)
         {
@@ -28,9 +28,9 @@ namespace Business.Concrete
             _categoryDal.Delete(category);
         }
 
-        public Category Get(int id)
+        public Category GetById(int id)
         {
-          return  _categoryDal.Get(x => x.ID == id);
+          return  _categoryDal.GetById(x => x.ID == id);
             
         }
 
