@@ -1,4 +1,5 @@
-﻿using Business.Abstract;
+﻿using BookStore.Areas.Admin.ViewModel;
+using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
@@ -11,112 +12,114 @@ using System.Web.Mvc;
 
 namespace BookStore.Areas.Admin.Controllers
 {
+
+    [Route("Kategori")]
     public class CategoryController : Controller
     {
 
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
         // GET: Admin/Category
+       
         public ActionResult Index(int? SayfaNo)
         {
-            int id = SayfaNo ?? 1; 
-            var result = categoryManager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Category>(id, 5);
+            int _sayfaNo = SayfaNo ?? 1; 
+            var result = categoryManager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Category>(_sayfaNo, 5);
             return View(result);
         }
-
-
-        /*
-
+        
+        [Route("Yeni")]
         [HttpGet]
-        public ActionResult Yeni()
+        public ActionResult NewCategory()
         {
-            return View("KategoriForm", new Category());
+            return View("CategoryForm", new Category());
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Kaydet(Category kategori)
+        public ActionResult Save(Category category)
         {
             if (!ModelState.IsValid)
             {
-                return View("KategoriForm");
+                return View("CategoryForm");
             }
 
-            MessageViewModel mesajViewModel = new MessageViewModel();
+            MessageViewModel messageViewModel = new MessageViewModel();
 
-            if (kategori.Id == 0)
+            if (category.ID == 0)
             {
-               var kategoriAd = c.Categories.ToList();
-                foreach (var item in kategoriAd)
+                var name = categoryManager.GetAll();               
+                foreach (var item in name)
                 {
-                    if (kategori.KategoriAdi == item.KategoriAdi)
+                    if (category.CategoryName == item.CategoryName)
                     {
-                        mesajViewModel.Status = false;
-                        mesajViewModel.LinkText = "Kategori Listesi";
-                        mesajViewModel.Url = "/Admin/Kategori";
-                        mesajViewModel.Mesaj = "Bu kategori zaten mevcut...";
-                        TempData["mesaj"] = mesajViewModel;
+                        messageViewModel.Status = false;
+                        messageViewModel.LinkText = "Kategori Listesi";
+                        messageViewModel.Url = "/Admin/Category";
+                        messageViewModel.Message = "Bu kategori zaten mevcut...";
+                        TempData["message"] = messageViewModel;
 
-                        return View("KategoriForm");
+                        return View("CategoryForm");
                     }
                 }
-                c.Categories.Add(kategori);
-                mesajViewModel.Mesaj = kategori.KategoriAdi + " başarıyle eklendi...";
+                categoryManager.Add(category);
+                messageViewModel.Message = category.CategoryName + " başarıyle eklendi...";
             }
             else
             {
-                var guncellenecekKategori = c.Categories.Find(kategori.Id);
-                if (guncellenecekKategori == null)
+                var updateCategory = categoryManager.Get(category.ID);
+                if (updateCategory == null)
                 {
                     return HttpNotFound();
                 }
-                var eskiKategoriAd = guncellenecekKategori.KategoriAdi;
+                var oldCategoryName = updateCategory.CategoryName;
 
-                if (kategori.KategoriAdi == eskiKategoriAd)
+                if (category.CategoryName== oldCategoryName)
                 {
-                    mesajViewModel.Status = false;
-                    mesajViewModel.LinkText = "Kategori Listesi";
-                    mesajViewModel.Url = "/Admin/Kategori";
-                    mesajViewModel.Mesaj = "Herhangi bir değişiklik yapılmadı...";
-                    TempData["mesaj"] = mesajViewModel;
-                    return View("KategoriForm");
+                    messageViewModel.Status = false;
+                    messageViewModel.LinkText = "Kategori Listesi";
+                    messageViewModel.Url = "/Admin/Category";
+                    messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
+                    TempData["message"] = messageViewModel;
+                    return View("CategoryForm");
 
                 }
                 else
                 {
 
-                    guncellenecekKategori.KategoriAdi = kategori.KategoriAdi;
-                    mesajViewModel.Mesaj = eskiKategoriAd + " => " + kategori.KategoriAdi + " olarak başarıyla güncellendi...";
+                    updateCategory.CategoryName = category.CategoryName;
+                    categoryManager.Update(category);
+                    messageViewModel.Message = oldCategoryName + " => " + category.CategoryName + " olarak başarıyla güncellendi...";
 
                 }
             }
-            c.SaveChanges();
-            mesajViewModel.Status = true;
-            TempData["mesaj"] = mesajViewModel;
-            return RedirectToAction("Index", "Kategori");
+        
+            messageViewModel.Status = true;
+            TempData["message"] = messageViewModel;
+            return RedirectToAction("Index", "Category");
         }
 
-        public ActionResult Guncelle(int id)
+        [Route("Guncelle")]
+        public ActionResult Update(int id)
         {
-            var model = c.Categories.Find(id);
+            var model = categoryManager.Get(id);
             if (model == null)
                 return HttpNotFound();
-            return View("KategoriForm", model);
+            return View("CategoryForm", model);
         }
 
-        public ActionResult Sil(int id)
+        [Route("Sil")]
+        public ActionResult Delete(int id)
         {
-            var silinecekKategori = c.Categories.Find(id);
-            if (silinecekKategori == null)
+            var deleteCategory = categoryManager.Get(id);
+            if (deleteCategory == null)
                 return HttpNotFound();
-            c.Categories.Remove(silinecekKategori);
-            c.SaveChanges();
-            return RedirectToAction("Index", "Kategori");
+            categoryManager.Delete(deleteCategory);
+            return RedirectToAction("Index", "Category");
 
         }
 
 
-        */
 
     }
 }

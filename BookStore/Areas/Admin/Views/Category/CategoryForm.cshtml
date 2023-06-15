@@ -1,0 +1,70 @@
+﻿@using Entities.Concrete
+@model Category
+@{
+    ViewBag.Title = "KategoriForm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+    var result = (BookStore.Areas.Admin.ViewModel.MessageViewModel)TempData["message"];
+
+}
+
+
+<!-- breadcrumbs -->
+<div class="w3l_agileits_breadcrumbs">
+    <div class="w3l_agileits_breadcrumbs_inner">
+        <ul>
+            <li><a href="/Admin/Kategori">Anasayfa</a><span>«</span></li>
+
+            <li>Kategoriler</li>
+        </ul>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+
+
+
+
+<div class="inner_content_w3_agile_info two_in">
+    <h2 class="w3_inner_tittle">Ekle &amp; Duzenle</h2>
+    <!-- tables -->
+
+    <div class="agile-tables">
+        @if (TempData["message"] != null)
+        {
+            if (result.Status == false)
+            {
+
+                <div class="alert alert-danger">
+                    @result.Message <b><a href="@result.Url">@result.LinkText</a></b>
+                </div>
+            }
+
+        }
+
+        <div class="w3l-table-info agile_info_shadow">
+            <h3 class="w3_inner_tittle two" id="mesaj"></h3>
+            @using (Html.BeginForm("Save", "Category", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CategoryName)
+                    @Html.TextBoxFor(m => m.CategoryName, new { @class = "form-control" })
+                    <b style="color:red;"> @Html.ValidationMessageFor(x => x.CategoryName)</b>
+                </div>
+
+               @Html.HiddenFor(m => m.ID)
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+
+        </div>
+
+    </div>
+</div>
+
+
+@*bu iki kod gidip layouta yazilacak*@
+@section scripts{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

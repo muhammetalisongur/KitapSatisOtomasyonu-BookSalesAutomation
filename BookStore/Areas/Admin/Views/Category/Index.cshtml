@@ -6,7 +6,7 @@
     ViewBag.Title = "Kategori";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 
-    var message = (BookStore.Areas.Admin.ViewModel.MessageViewModel)TempData["message"];
+    var result = (BookStore.Areas.Admin.ViewModel.MessageViewModel)TempData["message"];
 }
 
 <link rel="stylesheet" type="text/css" href="~/Content/css/table-style.css" />
@@ -16,7 +16,7 @@
 <div class="w3l_agileits_breadcrumbs">
     <div class="w3l_agileits_breadcrumbs_inner">
         <ul>
-            <li><a href="/Admin/Kategori">Anasayfa</a><span>«</span></li>
+            <li><a href="/Admin/Category">Anasayfa</a><span>«</span></li>
 
             <li>Kategoriler</li>
         </ul>
@@ -31,23 +31,23 @@
     <div class="agile-tables">
         @if (TempData["message"] != null)
         {
-            if (message.Status)
+            if (result.Status)
             {
 
                 <div class="alert alert-success">
-                    <b> @message.Message </b>
+                    <b> @result.Message </b>
                 </div>
             }
             else
             {
                 <div class="alert alert-danger">
-                    <b>  @message.Message</b>
+                    <b>  @result.Message</b>
                 </div>
             }
         }
         <div class="w3l-table-info agile_info_shadow">
             <h3 class="w3_inner_tittle two">
-                <a class="btn btn-success" href="/Admin/Category/Yeni">Yeni Kategori</a>
+                <a class="btn btn-success" href="/Admin/Category/NewCategory">Yeni Kategori</a>
             </h3>
             <table id="tblDepartmanlar">
                 <thead>
@@ -64,8 +64,8 @@
                     {
                         <tr>
                             <td>@category.CategoryName</td>
-                            <td><a href="/Admin/Kategori/Guncelle/@category.ID" class="btn btn-success">Guncelle</a></td>
-                            <td><a class="btn btn-danger" onclick="if (confirm('Kategori Silmek Istiyor musunuz?')){return true;}else{stopPropagation(); preventDefault();};" href="/Admin/Kategori/Sil/@category.ID">Sil</a></td>
+                            <td><a href="/Admin/Category/Update/@category.ID" class="btn btn-success">Guncelle</a></td>
+                            <td><a class="btn btn-danger" onclick="if (confirm('Kategori Silmek Istiyor musunuz?')){return true;}else{stopPropagation(); preventDefault();};" href="/Admin/Category/Delete/@category.ID">Sil</a></td>
                         </tr>
                     }
                 </tbody>
@@ -73,7 +73,7 @@
 
             </table>
 
-            @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Kategori", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
+            @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Category", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
 
 
 
