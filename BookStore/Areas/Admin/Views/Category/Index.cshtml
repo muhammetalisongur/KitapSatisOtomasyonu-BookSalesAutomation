@@ -16,7 +16,7 @@
 <div class="w3l_agileits_breadcrumbs">
     <div class="w3l_agileits_breadcrumbs_inner">
         <ul>
-            <li><a href="/Admin/Category">Anasayfa</a><span>«</span></li>
+            <li><a href="/Admin/Kategori">Anasayfa</a><span>«</span></li>
 
             <li>Kategoriler</li>
         </ul>
@@ -47,7 +47,7 @@
         }
         <div class="w3l-table-info agile_info_shadow">
             <h3 class="w3_inner_tittle two">
-                <a class="btn btn-success" href="/Admin/Category/NewCategory">Yeni Kategori</a>
+                <a class="btn btn-success" href="/Admin/Kategori/YeniKategori">Yeni Kategori</a>
             </h3>
             <table id="tblDepartmanlar">
                 <thead>
@@ -64,8 +64,8 @@
                     {
                         <tr>
                             <td>@category.CategoryName</td>
-                            <td><a href="/Admin/Category/Update/@category.ID" class="btn btn-success">Guncelle</a></td>
-                            <td><a class="btn btn-danger" onclick="if (confirm('Kategori Silmek Istiyor musunuz?')){return true;}else{stopPropagation(); preventDefault();};" href="/Admin/Category/Delete/@category.ID">Sil</a></td>
+                            <td><a href="/Admin/Kategori/Guncelle/@category.ID" class="btn btn-success">Guncelle</a></td>
+                            <td><a class="btn btn-danger" onclick="if (confirm('Kategori Silmek Istiyor musunuz?')){return true;}else{stopPropagation(); preventDefault();};" href="/Admin/Kategori/Sil/@category.ID">Sil</a></td>
                         </tr>
                     }
                 </tbody>

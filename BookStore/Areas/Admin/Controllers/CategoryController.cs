@@ -12,23 +12,22 @@ using System.Web.Mvc;
 
 namespace BookStore.Areas.Admin.Controllers
 {
-
-    [Route("Kategori")]
+    [RouteArea("Admin")]
     public class CategoryController : Controller
     {
-
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
         // GET: Admin/Category
-       
+        [Route("Kategori")]
+        [Route("Kategori/Index")]
         public ActionResult Index(int? SayfaNo)
         {
-            int _sayfaNo = SayfaNo ?? 1; 
+            int _sayfaNo = SayfaNo ?? 1;
             var result = categoryManager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Category>(_sayfaNo, 5);
             return View(result);
         }
-        
-        [Route("Yeni")]
+
+        [Route("Kategori/YeniKategori")]
         [HttpGet]
         public ActionResult NewCategory()
         {
@@ -48,7 +47,7 @@ namespace BookStore.Areas.Admin.Controllers
 
             if (category.ID == 0)
             {
-                var name = categoryManager.GetAll();               
+                var name = categoryManager.GetAll();
                 foreach (var item in name)
                 {
                     if (category.CategoryName == item.CategoryName)
@@ -74,7 +73,7 @@ namespace BookStore.Areas.Admin.Controllers
                 }
                 var oldCategoryName = updateCategory.CategoryName;
 
-                if (category.CategoryName== oldCategoryName)
+                if (category.CategoryName == oldCategoryName)
                 {
                     messageViewModel.Status = false;
                     messageViewModel.LinkText = "Kategori Listesi";
@@ -93,13 +92,13 @@ namespace BookStore.Areas.Admin.Controllers
 
                 }
             }
-        
+
             messageViewModel.Status = true;
             TempData["message"] = messageViewModel;
             return RedirectToAction("Index", "Category");
         }
 
-        [Route("Guncelle")]
+        [Route("Kategori/Guncelle/{id}")]
         public ActionResult Update(int id)
         {
             var model = categoryManager.Get(id);
@@ -108,7 +107,7 @@ namespace BookStore.Areas.Admin.Controllers
             return View("CategoryForm", model);
         }
 
-        [Route("Sil")]
+        [Route("Kategori/Sil/{id}")]
         public ActionResult Delete(int id)
         {
             var deleteCategory = categoryManager.Get(id);
