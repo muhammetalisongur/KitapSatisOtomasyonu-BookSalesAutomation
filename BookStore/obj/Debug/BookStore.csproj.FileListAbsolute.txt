@@ -160,3 +160,11 @@ C:\Users\mas\source\repos\BookStore\BookStore\bin\EntityFramework.xml
 \\Mac\Home\Documents\GitHub\BookStore\BookStore\obj\Debug\BookStore.csproj.CopyComplete
 \\Mac\Home\Documents\GitHub\BookStore\BookStore\obj\Debug\BookStore.dll
 \\Mac\Home\Documents\GitHub\BookStore\BookStore\obj\Debug\BookStore.pdb
+\\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\Microsoft.Bcl.AsyncInterfaces.dll
+\\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+\\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\System.Runtime.CompilerServices.Unsafe.dll
+\\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\System.Threading.Tasks.Extensions.dll
+\\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\Microsoft.Bcl.AsyncInterfaces.xml
+\\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+\\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\System.Runtime.CompilerServices.Unsafe.xml
+\\Mac\Home\Documents\GitHub\BookStore\BookStore\bin\System.Threading.Tasks.Extensions.xml
