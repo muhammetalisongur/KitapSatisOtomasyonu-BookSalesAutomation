@@ -71,8 +71,11 @@ namespace BookStore.Areas.Admin.Controllers
                     return HttpNotFound();
                 }
                 var oldAuthorFullName = updateAuthor.AuthorFullName;
+                var oldBiography = updateAuthor.AuthorBiography;
+                var oldCountryCity = updateAuthor.AuthorCountryCity;
+                var oldImage = updateAuthor.AuthorImage;
 
-                if (author.AuthorFullName == oldAuthorFullName)
+                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryCity == oldCountryCity && author.AuthorImage == oldImage)
                 {
                     messageViewModel.Status = false;
                     messageViewModel.LinkText = "Yazar Listesi";
@@ -84,12 +87,8 @@ namespace BookStore.Areas.Admin.Controllers
                 }
                 else
                 {
-
-                    updateAuthor.AuthorName = author.AuthorName;
-                    updateAuthor.AuthorSurname = author.AuthorSurname;
                     manager.Update(author);
-                    messageViewModel.Message = oldAuthorFullName + " => " + author.AuthorFullName + " olarak başarıyla güncellendi...";
-
+                    messageViewModel.Message = "Bilgiler başarıyla güncellendi...";
                 }
             }
 

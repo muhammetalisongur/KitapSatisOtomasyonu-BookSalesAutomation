@@ -27,7 +27,7 @@
     <!-- tables -->
 
     <div class="agile-tables">
-        <h3 class="w3_inner_tittle two">
+        <b style="font-size:20px">
             @if (TempData["message"] != null)
             {
                 if (result.Status == false)
@@ -39,46 +39,44 @@
                 }
 
             }
-        </h3>
+        </b>
         <div class="w3l-table-info agile_info_shadow">
-
-
             @using (Html.BeginForm("Save", "Author", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
-            <div class="form-group">
+                <div class="form-group">
 
-                @Html.LabelFor(m => m.AuthorImage)
-                <input type="file" name="AuthorImage" id="AuthorImage" value="Resim Ekle" class="form-control" style="height:auto" />
-                @Html.ValidationMessageFor(x => x.AuthorImage)
-                <br />
+                    @Html.LabelFor(m => m.AuthorImage)
+                    <input type="file" name="AuthorImage" id="AuthorImage" value="Resim Ekle" class="form-control" style="height:auto" />
+                    @Html.ValidationMessageFor(x => x.AuthorImage)
+                    <br />
 
 
-                @Html.LabelFor(m => m.AuthorName)
-                @Html.TextBoxFor(m => m.AuthorName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.AuthorName)
-                <br />
+                    @Html.LabelFor(m => m.AuthorName)
+                    @Html.TextBoxFor(m => m.AuthorName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorName)
+                    <br />
 
-                @Html.LabelFor(m => m.AuthorSurname)
-                @Html.TextBoxFor(m => m.AuthorSurname, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.AuthorSurname)
-                <br />
+                    @Html.LabelFor(m => m.AuthorSurname)
+                    @Html.TextBoxFor(m => m.AuthorSurname, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorSurname)
+                    <br />
 
-                @Html.LabelFor(m => m.AuthorBiography)
-                @Html.TextAreaFor(m => m.AuthorBiography, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.AuthorBiography)
-                <br />
+                    @Html.LabelFor(m => m.AuthorBiography)
+                    @Html.TextAreaFor(m => m.AuthorBiography, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorBiography)
+                    <br />
 
-                @Html.LabelFor(m => m.AuthorCountry)
-                @Html.TextBoxFor(m => m.AuthorCountry, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.AuthorCountry)
-                <br />
+                    @Html.LabelFor(m => m.AuthorCountry)
+                    @Html.TextBoxFor(m => m.AuthorCountry, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorCountry)
+                    <br />
 
-                @Html.LabelFor(m => m.AuthorCity)
-                @Html.TextBoxFor(m => m.AuthorCity, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.AuthorCity)
+                    @Html.LabelFor(m => m.AuthorCity)
+                    @Html.TextBoxFor(m => m.AuthorCity, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorCity)
 
-            </div>
+                </div>
 
                 @Html.HiddenFor(x => x.ID)
                 <button type="submit" class="btn btn-success">Kaydet</button>

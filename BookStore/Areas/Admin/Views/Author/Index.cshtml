@@ -30,7 +30,7 @@
     <!-- tables -->
 
     <div class="agile-tables">
-        <h3 class="w3_inner_tittle two">
+        <b style="font-size:20px">
             @if (TempData["message"] != null)
             {
                 if (result.Status)
@@ -47,7 +47,7 @@
                     </div>
                 }
             }
-        </h3>
+        </b>
         <div class="w3l-table-info agile_info_shadow">
             <h3 class="w3_inner_tittle two">
                 <a class="btn btn-success" href="/Admin/Yazar/YeniYazar">Yeni Yazar</a>
@@ -71,7 +71,7 @@
                         <tr>
                             <td><div style="width:150px">@author.AuthorImage</div></td>
                             <td>@author.AuthorFullName</td>
-                            <td>@author.AuthorBiography</td>
+                            <td>@author.AuthorBiography.Substring(0, 100)...</td>
                             <td>@author.AuthorCountryCity</td>
                             <td><a href="/Admin/Yazar/Guncelle/@author.ID" class="btn btn-success">Guncelle</a></td>
                             <td><a class="btn btn-danger" onclick="if (confirm('Yazari Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Yazar/Sil/@author.ID">Sil</a></td>

@@ -29,7 +29,7 @@
     <!-- tables -->
 
     <div class="agile-tables">
-        <h3 class="w3_inner_tittle two">
+        <b style="font-size:20px">
             @if (TempData["message"] != null)
             {
                 if (result.Status == false)
@@ -41,7 +41,7 @@
                 }
 
             }
-        </h3>
+        </b>
         <div class="w3l-table-info agile_info_shadow">
             @using (Html.BeginForm("Save", "Category", FormMethod.Post))
             {
