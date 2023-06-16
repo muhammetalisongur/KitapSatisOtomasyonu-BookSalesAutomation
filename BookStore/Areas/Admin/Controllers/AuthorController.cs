@@ -15,7 +15,7 @@ namespace BookStore.Areas.Admin.Controllers
     public class AuthorController : Controller
     {
         // GET: Admin/Author
-        CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        AuthorManager manager = new AuthorManager(new EfAuthorDal());
         MessageViewModel messageViewModel = new MessageViewModel();
 
         [Route("Yazar")]
@@ -23,100 +23,101 @@ namespace BookStore.Areas.Admin.Controllers
         public ActionResult Index(int? SayfaNo)
         {
             int _sayfaNo = SayfaNo ?? 1;
-            var result = categoryManager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Category>(_sayfaNo, 5);
+            var result = manager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Author>(_sayfaNo, 5);
             return View(result);
         }
 
-        [Route("Kategori/YeniKategori")]
+        [Route("Yazar/YeniYazar")]
         [HttpGet]
-        public ActionResult NewCategory()
+        public ActionResult New()
         {
-            return View("CategoryForm", new Category());
+            return View("AuthorForm", new Author());
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(Category category)
+        public ActionResult Save(Author author)
         {
             if (!ModelState.IsValid)
             {
-                return View("CategoryForm");
+                return View("AuthorForm");
             }
 
 
-            if (category.ID == 0)
+            if (author.ID == 0)
             {
-                var name = categoryManager.GetAll();
+                var name = manager.GetAll();
                 foreach (var item in name)
                 {
-                    if (category.CategoryName == item.CategoryName)
+                    if (author.AuthorFullName == item.AuthorFullName)
                     {
                         messageViewModel.Status = false;
-                        messageViewModel.LinkText = "Kategori Listesi";
-                        messageViewModel.Url = "/Admin/Kategori";
-                        messageViewModel.Message = "Bu kategori zaten mevcut...";
+                        messageViewModel.LinkText = "Yazar Listesi";
+                        messageViewModel.Url = "/Admin/Author";
+                        messageViewModel.Message = "Bu yazar zaten mevcut...";
                         TempData["message"] = messageViewModel;
 
-                        return View("CategoryForm");
+                        return View("AuthorForm");
                     }
                 }
-                categoryManager.Add(category);
-                messageViewModel.Message = category.CategoryName + " kategorisi başarıyle eklendi...";
+                manager.Add(author);
+                messageViewModel.Message = author.AuthorFullName + " yazarı başarıyle eklendi...";
             }
             else
             {
-                var updateCategory = categoryManager.GetById(category.ID);
-                if (updateCategory == null)
+                var updateAuthor = manager.GetById(author.ID);
+                if (updateAuthor == null)
                 {
                     return HttpNotFound();
                 }
-                var oldCategoryName = updateCategory.CategoryName;
+                var oldAuthorFullName = updateAuthor.AuthorFullName;
 
-                if (category.CategoryName == oldCategoryName)
+                if (author.AuthorFullName == oldAuthorFullName)
                 {
                     messageViewModel.Status = false;
-                    messageViewModel.LinkText = "Kategori Listesi";
-                    messageViewModel.Url = "/Admin/Kategori";
+                    messageViewModel.LinkText = "Yazar Listesi";
+                    messageViewModel.Url = "/Admin/Yazar";
                     messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
                     TempData["message"] = messageViewModel;
-                    return View("CategoryForm");
+                    return View("AuthorForm");
 
                 }
                 else
                 {
 
-                    updateCategory.CategoryName = category.CategoryName;
-                    categoryManager.Update(category);
-                    messageViewModel.Message = oldCategoryName + " => " + category.CategoryName + " olarak başarıyla güncellendi...";
+                    updateAuthor.AuthorName = author.AuthorName;
+                    updateAuthor.AuthorSurname = author.AuthorSurname;
+                    manager.Update(author);
+                    messageViewModel.Message = oldAuthorFullName + " => " + author.AuthorFullName + " olarak başarıyla güncellendi...";
 
                 }
             }
 
             messageViewModel.Status = true;
             TempData["message"] = messageViewModel;
-            return RedirectToAction("Index", "Category");
+            return RedirectToAction("Index", "Author");
         }
 
         [Route("Kategori/Guncelle/{id}")]
         public ActionResult Update(int id)
         {
-            var model = categoryManager.GetById(id);
+            var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
-            return View("CategoryForm", model);
+            return View("AuthorForm", model);
         }
 
         [Route("Kategori/Sil/{id}")]
         public ActionResult Delete(int id)
         {
-            var deleteCategory = categoryManager.GetById(id);
-            if (deleteCategory == null)
+            var deleteAuthor = manager.GetById(id);
+            if (deleteAuthor == null)
                 return HttpNotFound();
-            categoryManager.Delete(deleteCategory);
+            manager.Delete(deleteAuthor);
             messageViewModel.Status = true;
-            messageViewModel.Message = deleteCategory.CategoryName + " isimli kategori silindi...";
+            messageViewModel.Message = deleteAuthor.AuthorFullName + " isimli kategori silindi...";
             TempData["message"] = messageViewModel;
-            return RedirectToAction("Index", "Category");
+            return RedirectToAction("Index", "Author");
 
         }
     }

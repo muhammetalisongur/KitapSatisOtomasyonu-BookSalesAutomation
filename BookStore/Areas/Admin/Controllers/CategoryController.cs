@@ -15,7 +15,7 @@ namespace BookStore.Areas.Admin.Controllers
     [RouteArea("Admin")]
     public class CategoryController : Controller
     {
-        CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        CategoryManager manager = new CategoryManager(new EfCategoryDal());
         MessageViewModel messageViewModel = new MessageViewModel();
 
         // GET: Admin/Category
@@ -24,7 +24,7 @@ namespace BookStore.Areas.Admin.Controllers
         public ActionResult Index(int? SayfaNo)
         {
             int _sayfaNo = SayfaNo ?? 1;
-            var result = categoryManager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Category>(_sayfaNo, 5);
+            var result = manager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Category>(_sayfaNo, 5);
             return View(result);
         }
 
@@ -47,7 +47,7 @@ namespace BookStore.Areas.Admin.Controllers
 
             if (category.ID == 0)
             {
-                var name = categoryManager.GetAll();
+                var name = manager.GetAll();
                 foreach (var item in name)
                 {
                     if (category.CategoryName == item.CategoryName)
@@ -61,12 +61,12 @@ namespace BookStore.Areas.Admin.Controllers
                         return View("CategoryForm");
                     }
                 }
-                categoryManager.Add(category);
+                manager.Add(category);
                 messageViewModel.Message = category.CategoryName + " kategorisi başarıyle eklendi...";
             }
             else
             {
-                var updateCategory = categoryManager.GetById(category.ID);
+                var updateCategory = manager.GetById(category.ID);
                 if (updateCategory == null)
                 {
                     return HttpNotFound();
@@ -87,7 +87,7 @@ namespace BookStore.Areas.Admin.Controllers
                 {
 
                     updateCategory.CategoryName = category.CategoryName;
-                    categoryManager.Update(category);
+                    manager.Update(category);
                     messageViewModel.Message = oldCategoryName + " => " + category.CategoryName + " olarak başarıyla güncellendi...";
 
                 }
@@ -101,7 +101,7 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Kategori/Guncelle/{id}")]
         public ActionResult Update(int id)
         {
-            var model = categoryManager.GetById(id);
+            var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
             return View("CategoryForm", model);
@@ -110,10 +110,10 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Kategori/Sil/{id}")]
         public ActionResult Delete(int id)
         {
-            var deleteCategory = categoryManager.GetById(id);
+            var deleteCategory = manager.GetById(id);
             if (deleteCategory == null)
                 return HttpNotFound();
-            categoryManager.Delete(deleteCategory);
+            manager.Delete(deleteCategory);
             messageViewModel.Status = true;
             messageViewModel.Message = deleteCategory.CategoryName + " isimli kategori silindi...";
             TempData["message"] = messageViewModel;
