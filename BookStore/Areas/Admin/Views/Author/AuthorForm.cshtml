@@ -1,0 +1,97 @@
+﻿@using Entities.Concrete
+@model Author
+
+@{
+    ViewBag.Title = "YazarForm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var result = (BookStore.Areas.Admin.ViewModel.MessageViewModel)TempData["message"];
+
+}
+<!-- breadcrumbs -->
+<div class="w3l_agileits_breadcrumbs">
+    <div class="w3l_agileits_breadcrumbs_inner">
+        <ul>
+            <li><a href="Admin/Kategori">Anasayfa</a><span>«</span></li>
+
+            <li>Yazar</li>
+        </ul>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+
+
+
+<div id="mesaj"></div>
+<div class="inner_content_w3_agile_info two_in">
+    <h2 class="w3_inner_tittle">Ekle &amp; Duzenle</h2>
+    <!-- tables -->
+
+    <div class="agile-tables">
+        <h3 class="w3_inner_tittle two">
+            @if (TempData["message"] != null)
+            {
+                if (result.Status == false)
+                {
+
+                    <div class="alert alert-danger">
+                        @result.Message <b><a href="@result.Url">@result.LinkText</a></b>
+                    </div>
+                }
+
+            }
+        </h3>
+        <div class="w3l-table-info agile_info_shadow">
+
+
+            @using (Html.BeginForm("Save", "Author", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.AuthorImage)
+                <input type="file" name="AuthorImage" id="AuthorImage" value="Resim Ekle" class="form-control" style="height:auto" />
+                @Html.ValidationMessageFor(x => x.AuthorImage)
+                <br />
+
+
+                @Html.LabelFor(m => m.AuthorName)
+                @Html.TextBoxFor(m => m.AuthorName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.AuthorName)
+                <br />
+
+                @Html.LabelFor(m => m.AuthorSurname)
+                @Html.TextBoxFor(m => m.AuthorSurname, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.AuthorSurname)
+                <br />
+
+                @Html.LabelFor(m => m.AuthorBiography)
+                @Html.TextAreaFor(m => m.AuthorBiography, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.AuthorBiography)
+                <br />
+
+                @Html.LabelFor(m => m.AuthorCountry)
+                @Html.TextBoxFor(m => m.AuthorCountry, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.AuthorCountry)
+                <br />
+
+                @Html.LabelFor(m => m.AuthorCity)
+                @Html.TextBoxFor(m => m.AuthorCity, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.AuthorCity)
+
+            </div>
+
+                @Html.HiddenFor(x => x.ID)
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+
+        </div>
+
+    </div>
+</div>
+
+@*bu iki kod gidip layouta yazilacak*@
+@section scripts{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

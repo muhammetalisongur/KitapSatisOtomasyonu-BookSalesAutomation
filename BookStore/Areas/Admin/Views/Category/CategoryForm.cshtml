@@ -29,20 +29,20 @@
     <!-- tables -->
 
     <div class="agile-tables">
-        @if (TempData["message"] != null)
-        {
-            if (result.Status == false)
+        <h3 class="w3_inner_tittle two">
+            @if (TempData["message"] != null)
             {
+                if (result.Status == false)
+                {
 
-                <div class="alert alert-danger">
-                    @result.Message <b><a href="@result.Url">@result.LinkText</a></b>
-                </div>
+                    <div class="alert alert-danger">
+                        @result.Message <b><a href="@result.Url">@result.LinkText</a></b>
+                    </div>
+                }
+
             }
-
-        }
-
+        </h3>
         <div class="w3l-table-info agile_info_shadow">
-            <h3 class="w3_inner_tittle two" id="mesaj"></h3>
             @using (Html.BeginForm("Save", "Category", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
@@ -52,7 +52,7 @@
                     <b style="color:red;"> @Html.ValidationMessageFor(x => x.CategoryName)</b>
                 </div>
 
-               @Html.HiddenFor(m => m.ID)
+                @Html.HiddenFor(m => m.ID)
                 <button type="submit" class="btn btn-success">Kaydet</button>
 
             }

@@ -29,22 +29,24 @@
     <!-- tables -->
 
     <div class="agile-tables">
-        @if (TempData["message"] != null)
-        {
-            if (result.Status)
+        <h3 class="w3_inner_tittle two">
+            @if (TempData["message"] != null)
             {
+                if (result.Status)
+                {
 
-                <div class="alert alert-success">
-                    <b> @result.Message </b>
-                </div>
+                    <div class="alert alert-success">
+                        <b> @result.Message </b>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-danger">
+                        <b>  @result.Message</b>
+                    </div>
+                }
             }
-            else
-            {
-                <div class="alert alert-danger">
-                    <b>  @result.Message</b>
-                </div>
-            }
-        }
+        </h3>
         <div class="w3l-table-info agile_info_shadow">
             <h3 class="w3_inner_tittle two">
                 <a class="btn btn-success" href="/Admin/Kategori/YeniKategori">Yeni Kategori</a>
@@ -65,7 +67,7 @@
                         <tr>
                             <td>@category.CategoryName</td>
                             <td><a href="/Admin/Kategori/Guncelle/@category.ID" class="btn btn-success">Guncelle</a></td>
-                            <td><a class="btn btn-danger" onclick="if (confirm('Kategori Silmek Istiyor musunuz?')){return true;}else{stopPropagation(); preventDefault();};" href="/Admin/Kategori/Sil/@category.ID">Sil</a></td>
+                            <td><a class="btn btn-danger" onclick="if (confirm('Kategori Silmek Istiyor musunuz?')){return true;}else{event.stopPropagation(); event.preventDefault();};" href="/Admin/Kategori/Sil/@category.ID">Sil</a></td>
                         </tr>
                     }
                 </tbody>

@@ -378,7 +378,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Profil.cshtml" />
     <Content Include="Areas\Admin\Views\YayinEvi\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Yazar\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Yazar\YazarForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Author\AuthorForm.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <Content Include="Content\DataTables\css\common.scss" />
@@ -395,6 +395,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Scripts\jquery-3.6.4.min.map" />
     <Content Include="Scripts\jquery-3.6.4.slim.min.map" />
+    <Content Include="Areas\Admin\Views\Author\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -535,7 +536,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Author\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

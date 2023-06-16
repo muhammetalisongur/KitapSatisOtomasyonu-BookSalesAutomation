@@ -53,7 +53,7 @@ namespace BookStore.Areas.Admin.Controllers
                     {
                         messageViewModel.Status = false;
                         messageViewModel.LinkText = "Yazar Listesi";
-                        messageViewModel.Url = "/Admin/Author";
+                        messageViewModel.Url = "/Admin/Yazar";
                         messageViewModel.Message = "Bu yazar zaten mevcut...";
                         TempData["message"] = messageViewModel;
 
@@ -98,7 +98,7 @@ namespace BookStore.Areas.Admin.Controllers
             return RedirectToAction("Index", "Author");
         }
 
-        [Route("Kategori/Guncelle/{id}")]
+        [Route("Yazar/Guncelle/{id}")]
         public ActionResult Update(int id)
         {
             var model = manager.GetById(id);
@@ -107,7 +107,7 @@ namespace BookStore.Areas.Admin.Controllers
             return View("AuthorForm", model);
         }
 
-        [Route("Kategori/Sil/{id}")]
+        [Route("Yazar/Sil/{id}")]
         public ActionResult Delete(int id)
         {
             var deleteAuthor = manager.GetById(id);
