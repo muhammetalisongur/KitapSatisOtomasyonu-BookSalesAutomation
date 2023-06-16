@@ -5,9 +5,13 @@ using Entities.Concrete;
 using PagedList;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.EnterpriseServices;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Profile;
 
 namespace BookStore.Areas.Admin.Controllers
 {
@@ -59,7 +63,13 @@ namespace BookStore.Areas.Admin.Controllers
 
                         return View("AuthorForm");
                     }
+
                 }
+                string fileName = Path.GetFileName(Request.Files[0].FileName);
+                string path = "~/Admin/Images/" + fileName;
+                Request.Files[0].SaveAs(Server.MapPath(path));
+                author.AuthorImage = "/Images/" + fileName;
+
                 manager.Add(author);
                 messageViewModel.Message = author.AuthorFullName + " yazarı başarıyle eklendi...";
             }
@@ -70,10 +80,22 @@ namespace BookStore.Areas.Admin.Controllers
                 {
                     return HttpNotFound();
                 }
+
                 var oldAuthorFullName = updateAuthor.AuthorFullName;
                 var oldBiography = updateAuthor.AuthorBiography;
                 var oldCountryCity = updateAuthor.AuthorCountryCity;
                 var oldImage = updateAuthor.AuthorImage;
+
+                if (author.AuthorImage.Length > 0)
+                {
+                    string fileName = Path.GetFileName(Request.Files[0].FileName);
+                    string path = "~/Areas/Admin/Images/" + fileName;
+                    Request.Files[0].SaveAs(Server.MapPath(path));
+                    author.AuthorImage = "~/Areas/Admin/Images/" + fileName;
+
+
+                }
+
 
                 if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryCity == oldCountryCity && author.AuthorImage == oldImage)
                 {
@@ -119,5 +141,6 @@ namespace BookStore.Areas.Admin.Controllers
             return RedirectToAction("Index", "Author");
 
         }
+
     }
 }

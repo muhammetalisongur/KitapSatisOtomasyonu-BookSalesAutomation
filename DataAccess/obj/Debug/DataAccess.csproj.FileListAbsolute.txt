@@ -36,3 +36,5 @@ C:\Users\mas\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.csproj.Gener
 \\Mac\Home\Documents\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 \\Mac\Home\Documents\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.dll
 \\Mac\Home\Documents\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.pdb
+\\Mac\Home\Documents\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.AuthorImageConvertImageByte.resources
+\\Mac\Home\Documents\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.AuthorImageToConvert.resources

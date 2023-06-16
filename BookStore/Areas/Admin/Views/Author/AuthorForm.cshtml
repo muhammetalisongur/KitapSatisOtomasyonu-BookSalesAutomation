@@ -41,13 +41,13 @@
             }
         </b>
         <div class="w3l-table-info agile_info_shadow">
-            @using (Html.BeginForm("Save", "Author", FormMethod.Post))
+            @using (Html.BeginForm("Save", "Author", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
                 <div class="form-group">
 
                     @Html.LabelFor(m => m.AuthorImage)
-                    <input type="file" name="AuthorImage" id="AuthorImage" value="Resim Ekle" class="form-control" style="height:auto" />
+                    <input type="file" name="AuthorImage" id="AuthorImage" value="Resim Ekle" class="form-control" style="height:auto" multiple="multiple" />
                     @Html.ValidationMessageFor(x => x.AuthorImage)
                     <br />
 

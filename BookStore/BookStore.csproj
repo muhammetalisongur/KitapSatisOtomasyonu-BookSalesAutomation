@@ -535,6 +535,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

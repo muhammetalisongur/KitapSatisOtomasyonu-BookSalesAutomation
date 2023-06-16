@@ -32,7 +32,6 @@ namespace Entities.Concrete
         public string AuthorBiography { get; set; }
 
         [Required(ErrorMessage = "Yazar resmi boş geçilemez!")]
-        [StringLength(250, ErrorMessage = "Yazar resmi en fazla 250 karakter olabilir!")]
         [Display(Name = "Yazar Resmi")]
         public string AuthorImage { get; set; }
 
