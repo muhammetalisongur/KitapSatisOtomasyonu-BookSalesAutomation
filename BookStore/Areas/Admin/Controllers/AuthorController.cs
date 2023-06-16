@@ -40,7 +40,7 @@ namespace BookStore.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(Author author)
+        public ActionResult Save(Author author,HttpPostedFileBase file)
         {
             if (!ModelState.IsValid)
             {
@@ -65,6 +65,9 @@ namespace BookStore.Areas.Admin.Controllers
                     }
 
                 }
+
+
+
                 string fileName = Path.GetFileName(Request.Files[0].FileName);
                 string path = "~/Admin/Images/" + fileName;
                 Request.Files[0].SaveAs(Server.MapPath(path));
@@ -85,13 +88,16 @@ namespace BookStore.Areas.Admin.Controllers
                 var oldBiography = updateAuthor.AuthorBiography;
                 var oldCountryCity = updateAuthor.AuthorCountryCity;
                 var oldImage = updateAuthor.AuthorImage;
+                var oldImage2 = updateAuthor.AuthorImage;
 
                 if (author.AuthorImage.Length > 0)
                 {
+
+
                     string fileName = Path.GetFileName(Request.Files[0].FileName);
                     string path = "~/Areas/Admin/Images/" + fileName;
                     Request.Files[0].SaveAs(Server.MapPath(path));
-                    author.AuthorImage = "~/Areas/Admin/Images/" + fileName;
+                    author.AuthorImage = "~/Admin/Images/" + fileName;
 
 
                 }

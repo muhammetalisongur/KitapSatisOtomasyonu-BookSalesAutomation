@@ -69,7 +69,7 @@
                     @foreach (var author in Model)
                     {
                         <tr>
-                            <td><div style="width:150px">@author.AuthorImage</div></td>
+                            <td style="width:150px"><img src="@author.AuthorImage" alt="Alternate Text" /></td>
                             <td>@author.AuthorFullName</td>
                             <td>@author.AuthorBiography.Substring(0, 100)...</td>
                             <td>@author.AuthorCountryCity</td>
