@@ -98,7 +98,7 @@ namespace BookStore.Areas.Admin.Controllers
                 var oldBiography = updateAuthor.AuthorBiography;
                 var oldCountryCity = updateAuthor.AuthorCountryCity;
 
-                string oldImage = "~" + updateAuthor.AuthorImage;
+                string oldImage = updateAuthor.AuthorImage;
 
 
                 var fileName = Path.GetFileName(Request.Files[0].FileName);
@@ -106,7 +106,7 @@ namespace BookStore.Areas.Admin.Controllers
                 ViewBag.AuthorImage = path;
                 if (Path.GetFileName(Request.Files[0].FileName) != "")
                 {
-                    string fullPath = Request.MapPath(oldImage);
+                    string fullPath = Request.MapPath("~" + oldImage);
                     if (System.IO.File.Exists(fullPath))
                     {
                         System.IO.File.Delete(fullPath);
@@ -124,11 +124,13 @@ namespace BookStore.Areas.Admin.Controllers
                     messageViewModel.Url = "/Admin/Yazar";
                     messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
                     TempData["message"] = messageViewModel;
-                    return View("AuthorForm",new Author());
+                    return View("AuthorForm", new Author());
 
                 }
                 else
                 {
+                    if (path == "~/Areas/Admin/Images/Author/")
+                        author.AuthorImage = oldImage;
                     manager.Update(author);
                     messageViewModel.Status = true;
                     messageViewModel.Message = "Bilgiler başarıyla güncellendi...";
