@@ -46,40 +46,39 @@
                 @Html.AntiForgeryToken()
                 <div class="form-group">
 
-                    <div>
-                        @Html.LabelFor(model => model.AuthorImage)
-                        <div class="form-control">
-                            @Html.EditorFor(x => x.AuthorImage, new { htmlAttributes = new { @class = "form-control", type = "file", style = "height:auto", accept = "image/*", title = "Resim Yukle" } })
-                            <img src="@Model.AuthorImage" width="100" />
-                        </div>
-                        @*<input type="file" name="AuthorImage" id="AuthorImage" value="Resim Ekle" class="form-control" style="height:auto" accept="" title="Resim Yukle" />*@
-                        @Html.ValidationMessageFor(x => x.AuthorImage)
+                    @Html.LabelFor(model => model.AuthorImage)
+                    <div style="display:flex" class="col-2">
+                        @Html.EditorFor(x => x.AuthorImage, new { htmlAttributes = new { @class = "form-control", type = "file", style = "height:auto", accept = "image/*", title = "Resim Yukle", onchange = "prewIMG(event)" } })
+                        <img src="@Model.AuthorImage" height="52" width="52" style="position: absolute; left: calc(100% - 9.8em); " id="imgPrew" alt="Resim Yukle"/>
                     </div>
-                    <div>
-                        @Html.LabelFor(m => m.AuthorName)
-                        @Html.TextBoxFor(m => m.AuthorName, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(x => x.AuthorName)
-                    </div>
-                    <div>
-                        @Html.LabelFor(m => m.AuthorSurname)
-                        @Html.TextBoxFor(m => m.AuthorSurname, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(x => x.AuthorSurname)
-                    </div>
-                    <div>
-                        @Html.LabelFor(m => m.AuthorBiography)
-                        @Html.TextAreaFor(m => m.AuthorBiography, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(x => x.AuthorBiography)
-                    </div>
-                    <div>
-                        @Html.LabelFor(m => m.AuthorCountry)
-                        @Html.TextBoxFor(m => m.AuthorCountry, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(x => x.AuthorCountry)
-                    </div>
-                    <div>
-                        @Html.LabelFor(m => m.AuthorCity)
-                        @Html.TextBoxFor(m => m.AuthorCity, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(x => x.AuthorCity)
-                    </div>
+                    @*<input type="file" name="AuthorImage" id="AuthorImage" value="Resim Ekle" class="form-control" style="height:auto" accept="" title="Resim Yukle" />*@
+                    @Html.ValidationMessageFor(x => x.AuthorImage)
+                    <br />
+
+                    @Html.LabelFor(m => m.AuthorName)
+                    @Html.TextBoxFor(m => m.AuthorName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorName)
+                    <br />
+
+                    @Html.LabelFor(m => m.AuthorSurname)
+                    @Html.TextBoxFor(m => m.AuthorSurname, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorSurname)
+                    <br />
+
+                    @Html.LabelFor(m => m.AuthorBiography)
+                    @Html.TextAreaFor(m => m.AuthorBiography, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorBiography)
+                    <br />
+
+                    @Html.LabelFor(m => m.AuthorCountry)
+                    @Html.TextBoxFor(m => m.AuthorCountry, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorCountry)
+                    <br />
+
+                    @Html.LabelFor(m => m.AuthorCity)
+                    @Html.TextBoxFor(m => m.AuthorCity, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorCity)
+
                 </div>
 
                 @Html.HiddenFor(x => x.ID)
@@ -97,3 +96,10 @@
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }
+
+<script>
+    var prewIMG = function (event) {
+        var result = document.getElementById("imgPrew");
+        result.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
