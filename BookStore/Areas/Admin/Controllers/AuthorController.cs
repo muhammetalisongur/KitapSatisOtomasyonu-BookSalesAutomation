@@ -67,19 +67,24 @@ namespace BookStore.Areas.Admin.Controllers
                     }
 
                 }
-
-
                 if (Path.GetFileName(Request.Files[0].FileName).Length > 0)
                 {
                     var extension = Path.GetExtension(Request.Files[0].FileName);
                     var newFileName = author.AuthorName + "-" + author.AuthorSurname + extension;
-                    var path = "~/Areas/Admin/Images/" + newFileName;
+                    var path = "~/Areas/Admin/Images/Author/" + newFileName;
                     Request.Files[0].SaveAs(Server.MapPath(path));
-                    author.AuthorImage = "/Areas/Admin/Images/" + newFileName;
-                }
+                    author.AuthorImage = "/Areas/Admin/Images/Author/" + newFileName;
 
-                manager.Add(author);
-                messageViewModel.Message = author.AuthorFullName + " yazarı başarıyle eklendi...";
+                    manager.Add(author);
+                    messageViewModel.Message = author.AuthorFullName + " yazarı başarıyle eklendi...";
+                }
+                else
+                {
+                    messageViewModel.Status = false;
+                    messageViewModel.Message = "Yazar resmi boş geçilemez!";
+                    TempData["message"] = messageViewModel;
+                    return View("AuthorForm", new Author());
+                }
             }
             else
             {
@@ -93,17 +98,14 @@ namespace BookStore.Areas.Admin.Controllers
                 var oldBiography = updateAuthor.AuthorBiography;
                 var oldCountryCity = updateAuthor.AuthorCountryCity;
 
-
                 string oldImage = "~" + updateAuthor.AuthorImage;
 
 
-
-                if (Path.GetFileName(Request.Files[0].FileName).Length > 0)
+                var fileName = Path.GetFileName(Request.Files[0].FileName);
+                var path = "~/Areas/Admin/Images/Author/" + fileName;
+                ViewBag.AuthorImage = path;
+                if (Path.GetFileName(Request.Files[0].FileName) != "")
                 {
-                    var fileName = Path.GetFileName(Request.Files[0].FileName);
-                    var path = "~/Areas/Admin/Images/" + fileName;
-                    ViewBag.AuthorImage = path;
-
                     string fullPath = Request.MapPath(oldImage);
                     if (System.IO.File.Exists(fullPath))
                     {
@@ -111,32 +113,30 @@ namespace BookStore.Areas.Admin.Controllers
                     }
 
                     Request.Files[0].SaveAs(Server.MapPath(path));
-                    author.AuthorImage = "/Areas/Admin/Images/" + fileName;
-
-
+                    author.AuthorImage = "/Areas/Admin/Images/Author/" + fileName;
 
                 }
 
-
-                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryCity == oldCountryCity && oldImage == ViewBag.AuthorImage)
+                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryCity == oldCountryCity && path == "~/Areas/Admin/Images/Author/")
                 {
                     messageViewModel.Status = false;
                     messageViewModel.LinkText = "Yazar Listesi";
                     messageViewModel.Url = "/Admin/Yazar";
                     messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
                     TempData["message"] = messageViewModel;
-                    return View("AuthorForm");
+                    return View("AuthorForm",new Author());
 
                 }
                 else
                 {
                     manager.Update(author);
+                    messageViewModel.Status = true;
                     messageViewModel.Message = "Bilgiler başarıyla güncellendi...";
+                    TempData["message"] = messageViewModel;
+
                 }
             }
 
-            messageViewModel.Status = true;
-            TempData["message"] = messageViewModel;
             return RedirectToAction("Index", "Author");
         }
 

@@ -13,7 +13,7 @@
 <div class="w3l_agileits_breadcrumbs">
     <div class="w3l_agileits_breadcrumbs_inner">
         <ul>
-            <li><a href="/Admin/Kategori">Anasayfa</a><span>«</span></li>
+            <li><a href="~/Admin/Kategori">Anasayfa</a><span>«</span></li>
 
             <li>Kategoriler</li>
         </ul>
@@ -29,14 +29,14 @@
     <!-- tables -->
 
     <div class="agile-tables">
-        <b style="font-size:20px">
+        <b style="font-size:18px">
             @if (TempData["message"] != null)
             {
                 if (result.Status == false)
                 {
 
                     <div class="alert alert-danger">
-                        @result.Message <b><a href="@result.Url">@result.LinkText</a></b>
+                        @result.Message <b style="font-size:20px"><a href="@result.Url">@result.LinkText</a></b>
                     </div>
                 }
 

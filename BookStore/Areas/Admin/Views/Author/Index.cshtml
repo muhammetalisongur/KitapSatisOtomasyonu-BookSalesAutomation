@@ -17,7 +17,7 @@
 <div class="w3l_agileits_breadcrumbs">
     <div class="w3l_agileits_breadcrumbs_inner">
         <ul>
-            <li><a href="Admin/Kategori">Anasayfa</a><span>«</span></li>
+            <li><a href="~/Admin/Kategori">Anasayfa</a><span>«</span></li>
 
             <li>Yazarlar</li>
         </ul>
@@ -30,7 +30,7 @@
     <!-- tables -->
 
     <div class="agile-tables">
-        <b style="font-size:20px">
+        <b style="font-size:18px">
             @if (TempData["message"] != null)
             {
                 if (result.Status)
@@ -71,11 +71,14 @@
                         <tr>
                             <td><img src="@author.AuthorImage" width="100" /></td>
                             <td>@author.AuthorFullName</td>
-                            @if (author.AuthorBiography.Length > 100)
+                            @if (author.AuthorBiography.Length >= 100)
                             {
                                 <td>@author.AuthorBiography.Substring(0, 100)...</td>
                             }
-                            <td>@author.AuthorBiography</td>
+                            else
+                            {
+                                <td>@author.AuthorBiography</td>
+                            }
                             <td>@author.AuthorCountryCity</td>
                             <td><a href="/Admin/Yazar/Guncelle/@author.ID" class="btn btn-success">Guncelle</a></td>
                             <td><a class="btn btn-danger" onclick="if (confirm('Yazari Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Yazar/Sil/@author.ID">Sil</a></td>

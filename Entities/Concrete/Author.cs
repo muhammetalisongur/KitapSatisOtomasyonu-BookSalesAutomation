@@ -10,7 +10,7 @@ using System.Xml.Linq;
 namespace Entities.Concrete
 {
     public class Author : IEntity
-    {       
+    {
         public int ID { get; set; }
 
         [Required(ErrorMessage = "Yazar adı boş geçilemez!")]
@@ -31,7 +31,7 @@ namespace Entities.Concrete
         [Display(Name = "Yazar Biyografisi")]
         public string AuthorBiography { get; set; }
 
-        [Required(ErrorMessage = "Yazar resmi boş geçilemez!")]
+        //[Required(ErrorMessage = "Yazar resmi boş geçilemez!")]
         [Display(Name = "Yazar Resmi")]
         public string AuthorImage { get; set; }
 

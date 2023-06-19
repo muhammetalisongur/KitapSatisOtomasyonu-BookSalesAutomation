@@ -58,3 +58,4 @@ C:\Users\mas\source\repos\BookStore\DataAccess\obj\Debug\DataAccess.csproj.Gener
 \\Mac\Home\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.dll
 \\Mac\Home\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.pdb
 \\Mac\Home\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.AuthorUpdate.resources
+\\Mac\Home\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.AuthorImage.resources
