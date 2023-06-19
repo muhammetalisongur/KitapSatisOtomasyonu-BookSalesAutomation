@@ -2,6 +2,7 @@
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using Microsoft.Ajax.Utilities;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace BookStore.Areas.Admin.Controllers
         AuthorManager manager = new AuthorManager(new EfAuthorDal());
         MessageViewModel messageViewModel = new MessageViewModel();
 
+
         [Route("Yazar")]
         [Route("Yazar/Index")]
         public ActionResult Index(int? SayfaNo)
@@ -40,7 +42,7 @@ namespace BookStore.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(Author author,HttpPostedFileBase file)
+        public ActionResult Save(Author author)
         {
             if (!ModelState.IsValid)
             {
@@ -67,11 +69,14 @@ namespace BookStore.Areas.Admin.Controllers
                 }
 
 
-
-                string fileName = Path.GetFileName(Request.Files[0].FileName);
-                string path = "~/Admin/Images/" + fileName;
-                Request.Files[0].SaveAs(Server.MapPath(path));
-                author.AuthorImage = "/Images/" + fileName;
+                if (Path.GetFileName(Request.Files[0].FileName).Length > 0)
+                {
+                    var extension = Path.GetExtension(Request.Files[0].FileName);
+                    var newFileName = author.AuthorName + "-" + author.AuthorSurname + extension;
+                    var path = "~/Areas/Admin/Images/" + newFileName;
+                    Request.Files[0].SaveAs(Server.MapPath(path));
+                    author.AuthorImage = "/Areas/Admin/Images/" + newFileName;
+                }
 
                 manager.Add(author);
                 messageViewModel.Message = author.AuthorFullName + " yazarı başarıyle eklendi...";
@@ -87,23 +92,33 @@ namespace BookStore.Areas.Admin.Controllers
                 var oldAuthorFullName = updateAuthor.AuthorFullName;
                 var oldBiography = updateAuthor.AuthorBiography;
                 var oldCountryCity = updateAuthor.AuthorCountryCity;
-                var oldImage = updateAuthor.AuthorImage;
-                var oldImage2 = updateAuthor.AuthorImage;
 
-                if (author.AuthorImage.Length > 0)
+
+                string oldImage = "~" + updateAuthor.AuthorImage;
+
+
+
+                if (Path.GetFileName(Request.Files[0].FileName).Length > 0)
                 {
+                    var fileName = Path.GetFileName(Request.Files[0].FileName);
+                    var path = "~/Areas/Admin/Images/" + fileName;
+                    ViewBag.AuthorImage = path;
 
+                    string fullPath = Request.MapPath(oldImage);
+                    if (System.IO.File.Exists(fullPath))
+                    {
+                        System.IO.File.Delete(fullPath);
+                    }
 
-                    string fileName = Path.GetFileName(Request.Files[0].FileName);
-                    string path = "~/Areas/Admin/Images/" + fileName;
                     Request.Files[0].SaveAs(Server.MapPath(path));
-                    author.AuthorImage = "~/Admin/Images/" + fileName;
+                    author.AuthorImage = "/Areas/Admin/Images/" + fileName;
+
 
 
                 }
 
 
-                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryCity == oldCountryCity && author.AuthorImage == oldImage)
+                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryCity == oldCountryCity && oldImage == ViewBag.AuthorImage)
                 {
                     messageViewModel.Status = false;
                     messageViewModel.LinkText = "Yazar Listesi";
@@ -142,7 +157,7 @@ namespace BookStore.Areas.Admin.Controllers
                 return HttpNotFound();
             manager.Delete(deleteAuthor);
             messageViewModel.Status = true;
-            messageViewModel.Message = deleteAuthor.AuthorFullName + " isimli kategori silindi...";
+            messageViewModel.Message = deleteAuthor.AuthorFullName + " isimli yazar silindi...";
             TempData["message"] = messageViewModel;
             return RedirectToAction("Index", "Author");
 

@@ -69,9 +69,13 @@
                     @foreach (var author in Model)
                     {
                         <tr>
-                            <td style="width:150px"><img src="@author.AuthorImage" alt="Alternate Text" /></td>
+                            <td><img src="@author.AuthorImage" width="100" /></td>
                             <td>@author.AuthorFullName</td>
-                            <td>@author.AuthorBiography.Substring(0, 100)...</td>
+                            @if (author.AuthorBiography.Length > 100)
+                            {
+                                <td>@author.AuthorBiography.Substring(0, 100)...</td>
+                            }
+                            <td>@author.AuthorBiography</td>
                             <td>@author.AuthorCountryCity</td>
                             <td><a href="/Admin/Yazar/Guncelle/@author.ID" class="btn btn-success">Guncelle</a></td>
                             <td><a class="btn btn-danger" onclick="if (confirm('Yazari Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Yazar/Sil/@author.ID">Sil</a></td>
