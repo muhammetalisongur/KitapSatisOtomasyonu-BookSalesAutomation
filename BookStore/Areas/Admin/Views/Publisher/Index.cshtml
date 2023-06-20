@@ -56,8 +56,8 @@
                         <th>Resim</th>
                         <th>YayınEvi</th>
                         <th>Açıklama</th>
-                        <th>Adres</th>
                         <th>Email</th>
+                        <th>Adres</th>
                         <th>Ülke</th>
                         <th>Guncelle</th>
                         <th>Sil</th>
@@ -69,19 +69,21 @@
                     @foreach (var publisher in Model)
                     {
                         <tr>
-                            <td><img src="@publisher" width="100" /></td>
-                            <td>@author.AuthorFullName</td>
-                            @if (author.AuthorBiography.Length >= 100)
+                            <td><img src="@publisher.PublisherImage" width="100" height="100"/></td>
+                            <td>@publisher.PublisherName</td>
+                            @if (publisher.PublisherDescription.Length >= 100)
                             {
-                                <td>@author.AuthorBiography.Substring(0, 100)...</td>
+                                <td>@publisher.PublisherDescription.Substring(0, 100)...</td>
                             }
                             else
                             {
-                                <td>@author.AuthorBiography</td>
+                                <td>@publisher.PublisherDescription</td>
                             }
-                            <td>@author.AuthorCountryCity</td>
-                            <td><a href="/Admin/Yazar/Guncelle/@author.ID" class="btn btn-success">Guncelle</a></td>
-                            <td><a class="btn btn-danger" onclick="if (confirm('Yazari Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Yazar/Sil/@author.ID">Sil</a></td>
+                            <td>@publisher.PublisherEmail</td>
+                            <td>@publisher.PublisherAddress</td>
+                            <td>@publisher.PublisherCountry</td>
+                            <td><a href="/Admin/Yayinevi/Guncelle/@publisher.ID" class="btn btn-success">Guncelle</a></td>
+                            <td><a class="btn btn-danger" onclick="if (confirm('YayınEvini Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Yayinevi/Sil/@publisher.ID">Sil</a></td>
                         </tr>
                     }
                 </tbody>

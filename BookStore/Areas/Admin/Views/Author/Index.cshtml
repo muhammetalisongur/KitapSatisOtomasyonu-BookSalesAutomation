@@ -67,7 +67,7 @@
                     @foreach (var author in Model)
                     {
                         <tr>
-                            <td><img src="@author.AuthorImage" width="100" /></td>
+                            <td><img src="@author.AuthorImage" width="100" height="100" /></td>
                             <td>@author.AuthorFullName</td>
                             @if (author.AuthorBiography.Length >= 100)
                             {
