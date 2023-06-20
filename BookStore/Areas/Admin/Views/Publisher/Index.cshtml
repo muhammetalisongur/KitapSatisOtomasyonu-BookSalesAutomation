@@ -58,8 +58,8 @@
                         <th>Açıklama</th>
                         <th>Email</th>
                         <th>Adres</th>
-                        <th>Ülke</th>
-                        <th>Şehir</th>
+                        <th>Ülke / Şehir</th>
+                   
                         <th>Guncelle</th>
                         <th>Sil</th>
 
@@ -82,8 +82,7 @@
                             }
                             <td>@publisher.PublisherEmail</td>
                             <td>@publisher.PublisherAddress</td>
-                            <td>@publisher.PublisherCountry</td>
-                            <td>@publisher.PublisherCity</td>
+                            <td>@publisher.PublisherCountryCity</td>
                             <td><a href="/Admin/Yayinevi/Guncelle/@publisher.ID" class="btn btn-success">Guncelle</a></td>
                             <td><a class="btn btn-danger" onclick="if (confirm('YayınEvini Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Yayinevi/Sil/@publisher.ID">Sil</a></td>
                         </tr>
