@@ -1,5 +1,6 @@
 ﻿using BookStore.Areas.Admin.ViewModel;
 using Business.Concrete;
+using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using Microsoft.Ajax.Utilities;
@@ -19,6 +20,7 @@ namespace BookStore.Areas.Admin.Controllers
     [RouteArea("Admin")]
     public class AuthorController : Controller
     {
+
         // GET: Admin/Author
         AuthorManager manager = new AuthorManager(new EfAuthorDal());
         MessageViewModel messageViewModel = new MessageViewModel();

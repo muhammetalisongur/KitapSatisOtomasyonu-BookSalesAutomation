@@ -1,0 +1,103 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@using Entities.Concrete
+@model IPagedList<Publisher>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var result = (BookStore.Areas.Admin.ViewModel.MessageViewModel)TempData["message"];
+
+}
+<link rel="stylesheet" type="text/css" href="~/Content/css/table-style.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/css/basictable.css" />
+
+<!-- breadcrumbs -->
+<div class="w3l_agileits_breadcrumbs">
+    <div class="w3l_agileits_breadcrumbs_inner">
+        <ul>
+            <li><a href="~/Admin/Kategori">Anasayfa</a><span>«</span></li>
+
+            <li>YayınEvleri</li>
+        </ul>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+
+<div class="inner_content_w3_agile_info two_in">
+    <h2 class="w3_inner_tittle">Yazarlar</h2>
+    <!-- tables -->
+
+    <div class="agile-tables">
+        <b style="font-size:18px">
+            @if (TempData["message"] != null)
+            {
+                if (result.Status)
+                {
+
+                    <div class="alert alert-success">
+                        <b> @result.Message </b>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-danger">
+                        <b>  @result.Message</b>
+                    </div>
+                }
+            }
+        </b>
+        <div class="w3l-table-info agile_info_shadow">
+            <h3 class="w3_inner_tittle two">
+                <a class="btn btn-success" href="/Admin/Yazar/YeniYazar">Yeni Yazar</a>
+            </h3>
+            <table id="tblDepartmanlar">
+                <thead>
+                    <tr>
+                        <th>Resim</th>
+                        <th>YayınEvi</th>
+                        <th>Açıklama</th>
+                        <th>Adres</th>
+                        <th>Email</th>
+                        <th>Ülke</th>
+                        <th>Guncelle</th>
+                        <th>Sil</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var publisher in Model)
+                    {
+                        <tr>
+                            <td><img src="@publisher" width="100" /></td>
+                            <td>@author.AuthorFullName</td>
+                            @if (author.AuthorBiography.Length >= 100)
+                            {
+                                <td>@author.AuthorBiography.Substring(0, 100)...</td>
+                            }
+                            else
+                            {
+                                <td>@author.AuthorBiography</td>
+                            }
+                            <td>@author.AuthorCountryCity</td>
+                            <td><a href="/Admin/Yazar/Guncelle/@author.ID" class="btn btn-success">Guncelle</a></td>
+                            <td><a class="btn btn-danger" onclick="if (confirm('Yazari Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Yazar/Sil/@author.ID">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+
+
+            </table>
+
+            @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Yazar", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
+
+
+
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/js/jquery.basictable.min.js"></script>
+
+
+

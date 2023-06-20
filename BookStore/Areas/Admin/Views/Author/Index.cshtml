@@ -8,8 +8,6 @@
     var result = (BookStore.Areas.Admin.ViewModel.MessageViewModel)TempData["message"];
 
 }
-
-
 <link rel="stylesheet" type="text/css" href="~/Content/css/table-style.css" />
 <link rel="stylesheet" type="text/css" href="~/Content/css/basictable.css" />
 
@@ -92,7 +90,7 @@
             @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Yazar", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
 
 
-
+           
         </div>
 
     </div>

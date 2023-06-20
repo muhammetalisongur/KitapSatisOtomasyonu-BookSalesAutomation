@@ -145,6 +145,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
     <Compile Include="Areas\Admin\ViewModel\MessageViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -376,7 +377,6 @@
     <Content Include="Areas\Admin\Views\Shared\_Mesaj.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Mesajlasma.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Profil.cshtml" />
-    <Content Include="Areas\Admin\Views\YayinEvi\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Author\AuthorForm.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
@@ -395,6 +395,7 @@
     <Content Include="Scripts\jquery-3.6.4.min.map" />
     <Content Include="Scripts\jquery-3.6.4.slim.min.map" />
     <Content Include="Areas\Admin\Views\Author\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Publisher\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -536,6 +537,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Images\Author\" />
+    <Folder Include="Areas\Admin\Images\Publisher\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
