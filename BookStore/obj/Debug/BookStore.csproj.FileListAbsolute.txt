@@ -193,16 +193,12 @@ C:\Users\mas\source\repos\BookStore\BookStore\bin\EntityFramework.xml
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.Buffers.dll
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.Collections.Immutable.dll
-\\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.IO.FileSystem.dll
-\\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.IO.FileSystem.Primitives.dll
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.Memory.dll
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.Numerics.Vectors.dll
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.Reflection.Metadata.dll
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
-\\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.Security.Cryptography.Primitives.dll
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.Text.Encoding.CodePages.dll
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.Threading.Tasks.Extensions.dll
-\\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\System.ValueTuple.dll
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\vbc.exe
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\vbc.exe.config
 \\Mac\Home\GitHub\BookStore\BookStore\bin\roslyn\vbc.rsp

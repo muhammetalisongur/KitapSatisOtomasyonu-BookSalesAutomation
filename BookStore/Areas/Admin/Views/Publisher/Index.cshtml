@@ -24,7 +24,7 @@
 <!-- //breadcrumbs -->
 
 <div class="inner_content_w3_agile_info two_in">
-    <h2 class="w3_inner_tittle">Yazarlar</h2>
+    <h2 class="w3_inner_tittle">YayınEvleri</h2>
     <!-- tables -->
 
     <div class="agile-tables">
@@ -48,7 +48,7 @@
         </b>
         <div class="w3l-table-info agile_info_shadow">
             <h3 class="w3_inner_tittle two">
-                <a class="btn btn-success" href="/Admin/Yazar/YeniYazar">Yeni Yazar</a>
+                <a class="btn btn-success" href="/Admin/Yayinevi/YeniYayinevi">Yeni YayınEvi</a>
             </h3>
             <table id="tblDepartmanlar">
                 <thead>
@@ -59,6 +59,7 @@
                         <th>Email</th>
                         <th>Adres</th>
                         <th>Ülke</th>
+                        <th>Şehir</th>
                         <th>Guncelle</th>
                         <th>Sil</th>
 
@@ -82,6 +83,7 @@
                             <td>@publisher.PublisherEmail</td>
                             <td>@publisher.PublisherAddress</td>
                             <td>@publisher.PublisherCountry</td>
+                            <td>@publisher.PublisherCity</td>
                             <td><a href="/Admin/Yayinevi/Guncelle/@publisher.ID" class="btn btn-success">Guncelle</a></td>
                             <td><a class="btn btn-danger" onclick="if (confirm('YayınEvini Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Yayinevi/Sil/@publisher.ID">Sil</a></td>
                         </tr>

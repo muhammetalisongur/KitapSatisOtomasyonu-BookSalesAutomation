@@ -33,8 +33,6 @@ namespace Entities.Concrete
         [Display(Name = "Yayınevi E-Posta Adresi")]
         public string PublisherEmail { get; set; }
 
-        [Required(ErrorMessage = "Yayınevi resmi boş geçilemez!")]
-        [StringLength(250, ErrorMessage = "Yayınevi resmi en fazla 250 karakter olabilir!")]
         [Display(Name = "Yayınevi Resmi")]
         public string PublisherImage { get; set; }
 
@@ -45,6 +43,8 @@ namespace Entities.Concrete
         [Required(ErrorMessage = "Yayınevi şehri boş geçilemez!")]
         [Display(Name = "Yayınevi Şehri")]
         public string PublisherCity { get; set; }
+
+        [Display(Name = "Yayınevi Ülke / Şehir")]
         public string PublisherCountryCity => $"{PublisherCountry} / {PublisherCity}";
 
 

@@ -69,7 +69,7 @@ namespace BookStore.Areas.Admin.Controllers
                 if (Path.GetFileName(Request.Files[0].FileName).Length > 0)
                 {
                     var extension = Path.GetExtension(Request.Files[0].FileName);
-                    var newFileName = publisher.PublisherName + extension;
+                    var newFileName = publisher.PublisherName + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
                     var path = "~/Areas/Admin/Images/Publisher/" + newFileName;
                     Request.Files[0].SaveAs(Server.MapPath(path));
                     publisher.PublisherImage = "/Areas/Admin/Images/Publisher/" + newFileName;
@@ -82,7 +82,7 @@ namespace BookStore.Areas.Admin.Controllers
                     messageViewModel.Status = false;
                     messageViewModel.Message = "Yazar resmi boş geçilemez!";
                     TempData["message"] = messageViewModel;
-                    return View("PublisherForm", new Author());
+                    return View("PublisherForm", new Publisher());
                 }
             }
             else
@@ -97,12 +97,14 @@ namespace BookStore.Areas.Admin.Controllers
                 var oldDesc = updatePublisher.PublisherDescription;
                 var oldEmail = updatePublisher.PublisherEmail;
                 var oldCountry = updatePublisher.PublisherCountry;
+                var oldCity = updatePublisher.PublisherCity;
 
-                string oldImage = publisher.PublisherImage;
+                string oldImage = updatePublisher.PublisherImage;
 
 
-                var fileName = Path.GetFileName(Request.Files[0].FileName);
-                var path = "~/Areas/Admin/Images/Publisher/" + fileName;
+                var extension = Path.GetExtension(Request.Files[0].FileName);
+                var newFileName = publisher.PublisherName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
+                var path = "~/Areas/Admin/Images/Publisher/" + newFileName;
                 if (Path.GetFileName(Request.Files[0].FileName) != "")
                 {
                     string fullPath = Request.MapPath("~" + oldImage);
@@ -112,12 +114,13 @@ namespace BookStore.Areas.Admin.Controllers
                     }
 
                     Request.Files[0].SaveAs(Server.MapPath(path));
-                    publisher.PublisherImage = "/Areas/Admin/Images/Author/" + fileName;
+                    publisher.PublisherImage = "/Areas/Admin/Images/Publisher/" + newFileName;
 
                 }
 
                 if (publisher.PublisherName == oldName && publisher.PublisherDescription == oldDesc && publisher.PublisherEmail == oldEmail && publisher.PublisherCountry
-                    == oldCountry && path == "~/Areas/Admin/Images/Publisher/")
+                    == oldCountry && publisher.PublisherCity
+                    == oldCity && extension == "")
                 {
                     messageViewModel.Status = false;
                     messageViewModel.LinkText = "YayınEvi Listesi";
@@ -129,7 +132,7 @@ namespace BookStore.Areas.Admin.Controllers
                 }
                 else
                 {
-                    if (path == "~/Areas/Admin/Images/Publisher/")
+                    if (extension == "")
                         publisher.PublisherImage = oldImage;
                     manager.Update(publisher);
                     messageViewModel.Status = true;
@@ -139,7 +142,7 @@ namespace BookStore.Areas.Admin.Controllers
                 }
             }
 
-            return RedirectToAction("Index", "Author");
+            return RedirectToAction("Index", "Publisher");
         }
 
         [Route("Yayinevi/Guncelle/{id}")]
@@ -157,6 +160,14 @@ namespace BookStore.Areas.Admin.Controllers
             var deletePublisher = manager.GetById(id);
             if (deletePublisher == null)
                 return HttpNotFound();
+
+            string oldImage = deletePublisher.PublisherImage;
+            string fullPath = Request.MapPath("~" + oldImage);
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+            }
+
             manager.Delete(deletePublisher);
             messageViewModel.Status = true;
             messageViewModel.Message = deletePublisher.PublisherName + " isimli yayinevi silindi...";

@@ -9,8 +9,10 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.EnterpriseServices;
+using System.EnterpriseServices.Internal;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Profile;
@@ -72,7 +74,7 @@ namespace BookStore.Areas.Admin.Controllers
                 if (Path.GetFileName(Request.Files[0].FileName).Length > 0)
                 {
                     var extension = Path.GetExtension(Request.Files[0].FileName);
-                    var newFileName = author.AuthorName + "-" + author.AuthorSurname + extension;
+                    var newFileName = author.AuthorFullName + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
                     var path = "~/Areas/Admin/Images/Author/" + newFileName;
                     Request.Files[0].SaveAs(Server.MapPath(path));
                     author.AuthorImage = "/Areas/Admin/Images/Author/" + newFileName;
@@ -103,9 +105,10 @@ namespace BookStore.Areas.Admin.Controllers
                 string oldImage = updateAuthor.AuthorImage;
 
 
-                var fileName = Path.GetFileName(Request.Files[0].FileName);
-                var path = "~/Areas/Admin/Images/Author/" + fileName;
-                ViewBag.AuthorImage = path;
+                var extension = Path.GetExtension(Request.Files[0].FileName);
+                var newFileName = author.AuthorFullName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
+                var path = "~/Areas/Admin/Images/Author/" + newFileName;
+
                 if (Path.GetFileName(Request.Files[0].FileName) != "")
                 {
                     string fullPath = Request.MapPath("~" + oldImage);
@@ -115,11 +118,11 @@ namespace BookStore.Areas.Admin.Controllers
                     }
 
                     Request.Files[0].SaveAs(Server.MapPath(path));
-                    author.AuthorImage = "/Areas/Admin/Images/Author/" + fileName;
+                    author.AuthorImage = "/Areas/Admin/Images/Author/" + newFileName;
 
                 }
 
-                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryCity == oldCountryCity && path == "~/Areas/Admin/Images/Author/")
+                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryCity == oldCountryCity && extension == "")
                 {
                     messageViewModel.Status = false;
                     messageViewModel.LinkText = "Yazar Listesi";
@@ -131,7 +134,7 @@ namespace BookStore.Areas.Admin.Controllers
                 }
                 else
                 {
-                    if (path == "~/Areas/Admin/Images/Author/")
+                    if (extension == "")
                         author.AuthorImage = oldImage;
                     manager.Update(author);
                     messageViewModel.Status = true;
@@ -159,6 +162,13 @@ namespace BookStore.Areas.Admin.Controllers
             var deleteAuthor = manager.GetById(id);
             if (deleteAuthor == null)
                 return HttpNotFound();
+            string oldImage = deleteAuthor.AuthorImage;
+            string fullPath = Request.MapPath("~" + oldImage);
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+            }
+
             manager.Delete(deleteAuthor);
             messageViewModel.Status = true;
             messageViewModel.Message = deleteAuthor.AuthorFullName + " isimli yazar silindi...";
