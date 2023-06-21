@@ -11,10 +11,12 @@ namespace DataAccess.Concrete
 {
     public class Context : DbContext
     {
+
         public Context() : base("name=Context")
         {
-            Database.SetInitializer(new CountrySeed());
+            Database.SetInitializer<Context>(new CountrySeed<Context>());
         }
+
 
 
         public DbSet<Author> Authors { get; set; } //hangi nesnem hangi nesneye karşılık gelecek
@@ -29,17 +31,6 @@ namespace DataAccess.Concrete
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
-
-            //modelBuilder.Entity<Country>()
-            //.HasOptional(c => c.Cities)
-            //.WithMany()
-            //.WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<Country>()
-            //.HasOptional(c => c.Authors)
-            //.WithMany()
-            //.WillCascadeOnDelete(false);
 
         }
 
