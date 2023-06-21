@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,20 +38,25 @@ namespace Entities.Concrete
 
         [Required(ErrorMessage = "Yazar ülkesi boş geçilemez!")]
         [Display(Name = "Yazar Ülkesi")]
-        public string AuthorCountry { get; set; }
+        [ForeignKey("Country")]
+        
+        public int AuthorCountryID { get; set; }
 
         [Required(ErrorMessage = "Yazar şehri boş geçilemez!")]
         [Display(Name = "Yazar Şehri")]
-        public string AuthorCity { get; set; }
+        [ForeignKey("City")]
+        public int AuthorCityID { get; set; }
 
         [Display(Name = "Yazar Ülke / Şehir")]
-        public string AuthorCountryCity => $"{AuthorCountry} / {AuthorCity}";
+        public string AuthorCountryCity => $"{AuthorCountryID} / {AuthorCityID}";
 
 
 
 
         // Navigation Property
         public virtual ICollection<Book> Books { get; set; }
+        public virtual Country Country { get; set; }
+        public virtual City City { get; set; }
 
     }
 }

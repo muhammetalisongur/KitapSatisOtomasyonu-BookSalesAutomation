@@ -27,5 +27,6 @@ namespace Entities.Concrete
 
         //Navigation Property
         public virtual Country Country { get; set; }
+        public virtual ICollection<Author> Authors { get; set; }
     }
 }

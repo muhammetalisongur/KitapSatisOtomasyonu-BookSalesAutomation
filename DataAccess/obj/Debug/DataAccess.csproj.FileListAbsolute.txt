@@ -105,3 +105,5 @@ D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.dll
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.pdb
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.CreateCountryandCityTable.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateAuthorCountryandCityType.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.Seed.resources
