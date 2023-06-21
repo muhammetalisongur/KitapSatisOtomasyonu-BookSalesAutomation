@@ -76,28 +76,11 @@
 
 
                 }
-
-                @*else
-                {
-                    @Html.LabelFor(m => m.AuthorCountry)
-                    @Html.TextBoxFor(m => m.AuthorCountry, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.AuthorCountry)
-
-
-                }*@
-
                 <br />
                 
                 @Html.LabelFor(m => m.AuthorCity)
                 @Html.DropDownListFor(m => m.AuthorCity, new SelectList(""), "-- Şehir Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
                 @Html.ValidationMessageFor(x => x.AuthorCity)
-
-
-                @*<br />
-
-                @Html.LabelFor(m => m.AuthorCity)
-                @Html.TextBoxFor(m => m.AuthorCity, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.AuthorCity)*@
 
             </div>
 
@@ -117,6 +100,7 @@
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }
 
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
 <script>
 
     // Resim Önizleme
