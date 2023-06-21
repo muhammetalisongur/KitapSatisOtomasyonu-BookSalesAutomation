@@ -33,7 +33,7 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>2</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -397,6 +397,7 @@
     <Content Include="Areas\Admin\Views\Author\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Publisher\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Publisher\PublisherForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\DisplayCity.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />

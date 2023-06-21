@@ -18,6 +18,8 @@ namespace DataAccess.Concrete
         public DbSet<BookTranslator> BookTranslators { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<City> Cities { get; set; }
 
     }
 }

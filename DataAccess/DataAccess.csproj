@@ -54,11 +54,15 @@
     <Compile Include="Abstract\IAuthorDal.cs" />
     <Compile Include="Abstract\IBookTranslatorDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\ICityDal.cs" />
+    <Compile Include="Abstract\ICountryDal.cs" />
     <Compile Include="Abstract\IPublisherDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\EntityFramework\EfAuthorDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfBookTranslatorDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCityDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCountryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfPublisherDal.cs" />
     <Compile Include="Migrations\202306150705030_CreateDatabaseTable.cs" />
     <Compile Include="Migrations\202306150705030_CreateDatabaseTable.designer.cs">
@@ -75,6 +79,10 @@
     <Compile Include="Migrations\202306201106443_PublisherImageUpdate.cs" />
     <Compile Include="Migrations\202306201106443_PublisherImageUpdate.designer.cs">
       <DependentUpon>202306201106443_PublisherImageUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306211053226_CreateCountryandCityTable.cs" />
+    <Compile Include="Migrations\202306211053226_CreateCountryandCityTable.designer.cs">
+      <DependentUpon>202306211053226_CreateCountryandCityTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306201106443_PublisherImageUpdate.resx">
       <DependentUpon>202306201106443_PublisherImageUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306211053226_CreateCountryandCityTable.resx">
+      <DependentUpon>202306211053226_CreateCountryandCityTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

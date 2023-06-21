@@ -37,10 +37,28 @@ namespace BookStore.Areas.Admin.Controllers
             return View(result);
         }
 
+
+        public List<Country> GetCountries()
+        {
+            // Country-City
+            CountryManager countryManager = new CountryManager(new EfCountryDal());
+            List<Country> result = countryManager.GetAll();
+            return result;
+        }
+
+        public ActionResult GetCity(int id)
+        {
+            CityManager cityManager = new CityManager(new EfCityDal());
+            var result = cityManager.GetAll().Where(x => x.CountryID == id).ToList();
+            ViewBag.CityList = new SelectList(result, "ID", "CityName");
+            return PartialView("DisplayCity");
+        }
+
         [Route("Yazar/YeniYazar")]
         [HttpGet]
         public ActionResult New()
         {
+            ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
             return View("AuthorForm", new Author());
         }
 
@@ -52,6 +70,7 @@ namespace BookStore.Areas.Admin.Controllers
             {
                 return View("AuthorForm");
             }
+
 
 
             if (author.ID == 0)

@@ -1,0 +1,16 @@
+﻿@using Entities.Concrete
+@model City
+
+<option value="">-- Şehir Seç --</option>
+
+@if (ViewBag.CityList != null)
+{
+    foreach (var item in ViewBag.CityList)
+    {
+        <option value="@item.Value">@item.Text</option>
+    }
+}
+else
+{
+    <option value="">-- Şehir Bulunamadı --</option>
+}

@@ -34,3 +34,15 @@ C:\Users\mas\source\repos\BookStore\Core\obj\Debug\Core.pdb
 \\Mac\Home\GitHub\BookStore\Core\obj\Debug\Core.csproj.CopyComplete
 \\Mac\Home\GitHub\BookStore\Core\obj\Debug\Core.dll
 \\Mac\Home\GitHub\BookStore\Core\obj\Debug\Core.pdb
+D:\GitHub\BookStore\Core\bin\Debug\Core.dll.config
+D:\GitHub\BookStore\Core\bin\Debug\Core.dll
+D:\GitHub\BookStore\Core\bin\Debug\Core.pdb
+D:\GitHub\BookStore\Core\bin\Debug\EntityFramework.dll
+D:\GitHub\BookStore\Core\bin\Debug\EntityFramework.SqlServer.dll
+D:\GitHub\BookStore\Core\bin\Debug\EntityFramework.xml
+D:\GitHub\BookStore\Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\GitHub\BookStore\Core\obj\Debug\Core.csproj.AssemblyReference.cache
+D:\GitHub\BookStore\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+D:\GitHub\BookStore\Core\obj\Debug\Core.csproj.CopyComplete
+D:\GitHub\BookStore\Core\obj\Debug\Core.dll
+D:\GitHub\BookStore\Core\obj\Debug\Core.pdb
