@@ -13,7 +13,6 @@ namespace DataAccess.Concrete
     {
         public Context() : base("name=Context")
         {
-            //Database.SetInitializer(new CountrySeed<Context>());
             Database.SetInitializer(new CountrySeed());
         }
 
@@ -29,8 +28,9 @@ namespace DataAccess.Concrete
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //base.OnModelCreating(modelBuilder);
-           
+            base.OnModelCreating(modelBuilder);
+            
+
             //modelBuilder.Entity<Country>()
             //.HasOptional(c => c.Cities)
             //.WithMany()

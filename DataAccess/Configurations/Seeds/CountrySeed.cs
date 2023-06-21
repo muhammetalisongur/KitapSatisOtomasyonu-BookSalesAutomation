@@ -13,27 +13,35 @@ namespace DataAccess.Configurations.Seeds
 
         protected override void Seed(Context context)
         {
+            //context.Countries.Add(new Country() { ID = 1, CountryName = "Türkiye" });
+            //context.Countries.Add(new Country() { ID = 2, CountryName = "Amerika" });
+            //context.Countries.Add(new Country() { ID = 3, CountryName = "Almanya" });
+            //context.Countries.Add(new Country() { ID = 4, CountryName = "İngiltere" });
+            //context.Countries.Add(new Country() { ID = 5, CountryName = "Fransa" });
+            //context.Countries.Add(new Country() { ID = 6, CountryName = "İtalya" });
+            
 
-            IList<Country> countries = new List<Country>();
-            countries.Add(new Country() { ID = 1, CountryName = "Türkiye" });
+            //IList<Country> countries = new List<Country>();
+
+            //countries.Add(new Country() { ID = 1, CountryName = "Türkiye" });
         
-            countries.Add(new Country() { ID = 2, CountryName = "Amerika" });
-            countries.Add(new Country() { ID = 3, CountryName = "Almanya" });
-            countries.Add(new Country() { ID = 4, CountryName = "İngiltere" });
-            countries.Add(new Country() { ID = 5, CountryName = "Fransa" });
-            countries.Add(new Country() { ID = 6, CountryName = "İtalya" });
-            countries.Add(new Country() { ID = 7, CountryName = "İspanya" });
-            countries.Add(new Country() { ID = 8, CountryName = "Rusya" });
-            countries.Add(new Country() { ID = 9, CountryName = "Çin" });
-            countries.Add(new Country() { ID = 10, CountryName = "Japonya" });
-            countries.Add(new Country() { ID = 11, CountryName = "Hindistan" });
-            countries.Add(new Country() { ID = 12, CountryName = "Kanada" });
-            countries.Add(new Country() { ID = 13, CountryName = "Avustralya" });
+            //countries.Add(new Country() { ID = 2, CountryName = "Amerika" });
+            //countries.Add(new Country() { ID = 3, CountryName = "Almanya" });
+            //countries.Add(new Country() { ID = 4, CountryName = "İngiltere" });
+            //countries.Add(new Country() { ID = 5, CountryName = "Fransa" });
+            //countries.Add(new Country() { ID = 6, CountryName = "İtalya" });
+            //countries.Add(new Country() { ID = 7, CountryName = "İspanya" });
+            //countries.Add(new Country() { ID = 8, CountryName = "Rusya" });
+            //countries.Add(new Country() { ID = 9, CountryName = "Çin" });
+            //countries.Add(new Country() { ID = 10, CountryName = "Japonya" });
+            //countries.Add(new Country() { ID = 11, CountryName = "Hindistan" });
+            //countries.Add(new Country() { ID = 12, CountryName = "Kanada" });
+            //countries.Add(new Country() { ID = 13, CountryName = "Avustralya" });
 
 
-
-            context.Countries.AddRange(countries);
-
+           
+            //context.Countries.AddRange(countries);
+       
             base.Seed(context);
         }
     }

@@ -89,9 +89,9 @@
     <Compile Include="Migrations\202306211331292_UpdateAuthorCountryandCityType.designer.cs">
       <DependentUpon>202306211331292_UpdateAuthorCountryandCityType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202306211419375_Seed.cs" />
-    <Compile Include="Migrations\202306211419375_Seed.designer.cs">
-      <DependentUpon>202306211419375_Seed.cs</DependentUpon>
+    <Compile Include="Migrations\202306211447568_Seed.cs" />
+    <Compile Include="Migrations\202306211447568_Seed.designer.cs">
+      <DependentUpon>202306211447568_Seed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,8 +129,8 @@
     <EmbeddedResource Include="Migrations\202306211331292_UpdateAuthorCountryandCityType.resx">
       <DependentUpon>202306211331292_UpdateAuthorCountryandCityType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202306211419375_Seed.resx">
-      <DependentUpon>202306211419375_Seed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202306211447568_Seed.resx">
+      <DependentUpon>202306211447568_Seed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
