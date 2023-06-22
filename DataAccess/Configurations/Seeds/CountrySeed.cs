@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Configurations.Seeds
 {
-    public class CountrySeed<T> : DropCreateDatabaseAlways<Context>
+    public class CountrySeed<T> : DropCreateDatabaseIfModelChanges<Context>
     {
 
         protected override void Seed(Context context)
@@ -16,7 +16,7 @@ namespace DataAccess.Configurations.Seeds
 
             IList<Country> countries = new List<Country>();
 
-            #region Data
+            #region Countries
             countries.Add(new Country() { ID = 1, CountryName = "Türkiye" });
             countries.Add(new Country() { ID = 2, CountryName = "Amerika" });
             countries.Add(new Country() { ID = 3, CountryName = "Almanya" });

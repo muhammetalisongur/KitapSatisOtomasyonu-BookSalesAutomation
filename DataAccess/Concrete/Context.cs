@@ -16,8 +16,10 @@ namespace DataAccess.Concrete
 
         public Context() : base("name=Context")
         {
+
+            Database.SetInitializer(new CategorySeed<Context>());
             Database.SetInitializer(new CountrySeed<Context>());
-            Database.SetInitializer(new CitySeed<Context>());
+            //Database.SetInitializer(new CitySeed<Context>());
 
         }
 

@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Configurations.Seeds
 {
-    public class CitySeed<T> : DropCreateDatabaseIfModelChanges<Context>
+    public class CitySeed<T> : DropCreateDatabaseAlways<Context>
     {
         protected override void Seed(Context context)
         {
             IList<City> cities = new List<City>();
 
+            #region City
             // Türkiye
             cities.Add(new City() { ID = 1, CityName = "İstanbul", CountryID = 1 });
             cities.Add(new City() { ID = 2, CityName = "Ankara", CountryID = 1 });
@@ -202,7 +203,8 @@ namespace DataAccess.Configurations.Seeds
             cities.Add(new City() { ID = 173, CityName = "Bordeaux", CountryID = 5 });
             cities.Add(new City() { ID = 174, CityName = "Lille", CountryID = 5 });
             cities.Add(new City() { ID = 175, CityName = "Rennes", CountryID = 5 });
-            cities.Add(new City() { ID = 176, CityName = "Reims", CountryID = 5 });
+            cities.Add(new City() { ID = 176, CityName = "Reims", CountryID = 5 }); 
+            #endregion
 
 
             context.Cities.AddRange(cities);
