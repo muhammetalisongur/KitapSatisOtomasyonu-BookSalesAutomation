@@ -1,8 +1,10 @@
 ﻿using DataAccess.Configurations.Seeds;
+using DataAccess.Migrations;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Remoting.Contexts;
@@ -17,8 +19,9 @@ namespace DataAccess.Concrete
         public Context() : base("name=Context")
         {
 
-            Database.SetInitializer(new CategorySeed<Context>());
-            Database.SetInitializer(new CountrySeed<Context>());
+
+            //Database.SetInitializer(new CategorySeed<Context>());
+            //Database.SetInitializer(new CountrySeed<Context>());
             //Database.SetInitializer(new CitySeed<Context>());
 
         }
@@ -33,6 +36,11 @@ namespace DataAccess.Concrete
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Country>().HasMany(i => i.Cities).WithRequired().WillCascadeOnDelete(false);
+
+        }
 
 
     }

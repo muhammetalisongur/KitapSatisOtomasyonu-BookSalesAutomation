@@ -5,7 +5,7 @@ using System.Data.Entity;
 
 namespace DataAccess.Configurations.Seeds
 {
-    public class CategorySeed<T> : DropCreateDatabaseIfModelChanges<Context>
+    public class CategorySeed<T> : DropCreateDatabaseAlways<Context>
     {
 
         protected override void Seed(Context context)
@@ -44,10 +44,11 @@ namespace DataAccess.Configurations.Seeds
             categories.Add(new Category() { ID = 27, CategoryName = "Masal" });
             categories.Add(new Category() { ID = 28, CategoryName = "Tiyatro" });
             categories.Add(new Category() { ID = 29, CategoryName = "Dergi" });
-            categories.Add(new Category() { ID = 30, CategoryName = "Diğer" }); 
+            categories.Add(new Category() { ID = 30, CategoryName = "Diğer" });
             #endregion
 
             context.Categories.AddRange(categories);
+        
 
         }
     }

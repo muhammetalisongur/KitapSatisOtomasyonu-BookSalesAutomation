@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Configurations.Seeds
 {
-    public class CountrySeed<T> : DropCreateDatabaseIfModelChanges<Context>
+    public class CountrySeed<T> : DropCreateDatabaseAlways<Context>
     {
 
         protected override void Seed(Context context)
@@ -155,7 +155,7 @@ namespace DataAccess.Configurations.Seeds
             #endregion
 
             context.Countries.AddRange(countries);
-
+      
         }
     }
 }

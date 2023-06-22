@@ -208,6 +208,7 @@ namespace DataAccess.Configurations.Seeds
 
 
             context.Cities.AddRange(cities);
+            
         }
     }
 }
