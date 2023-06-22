@@ -64,6 +64,7 @@
     <Compile Include="Concrete\EntityFramework\EfCityDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCountryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfPublisherDal.cs" />
+    <Compile Include="Configurations\Seeds\CitySeed.cs" />
     <Compile Include="Configurations\Seeds\CountrySeed.cs" />
     <Compile Include="Migrations\202306150705030_CreateDatabaseTable.cs" />
     <Compile Include="Migrations\202306150705030_CreateDatabaseTable.designer.cs">
@@ -88,10 +89,6 @@
     <Compile Include="Migrations\202306211331292_UpdateAuthorCountryandCityType.cs" />
     <Compile Include="Migrations\202306211331292_UpdateAuthorCountryandCityType.designer.cs">
       <DependentUpon>202306211331292_UpdateAuthorCountryandCityType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202306211848020_SeedDatabase.cs" />
-    <Compile Include="Migrations\202306211848020_SeedDatabase.designer.cs">
-      <DependentUpon>202306211848020_SeedDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,9 +125,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306211331292_UpdateAuthorCountryandCityType.resx">
       <DependentUpon>202306211331292_UpdateAuthorCountryandCityType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202306211848020_SeedDatabase.resx">
-      <DependentUpon>202306211848020_SeedDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
