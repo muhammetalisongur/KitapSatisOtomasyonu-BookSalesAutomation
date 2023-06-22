@@ -28,6 +28,8 @@ namespace DataAccess.Configurations.Seeds
             countries.Add(new Country() { ID = 11, CountryName = "Hindistan" });
             countries.Add(new Country() { ID = 12, CountryName = "Kanada" });
             countries.Add(new Country() { ID = 13, CountryName = "Avustralya" });
+           
+
 
 
             foreach (Country country in countries)
