@@ -13,8 +13,10 @@ namespace DataAccess.Configurations.Seeds
 
         protected override void Seed(Context context)
         {
+
             IList<Country> countries = new List<Country>();
 
+            #region Data
             countries.Add(new Country() { ID = 1, CountryName = "Türkiye" });
             countries.Add(new Country() { ID = 2, CountryName = "Amerika" });
             countries.Add(new Country() { ID = 3, CountryName = "Almanya" });
@@ -148,21 +150,11 @@ namespace DataAccess.Configurations.Seeds
             countries.Add(new Country() { ID = 131, CountryName = "Gana" });
             countries.Add(new Country() { ID = 132, CountryName = "Togo" });
             countries.Add(new Country() { ID = 133, CountryName = "Benin" });
-
-
-
-
-
-
-
-
-
-
-
+            countries.Add(new Country() { ID = 134, CountryName = "Nijerya" });
+            countries.Add(new Country() { ID = 135, CountryName = "Kamerun" });
+            #endregion
 
             context.Countries.AddRange(countries);
-
-            base.Seed(context);
 
         }
     }

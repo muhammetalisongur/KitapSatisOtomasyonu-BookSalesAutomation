@@ -45,6 +45,7 @@ namespace Core.DataAccess.EntityFramework
         {
             using(TContext context = new TContext())
             {
+
                 //filter boş mu     EVET ise bütün datayı döndür           HAYIR ise filtreyi uygula 
                 return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList(); //filter null ise ilk kısım çalışır değilse ikinci kısım çalışır.
             }

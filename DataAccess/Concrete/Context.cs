@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,7 +16,9 @@ namespace DataAccess.Concrete
 
         public Context() : base("name=Context")
         {
-            Database.SetInitializer<Context>(new CountrySeed<Context>());
+            Database.SetInitializer(new CountrySeed<Context>());
+            Database.SetInitializer(new CitySeed<Context>());
+
         }
 
 
@@ -28,11 +32,6 @@ namespace DataAccess.Concrete
         public DbSet<City> Cities { get; set; }
 
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-        }
 
     }
 }
