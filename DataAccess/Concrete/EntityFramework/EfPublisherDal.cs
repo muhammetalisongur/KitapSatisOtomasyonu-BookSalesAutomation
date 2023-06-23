@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfPublisherDal : EfEntityRepositoryBase<Publisher, BookContext>, IPublisherDal
+    public class EfPublisherDal : EfEntityRepositoryBase<Publisher, BookStoreContext>, IPublisherDal
     {
     }
 }

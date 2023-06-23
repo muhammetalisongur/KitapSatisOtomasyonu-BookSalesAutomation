@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Configurations.Seeds
 {
-    public class CitySeed<T> : DropCreateDatabaseAlways<BookContext>
+    public class CitySeed<T> : DropCreateDatabaseAlways<BookStoreContext>
     {
-        protected override void Seed(BookContext context)
+        protected override void Seed(BookStoreContext context)
         {
             IList<City> cities = new List<City>();
 

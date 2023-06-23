@@ -5,10 +5,10 @@ using System.Data.Entity;
 
 namespace DataAccess.Configurations.Seeds
 {
-    public class CategorySeed : CreateDatabaseIfNotExists<BookContext>
+    public class CategorySeed : DropCreateDatabaseIfModelChanges<BookStoreContext>
     {
 
-        protected override void Seed(BookContext context)
+        protected override void Seed(BookStoreContext context)
         {
             IList<Category> categories = new List<Category>();
 
@@ -40,11 +40,8 @@ namespace DataAccess.Configurations.Seeds
             categories.Add(new Category() { ID = 23, CategoryName = "Gezi" });
             categories.Add(new Category() { ID = 24, CategoryName = "Biyografi" });
             categories.Add(new Category() { ID = 25, CategoryName = "Anı" });
-            categories.Add(new Category() { ID = 26, CategoryName = "Deneme" });
-            categories.Add(new Category() { ID = 27, CategoryName = "Masal" });
-            categories.Add(new Category() { ID = 28, CategoryName = "Tiyatro" });
-            categories.Add(new Category() { ID = 29, CategoryName = "Dergi" });
-            categories.Add(new Category() { ID = 30, CategoryName = "Diğer" });
+
+
             #endregion
 
             context.Categories.AddRange(categories);

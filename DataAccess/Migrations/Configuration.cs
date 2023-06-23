@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DataAccess.Concrete.BookContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DataAccess.Concrete.BookStoreContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(DataAccess.Concrete.BookContext context)
+        protected override void Seed(DataAccess.Concrete.BookStoreContext context)
         {
             //  This method will be called after migrating to the latest version.
 

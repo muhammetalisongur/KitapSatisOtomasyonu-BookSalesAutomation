@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Configurations.Seeds
 {
-    public class CountrySeed : CreateDatabaseIfNotExists<BookContext>
+    public class CountrySeed : DropCreateDatabaseIfModelChanges<BookStoreContext>
     {
 
-        protected override void Seed(BookContext context)
+        protected override void Seed(BookStoreContext context)
         {
 
             IList<Country> countries = new List<Country>();

@@ -50,7 +50,8 @@ namespace BookStore.Areas.Admin.Controllers
         {
             CityManager cityManager = new CityManager(new EfCityDal());
             var result = cityManager.GetAll().Where(x => x.CountryID == id).ToList();
-            ViewBag.CityList = new SelectList(result, "ID", "CityName");
+            if (result.Count == 0) { ViewBag.CityList = null; }
+            else { ViewBag.CityList = new SelectList(result, "ID", "CityName"); }
             return PartialView("DisplayCity");
         }
 

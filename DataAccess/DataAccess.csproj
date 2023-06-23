@@ -57,7 +57,7 @@
     <Compile Include="Abstract\ICityDal.cs" />
     <Compile Include="Abstract\ICountryDal.cs" />
     <Compile Include="Abstract\IPublisherDal.cs" />
-    <Compile Include="Concrete\BookContext.cs" />
+    <Compile Include="Concrete\BookStoreContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfAuthorDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfBookTranslatorDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
@@ -67,6 +67,7 @@
     <Compile Include="Configurations\Seeds\CategorySeed.cs" />
     <Compile Include="Configurations\Seeds\CitySeed.cs" />
     <Compile Include="Configurations\Seeds\CountrySeed.cs" />
+    <Compile Include="Configurations\Seeds\SeedDatabase.cs" />
     <Compile Include="Migrations\202306150705030_CreateDatabaseTable.cs" />
     <Compile Include="Migrations\202306150705030_CreateDatabaseTable.designer.cs">
       <DependentUpon>202306150705030_CreateDatabaseTable.cs</DependentUpon>

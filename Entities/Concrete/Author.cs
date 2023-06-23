@@ -42,10 +42,10 @@ namespace Entities.Concrete
         
         public int AuthorCountryID { get; set; }
 
-        [Required(ErrorMessage = "Yazar şehri boş geçilemez!")]
+       
         [Display(Name = "Yazar Şehri")]
         [ForeignKey("City")]
-        public int AuthorCityID { get; set; }
+        public int? AuthorCityID { get; set; }
 
         [Display(Name = "Yazar Ülke / Şehir")]
         public string AuthorCountryCity => $"{AuthorCountryID} / {AuthorCityID}";

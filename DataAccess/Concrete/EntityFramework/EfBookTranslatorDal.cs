@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfBookTranslatorDal : EfEntityRepositoryBase<BookTranslator, BookContext>, IBookTranslatorDal
+    public class EfBookTranslatorDal : EfEntityRepositoryBase<BookTranslator, BookStoreContext>, IBookTranslatorDal
     {
     }
 }
