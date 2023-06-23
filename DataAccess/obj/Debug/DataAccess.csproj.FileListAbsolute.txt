@@ -109,3 +109,4 @@ D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateAuthorCount
 \\Mac\Home\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.CreateCountryandCityTable.resources
 \\Mac\Home\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateAuthorCountryandCityType.resources
 \\Mac\Home\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.SeedDatabase.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.CitySeedData.resources

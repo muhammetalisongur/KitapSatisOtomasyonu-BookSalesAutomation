@@ -57,7 +57,7 @@
     <Compile Include="Abstract\ICityDal.cs" />
     <Compile Include="Abstract\ICountryDal.cs" />
     <Compile Include="Abstract\IPublisherDal.cs" />
-    <Compile Include="Concrete\Context.cs" />
+    <Compile Include="Concrete\BookContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfAuthorDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfBookTranslatorDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
@@ -90,6 +90,10 @@
     <Compile Include="Migrations\202306211331292_UpdateAuthorCountryandCityType.cs" />
     <Compile Include="Migrations\202306211331292_UpdateAuthorCountryandCityType.designer.cs">
       <DependentUpon>202306211331292_UpdateAuthorCountryandCityType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306230802132_CitySeedData.cs" />
+    <Compile Include="Migrations\202306230802132_CitySeedData.designer.cs">
+      <DependentUpon>202306230802132_CitySeedData.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306211331292_UpdateAuthorCountryandCityType.resx">
       <DependentUpon>202306211331292_UpdateAuthorCountryandCityType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306230802132_CitySeedData.resx">
+      <DependentUpon>202306230802132_CitySeedData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

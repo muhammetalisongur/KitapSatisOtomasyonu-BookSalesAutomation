@@ -5,10 +5,10 @@ using System.Data.Entity;
 
 namespace DataAccess.Configurations.Seeds
 {
-    public class CategorySeed<T> : DropCreateDatabaseAlways<Context>
+    public class CategorySeed : CreateDatabaseIfNotExists<BookContext>
     {
 
-        protected override void Seed(Context context)
+        protected override void Seed(BookContext context)
         {
             IList<Category> categories = new List<Category>();
 
@@ -48,7 +48,7 @@ namespace DataAccess.Configurations.Seeds
             #endregion
 
             context.Categories.AddRange(categories);
-        
+
 
         }
     }

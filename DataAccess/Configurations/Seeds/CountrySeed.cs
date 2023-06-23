@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Configurations.Seeds
 {
-    public class CountrySeed<T> : DropCreateDatabaseAlways<Context>
+    public class CountrySeed : CreateDatabaseIfNotExists<BookContext>
     {
 
-        protected override void Seed(Context context)
+        protected override void Seed(BookContext context)
         {
 
             IList<Country> countries = new List<Country>();
@@ -155,7 +155,7 @@ namespace DataAccess.Configurations.Seeds
             #endregion
 
             context.Countries.AddRange(countries);
-      
+
         }
     }
 }

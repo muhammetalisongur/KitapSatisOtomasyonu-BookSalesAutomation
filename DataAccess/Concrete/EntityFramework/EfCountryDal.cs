@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCountryDal : EfEntityRepositoryBase<Country, Context>, ICountryDal
+    public class EfCountryDal : EfEntityRepositoryBase<Country, BookContext>, ICountryDal
     {
     }
 }
