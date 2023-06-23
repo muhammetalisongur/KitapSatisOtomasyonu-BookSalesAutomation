@@ -113,7 +113,7 @@
     // Ülke Seçildiğinde Şehirleri Getir
 
     $(document).ready(function () {
-        $("#AuthorCountry").change(function () {
+        $("#AuthorCountryID").change(function () {
             var countryId = $(this).val();
             $.ajax({
                 url: "/Admin/Author/GetCity?id=" + countryId,
@@ -121,8 +121,8 @@
                 contentType: "html",
                 success: function (response) {
                     debugger
-                    $("#AuthorCity").empty();
-                    $("#AuthorCity").append(response);
+                    $("#AuthorCityID").empty();
+                    $("#AuthorCityID").append(response);
 
                 }
             });

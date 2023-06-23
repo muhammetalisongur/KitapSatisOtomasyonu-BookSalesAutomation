@@ -92,9 +92,13 @@
     <Compile Include="Migrations\202306211331292_UpdateAuthorCountryandCityType.designer.cs">
       <DependentUpon>202306211331292_UpdateAuthorCountryandCityType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202306230802132_CitySeedData.cs" />
-    <Compile Include="Migrations\202306230802132_CitySeedData.designer.cs">
-      <DependentUpon>202306230802132_CitySeedData.cs</DependentUpon>
+    <Compile Include="Migrations\202306231302300_UpdateAuthorCity.cs" />
+    <Compile Include="Migrations\202306231302300_UpdateAuthorCity.designer.cs">
+      <DependentUpon>202306231302300_UpdateAuthorCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306231306376_UpdateCity.cs" />
+    <Compile Include="Migrations\202306231306376_UpdateCity.designer.cs">
+      <DependentUpon>202306231306376_UpdateCity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,8 +136,11 @@
     <EmbeddedResource Include="Migrations\202306211331292_UpdateAuthorCountryandCityType.resx">
       <DependentUpon>202306211331292_UpdateAuthorCountryandCityType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202306230802132_CitySeedData.resx">
-      <DependentUpon>202306230802132_CitySeedData.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202306231302300_UpdateAuthorCity.resx">
+      <DependentUpon>202306231302300_UpdateAuthorCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306231306376_UpdateCity.resx">
+      <DependentUpon>202306231306376_UpdateCity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

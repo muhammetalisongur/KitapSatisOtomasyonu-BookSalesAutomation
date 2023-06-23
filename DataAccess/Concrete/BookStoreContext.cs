@@ -17,9 +17,8 @@ namespace DataAccess.Concrete
     {
 
         public BookStoreContext() : base("name=BookStoreContext")
-        {          
-            Database.SetInitializer(new CategorySeed());
-            Database.SetInitializer(new CountrySeed());
+        {
+            Database.SetInitializer(new SeedDatabase());
 
         }
 
@@ -32,14 +31,6 @@ namespace DataAccess.Concrete
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
-
-        override protected void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<City>()
-               .HasRequired<Country>(x => x.Country)
-               .WithMany(x => x.Cities)
-               .HasForeignKey(x => x.CountryID).WillCascadeOnDelete(false);
-        }
 
 
     }
