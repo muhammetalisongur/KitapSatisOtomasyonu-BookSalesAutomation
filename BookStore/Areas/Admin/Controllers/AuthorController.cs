@@ -26,15 +26,17 @@ namespace BookStore.Areas.Admin.Controllers
         // GET: Admin/Author
         AuthorManager manager = new AuthorManager(new EfAuthorDal());
         MessageViewModel messageViewModel = new MessageViewModel();
+        CountryManager countryManager = new CountryManager(new EfCountryDal());
+        CityManager cityManager = new CityManager(new EfCityDal());
 
 
         [Route("Yazar")]
         [Route("Yazar/Index")]
         public ActionResult Index(int? SayfaNo)
         {
-            int _sayfaNo = SayfaNo ?? 1;
-            var result = manager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Author>(_sayfaNo, 5);
-            return View(result);
+            int _sayfaNo = SayfaNo ?? 0;
+            var result1 = manager.GetAllAuthorsWithAddress(_sayfaNo).Result;
+            return View(result1);
         }
 
 

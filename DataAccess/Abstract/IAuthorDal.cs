@@ -10,5 +10,6 @@ namespace DataAccess.Abstract
 {
     public interface IAuthorDal : IEntityRepostiory<Author>
     {
+        Task<IEnumerable<Author>> GetAllAuthorsWithAddress(int pageNo);
     }
 }

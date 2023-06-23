@@ -15,5 +15,8 @@ namespace Business.Abstract
         void Update(Author author);
         void Delete(Author author);
 
+
+        Task<IEnumerable<Author>> GetAllAuthorsWithAddress(int pageNo);
+
     }
 }
