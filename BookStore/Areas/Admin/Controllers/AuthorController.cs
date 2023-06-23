@@ -49,7 +49,7 @@ namespace BookStore.Areas.Admin.Controllers
         public ActionResult GetCity(int id)
         {
             CityManager cityManager = new CityManager(new EfCityDal());
-            var result = cityManager.GetAll().Where(x => x.CountryID == id).ToList();
+            var result = cityManager.GetAll().Where(x => x.CountryID == id).OrderBy(x => x.CityName).ToList();
             if (result.Count == 0) { ViewBag.CityList = null; }
             else { ViewBag.CityList = new SelectList(result, "ID", "CityName"); }
             return PartialView("DisplayCity");
@@ -91,6 +91,8 @@ namespace BookStore.Areas.Admin.Controllers
                     }
 
                 }
+
+
                 if (Path.GetFileName(Request.Files[0].FileName).Length > 0)
                 {
                     var extension = Path.GetExtension(Request.Files[0].FileName);
@@ -148,6 +150,8 @@ namespace BookStore.Areas.Admin.Controllers
                     messageViewModel.LinkText = "Yazar Listesi";
                     messageViewModel.Url = "/Admin/Yazar";
                     messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
+
+                    ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
                     TempData["message"] = messageViewModel;
                     return View("AuthorForm", new Author());
 
@@ -173,6 +177,8 @@ namespace BookStore.Areas.Admin.Controllers
             var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
+            ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+
             return View("AuthorForm", model);
         }
 

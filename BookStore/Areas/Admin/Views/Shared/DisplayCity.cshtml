@@ -1,7 +1,7 @@
 ﻿@using Entities.Concrete
 @model City
 
-<option value="">-- Şehir Seç --</option>
+
 
 @if (ViewBag.CityList != null)
 {
@@ -12,5 +12,5 @@
 }
 else
 {
-    <option value="">-- Şehir Bulunamadı --</option>
+    <option value="" selected>-- Şehir Bulunamadı --</option>
 }
