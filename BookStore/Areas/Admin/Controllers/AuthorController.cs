@@ -47,7 +47,7 @@ namespace BookStore.Areas.Admin.Controllers
                              AuthorImage = a.AuthorImage,
                              AuthorCountryID = a.AuthorCountryID,
                              AuthorCityID = a.AuthorCityID,
-                             AuthorCountryCity = (c.CountryName + " / " + ci.CityName).ToString(),
+                             AuthorCountryCity = c.CountryName + " / " + ci.CityName,
 
                          }).ToPagedList(_sayfaNo, 5);
 
@@ -139,15 +139,26 @@ namespace BookStore.Areas.Admin.Controllers
             else
             {
                 var updateAuthor = manager.GetById(author.ID);
+
                 if (updateAuthor == null)
                 {
                     return HttpNotFound();
                 }
 
+                
+                var AuthorCountryCity = from a in manager.GetAll()
+                                        join c in countryManager.GetAll() on a.AuthorCountryID equals c.ID
+                                        join ci in cityManager.GetAll() on a.AuthorCityID equals ci.ID
+                                        where a.ID == author.ID
+                                        select new Author
+                                        {
+                                            AuthorCountryCity = c.CountryName + " / " + ci.CityName,
+                                        };
+
                 var oldAuthorFullName = updateAuthor.AuthorFullName;
                 var oldBiography = updateAuthor.AuthorBiography;
-                var oldCountryCity = updateAuthor.AuthorCountryCity;
-
+                var oldCountryCity = AuthorCountryCity.Select(x=>x.AuthorCountryCity).FirstOrDefault();
+            
                 string oldImage = updateAuthor.AuthorImage;
 
 

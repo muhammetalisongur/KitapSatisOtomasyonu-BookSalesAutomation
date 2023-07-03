@@ -72,8 +72,6 @@
                         @Html.LabelFor(m => m.AuthorCountryID)
                         @Html.DropDownListFor(m => m.AuthorCountryID, ViewBag.Country as SelectList, "-- Ülke Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
                         @Html.ValidationMessageFor(x => x.AuthorCountryID)
-
-
                     }
                     else
                     {
@@ -83,7 +81,7 @@
                     }
                     <br />
 
-                    @if(ViewBag.City != null)
+                    @if (ViewBag.CityList != null)
                     {
                         @Html.LabelFor(m => m.AuthorCityID)
                         @Html.DropDownListFor(m => m.AuthorCityID, ViewBag.CityList as SelectList, "-- Şehir Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
@@ -92,13 +90,9 @@
                     else
                     {
                         @Html.LabelFor(m => m.AuthorCityID)
-                        @Html.DropDownListFor(m => m.AuthorCityID, new SelectList(""), "-- Şehir Bulunumadı --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.DropDownListFor(m => m.AuthorCityID, new SelectList(""), "-- Şehir Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
                         @Html.ValidationMessageFor(x => x.AuthorCityID)
                     }
-
-                    @*@Html.LabelFor(m => m.AuthorCityID)
-                    @Html.DropDownListFor(m => m.AuthorCityID, new SelectList(""), "-- Şehir Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
-                    @Html.ValidationMessageFor(x => x.AuthorCityID)*@
 
                 </div>
 
