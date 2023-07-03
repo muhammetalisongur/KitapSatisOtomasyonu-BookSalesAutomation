@@ -43,7 +43,7 @@ namespace BookStore.Areas.Admin.Controllers
                                                                     Countries.CountryName, 
                                                                     Cities.CityName FROM Authors 
                                                                     LEFT OUTER JOIN Countries ON Authors.AuthorCountryID = Countries.ID 
-                                                                    LEFT OUTER JOIN Cities ON Authors.AuthorCityID = Cities.ID").ToPagedList(_sayfaNo, 5);
+                                                                    LEFT OUTER JOIN Cities ON Authors.AuthorCityID = Cities.ID");
 
             var model = new List<Author>();
 

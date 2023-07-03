@@ -97,6 +97,10 @@
     <Compile Include="Migrations\202306231306376_UpdateCity.designer.cs">
       <DependentUpon>202306231306376_UpdateCity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307031345281_UpdatePublisherCountryCity.cs" />
+    <Compile Include="Migrations\202307031345281_UpdatePublisherCountryCity.designer.cs">
+      <DependentUpon>202307031345281_UpdatePublisherCountryCity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -138,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306231306376_UpdateCity.resx">
       <DependentUpon>202306231306376_UpdateCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307031345281_UpdatePublisherCountryCity.resx">
+      <DependentUpon>202307031345281_UpdatePublisherCountryCity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -72,13 +72,32 @@
                 @Html.ValidationMessageFor(x => x.PublisherAddress)
                 <br />
 
-                @Html.LabelFor(m => m.PublisherCountry)
-                @Html.TextBoxFor(m => m.PublisherCountry, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.PublisherCountry)<br />
+                @if (ViewBag.Country != null)
+                {
+                    @Html.LabelFor(m => m.PublisherCountryID)
+                    @Html.DropDownListFor(m => m.PublisherCountryID, ViewBag.Country as SelectList, "-- Ülke Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                    @Html.ValidationMessageFor(x => x.PublisherCountryID)
+                }
+                else
+                {
+                    @Html.LabelFor(m => m.PublisherCountryID)
+                    @Html.DropDownListFor(m => m.PublisherCountryID, new SelectList(""), "-- Ülke Bulunumadı --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                    @Html.ValidationMessageFor(x => x.PublisherCountryID)
+                }
+                <br />
 
-                @Html.LabelFor(m => m.PublisherCity)
-                @Html.TextBoxFor(m => m.PublisherCity, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.PublisherCity)
+                @if (ViewBag.CityList != null)
+                {
+                    @Html.LabelFor(m => m.PublisherCityID)
+                    @Html.DropDownListFor(m => m.PublisherCityID, ViewBag.CityList as SelectList, "-- Şehir Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                    @Html.ValidationMessageFor(x => x.PublisherCityID)
+                }
+                else
+                {
+                    @Html.LabelFor(m => m.PublisherCityID)
+                    @Html.DropDownListFor(m => m.PublisherCityID, new SelectList(""), "-- Şehir Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                    @Html.ValidationMessageFor(x => x.PublisherCityID)
+                }
 
             </div>
 
@@ -99,7 +118,31 @@
 }
 
 <script>
+
+    // Resim Önizleme
     var prewIMG = function (event) {
         var result = document.getElementById("imgPrew");
         result.src = URL.createObjectURL(event.target.files[0]);
-    };</script>
+    };
+
+
+    // Ülke Seçildiğinde Şehirleri Getir
+
+    $(document).ready(function () {
+        $("#PublisherCountryID").change(function () {
+            var countryId = $(this).val();
+            $.ajax({
+                url: "/Admin/Publisher/GetCity?id=" + countryId,
+                type: "POST",
+                contentType: "html",
+                success: function (response) {
+                    debugger
+                    $("#PublisherCityID").empty();
+                    $("#PublisherCityID").append(response);
+
+                }
+            });
+        });
+    });
+
+</script>

@@ -39,18 +39,30 @@ namespace Entities.Concrete
 
         [Required(ErrorMessage = "Yayınevi ülkesi boş geçilemez!")]
         [Display(Name = "Yayınevi Ülkesi")]
-        public string PublisherCountry { get; set; }
+        [ForeignKey("Country")]
+        public int PublisherCountryID { get; set; }
 
-        [Required(ErrorMessage = "Yayınevi şehri boş geçilemez!")]
+      
         [Display(Name = "Yayınevi Şehri")]
-        public string PublisherCity { get; set; }
+        [ForeignKey("City")]
+        public int? PublisherCityID { get; set; }
+
+
+        [NotMapped]
+        public string CountryName { get; set; }
+
+        [NotMapped]
+        public string CityName { get; set; }
+
 
         [NotMapped]
         [Display(Name = "Yayınevi Ülke / Şehir")]
-        public string PublisherCountryCity { get; set; }/* => $"{PublisherCountry} / {PublisherCity}";*/
+        public string PublisherCountryCity => CountryName + " / " + (CityName == null ? "Şehir Yok" : CityName);
 
 
         // Navigation Property
         public virtual ICollection<Book> Books { get; set; }
+        public virtual Country Country { get; set; }
+        public virtual City City { get; set; }
     }
 }

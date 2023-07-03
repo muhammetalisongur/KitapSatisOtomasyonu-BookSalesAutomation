@@ -111,3 +111,4 @@ D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateAuthorCount
 \\Mac\Home\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.SeedDatabase.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateAuthorCity.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateCity.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdatePublisherCountryCity.resources

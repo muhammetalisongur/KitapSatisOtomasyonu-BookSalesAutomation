@@ -1,5 +1,6 @@
 ﻿using BookStore.Areas.Admin.ViewModel;
 using Business.Concrete;
+using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using PagedList;
@@ -29,27 +30,36 @@ namespace BookStore.Areas.Admin.Controllers
         {
             int _sayfaNo = SayfaNo ?? 1;
 
-           
 
-            var query = (from p in manager.GetAll()
-                         join c in countryManager.GetAll() on p.ID equals c.ID
-                         join ci in cityManager.GetAll() on p.ID equals ci.ID
-                         select new Publisher
-                         {
-                             PublisherName = p.PublisherName,
-                             PublisherDescription = p.PublisherDescription,
-                             PublisherEmail = p.PublisherEmail,
-                             PublisherImage = p.PublisherImage,
-                             PublisherAddress = p.PublisherAddress,
-                             PublisherCountry = p.PublisherCountry,
-                             PublisherCity = p.PublisherCity,
-                             PublisherCountryCity = c.CountryName + " / " + ci.CityName,
+            var context = new BookStoreContext();
 
-                         }).OrderByDescending(x => x.ID).ToPagedList(_sayfaNo, 5);
+            var List = context.Database.SqlQuery<PublisherViewModel>(@"SELECT Publishers.*, 
+                                                                       Countries.CountryName, 
+                                                                       Cities.CityName FROM Publishers 
+                                                                       LEFT OUTER JOIN Countries ON Publishers.PublisherCountryID = Countries.ID 
+                                                                       LEFT OUTER JOIN Cities ON Publishers.PublisherCityID = Cities.ID");
+
+
+
+            //var query = (from p in manager.GetAll()
+            //             join c in countryManager.GetAll() on p.ID equals c.ID
+            //             join ci in cityManager.GetAll() on p.ID equals ci.ID
+            //             select new Publisher
+            //             {
+            //                 PublisherName = p.PublisherName,
+            //                 PublisherDescription = p.PublisherDescription,
+            //                 PublisherEmail = p.PublisherEmail,
+            //                 PublisherImage = p.PublisherImage,
+            //                 PublisherAddress = p.PublisherAddress,
+            //                 PublisherCountry = p.PublisherCountry,
+            //                 PublisherCity = p.PublisherCity,
+            //                 PublisherCountryCity = c.CountryName + " / " + ci.CityName,
+
+            //             }).OrderByDescending(x => x.ID).ToPagedList(_sayfaNo, 5);
 
             //var result = manager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Publisher>(_sayfaNo, 5);
 
-            return View(query);
+            return View(List);
         }
 
         public List<Country> GetCountries()
@@ -134,8 +144,8 @@ namespace BookStore.Areas.Admin.Controllers
                 var oldName = updatePublisher.PublisherName;
                 var oldDesc = updatePublisher.PublisherDescription;
                 var oldEmail = updatePublisher.PublisherEmail;
-                var oldCountry = updatePublisher.PublisherCountry;
-                var oldCity = updatePublisher.PublisherCity;
+                var oldCountry = updatePublisher.PublisherCountryID;
+                var oldCity = updatePublisher.PublisherCityID;
 
                 string oldImage = updatePublisher.PublisherImage;
 
@@ -156,8 +166,8 @@ namespace BookStore.Areas.Admin.Controllers
 
                 }
 
-                if (publisher.PublisherName == oldName && publisher.PublisherDescription == oldDesc && publisher.PublisherEmail == oldEmail && publisher.PublisherCountry
-                    == oldCountry && publisher.PublisherCity
+                if (publisher.PublisherName == oldName && publisher.PublisherDescription == oldDesc && publisher.PublisherEmail == oldEmail && publisher.PublisherCountryID
+                    == oldCountry && publisher.PublisherCityID
                     == oldCity && extension == "")
                 {
                     messageViewModel.Status = false;

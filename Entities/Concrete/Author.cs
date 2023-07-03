@@ -32,7 +32,7 @@ namespace Entities.Concrete
         [Display(Name = "Yazar Biyografisi")]
         public string AuthorBiography { get; set; }
 
-        //[Required(ErrorMessage = "Yazar resmi boş geçilemez!")]
+       
         [Display(Name = "Yazar Resmi")]
         public string AuthorImage { get; set; }
 

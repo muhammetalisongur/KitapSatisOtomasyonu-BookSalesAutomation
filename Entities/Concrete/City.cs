@@ -24,5 +24,6 @@ namespace Entities.Concrete
 
         public virtual Country Country { get; set; }
         public virtual ICollection<Author> Authors { get; set; }
+        public virtual ICollection<Publisher> Publishers { get; set; }
     }
 }

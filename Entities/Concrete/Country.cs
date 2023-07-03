@@ -21,5 +21,6 @@ namespace Entities.Concrete
         //Navigation Property
         public virtual ICollection<City> Cities { get; set; }
         public virtual ICollection<Author> Authors { get; set; }
+        public virtual ICollection<Publisher> Publishers { get; set; }
     }
 }

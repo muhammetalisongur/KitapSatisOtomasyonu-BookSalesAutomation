@@ -149,6 +149,7 @@
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
     <Compile Include="Areas\Admin\ViewModel\AuthorViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\MessageViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModel\PublisherViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
