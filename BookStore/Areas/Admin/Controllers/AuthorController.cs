@@ -143,25 +143,13 @@ namespace BookStore.Areas.Admin.Controllers
                 if (updateAuthor == null)
                 {
                     return HttpNotFound();
-                }
-
-
-                //var AuthorCountryCity = from a in manager.GetAll()
-                //                        join c in countryManager.GetAll() on a.AuthorCountryID equals c.ID
-                //                        join ci in cityManager.GetAll() on a.AuthorCityID equals ci.ID
-                //                        where a.ID == author.ID
-                //                        select new Author
-                //                        {
-                //                            AuthorCountryCity = c.CountryName + " / " + ci.CityName,
-                //                        };
+                }               
 
                 var oldAuthorFullName = updateAuthor.AuthorFullName;
                 var oldBiography = updateAuthor.AuthorBiography;
                 var oldCountry = updateAuthor.AuthorCountryID;
                 var oldCity = updateAuthor.AuthorCityID;
-
                 string oldImage = updateAuthor.AuthorImage;
-
 
                 var extension = Path.GetExtension(Request.Files[0].FileName);
                 var newFileName = author.AuthorFullName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
@@ -188,6 +176,7 @@ namespace BookStore.Areas.Admin.Controllers
                     messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
 
                     ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+                    GetCity(author.AuthorCountryID);
                     TempData["message"] = messageViewModel;
                     return View("AuthorForm", new Author());
 
