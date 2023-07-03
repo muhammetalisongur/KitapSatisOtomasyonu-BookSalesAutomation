@@ -58,7 +58,6 @@ namespace BookStore.Areas.Admin.Controllers
                 });
             }
 
-
             //var query = (from p in manager.GetAll()
             //             join c in countryManager.GetAll() on p.ID equals c.ID
             //             join ci in cityManager.GetAll() on p.ID equals ci.ID
@@ -192,6 +191,8 @@ namespace BookStore.Areas.Admin.Controllers
                     messageViewModel.LinkText = "YayınEvi Listesi";
                     messageViewModel.Url = "/Admin/Yayinevi";
                     messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
+                    ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+                    GetCity(publisher.PublisherCountryID);
                     TempData["message"] = messageViewModel;
                     return View("PublisherForm", new Publisher());
 
@@ -217,6 +218,8 @@ namespace BookStore.Areas.Admin.Controllers
             var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
+            ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+            GetCity(model.PublisherCountryID);
             return View("PublisherForm", model);
         }
 
