@@ -2,6 +2,7 @@
 using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using DataAccess.Migrations;
 using Entities.Concrete;
 using Microsoft.Ajax.Utilities;
 using PagedList;
@@ -34,25 +35,49 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Yazar/Index")]
         public ActionResult Index(int? SayfaNo)
         {
-            int _sayfaNo = SayfaNo ?? 1;
-            var query = (from a in manager.GetAll()
-                         join c in countryManager.GetAll() on a.AuthorCountryID equals c.ID
-                         join ci in cityManager.GetAll() on a.AuthorCityID equals ci.ID
-                         select new Author
-                         {
-                             ID = a.ID,
-                             AuthorName = a.AuthorName,
-                             AuthorSurname = a.AuthorSurname,
-                             AuthorBiography = a.AuthorBiography,
-                             AuthorImage = a.AuthorImage,
-                             AuthorCountryID = a.AuthorCountryID,
-                             AuthorCityID = a.AuthorCityID,
-                             AuthorCountryCity = c.CountryName + " / " + ci.CityName,
+            int _sayfaNo = SayfaNo ?? 1;           
 
-                         }).ToPagedList(_sayfaNo, 5);
+            var context = new BookStoreContext();           
 
-            //var result = manager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Author>(_sayfaNo, 5);
-            return View(query);
+            var List = context.Database.SqlQuery<AuthorViewModel>(@"SELECT Authors.*, 
+                                                                    Countries.CountryName, 
+                                                                    Cities.CityName FROM Authors 
+                                                                    LEFT OUTER JOIN Countries ON Authors.AuthorCountryID = Countries.ID 
+                                                                    LEFT OUTER JOIN Cities ON Authors.AuthorCityID = Cities.ID").ToPagedList(_sayfaNo, 5);
+
+            var model = new List<Author>();
+
+            foreach (var item in List)
+            {
+                model.Add( new Author
+                {
+                    ID = item.ID,
+                    AuthorName = item.AuthorName,
+                    AuthorSurname = item.AuthorSurname,                    
+                    AuthorBiography = item.AuthorBiography,
+                    AuthorImage = item.AuthorImage,
+                    AuthorCountryID = item.AuthorCountryID,
+                    AuthorCityID = item.AuthorCityID,
+                    CountryName = item.CountryName,
+                    CityName = item.CityName,
+                });
+            }
+
+            //var query = (from a in manager.GetAll()
+            //             join c in countryManager.GetAll() on a.AuthorCountryID equals c.ID
+            //             join ci in cityManager.GetAll() on a.AuthorCityID equals ci.ID
+            //             select new Author
+            //             {
+            //                 ID = a.ID,
+            //                 AuthorName = a.AuthorName,
+            //                 AuthorSurname = a.AuthorSurname,
+            //                 AuthorBiography = a.AuthorBiography,
+            //                 AuthorImage = a.AuthorImage,
+            //                 AuthorCountryCity = c.CountryName + (ci.CityName == null ? " / Şehir Yok" : " / " + ci.CityName)
+
+            //             }).ToPagedList(_sayfaNo, 5);
+
+            return View(model.ToPagedList(_sayfaNo, 5));
         }
 
 
@@ -96,8 +121,6 @@ namespace BookStore.Areas.Admin.Controllers
                 return View("AuthorForm");
             }
 
-
-
             if (author.ID == 0)
             {
                 var name = manager.GetAll();
@@ -115,7 +138,6 @@ namespace BookStore.Areas.Admin.Controllers
                     }
 
                 }
-
 
                 if (Path.GetFileName(Request.Files[0].FileName).Length > 0)
                 {
@@ -143,7 +165,7 @@ namespace BookStore.Areas.Admin.Controllers
                 if (updateAuthor == null)
                 {
                     return HttpNotFound();
-                }               
+                }
 
                 var oldAuthorFullName = updateAuthor.AuthorFullName;
                 var oldBiography = updateAuthor.AuthorBiography;
@@ -219,7 +241,6 @@ namespace BookStore.Areas.Admin.Controllers
             {
                 System.IO.File.Delete(fullPath);
             }
-
             manager.Delete(deleteAuthor);
             messageViewModel.Status = true;
             messageViewModel.Message = deleteAuthor.AuthorFullName + " isimli yazar silindi...";

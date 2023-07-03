@@ -49,8 +49,15 @@ namespace Entities.Concrete
 
 
         [NotMapped]
+        public string CountryName { get; set; }
+
+        [NotMapped]
+        public string CityName { get; set; }
+
+
+        [NotMapped]
         [Display(Name = "Yazar Ülke / Şehir")]
-        public string AuthorCountryCity { get; set; } /*=> $"{Country.CountryName} / {City.CityName}";*/
+        public string AuthorCountryCity => CountryName + " / " + (CityName == null ? "Şehir Yok" : CityName);
 
 
 

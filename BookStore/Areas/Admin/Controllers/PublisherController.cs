@@ -28,6 +28,9 @@ namespace BookStore.Areas.Admin.Controllers
         public ActionResult Index(int? SayfaNo)
         {
             int _sayfaNo = SayfaNo ?? 1;
+
+           
+
             var query = (from p in manager.GetAll()
                          join c in countryManager.GetAll() on p.ID equals c.ID
                          join ci in cityManager.GetAll() on p.ID equals ci.ID
