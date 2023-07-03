@@ -40,6 +40,24 @@ namespace BookStore.Areas.Admin.Controllers
                                                                        LEFT OUTER JOIN Cities ON Publishers.PublisherCityID = Cities.ID");
 
 
+            var model = new List<Publisher>();
+
+            foreach (var item in List)
+            {
+                model.Add(new Publisher
+                {
+                    ID = item.ID,
+                    PublisherName = item.PublisherName,
+                    PublisherDescription = item.PublisherDescription,
+                    PublisherEmail = item.PublisherEmail,
+                    PublisherImage = item.PublisherImage,
+                    PublisherAddress = item.PublisherAddress,
+                    CountryName = item.CountryName,
+                    CityName = item.CityName,
+
+                });
+            }
+
 
             //var query = (from p in manager.GetAll()
             //             join c in countryManager.GetAll() on p.ID equals c.ID
@@ -59,7 +77,7 @@ namespace BookStore.Areas.Admin.Controllers
 
             //var result = manager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Publisher>(_sayfaNo, 5);
 
-            return View(List);
+            return View(model.ToPagedList(_sayfaNo, 5));
         }
 
         public List<Country> GetCountries()

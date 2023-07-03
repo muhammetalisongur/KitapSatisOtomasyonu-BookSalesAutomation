@@ -13,9 +13,9 @@ namespace BookStore.Areas.Admin.ViewModel
         public string PublisherEmail { get; set; }
         public string PublisherImage { get; set; }
         public string PublisherAddress { get; set; }
-        public string PublisherCountry { get; set; }
-        public string PublisherCity { get; set; }
-        public string PublisherCountryCity { get; set; }
+        public string CountryName { get; set; }
+        public string CityName { get; set; }
+        public string PublisherCountryCity => CountryName + " / " + (CityName == null ? "Şehir Yok" : CityName);
 
     }
 }
