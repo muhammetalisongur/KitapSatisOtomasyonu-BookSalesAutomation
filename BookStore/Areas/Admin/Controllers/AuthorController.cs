@@ -145,20 +145,21 @@ namespace BookStore.Areas.Admin.Controllers
                     return HttpNotFound();
                 }
 
-                
-                var AuthorCountryCity = from a in manager.GetAll()
-                                        join c in countryManager.GetAll() on a.AuthorCountryID equals c.ID
-                                        join ci in cityManager.GetAll() on a.AuthorCityID equals ci.ID
-                                        where a.ID == author.ID
-                                        select new Author
-                                        {
-                                            AuthorCountryCity = c.CountryName + " / " + ci.CityName,
-                                        };
+
+                //var AuthorCountryCity = from a in manager.GetAll()
+                //                        join c in countryManager.GetAll() on a.AuthorCountryID equals c.ID
+                //                        join ci in cityManager.GetAll() on a.AuthorCityID equals ci.ID
+                //                        where a.ID == author.ID
+                //                        select new Author
+                //                        {
+                //                            AuthorCountryCity = c.CountryName + " / " + ci.CityName,
+                //                        };
 
                 var oldAuthorFullName = updateAuthor.AuthorFullName;
                 var oldBiography = updateAuthor.AuthorBiography;
-                var oldCountryCity = AuthorCountryCity.Select(x=>x.AuthorCountryCity).FirstOrDefault();
-            
+                var oldCountry = updateAuthor.AuthorCountryID;
+                var oldCity = updateAuthor.AuthorCityID;
+
                 string oldImage = updateAuthor.AuthorImage;
 
 
@@ -179,7 +180,7 @@ namespace BookStore.Areas.Admin.Controllers
 
                 }
 
-                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryCity == oldCountryCity && extension == "")
+                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryID == oldCountry && author.AuthorCityID == oldCity && extension == "")
                 {
                     messageViewModel.Status = false;
                     messageViewModel.LinkText = "Yazar Listesi";
