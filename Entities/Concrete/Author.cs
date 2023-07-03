@@ -50,7 +50,7 @@ namespace Entities.Concrete
 
         [NotMapped]
         [Display(Name = "Yazar Ülke / Şehir")]
-        public string AuthorCountryCity => ""/*$"{Country?.CountryName ?? ""} / {City?.CityName ?? ""}"*/;
+        public string AuthorCountryCity { get; set; } /*=> $"{Country.CountryName} / {City.CityName}";*/
 
 
 

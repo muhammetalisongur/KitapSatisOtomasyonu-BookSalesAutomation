@@ -43,9 +43,9 @@ namespace Business.Concrete
             _authorDal.Update(author);
         }
 
-        public async Task<IEnumerable<Author>> GetAllAuthorsWithAddress(int pageNo)
-        {
-            return await _authorDal.GetAllAuthorsWithAddress(pageNo);
-        }
+        //public async Task<IEnumerable<Author>> GetAllAuthorsWithAddress(int pageNo)
+        //{
+        //    return await _authorDal.GetAllAuthorsWithAddress(pageNo);
+        //}
     }
 }

@@ -44,44 +44,63 @@
             @using (Html.BeginForm("Save", "Author", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
-            <div class="form-group">
+                <div class="form-group">
 
-                @Html.LabelFor(model => model.AuthorImage)
-                <div style="display:flex" class="col-2">
-                    @Html.EditorFor(x => x.AuthorImage, new { htmlAttributes = new { @class = "form-control", type = "file", style = "height:auto", accept = "image/*", title = "Resim Yukle", onchange = "prewIMG(event)" } })
-                    <img src="@Model.AuthorImage" height="52" width="52" style="position: absolute; left: calc(100% - 9.8em); " id="imgPrew" alt="Resim Yukle" />
+                    @Html.LabelFor(model => model.AuthorImage)
+                    <div style="display:flex" class="col-2">
+                        @Html.EditorFor(x => x.AuthorImage, new { htmlAttributes = new { @class = "form-control", type = "file", style = "height:auto", accept = "image/*", title = "Resim Yukle", onchange = "prewIMG(event)" } })
+                        <img src="@Model.AuthorImage" height="52" width="52" style="position: absolute; left: calc(100% - 9.8em); " id="imgPrew" alt="Resim Yukle" />
+                    </div>
+                    <br />
+
+                    @Html.LabelFor(m => m.AuthorName)
+                    @Html.TextBoxFor(m => m.AuthorName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorName)
+                    <br />
+
+                    @Html.LabelFor(m => m.AuthorSurname)
+                    @Html.TextBoxFor(m => m.AuthorSurname, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorSurname)
+                    <br />
+
+                    @Html.LabelFor(m => m.AuthorBiography)
+                    @Html.TextAreaFor(m => m.AuthorBiography, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.AuthorBiography)
+                    <br />
+                    @if (ViewBag.Country != null)
+                    {
+                        @Html.LabelFor(m => m.AuthorCountryID)
+                        @Html.DropDownListFor(m => m.AuthorCountryID, ViewBag.Country as SelectList, "-- Ülke Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.ValidationMessageFor(x => x.AuthorCountryID)
+
+
+                    }
+                    else
+                    {
+                        @Html.LabelFor(m => m.AuthorCountryID)
+                        @Html.DropDownListFor(m => m.AuthorCountryID, new SelectList(""), "-- Ülke Bulunumadı --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.ValidationMessageFor(x => x.AuthorCountryID)
+                    }
+                    <br />
+
+                    @if(ViewBag.City != null)
+                    {
+                        @Html.LabelFor(m => m.AuthorCityID)
+                        @Html.DropDownListFor(m => m.AuthorCityID, ViewBag.CityList as SelectList, "-- Şehir Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.ValidationMessageFor(x => x.AuthorCityID)
+                    }
+                    else
+                    {
+                        @Html.LabelFor(m => m.AuthorCityID)
+                        @Html.DropDownListFor(m => m.AuthorCityID, new SelectList(""), "-- Şehir Bulunumadı --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.ValidationMessageFor(x => x.AuthorCityID)
+                    }
+
+                    @*@Html.LabelFor(m => m.AuthorCityID)
+                    @Html.DropDownListFor(m => m.AuthorCityID, new SelectList(""), "-- Şehir Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                    @Html.ValidationMessageFor(x => x.AuthorCityID)*@
+
                 </div>
-                <br />
-
-                @Html.LabelFor(m => m.AuthorName)
-                @Html.TextBoxFor(m => m.AuthorName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.AuthorName)
-                <br />
-
-                @Html.LabelFor(m => m.AuthorSurname)
-                @Html.TextBoxFor(m => m.AuthorSurname, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.AuthorSurname)
-                <br />
-
-                @Html.LabelFor(m => m.AuthorBiography)
-                @Html.TextAreaFor(m => m.AuthorBiography, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.AuthorBiography)
-                <br />
-                @if (ViewBag.Country != null)
-                {
-                    @Html.LabelFor(m => m.AuthorCountryID)
-                    @Html.DropDownListFor(m => m.AuthorCountryID, ViewBag.Country as SelectList, "-- Ülke Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
-                    @Html.ValidationMessageFor(x => x.AuthorCountryID)
-
-
-                }
-                <br />
-                
-                @Html.LabelFor(m => m.AuthorCityID)
-                @Html.DropDownListFor(m => m.AuthorCityID, new SelectList(""), "-- Şehir Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
-                @Html.ValidationMessageFor(x => x.AuthorCityID)
-
-            </div>
 
                 @Html.HiddenFor(x => x.ID)
                 <button type="submit" class="btn btn-success">Kaydet</button>

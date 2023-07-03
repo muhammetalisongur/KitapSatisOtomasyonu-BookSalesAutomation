@@ -19,6 +19,8 @@ namespace BookStore.Areas.Admin.Controllers
         // GET: Admin/Publisher
         PublisherManager manager = new PublisherManager(new EfPublisherDal());
         MessageViewModel messageViewModel = new MessageViewModel();
+        CountryManager countryManager = new CountryManager(new EfCountryDal());
+        CityManager cityManager = new CityManager(new EfCityDal());
 
 
         [Route("Yayinevi")]
@@ -26,16 +28,49 @@ namespace BookStore.Areas.Admin.Controllers
         public ActionResult Index(int? SayfaNo)
         {
             int _sayfaNo = SayfaNo ?? 1;
-            var result = manager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Publisher>(_sayfaNo, 5);
-            return View(result);
+            var query = (from p in manager.GetAll()
+                         join c in countryManager.GetAll() on p.ID equals c.ID
+                         join ci in cityManager.GetAll() on p.ID equals ci.ID
+                         select new Publisher
+                         {
+                             PublisherName = p.PublisherName,
+                             PublisherDescription = p.PublisherDescription,
+                             PublisherEmail = p.PublisherEmail,
+                             PublisherImage = p.PublisherImage,
+                             PublisherAddress = p.PublisherAddress,
+                             PublisherCountry = p.PublisherCountry,
+                             PublisherCity = p.PublisherCity,
+                             PublisherCountryCity = c.CountryName + " / " + ci.CityName,
+
+                         }).OrderByDescending(x => x.ID).ToPagedList(_sayfaNo, 5);
+
+            //var result = manager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Publisher>(_sayfaNo, 5);
+
+            return View(query);
         }
 
+        public List<Country> GetCountries()
+        {
+            // Country-City
+            CountryManager countryManager = new CountryManager(new EfCountryDal());
+            List<Country> result = countryManager.GetAll();
+            return result;
+        }
 
+        public ActionResult GetCity(int id)
+        {
+            CityManager cityManager = new CityManager(new EfCityDal());
+            var result = cityManager.GetAll().Where(x => x.CountryID == id).OrderBy(x => x.CityName).ToList();
+            if (result.Count == 0) { ViewBag.CityList = null; }
+            else { ViewBag.CityList = new SelectList(result, "ID", "CityName"); }
+            return PartialView("DisplayCity");
+        }
 
         [Route("Yayinevi/YeniYayinevi")]
         [HttpGet]
         public ActionResult New()
         {
+            ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
             return View("PublisherForm", new Publisher());
         }
 

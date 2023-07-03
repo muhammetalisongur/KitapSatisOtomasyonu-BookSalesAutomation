@@ -16,7 +16,6 @@ namespace Entities.Concrete
         [ForeignKey("Country")]
         public int? CountryID { get; set; }
 
-        [NotMapped]
         [Display(Name = "Ülke / Şehir")]
         public string CountryCityName => $"{Country.CountryName} / {CityName}";
 

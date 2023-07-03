@@ -34,9 +34,25 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Yazar/Index")]
         public ActionResult Index(int? SayfaNo)
         {
-            int _sayfaNo = SayfaNo ?? 0;
-            var result1 = manager.GetAllAuthorsWithAddress(_sayfaNo).Result;
-            return View(result1);
+            int _sayfaNo = SayfaNo ?? 1;
+            var query = (from a in manager.GetAll()
+                         join c in countryManager.GetAll() on a.AuthorCountryID equals c.ID
+                         join ci in cityManager.GetAll() on a.AuthorCityID equals ci.ID
+                         select new Author
+                         {
+                             ID = a.ID,
+                             AuthorName = a.AuthorName,
+                             AuthorSurname = a.AuthorSurname,
+                             AuthorBiography = a.AuthorBiography,
+                             AuthorImage = a.AuthorImage,
+                             AuthorCountryID = a.AuthorCountryID,
+                             AuthorCityID = a.AuthorCityID,
+                             AuthorCountryCity = (c.CountryName + " / " + ci.CityName).ToString(),
+
+                         }).ToPagedList(_sayfaNo, 5);
+
+            //var result = manager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Author>(_sayfaNo, 5);
+            return View(query);
         }
 
 
@@ -52,8 +68,14 @@ namespace BookStore.Areas.Admin.Controllers
         {
             CityManager cityManager = new CityManager(new EfCityDal());
             var result = cityManager.GetAll().Where(x => x.CountryID == id).OrderBy(x => x.CityName).ToList();
-            if (result.Count == 0) { ViewBag.CityList = null; }
-            else { ViewBag.CityList = new SelectList(result, "ID", "CityName"); }
+            if (result.Count == 0)
+            {
+                ViewBag.CityList = null;
+            }
+            else
+            {
+                ViewBag.CityList = new SelectList(result, "ID", "CityName");
+            }
             return PartialView("DisplayCity");
         }
 
@@ -180,7 +202,7 @@ namespace BookStore.Areas.Admin.Controllers
             if (model == null)
                 return HttpNotFound();
             ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
-
+            GetCity(model.AuthorCountryID);
             return View("AuthorForm", model);
         }
 

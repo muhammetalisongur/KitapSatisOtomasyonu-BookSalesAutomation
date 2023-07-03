@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,8 +45,9 @@ namespace Entities.Concrete
         [Display(Name = "Yayınevi Şehri")]
         public string PublisherCity { get; set; }
 
+        [NotMapped]
         [Display(Name = "Yayınevi Ülke / Şehir")]
-        public string PublisherCountryCity => $"{PublisherCountry} / {PublisherCity}";
+        public string PublisherCountryCity { get; set; }/* => $"{PublisherCountry} / {PublisherCity}";*/
 
 
         // Navigation Property
