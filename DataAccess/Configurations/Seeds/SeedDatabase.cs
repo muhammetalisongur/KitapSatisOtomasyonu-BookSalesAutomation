@@ -393,6 +393,589 @@ namespace DataAccess.Configurations.Seeds
 
 
 
+            IList<Author> authors = new List<Author>();
+
+            #region Authors
+            // Authors
+
+            authors.Add(new Author()
+            {
+                ID = 1,
+                AuthorName = "Jules",
+                AuthorSurname = "Verne",
+                AuthorBiography = "Jules Gabriel Verne (Fransızca telaffuz: [ʒyl vɛʁn]; 8 Şubat 1828 - 24 Mart 1905), Fransız yazar ve gezgin. Verne, Hugo Gernsback ve H. G. Wells ile genellikle bilim kurgunun öncüleri olarak adlandırılır. Eserlerinde ayrıntılarıyla tarif ettiği buluşlar ve makinelerin o sıralarda gelişmekte olan Avrupa sanayisi ve teknolojisine ilham kaynağı olduğu düşünülür. Özellikle uzay, hava taşıtları ve denizaltılar hakkında yazmıştır.Daha çok Denizler Altında Yirmi Bin Fersah (1870), Dünyanın Merkezine Yolculuk (1864) ve Seksen Günde Devr-i Âlem (1873) romanlarıyla tanınır. UNESCO’nun çeviri kitap veritabanına (Index Translationum) göre eserleri en çok çevrilen ikinci yazardır.[1] Eserleri 148 farklı dile çevrildi. Birçok icadı önceden tahmin ettiği için Bilim falcısı olarak anıldı.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/F%C3%A9lix_Nadar_1820-1910_portraits_Jules_Verne.jpg/1200px-F%C3%A9lix_Nadar_1820-1910_portraits_Jules_Verne.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 2,
+                AuthorName = "William",
+                AuthorSurname = "Shakespeare",
+                AuthorBiography = "William Shakespeare (d. 26 Nisan 1564, Stratford-upon-Avon - ö. 23 Nisan 1616, Stratford-upon-Avon), İngiliz oyun yazarı, şair ve aktördür. İngiliz edebiyatının en önemli figürlerinden biri olarak kabul edilir. Eserleri dünya çapında tanınır ve tiyatro tarihinin en büyük eserleri arasında yer alır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/220px-Shakespeare.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 3,
+                AuthorName = "Jane",
+                AuthorSurname = "Austen",
+                AuthorBiography = "Jane Austen (d. 16 Aralık 1775, Steventon - ö. 18 Temmuz 1817, Winchester), İngiliz roman yazarıdır. Eserleri, İngiliz edebiyatının klasikleri arasında yer alır. Austen, özellikle aşk, evlilik, toplumsal statü ve kadının rolü gibi konuları işlemesiyle tanınır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/CassandraAusten-JaneAusten%28c.1810%29_hires.jpg/220px-CassandraAusten-JaneAusten%28c.1810%29_hires.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 4,
+                AuthorName = "Fyodor",
+                AuthorSurname = "Dostoevsky",
+                AuthorBiography = "Fyodor Mihayloviç Dostoyevski (Rusça: Фёдор Миха́йлович Достое́вский; 11 Kasım 1821 - 9 Şubat 1881), Rus yazar. Eserleri, edebi derinlikleri, psikolojik karmaşıklıkları ve etik sorunları ele almasıyla tanınır. Dostoyevski, Rus edebiyatının en büyük yazarlarından biridir.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Dostoevsky_1872.jpg/220px-Dostoevsky_1872.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 5,
+                AuthorName = "Gabriel",
+                AuthorSurname = "García Márquez",
+                AuthorBiography = "Gabriel José de la Concordia García Márquez (6 Mart 1927 - 17 Nisan 2014), Kolombiyalı yazar ve gazetecidir. Eserleri, büyülü gerçekçilik tarzıyla tanınır ve Latin Amerika edebiyatının en önemli figürlerinden biri olarak kabul edilir. En ünlü eseri 'Yüzyıllık Yalnızlık'tır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Gabriel_Garcia_Marquez.jpg/220px-Gabriel_Garcia_Marquez.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 6,
+                AuthorName = "Leo",
+                AuthorSurname = "Tolstoy",
+                AuthorBiography = "Lev Nikolayeviç Tolstoy (Rusça: Лев Никола́евич Толсто́й; 9 Eylül 1828 - 20 Kasım 1910), Rus yazar ve düşünür. Tolstoy, Rus edebiyatının en büyük yazarlarından biri olarak kabul edilir. Eserleri, insanın ruhsal ve ahlaki gelişimi, sınıfsal adaletsizlikler, savaşın doğası ve insanın toplumla ilişkisi gibi konuları işler.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Leo_Tolstoy_1897%2C_black_and_white%2C_37767u.jpg/220px-Leo_Tolstoy_1897%2C_black_and_white%2C_37767u.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 7,
+                AuthorName = "Virginia",
+                AuthorSurname = "Woolf",
+                AuthorBiography = "Adeline Virginia Woolf (25 Ocak 1882 - 28 Mart 1941), İngiliz yazar ve modernist edebiyatın önde gelen figürlerinden biridir. Woolf, feminist eleştirisi, bilinç akışı tekniği ve deneysel anlatısıyla tanınır. Eserleri, cinsiyet, kimlik, sanat ve edebiyat üzerine derinlikli düşünceleri içerir.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Virginia_Woolf%2C_by_George_Charles_Beresford.jpg/220px-Virginia_Woolf%2C_by_George_Charles_Beresford.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 8,
+                AuthorName = "Miguel de",
+                AuthorSurname = "Cervantes",
+                AuthorBiography = "Miguel de Cervantes Saavedra (d. 29 Eylül 1547, Alcalá de Henares - ö. 22 Nisan 1616, Madrid), İspanyol yazar ve şairdir. Dünya edebiyatının en önemli figürlerinden biri olarak kabul edilir. En tanınmış eseri, Don Kişot adlı romanıdır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Miguel_de_Cervantes_Saavedra2.jpg/220px-Miguel_de_Cervantes_Saavedra2.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 9,
+                AuthorName = "George",
+                AuthorSurname = "Orwell",
+                AuthorBiography = "Eric Arthur Blair (25 Haziran 1903 - 21 Ocak 1950), George Orwell mahlasıyla bilinen İngiliz yazar ve gazetecidir. Eserleri, totaliterizm, siyaset, toplum ve dil üzerine eleştirel düşünceleri içerir. '1984' ve 'Hayvan Çiftliği' gibi eserleriyle tanınır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/George_Orwell_press_photo.jpg/220px-George_Orwell_press_photo.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 10,
+                AuthorName = "Emily",
+                AuthorSurname = "Brontë",
+                AuthorBiography = "Emily Jane Brontë (30 Temmuz 1818 - 19 Aralık 1848), İngiliz yazardır. 'Uğultulu Tepeler' adlı tek romanıyla tanınır. Eserleri, tutkulu duyguları, doğa tasvirleri ve karanlık atmosferiyle dikkat çeker.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Bront%C3%AB_emily.jpg/220px-Bront%C3%AB_emily.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 11,
+                AuthorName = "Charles",
+                AuthorSurname = "Dickens",
+                AuthorBiography = "Charles John Huffam Dickens (7 Şubat 1812 - 9 Haziran 1870), İngiliz yazar ve sosyal eleştirmendir. Eserleri, Viktorya dönemi İngiltere'sindeki toplumsal adaletsizlikleri, yoksulluğu ve çocuk işçiliğini ele alır. 'Büyük Umutlar', 'Oliver Twist' ve 'İki Şehrin Hikayesi' gibi eserleriyle tanınır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Dickens_Gurney_head.jpg/220px-Dickens_Gurney_head.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 12,
+                AuthorName = "Ernest",
+                AuthorSurname = "Hemingway",
+                AuthorBiography = "Ernest Miller Hemingway (21 Temmuz 1899 - 2 Temmuz 1961), Amerikalı yazar ve gazetecidir. Eserleri, basit ve açık bir dil kullanımıyla dikkat çeker. Hemingway, savaş, aşk, macera ve insan doğası gibi temaları işler. 'Çanlar Kimin İçin Çalıyor' ve 'Yaşlı Adam ve Deniz' gibi eserleriyle tanınır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ernest_Hemingway_1923_passport_photo.jpg/220px-Ernest_Hemingway_1923_passport_photo.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 13,
+                AuthorName = "Charlotte",
+                AuthorSurname = "Brontë",
+                AuthorBiography = "Charlotte Brontë (21 Nisan 1816 - 31 Mart 1855), İngiliz yazar ve şairdir. 'Jane Eyre' adlı romanıyla tanınır. Eserleri, kadın bağımsızlığı, sınıfsal adaletsizlikler ve aşk gibi konuları ele alır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Charlotte_Bront%C3%AB_project.jpg/220px-Charlotte_Bront%C3%AB_project.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 14,
+                AuthorName = "Mark",
+                AuthorSurname = "Twain",
+                AuthorBiography = "Samuel Langhorne Clemens (30 Kasım 1835 - 21 Nisan 1910), sahne adıyla Mark Twain, Amerikalı yazar ve mizahçıdır. Eserleri, Amerikan edebiyatının en önemli eserleri arasında yer alır. 'Tom Sawyer'ın Maceraları' ve 'Huckleberry Finn'in Maceraları' gibi eserleriyle tanınır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Mark_Twain%2C_Brady-Handy_photo_portrait%2C_Feb_7%2C_1871%2C_cropped.jpg/220px-Mark_Twain%2C_Brady-Handy_photo_portrait%2C_Feb_7%2C_1871%2C_cropped.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 84,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 15,
+                AuthorName = "Albert",
+                AuthorSurname = "Camus",
+                AuthorBiography = "Albert Camus (7 Kasım 1913 - 4 Ocak 1960), Cezayir asıllı Fransız yazar ve düşünürdür. Eserleri, varoluşçu düşünce, absürdizm ve insanın anlamsızlığı gibi felsefi konuları ele alır. 'Yabancı' ve 'Düşüş' gibi eserleriyle tanınır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Albert_Camus%2C_gagnant_du_prix_Nobel%2C_portrait_en_buste%2C_posant_dans_un_jardin_de_Montrouge%2C_le_10_novembre_1957_%28b%29.jpg/220px-Albert_Camus%2C_gagnant_du_prix_Nobel%2C_portrait_en_buste%2C_posant_dans_un_jardin_de_Montrouge%2C_le_10_novembre_1957_%28b%29.jpg",
+                AuthorCountryID = 2,
+                AuthorCityID = 83,
+            });
+
+
+
+            //Turkish Authors
+            authors.Add(new Author()
+            {
+                ID = 16,
+                AuthorName = "Orhan",
+                AuthorSurname = "Pamuk",
+                AuthorBiography = "Orhan Pamuk, (d. 7 Haziran 1952, İstanbul), Nobel ödüllü Türk yazar. Romanlarında ve eserlerinde İstanbul'u, Türkiye'nin toplumsal ve siyasal değişimini ve karmaşık kimliğini temaları arasında işlemiştir.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Orhan_Pamuk_2009.jpg/220px-Orhan_Pamuk_2009.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 17,
+                AuthorName = "Elif",
+                AuthorSurname = "Şafak",
+                AuthorBiography = "Elif Şafak, (d. 25 Ekim 1971, Strasbourg, Fransa), Türk yazar. Genellikle toplumsal ve kadın hakları temaları işlemektedir. Eserleri çok sayıda dile çevrilmiştir ve uluslararası alanda tanınmaktadır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Elif_Safak_%28cropped%29.jpg/220px-Elif_Safak_%28cropped%29.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 18,
+                AuthorName = "Ahmet Hamdi",
+                AuthorSurname = "Tanpınar",
+                AuthorBiography = "Ahmet Hamdi Tanpınar, (d. 23 Haziran 1901, İstanbul - ö. 24 Ocak 1962, İstanbul), Türk edebiyatının önemli yazarlarından ve edebiyat kuramcılarından biridir. Romanları, öyküleri, denemeleri, eleştirileri, tarihî ve kültürel konuları işleyen eserleri ile tanınır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Ahmet_Hamdi_Tanp%C4%B1nar1.jpg/220px-Ahmet_Hamdi_Tanp%C4%B1nar1.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 19,
+                AuthorName = "Yaşar",
+                AuthorSurname = "Kemal",
+                AuthorBiography = "Yaşar Kemal, (d. 6 Ekim 1923, Hemite / Osmaniye - ö. 28 Şubat 2015, İstanbul), Türk yazar. Romanları ve öyküleri ile tanınmaktadır. Eserlerinde Anadolu'nun köy yaşamını, toplumsal sorunlarını ve doğayı anlatmıştır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Yasar_Kemal.jpg/220px-Yasar_Kemal.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 20,
+                AuthorName = "Nazım",
+                AuthorSurname = "Hikmet",
+                AuthorBiography = "Nazım Hikmet Ran, (d. 20 Ocak 1902, Selanik - ö. 3 Haziran 1963, Moskova), Türk şair, oyun yazarı ve romancı. Eserleri arasında toplumcu gerçekçi tarzıyla öne çıkan şiirleri ve tiyatro oyunları bulunmaktadır. Türkiye'nin en önemli şairlerinden biridir.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Nazim_Hikmet_Ran_1961.jpg/220px-Nazim_Hikmet_Ran_1961.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 21,
+                AuthorName = "Halide",
+                AuthorSurname = "Edip",
+                AuthorBiography = "Halide Edip Adıvar, (d. 1884, İstanbul - ö. 1964, İstanbul), Türk yazar, siyasetçi ve eğitimcidir. Eserlerinde toplumsal ve kadın sorunlarını işlemiştir. Romanları ve tarihî eserleriyle tanınır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Halide_Edip_Ad%C4%B1var_%281912%29.jpg/220px-Halide_Edip_Ad%C4%B1var_%281912%29.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 22,
+                AuthorName = "Cemal",
+                AuthorSurname = "Süreya",
+                AuthorBiography = "Cemal Süreya, (d. 1931, Erzincan - ö. 1990, İstanbul), Türk şair, yazar ve çevirmen. Modern Türk şiirinin önemli isimlerindendir. İronik, duygusal ve aşk temalı şiirleri ile tanınır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Cemal_S%C3%BCreya_%281987%29.jpg/220px-Cemal_S%C3%BCreya_%281987%29.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 23,
+                AuthorName = "Adalet",
+                AuthorSurname = "Ağaoğlu",
+                AuthorBiography = "Adalet Ağaoğlu, (d. 23 Ekim 1929, Nallıhan, Ankara - ö. 14 Temmuz 2020, İstanbul), Türk yazar ve oyun yazarı. Edebiyat alanında çeşitli türlerde eserler vermiştir. Romanları, öyküleri ve tiyatro oyunları ile tanınır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Adalet_A%C4%9Fao%C4%9Flu%2C_November_2015%2C_%C4%B0stanbul_%28by_mehmetdemirta%C5%9F%29_%282%29.jpg/220px-Adalet_A%C4%9Fao%C4%9Flu%2C_November_2015%2C_%C4%B0stanbul_%28by_mehmetdemirta%C5%9F%29_%282%29.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 24,
+                AuthorName = "Atilla",
+                AuthorSurname = "İlhan",
+                AuthorBiography = "Atilla İlhan, (d. 15 Haziran 1925, Menemen - ö. 10 Ekim 2005, İstanbul), Türk şair, yazar ve gazetecidir. Edebiyat alanında şiirler, romanlar, oyunlar ve denemeler yazmıştır. Türk edebiyatında önemli bir isimdir.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Atilla%C4%B0lhan.gif/220px-Atilla%C4%B0lhan.gif",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 25,
+                AuthorName = "Ahmet",
+                AuthorSurname = "Ümit",
+                AuthorBiography = "Ahmet Ümit, (d. 1 Temmuz 1960, Gaziantep), Türk yazar, senarist ve gazetecidir. Romanları ve öyküleri ile tanınır. Eserlerinde genellikle polisiye ve tarihi temaları işlemiştir.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ahmet_%C3%9Cmit_2015.jpg/220px-Ahmet_%C3%9Cmit_2015.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 26,
+                AuthorName = "Nâzım",
+                AuthorSurname = "Hikmet",
+                AuthorBiography = "Nâzım Hikmet Ran, (d. 20 Ocak 1902, Selanik - ö. 3 Haziran 1963, Moskova), Türk şair, oyun yazarı ve romancı. Eserleri arasında toplumcu gerçekçi tarzıyla öne çıkan şiirleri ve tiyatro oyunları bulunmaktadır. Türkiye'nin en önemli şairlerinden biridir.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Nazim_Hikmet_Ran_1961.jpg/220px-Nazim_Hikmet_Ran_1961.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 27,
+                AuthorName = "Ahmet",
+                AuthorSurname = "Haşim",
+                AuthorBiography = "Ahmet Haşim, (d. 20 Mart 1884, İstanbul - ö. 4 Haziran 1933, Göztepe, İstanbul), Türk şair ve yazar. İkinci Yeni akımının öncülerinden biridir. Şiirlerinde melankolik ve duygusal bir dil kullanmıştır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ahmet_Ha%C5%9Fim_portrait.png/220px-Ahmet_Ha%C5%9Fim_portrait.png",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 28,
+                AuthorName = "Peyami",
+                AuthorSurname = "Safa",
+                AuthorBiography = "Peyami Safa, (d. 2 Nisan 1899, İstanbul - ö. 15 Haziran 1961, İstanbul), Türk yazar, gazeteci ve düşünür. Romanlarında toplumsal sorunları, psikolojik analizleri ve felsefi düşünceleri işlemiştir. Modern Türk romanının önemli isimlerinden biridir.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Peyami_Safa.jpg/220px-Peyami_Safa.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 29,
+                AuthorName = "Sait",
+                AuthorSurname = "Faik",
+                AuthorBiography = "Sait Faik Abasıyanık, (d. 23 Kasım 1906, Adapazarı - ö. 11 Mayıs 1954, İstanbul), Türk yazar. Hikâyeleriyle tanınan Sait Faik, Türk edebiyatında özgün bir tarz oluşturmuş ve öykü türüne yeni bir soluk getirmiştir.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Sait_Faik_Abas%C4%B1yan%C4%B1k.jpg/220px-Sait_Faik_Abas%C4%B1yan%C4%B1k.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            authors.Add(new Author()
+            {
+                ID = 30,
+                AuthorName = "Oğuz",
+                AuthorSurname = "Atay",
+                AuthorBiography = "Oğuz Atay, (d. 12 Ekim 1934, İnebolu - ö. 13 Aralık 1977, İstanbul), Türk yazar. Edebiyat alanında modernist bir yaklaşım sergilemiş ve postmodern Türk edebiyatının öncülerinden biri olarak kabul edilir. Romanlarıyla tanınır.",
+                AuthorImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/O%C4%9Fuz_Atay.jpg/220px-O%C4%9Fuz_Atay.jpg",
+                AuthorCountryID = 1,
+                AuthorCityID = 1,
+            });
+
+            #endregion
+
+
+            context.Authors.AddRange(authors);
+
+
+            IList<Publisher> publishers = new List<Publisher>();
+
+            #region Publishers
+
+            publishers.Add(new Publisher()
+            {
+                ID = 1,
+                PublisherName = "Can Yayınları",
+                PublisherDescription = "Can Yayınları, Erdal Öz tarafından 1981'de kurulan yayınevi. Kuruluşundan bu yana çocuk ve kültür&edebiyat kitapları yayımlamaktadır. Türk Edebiyatı, Çağdaş Dünya Edebiyatı, Klasikler, Modern Klasikler dizileri dışında çocuk kitapları, şiir, öykü, roman, biyografi ve denemeler yayınevinin yayıncılık alanıdır. Günümüzde Can Öz tarafından yönetilen yayınevinin merkezi Galatasaray'dadır.",
+                PublisherAddress = "Iz Plaza Giz Maslak, Eski Büyükdere Cad. No:9 Kat:8",
+                PublisherEmail = "yayinevi@canyayinlari.com",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/tr/1/1a/Can-yayinlari-logo.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 2,
+                PublisherName = "İletişim Yayınları",
+                PublisherDescription = "İletişim Yayınları, 1982 yılında Ümit İnatçı tarafından kurulan bir yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Siyaset, felsefe, sosyal bilimler, sanat ve edebiyat gibi çeşitli konularda kitaplar yayımlamaktadır.",
+                PublisherAddress = "Tomtom Mahallesi İstiklal Caddesi No: 149",
+                PublisherEmail = "iletisim@iletisim.com.tr",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Logo_of_%C4%B0leti%C5%9Fim_Yay%C4%B1nlar%C4%B1.svg/220px-Logo_of_%C4%B0leti%C5%9Fim_Yay%C4%B1nlar%C4%B1.svg.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 3,
+                PublisherName = "Doğan Kitap",
+                PublisherDescription = "Doğan Kitap, Doğan Holding bünyesinde faaliyet gösteren bir yayınevidir. Türk ve yabancı yazarların eserlerini yayımlamaktadır. Roman, tarih, biyografi, kişisel gelişim, çocuk kitapları gibi farklı kategorilerde kitaplar sunmaktadır.",
+                PublisherAddress = "Nispetiye Caddesi Akmerkez E3 Blok No:1/40 Beşiktaş",
+                PublisherEmail = "kitap@doganburda.com",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/tr/thumb/2/2d/Do%C4%9Fan_kitap_logo.png/220px-Do%C4%9Fan_kitap_logo.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 4,
+                PublisherName = "Everest Yayınları",
+                PublisherDescription = "Everest Yayınları, 1990 yılında Türker İnanoğlu tarafından kurulan bir yayınevidir. Edebiyat, çocuk edebiyatı, tarih, siyaset, felsefe, psikoloji gibi çeşitli alanlarda kitaplar yayımlamaktadır. Yerli ve yabancı yazarların eserlerini okurlarla buluşturmaktadır.",
+                PublisherAddress = "Feyzullah Mahallesi Meşrutiyet Caddesi No:19 Şişli",
+                PublisherEmail = "iletisim@everestyayinlari.com",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/tr/2/20/Everest_Yay%C4%B1nlar%C4%B1_logo.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 5,
+                PublisherName = "Yapı Kredi Yayınları",
+                PublisherDescription = "Yapı Kredi Yayınları, 1944 yılında İstanbul'da kurulan bir yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Aynı zamanda sanat, mimari, edebiyat eleştirisi, tarih, felsefe ve sosyal bilimler gibi konularda kitaplar da yayımlamaktadır.",
+                PublisherAddress = "Yapı Kredi Kültür Sanat Yayıncılık A.Ş., Yapı Kredi Plaza C Blok, 34330 Levent",
+                PublisherEmail = "iletisim@ykykultur.com.tr",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Yap%C4%B1_Kredi_Yay%C4%B1nlar%C4%B1_logo.svg/220px-Yap%C4%B1_Kredi_Yay%C4%B1nlar%C4%B1_logo.svg.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 6,
+                PublisherName = "İş Bankası Kültür Yayınları",
+                PublisherDescription = "İş Bankası Kültür Yayınları, Türkiye İş Bankası'nın kültür alanında faaliyet gösteren yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Ayrıca tarih, felsefe, sanat, müzik, sinema, psikoloji gibi konularda da kitaplar sunmaktadır.",
+                PublisherAddress = "İş Kuleleri Kule 3 Levent",
+                PublisherEmail = "kulturyayinlari@isbank.com.tr",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/I%C5%9F_Bankas%C4%B1_K%C3%BClt%C3%BCr_Yay%C4%B1nlar%C4%B1_logo.svg/220px-I%C5%9F_Bankas%C4%B1_K%C3%BClt%C3%BCr_Yay%C4%B1nlar%C4%B1_logo.svg.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 7,
+                PublisherName = "Sel Yayıncılık",
+                PublisherDescription = "Sel Yayıncılık, 1991 yılında Niyazi Sel tarafından kurulan bir yayınevidir. Edebiyat, felsefe, sosyal bilimler, sanat, kültür ve tarih gibi konularda kitaplar yayımlamaktadır. Özellikle Türk edebiyatına katkı sağlayan eserleriyle tanınmaktadır.",
+                PublisherAddress = "Caferağa Mahallesi, Albay İmran Caddesi No:11 Kadıköy",
+                PublisherEmail = "iletisim@selyayincilik.com",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sel_Yay%C4%B1nc%C4%B1l%C4%B1k_logo.png/220px-Sel_Yay%C4%B1nc%C4%B1l%C4%B1k_logo.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 8,
+                PublisherName = "Kırmızı Kedi Yayınevi",
+                PublisherDescription = "Kırmızı Kedi Yayınevi, 2009 yılında Ayşe Buğra ve Kaan Arslan tarafından kurulan bir yayınevidir. Sosyal bilimler, politika, felsefe, edebiyat ve çocuk kitapları gibi çeşitli alanlarda kitaplar yayımlamaktadır. Yayınevi aynı zamanda Türkçe'ye çeviri eserler de sunmaktadır.",
+                PublisherAddress = "Serdar-ı Ekrem Caddesi, Çavuşbey Sokak No:26/A Beyoğlu",
+                PublisherEmail = "iletisim@kirmizikedi.com",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/K%C4%B1rm%C4%B1z%C4%B1_Kedi_Yay%C4%B1nevi_logo.png/220px-K%C4%B1rm%C4%B1z%C4%B1_Kedi_Yay%C4%B1nevi_logo.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 9,
+                PublisherName = "Can Yayınları",
+                PublisherDescription = "Can Yayınları, Erdal Öz tarafından 1981'de kurulan yayınevi. Kuruluşundan bu yana çocuk ve kültür&edebiyat kitapları yayımlamaktadır. Türk Edebiyatı, Çağdaş Dünya Edebiyatı, Klasikler, Modern Klasikler dizileri dışında çocuk kitapları, şiir, öykü, roman, biyografi ve denemeler yayınevinin yayıncılık alanıdır. Günümüzde Can Öz tarafından yönetilen yayınevinin merkezi Galatasaray'dadır.",
+                PublisherAddress = "Iz Plaza Giz Maslak, Eski Büyükdere Cad. No:9 Kat:8",
+                PublisherEmail = "yayinevi@canyayinlari.com",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/tr/1/1a/Can-yayinlari-logo.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 10,
+                PublisherName = "İletişim Yayınları",
+                PublisherDescription = "İletişim Yayınları, 1982 yılında Ümit İnatçı tarafından kurulan bir yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Siyaset, felsefe, sosyal bilimler, sanat ve edebiyat gibi çeşitli konularda kitaplar yayımlamaktadır.",
+                PublisherAddress = "Tomtom Mahallesi İstiklal Caddesi No: 149",
+                PublisherEmail = "iletisim@iletisim.com.tr",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Logo_of_%C4%B0leti%C5%9Fim_Yay%C4%B1nlar%C4%B1.svg/220px-Logo_of_%C4%B0leti%C5%9Fim_Yay%C4%B1nlar%C4%B1.svg.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 11,
+                PublisherName = "Doğan Kitap",
+                PublisherDescription = "Doğan Kitap, Doğan Holding bünyesinde faaliyet gösteren bir yayınevidir. Türk ve yabancı yazarların eserlerini yayımlamaktadır. Roman, tarih, biyografi, kişisel gelişim, çocuk kitapları gibi farklı kategorilerde kitaplar sunmaktadır.",
+                PublisherAddress = "Nispetiye Caddesi Akmerkez E3 Blok No:1/40 Beşiktaş",
+                PublisherEmail = "kitap@doganburda.com",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/tr/thumb/2/2d/Do%C4%9Fan_kitap_logo.png/220px-Do%C4%9Fan_kitap_logo.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 12,
+                PublisherName = "Everest Yayınları",
+                PublisherDescription = "Everest Yayınları, 1990 yılında Türker İnanoğlu tarafından kurulan bir yayınevidir. Edebiyat, çocuk edebiyatı, tarih, siyaset, felsefe, psikoloji gibi çeşitli alanlarda kitaplar yayımlamaktadır. Yerli ve yabancı yazarların eserlerini okurlarla buluşturmaktadır.",
+                PublisherAddress = "Feyzullah Mahallesi Meşrutiyet Caddesi No:19 Şişli",
+                PublisherEmail = "iletisim@everestyayinlari.com",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/tr/2/20/Everest_Yay%C4%B1nlar%C4%B1_logo.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 13,
+                PublisherName = "Yapı Kredi Yayınları",
+                PublisherDescription = "Yapı Kredi Yayınları, 1944 yılında İstanbul'da kurulan bir yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Aynı zamanda sanat, mimari, edebiyat eleştirisi, tarih, felsefe ve sosyal bilimler gibi konularda kitaplar da yayımlamaktadır.",
+                PublisherAddress = "Yapı Kredi Kültür Sanat Yayıncılık A.Ş., Yapı Kredi Plaza C Blok, 34330 Levent",
+                PublisherEmail = "iletisim@ykykultur.com.tr",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Yap%C4%B1_Kredi_Yay%C4%B1nlar%C4%B1_logo.svg/220px-Yap%C4%B1_Kredi_Yay%C4%B1nlar%C4%B1_logo.svg.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 14,
+                PublisherName = "İş Bankası Kültür Yayınları",
+                PublisherDescription = "İş Bankası Kültür Yayınları, Türkiye İş Bankası'nın kültür alanında faaliyet gösteren yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Ayrıca tarih, felsefe, sanat, müzik, sinema, psikoloji gibi konularda da kitaplar sunmaktadır.",
+                PublisherAddress = "İş Kuleleri Kule 3 Levent",
+                PublisherEmail = "kulturyayinlari@isbank.com.tr",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/I%C5%9F_Bankas%C4%B1_K%C3%BClt%C3%BCr_Yay%C4%B1nlar%C4%B1_logo.svg/220px-I%C5%9F_Bankas%C4%B1_K%C3%BClt%C3%BCr_Yay%C4%B1nlar%C4%B1_logo.svg.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+            publishers.Add(new Publisher()
+            {
+                ID = 15,
+                PublisherName = "Sel Yayıncılık",
+                PublisherDescription = "Sel Yayıncılık, 1991 yılında Niyazi Sel tarafından kurulan bir yayınevidir. Edebiyat, felsefe, sosyal bilimler, sanat, kültür ve tarih gibi konularda kitaplar yayımlamaktadır. Özellikle Türk edebiyatına katkı sağlayan eserleriyle tanınmaktadır.",
+                PublisherAddress = "Caferağa Mahallesi, Albay İmran Caddesi No:11 Kadıköy",
+                PublisherEmail = "iletisim@selyayincilik.com",
+                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sel_Yay%C4%B1nc%C4%B1l%C4%B1k_logo.png/220px-Sel_Yay%C4%B1nc%C4%B1l%C4%B1k_logo.png",
+                PublisherCountryID = 1,
+                PublisherCityID = 1,
+            });
+
+
+            #endregion
+
+            context.Publishers.AddRange(publishers);
+
+            IList<BookTranslator> bookTranslators = new List<BookTranslator>();
+
+            #region BookTranslators
+            bookTranslators.Add(new BookTranslator()
+            {
+                ID = 1,
+                TranslatorName = "Banu",
+                TranslatorSurname = "Karakaş",
+                TranslatorBiography = "1987’de İstanbul’da doğdu. 2005-2013 yılları arasında Boğaziçi Üniversitesi’nde felsefe, yabancı diller ve sinema çalışmaları alanlarında eğitim aldı. 2006 yılından bu yana dil çalışmalarıyla ilgileniyor, ağırlıklı olarak İspanyolca, İngilizce ve Türkçe dilleri arasında çeviri yapıyor. Karakaş, 2015 yılından beri Latin Amerika’da yaşıyor ve bölge edebiyatı konusunda danışmanlık yapıyor. Çevirdiği eserlerden bazıları: Düşlerimin Sınırı Olmayacak (Ernesto Che Guevara, Alfa Kitap), Yazma Uğraşı (Peter Clark, Metropolis Kitap), Solcu Futbolcular (Quique Peinado, Yazılama Yayınevi), Denemeler (David Hume, Pinhan Yayıncılık).",
+                TranslatorImage = "https://www.banukarakas.com/wp-content/uploads/elementor/thumbs/banukarakas-po15ow3uwpquwkf2sh8ui3bgqhik7m7aoer0iltil4.png",
+                TranslatorCountryID = 1,
+                TranslatorCityID = 1,
+            });
+            bookTranslators.Add(new BookTranslator()
+            {
+                ID = 2,
+                TranslatorName = "Ali",
+                TranslatorSurname = "Demir",
+                TranslatorBiography = "Ali Demir, İzmir doğumlu bir çevirmen ve yazardır. Almanca ve Türkçe dilleri arasında çeviri yapmaktadır. Edebiyat alanında birçok önemli eseri Türkçeye kazandırmıştır. Çevirdiği eserler arasında Sonsuzluğun Sonu (Michael Ende, Can Yayınları), Dönüşüm (Franz Kafka, İletişim Yayınları), Kırmızı Pazartesi (Gabriel Garcia Marquez, Doğan Kitap) bulunmaktadır.",
+                TranslatorImage = "https://example.com/translator2.png",
+                TranslatorCountryID = 1,
+                TranslatorCityID = 1,
+            });
+
+            bookTranslators.Add(new BookTranslator()
+            {
+                ID = 3,
+                TranslatorName = "Ayşe",
+                TranslatorSurname = "Kaya",
+                TranslatorBiography = "Ayşe Kaya, İstanbul doğumlu bir çevirmen ve yazardır. İngilizce ve Almanca dilleri arasında çeviri yapmaktadır. Edebiyat alanında çeşitli ödüller kazanmıştır. Çevirdiği eserler arasında Gece Yolculuğu (Javier Marías, XYZ Yayınevi), Kayıp Zamanın İzinde (Marcel Proust, YKY), Yabancı (Albert Camus, Can Yayınları) bulunmaktadır.",
+                TranslatorImage = "https://picsum.photos/400",
+                TranslatorCountryID = 1,
+                TranslatorCityID = 1,
+            });
+
+            bookTranslators.Add(new BookTranslator()
+            {
+                ID = 4,
+                TranslatorName = "Mehmet",
+                TranslatorSurname = "Yılmaz",
+                TranslatorBiography = "Mehmet Yılmaz, Ankara doğumlu bir çevirmen ve dil bilimcidir. Fransızca, İngilizce ve Türkçe dilleri arasında çeviriler yapmaktadır. 2010 yılında Boğaziçi Üniversitesi'nden mezun oldu ve çeviri alanında çeşitli projelere katıldı. Çevirdiği eserler arasında Le Comte de Monte Cristo (Alexandre Dumas, İthaki Yayınları) ve The Catcher in the Rye (J.D. Salinger, Can Yayınları) bulunmaktadır.",
+                TranslatorImage = "https://picsum.photos/400",
+                TranslatorCountryID = 1,
+                TranslatorCityID = 1,
+            });
+
+            #endregion
+
+            context.BookTranslators.AddRange(bookTranslators);
+
             base.Seed(context);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,36 +11,36 @@ namespace Business.Concrete
 {
     public class BookTranslatorManager : IBookTranslatorService
     {
-        private readonly IBookTranslatorService _bookTranslatorService;
+       private readonly IBookTranslatorDal _bookTranslatorDal;
 
-        public BookTranslatorManager(IBookTranslatorService bookTranslatorService)
+        public BookTranslatorManager(IBookTranslatorDal bookTranslatorDal)
         {
-            _bookTranslatorService = bookTranslatorService;
+            _bookTranslatorDal = bookTranslatorDal;
         }
 
         public void Add(BookTranslator translator)
         {
-            _bookTranslatorService.Add(translator);
+            _bookTranslatorDal.Add(translator);
         }
 
         public void Delete(BookTranslator translator)
         {
-            _bookTranslatorService.Delete(translator);
+            _bookTranslatorDal.Delete(translator);
         }
 
         public List<BookTranslator> GetAll()
         {
-            return _bookTranslatorService.GetAll();
+            return _bookTranslatorDal.GetAll();
         }
 
         public BookTranslator GetById(int id)
         {
-            return _bookTranslatorService.GetById(id);
+            return _bookTranslatorDal.GetById(x=>x.ID == id);
         }
 
         public void Update(BookTranslator translator)
         {
-           _bookTranslatorService.Update(translator);
+            _bookTranslatorDal.Update(translator);
         }
     }
 }

@@ -1,0 +1,143 @@
+﻿@using Entities.Concrete
+@model BookTranslator
+@{
+    ViewBag.Title = "BookTranslatorForm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var result = (BookStore.Areas.Admin.ViewModel.MessageViewModel)TempData["message"];
+
+}
+<!-- breadcrumbs -->
+<div class="w3l_agileits_breadcrumbs">
+    <div class="w3l_agileits_breadcrumbs_inner">
+        <ul>
+            <li><a href="~/Admin/Kategori">Anasayfa</a><span>«</span></li>
+
+            <li>Kitap Çevirmen</li>
+        </ul>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+
+
+
+<div id="mesaj"></div>
+<div class="inner_content_w3_agile_info two_in">
+    <h2 class="w3_inner_tittle">Ekle &amp; Duzenle</h2>
+    <!-- tables -->
+
+    <div class="agile-tables">
+        <b style="font-size:18px">
+            @if (TempData["message"] != null)
+            {
+                if (result.Status == false)
+                {
+
+                    <div class="alert alert-danger">
+                        @result.Message <b style="font-size:20px"><a href="@result.Url">@result.LinkText</a></b>
+                    </div>
+                }
+
+            }
+        </b>
+        <div class="w3l-table-info agile_info_shadow">
+            @using (Html.BeginForm("Save", "BookTranslator", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+
+                    @Html.LabelFor(model => model.TranslatorImage)
+                    <div style="display:flex" class="col-2">
+                        @Html.EditorFor(x => x.TranslatorImage, new { htmlAttributes = new { @class = "form-control", type = "file", style = "height:auto", accept = "image/*", title = "Resim Yukle", onchange = "prewIMG(event)" } })
+                        <img src="@Model.TranslatorImage" height="52" width="52" style="position: absolute; left: calc(100% - 9.8em); " id="imgPrew" alt="Resim Yukle" />
+                    </div>
+                    <br />
+
+                    @Html.LabelFor(m => m.TranslatorName)
+                    @Html.TextBoxFor(m => m.TranslatorName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.TranslatorName)
+                    <br />
+
+                    @Html.LabelFor(m => m.TranslatorSurname)
+                    @Html.TextBoxFor(m => m.TranslatorSurname, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.TranslatorSurname)
+                    <br />
+
+                    @Html.LabelFor(m => m.TranslatorBiography)
+                    @Html.TextAreaFor(m => m.TranslatorBiography, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.TranslatorBiography)
+                    <br />
+                    @if (ViewBag.Country != null)
+                    {
+                        @Html.LabelFor(m => m.TranslatorCountryID)
+                        @Html.DropDownListFor(m => m.TranslatorCountryID, ViewBag.Country as SelectList, "-- Ülke Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.ValidationMessageFor(x => x.TranslatorCountryID)
+                    }
+                    else
+                    {
+                        @Html.LabelFor(m => m.TranslatorCountryID)
+                        @Html.DropDownListFor(m => m.TranslatorCountryID, new SelectList(""), "-- Ülke Bulunumadı --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.ValidationMessageFor(x => x.TranslatorCountryID)
+                    }
+                    <br />
+
+                    @if (ViewBag.CityList != null)
+                    {
+                        @Html.LabelFor(m => m.TranslatorCityID)
+                        @Html.DropDownListFor(m => m.TranslatorCityID, ViewBag.CityList as SelectList, "-- Şehir Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.ValidationMessageFor(x => x.TranslatorCityID)
+                    }
+                    else
+                    {
+                        @Html.LabelFor(m => m.TranslatorCityID)
+                        @Html.DropDownListFor(m => m.TranslatorCityID, new SelectList(""), "-- Şehir Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.ValidationMessageFor(x => x.TranslatorCityID)
+                    }
+
+                </div>
+
+                @Html.HiddenFor(x => x.ID)
+                <button type="submit" class="btn btn-success">Kaydet</button>
+
+            }
+
+        </div>
+
+    </div>
+</div>
+
+@*bu iki kod gidip layouta yazilacak*@
+@section scripts{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script>
+
+    // Resim Önizleme
+    var prewIMG = function (event) {
+        var result = document.getElementById("imgPrew");
+        result.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+
+    // Ülke Seçildiğinde Şehirleri Getir
+
+    $(document).ready(function () {
+        $("#TranslatorCountryID").change(function () {
+            var countryId = $(this).val();
+            $.ajax({
+                url: "/Admin/BookTranslator/GetCity?id=" + countryId,
+                type: "POST",
+                contentType: "html",
+                success: function (response) {
+                    debugger
+                    $("#TranslatorCityID").empty();
+                    $("#TranslatorCityID").append(response);
+
+                }
+            });
+        });
+    });
+
+</script>

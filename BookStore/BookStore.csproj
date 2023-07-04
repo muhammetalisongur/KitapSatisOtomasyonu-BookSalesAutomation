@@ -148,6 +148,7 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
     <Compile Include="Areas\Admin\ViewModel\AuthorViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModel\BookTranslatorViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\MessageViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\PublisherViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -400,6 +401,8 @@
     <Content Include="Areas\Admin\Views\Publisher\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Publisher\PublisherForm.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\DisplayCity.cshtml" />
+    <Content Include="Areas\Admin\Views\BookTranslator\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BookTranslator\BookTranslatorForm.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -543,7 +546,6 @@
     <Folder Include="Areas\Admin\Images\Author\" />
     <Folder Include="Areas\Admin\Images\BookTranslator\" />
     <Folder Include="Areas\Admin\Images\Publisher\" />
-    <Folder Include="Areas\Admin\Views\BookTranslator\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

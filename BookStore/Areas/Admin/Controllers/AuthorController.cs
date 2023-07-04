@@ -134,6 +134,8 @@ namespace BookStore.Areas.Admin.Controllers
                         messageViewModel.Message = "Bu yazar zaten mevcut...";
                         TempData["message"] = messageViewModel;
 
+                        ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+                        GetCity(author.AuthorCountryID);
                         return View("AuthorForm");
                     }
 
@@ -155,6 +157,8 @@ namespace BookStore.Areas.Admin.Controllers
                     messageViewModel.Status = false;
                     messageViewModel.Message = "Yazar resmi boş geçilemez!";
                     TempData["message"] = messageViewModel;
+                    ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+                    GetCity(author.AuthorCountryID);
                     return View("AuthorForm", new Author());
                 }
             }

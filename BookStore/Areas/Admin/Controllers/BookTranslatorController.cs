@@ -13,7 +13,7 @@ using System.Web.Mvc;
 
 namespace BookStore.Areas.Admin.Controllers
 {
-    /*
+    
     [RouteArea("Admin")]
     public class BookTranslatorController : Controller
     {
@@ -32,25 +32,25 @@ namespace BookStore.Areas.Admin.Controllers
 
             var context = new BookStoreContext();
 
-            var List = context.Database.SqlQuery<AuthorViewModel>(@"SELECT Authors.*, 
-                                                                    Countries.CountryName, 
-                                                                    Cities.CityName FROM Authors 
-                                                                    LEFT OUTER JOIN Countries ON Authors.AuthorCountryID = Countries.ID 
-                                                                    LEFT OUTER JOIN Cities ON Authors.AuthorCityID = Cities.ID");
+            var List = context.Database.SqlQuery<BookTranslatorViewModel>(@"SELECT BookTranslators.*, 
+                                                                            Cities.CityName, Countries.CountryName
+                                                                            FROM BookTranslators 
+                                                                            LEFT OUTER JOIN Countries ON BookTranslators.TranslatorCountryID = Countries.ID 
+                                                                            LEFT OUTER JOIN Cities ON BookTranslators.TranslatorCityID = Cities.ID");
 
-            var model = new List<Author>();
+            var model = new List<BookTranslator>();
 
             foreach (var item in List)
             {
-                model.Add(new Author
+                model.Add(new BookTranslator
                 {
                     ID = item.ID,
-                    AuthorName = item.AuthorName,
-                    AuthorSurname = item.AuthorSurname,
-                    AuthorBiography = item.AuthorBiography,
-                    AuthorImage = item.AuthorImage,
-                    AuthorCountryID = item.AuthorCountryID,
-                    AuthorCityID = item.AuthorCityID,
+                    TranslatorName = item.TranslatorName,
+                    TranslatorSurname = item.TranslatorSurname,
+                    TranslatorBiography = item.TranslatorBiography,
+                    TranslatorImage = item.TranslatorImage,
+                    TranslatorCountryID = item.TranslatorCountryID,
+                    TranslatorCityID = item.TranslatorCityID,
                     CountryName = item.CountryName,
                     CityName = item.CityName,
                 });
@@ -113,6 +113,8 @@ namespace BookStore.Areas.Admin.Controllers
                         messageViewModel.Message = "Bu çevirmen zaten mevcut...";
                         TempData["message"] = messageViewModel;
 
+                        ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+                        GetCity(bookTranslator.TranslatorCountryID);
                         return View("BookTranslatorForm");
                     }
 
@@ -133,6 +135,8 @@ namespace BookStore.Areas.Admin.Controllers
                 {
                     messageViewModel.Status = false;
                     messageViewModel.Message = "Çevirmen resmi boş geçilemez!";
+                    ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+                    GetCity(bookTranslator.TranslatorCountryID);
                     TempData["message"] = messageViewModel;
                     return View("BookTranslatorForm", new BookTranslator());
                 }
@@ -146,15 +150,15 @@ namespace BookStore.Areas.Admin.Controllers
                     return HttpNotFound();
                 }
 
-                var oldAuthorFullName = updateBookTranslator.TranslatorFullName;
+                var oldFullName = updateBookTranslator.TranslatorFullName;
                 var oldBiography = updateBookTranslator.TranslatorBiography;
-                var oldCountry = updateBookTranslator.AuthorCountryID;
-                var oldCity = updateBookTranslator.AuthorCityID;
-                string oldImage = updateBookTranslator.AuthorImage;
+                var oldCountry = updateBookTranslator.TranslatorCountryID;
+                var oldCity = updateBookTranslator.TranslatorCityID;
+                string oldImage = updateBookTranslator.TranslatorImage;
 
                 var extension = Path.GetExtension(Request.Files[0].FileName);
-                var newFileName = author.AuthorFullName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
-                var path = "~/Areas/Admin/Images/Author/" + newFileName;
+                var newFileName = bookTranslator.TranslatorFullName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
+                var path = "~/Areas/Admin/Images/BookTranslator/" + newFileName;
 
                 if (Path.GetFileName(Request.Files[0].FileName) != "")
                 {
@@ -165,69 +169,67 @@ namespace BookStore.Areas.Admin.Controllers
                     }
 
                     Request.Files[0].SaveAs(Server.MapPath(path));
-                    author.AuthorImage = "/Areas/Admin/Images/Author/" + newFileName;
+                    bookTranslator.TranslatorImage = "/Areas/Admin/Images/BookTranslator/" + newFileName;
 
                 }
 
-                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryID == oldCountry && author.AuthorCityID == oldCity && extension == "")
+                if (bookTranslator.TranslatorFullName == oldFullName && bookTranslator.TranslatorBiography == oldBiography && bookTranslator.TranslatorCountryID == oldCountry && bookTranslator.TranslatorCityID == oldCity && extension == "")
                 {
                     messageViewModel.Status = false;
-                    messageViewModel.LinkText = "Yazar Listesi";
-                    messageViewModel.Url = "/Admin/Yazar";
+                    messageViewModel.LinkText = "Çevirmen Listesi";
+                    messageViewModel.Url = "/Admin/kitapcevirmen";
                     messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
 
                     ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
-                    GetCity(author.AuthorCountryID);
+                    GetCity(bookTranslator.TranslatorCountryID);
                     TempData["message"] = messageViewModel;
-                    return View("BookTranslatorForm", new Author());
+                    return View("BookTranslatorForm", new BookTranslator());
 
                 }
                 else
                 {
                     if (extension == "")
-                        author.AuthorImage = oldImage;
-                    manager.Update(author);
+                        bookTranslator.TranslatorImage = oldImage;
+                    manager.Update(bookTranslator);
                     messageViewModel.Status = true;
                     messageViewModel.Message = "Bilgiler başarıyla güncellendi...";
                     TempData["message"] = messageViewModel;
-
                 }
             }
 
-            return RedirectToAction("Index", "Author");
+            return RedirectToAction("Index", "BookTranslator");
         }
 
-        [Route("Yazar/Guncelle/{id}")]
+        [Route("Kitapcevirmen/Guncelle/{id}")]
         public ActionResult Update(int id)
         {
             var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
             ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
-            GetCity(model.AuthorCountryID);
+            GetCity(model.TranslatorCountryID);
             return View("BookTranslatorForm", model);
         }
 
-        [Route("Yazar/Sil/{id}")]
+        [Route("Kitapcevirmen/Sil/{id}")]
         public ActionResult Delete(int id)
         {
-            var deleteAuthor = manager.GetById(id);
-            if (deleteAuthor == null)
+            var delete = manager.GetById(id);
+            if (delete == null)
                 return HttpNotFound();
-            string oldImage = deleteAuthor.AuthorImage;
+            string oldImage = delete.TranslatorImage;
             string fullPath = Request.MapPath("~" + oldImage);
             if (System.IO.File.Exists(fullPath))
             {
                 System.IO.File.Delete(fullPath);
             }
-            manager.Delete(deleteAuthor);
+            manager.Delete(delete);
             messageViewModel.Status = true;
-            messageViewModel.Message = deleteAuthor.AuthorFullName + " isimli yazar silindi...";
+            messageViewModel.Message = delete.TranslatorFullName + " isimli çevirmen silindi...";
             TempData["message"] = messageViewModel;
-            return RedirectToAction("Index", "Author");
+            return RedirectToAction("Index", "BookTranslator");
 
         }
     }
 
-    */
 }
