@@ -760,7 +760,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "İletişim Yayınları, 1982 yılında Ümit İnatçı tarafından kurulan bir yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Siyaset, felsefe, sosyal bilimler, sanat ve edebiyat gibi çeşitli konularda kitaplar yayımlamaktadır.",
                 PublisherAddress = "Tomtom Mahallesi İstiklal Caddesi No: 149",
                 PublisherEmail = "iletisim@iletisim.com.tr",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Logo_of_%C4%B0leti%C5%9Fim_Yay%C4%B1nlar%C4%B1.svg/220px-Logo_of_%C4%B0leti%C5%9Fim_Yay%C4%B1nlar%C4%B1.svg.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -772,7 +772,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "Doğan Kitap, Doğan Holding bünyesinde faaliyet gösteren bir yayınevidir. Türk ve yabancı yazarların eserlerini yayımlamaktadır. Roman, tarih, biyografi, kişisel gelişim, çocuk kitapları gibi farklı kategorilerde kitaplar sunmaktadır.",
                 PublisherAddress = "Nispetiye Caddesi Akmerkez E3 Blok No:1/40 Beşiktaş",
                 PublisherEmail = "kitap@doganburda.com",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/tr/thumb/2/2d/Do%C4%9Fan_kitap_logo.png/220px-Do%C4%9Fan_kitap_logo.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -784,7 +784,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "Everest Yayınları, 1990 yılında Türker İnanoğlu tarafından kurulan bir yayınevidir. Edebiyat, çocuk edebiyatı, tarih, siyaset, felsefe, psikoloji gibi çeşitli alanlarda kitaplar yayımlamaktadır. Yerli ve yabancı yazarların eserlerini okurlarla buluşturmaktadır.",
                 PublisherAddress = "Feyzullah Mahallesi Meşrutiyet Caddesi No:19 Şişli",
                 PublisherEmail = "iletisim@everestyayinlari.com",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/tr/2/20/Everest_Yay%C4%B1nlar%C4%B1_logo.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -796,7 +796,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "Yapı Kredi Yayınları, 1944 yılında İstanbul'da kurulan bir yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Aynı zamanda sanat, mimari, edebiyat eleştirisi, tarih, felsefe ve sosyal bilimler gibi konularda kitaplar da yayımlamaktadır.",
                 PublisherAddress = "Yapı Kredi Kültür Sanat Yayıncılık A.Ş., Yapı Kredi Plaza C Blok, 34330 Levent",
                 PublisherEmail = "iletisim@ykykultur.com.tr",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Yap%C4%B1_Kredi_Yay%C4%B1nlar%C4%B1_logo.svg/220px-Yap%C4%B1_Kredi_Yay%C4%B1nlar%C4%B1_logo.svg.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -808,7 +808,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "İş Bankası Kültür Yayınları, Türkiye İş Bankası'nın kültür alanında faaliyet gösteren yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Ayrıca tarih, felsefe, sanat, müzik, sinema, psikoloji gibi konularda da kitaplar sunmaktadır.",
                 PublisherAddress = "İş Kuleleri Kule 3 Levent",
                 PublisherEmail = "kulturyayinlari@isbank.com.tr",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/I%C5%9F_Bankas%C4%B1_K%C3%BClt%C3%BCr_Yay%C4%B1nlar%C4%B1_logo.svg/220px-I%C5%9F_Bankas%C4%B1_K%C3%BClt%C3%BCr_Yay%C4%B1nlar%C4%B1_logo.svg.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -820,7 +820,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "Sel Yayıncılık, 1991 yılında Niyazi Sel tarafından kurulan bir yayınevidir. Edebiyat, felsefe, sosyal bilimler, sanat, kültür ve tarih gibi konularda kitaplar yayımlamaktadır. Özellikle Türk edebiyatına katkı sağlayan eserleriyle tanınmaktadır.",
                 PublisherAddress = "Caferağa Mahallesi, Albay İmran Caddesi No:11 Kadıköy",
                 PublisherEmail = "iletisim@selyayincilik.com",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sel_Yay%C4%B1nc%C4%B1l%C4%B1k_logo.png/220px-Sel_Yay%C4%B1nc%C4%B1l%C4%B1k_logo.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -832,7 +832,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "Kırmızı Kedi Yayınevi, 2009 yılında Ayşe Buğra ve Kaan Arslan tarafından kurulan bir yayınevidir. Sosyal bilimler, politika, felsefe, edebiyat ve çocuk kitapları gibi çeşitli alanlarda kitaplar yayımlamaktadır. Yayınevi aynı zamanda Türkçe'ye çeviri eserler de sunmaktadır.",
                 PublisherAddress = "Serdar-ı Ekrem Caddesi, Çavuşbey Sokak No:26/A Beyoğlu",
                 PublisherEmail = "iletisim@kirmizikedi.com",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/K%C4%B1rm%C4%B1z%C4%B1_Kedi_Yay%C4%B1nevi_logo.png/220px-K%C4%B1rm%C4%B1z%C4%B1_Kedi_Yay%C4%B1nevi_logo.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -856,7 +856,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "İletişim Yayınları, 1982 yılında Ümit İnatçı tarafından kurulan bir yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Siyaset, felsefe, sosyal bilimler, sanat ve edebiyat gibi çeşitli konularda kitaplar yayımlamaktadır.",
                 PublisherAddress = "Tomtom Mahallesi İstiklal Caddesi No: 149",
                 PublisherEmail = "iletisim@iletisim.com.tr",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Logo_of_%C4%B0leti%C5%9Fim_Yay%C4%B1nlar%C4%B1.svg/220px-Logo_of_%C4%B0leti%C5%9Fim_Yay%C4%B1nlar%C4%B1.svg.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -868,7 +868,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "Doğan Kitap, Doğan Holding bünyesinde faaliyet gösteren bir yayınevidir. Türk ve yabancı yazarların eserlerini yayımlamaktadır. Roman, tarih, biyografi, kişisel gelişim, çocuk kitapları gibi farklı kategorilerde kitaplar sunmaktadır.",
                 PublisherAddress = "Nispetiye Caddesi Akmerkez E3 Blok No:1/40 Beşiktaş",
                 PublisherEmail = "kitap@doganburda.com",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/tr/thumb/2/2d/Do%C4%9Fan_kitap_logo.png/220px-Do%C4%9Fan_kitap_logo.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -880,7 +880,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "Everest Yayınları, 1990 yılında Türker İnanoğlu tarafından kurulan bir yayınevidir. Edebiyat, çocuk edebiyatı, tarih, siyaset, felsefe, psikoloji gibi çeşitli alanlarda kitaplar yayımlamaktadır. Yerli ve yabancı yazarların eserlerini okurlarla buluşturmaktadır.",
                 PublisherAddress = "Feyzullah Mahallesi Meşrutiyet Caddesi No:19 Şişli",
                 PublisherEmail = "iletisim@everestyayinlari.com",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/tr/2/20/Everest_Yay%C4%B1nlar%C4%B1_logo.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -892,7 +892,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "Yapı Kredi Yayınları, 1944 yılında İstanbul'da kurulan bir yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Aynı zamanda sanat, mimari, edebiyat eleştirisi, tarih, felsefe ve sosyal bilimler gibi konularda kitaplar da yayımlamaktadır.",
                 PublisherAddress = "Yapı Kredi Kültür Sanat Yayıncılık A.Ş., Yapı Kredi Plaza C Blok, 34330 Levent",
                 PublisherEmail = "iletisim@ykykultur.com.tr",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Yap%C4%B1_Kredi_Yay%C4%B1nlar%C4%B1_logo.svg/220px-Yap%C4%B1_Kredi_Yay%C4%B1nlar%C4%B1_logo.svg.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -904,7 +904,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "İş Bankası Kültür Yayınları, Türkiye İş Bankası'nın kültür alanında faaliyet gösteren yayınevidir. Türk ve dünya edebiyatının önemli eserlerini yayımlamaktadır. Ayrıca tarih, felsefe, sanat, müzik, sinema, psikoloji gibi konularda da kitaplar sunmaktadır.",
                 PublisherAddress = "İş Kuleleri Kule 3 Levent",
                 PublisherEmail = "kulturyayinlari@isbank.com.tr",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/I%C5%9F_Bankas%C4%B1_K%C3%BClt%C3%BCr_Yay%C4%B1nlar%C4%B1_logo.svg/220px-I%C5%9F_Bankas%C4%B1_K%C3%BClt%C3%BCr_Yay%C4%B1nlar%C4%B1_logo.svg.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -916,7 +916,7 @@ namespace DataAccess.Configurations.Seeds
                 PublisherDescription = "Sel Yayıncılık, 1991 yılında Niyazi Sel tarafından kurulan bir yayınevidir. Edebiyat, felsefe, sosyal bilimler, sanat, kültür ve tarih gibi konularda kitaplar yayımlamaktadır. Özellikle Türk edebiyatına katkı sağlayan eserleriyle tanınmaktadır.",
                 PublisherAddress = "Caferağa Mahallesi, Albay İmran Caddesi No:11 Kadıköy",
                 PublisherEmail = "iletisim@selyayincilik.com",
-                PublisherImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sel_Yay%C4%B1nc%C4%B1l%C4%B1k_logo.png/220px-Sel_Yay%C4%B1nc%C4%B1l%C4%B1k_logo.png",
+                PublisherImage = "https://picsum.photos/400",
                 PublisherCountryID = 1,
                 PublisherCityID = 1,
             });
@@ -945,7 +945,7 @@ namespace DataAccess.Configurations.Seeds
                 TranslatorName = "Ali",
                 TranslatorSurname = "Demir",
                 TranslatorBiography = "Ali Demir, İzmir doğumlu bir çevirmen ve yazardır. Almanca ve Türkçe dilleri arasında çeviri yapmaktadır. Edebiyat alanında birçok önemli eseri Türkçeye kazandırmıştır. Çevirdiği eserler arasında Sonsuzluğun Sonu (Michael Ende, Can Yayınları), Dönüşüm (Franz Kafka, İletişim Yayınları), Kırmızı Pazartesi (Gabriel Garcia Marquez, Doğan Kitap) bulunmaktadır.",
-                TranslatorImage = "https://example.com/translator2.png",
+                TranslatorImage = "https://picsum.photos/400",
                 TranslatorCountryID = 1,
                 TranslatorCityID = 1,
             });

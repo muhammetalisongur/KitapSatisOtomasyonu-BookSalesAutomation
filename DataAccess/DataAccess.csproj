@@ -107,6 +107,18 @@
     <Compile Include="Migrations\202307040702344_UpdateBookTranslatorCountryandCity.designer.cs">
       <DependentUpon>202307040702344_UpdateBookTranslatorCountryandCity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307041310562_UpdateBook.cs" />
+    <Compile Include="Migrations\202307041310562_UpdateBook.designer.cs">
+      <DependentUpon>202307041310562_UpdateBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307041315362_UpdateBookPublisherDate.cs" />
+    <Compile Include="Migrations\202307041315362_UpdateBookPublisherDate.designer.cs">
+      <DependentUpon>202307041315362_UpdateBookPublisherDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307041323105_UpdateBooknullabebooktranslator.cs" />
+    <Compile Include="Migrations\202307041323105_UpdateBooknullabebooktranslator.designer.cs">
+      <DependentUpon>202307041323105_UpdateBooknullabebooktranslator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -154,6 +166,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307040702344_UpdateBookTranslatorCountryandCity.resx">
       <DependentUpon>202307040702344_UpdateBookTranslatorCountryandCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307041310562_UpdateBook.resx">
+      <DependentUpon>202307041310562_UpdateBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307041315362_UpdateBookPublisherDate.resx">
+      <DependentUpon>202307041315362_UpdateBookPublisherDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307041323105_UpdateBooknullabebooktranslator.resx">
+      <DependentUpon>202307041323105_UpdateBooknullabebooktranslator.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

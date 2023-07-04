@@ -113,3 +113,6 @@ D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateAuthorCity.
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateCity.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdatePublisherCountryCity.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateBookTranslatorCountryandCity.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateBook.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateBookPublisherDate.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateBooknullabebooktranslator.resources

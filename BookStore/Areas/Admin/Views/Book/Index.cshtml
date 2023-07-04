@@ -1,0 +1,127 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@using Entities.Concrete
+@model IPagedList<Book>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var result = (BookStore.Areas.Admin.ViewModel.MessageViewModel)TempData["message"];
+
+}
+<link rel="stylesheet" type="text/css" href="~/Content/css/table-style.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/css/basictable.css" />
+
+<!-- breadcrumbs -->
+<div class="w3l_agileits_breadcrumbs">
+    <div class="w3l_agileits_breadcrumbs_inner">
+        <ul>
+            <li><a href="~/Admin/Kategori">Anasayfa</a><span>«</span></li>
+
+            <li>Kitaplar</li>
+        </ul>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+
+<div class="inner_content_w3_agile_info two_in">
+    <h2 class="w3_inner_tittle">Kitaplar</h2>
+    <!-- tables -->
+
+    <div class="agile-tables">
+        <b style="font-size:18px">
+            @if (TempData["message"] != null)
+            {
+                if (result.Status)
+                {
+
+                    <div class="alert alert-success">
+                        <b> @result.Message </b>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-danger">
+                        <b>  @result.Message</b>
+                    </div>
+                }
+            }
+        </b>
+        <div class="w3l-table-info agile_info_shadow">
+            <h3 class="w3_inner_tittle two">
+                <a class="btn btn-success" href="/Admin/Kitap/YeniKitap">Yeni Kitap Ekle</a>
+            </h3>
+            <table id="tblDepartmanlar">
+                <thead>
+                    <tr>
+                        <th>Resim</th>
+                        <th>ISBN</th>
+                        <th>Kitap Adı</th>
+                        <th>Açıklaması</th>
+                        <th>Kategori</th>
+                        <th>YayınEvi</th>
+                        <th>Yazar</th>
+                        <th>Çevirmen</th>
+                        <th>Sayfa Sayısı</th>
+                        <th>Fiyat</th>
+                        <th>Satış Durumu</th>
+                        <th>Guncelle</th>
+                        <th>Sil</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var book in Model)
+                    {
+                        <tr>
+                            <td><img src="@book.BookImage" width="100" height="100" /></td>
+                            <td>@book.BookISBN</td>
+                            <td>@book.BookName</td>
+                            @if (book.BookDescription.Length >= 100)
+                            {
+                                <td>@book.BookDescription.Substring(0, 100)...</td>
+                            }
+                            else
+                            {
+                                <td>@book.BookDescription</td>
+                            }
+                            <td>@book.CategoryName</td>
+                            <td>@book.PublisherName</td>
+                            <td>@book.AuthorFullName</td>
+                            @if (@book.TranslatorFullName == " ")
+                            {
+                                <td>-</td>
+                            }
+                            else
+                            {
+                                <td>@book.TranslatorFullName</td>
+                            }
+                            <td>@book.BookPage</td>
+                            <td>@book.BookPrice</td>
+                            @if (book.BookStatus == true)
+                            {
+                                <td>Stokta</td>
+                            }
+                            else
+                            {
+                                <td>Stokta Yok</td>
+                            }
+                            <td><a href="/Admin/Yazar/Guncelle/@book.ID" class="btn btn-success">Guncelle</a></td>
+                            <td><a class="btn btn-danger" onclick="if (confirm('Kitabı Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Yazar/Sil/@book.ID">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+
+
+            </table>
+
+            @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Yazar", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
+
+
+
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/js/jquery.basictable.min.js"></script>
+

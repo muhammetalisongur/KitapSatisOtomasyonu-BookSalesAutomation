@@ -23,8 +23,7 @@ namespace Entities.Concrete
         [Display(Name = "Kitap Açıklaması")]
         public string BookDescription { get; set; }
 
-        [Required(ErrorMessage = "Kitap resmi boş geçilemez!")]
-        [StringLength(250, ErrorMessage = "Kitap resmi en fazla 250 karakter olabilir!")]
+
         [Display(Name = "Kitap Resmi")]
         public string BookImage { get; set; }
 
@@ -43,15 +42,9 @@ namespace Entities.Concrete
         [ForeignKey("Category")]
         public int BookCategoryID { get; set; }
 
-        [Required(ErrorMessage = "Kitap dili boş geçilemez!")]
-        [StringLength(50, ErrorMessage = "Kitap dili en fazla 50 karakter olabilir!")]
-        [Display(Name = "Kitap Dili")]
-        public string BookLanguage { get; set; }
-
-        [Required(ErrorMessage = "Kitap çevirmeni boş geçilemez!")]
         [Display(Name = "Kitap Çevirmeni")]
         [ForeignKey("BookTranslator")]
-        public int BookTranslatorID { get; set; }
+        public int? BookTranslatorID { get; set; }
 
         [Required(ErrorMessage = "Kitap sayfa sayısı boş geçilemez!")]
         [Range(1, int.MaxValue, ErrorMessage = "Kitap sayfa sayısı en az 1 olabilir!")]
@@ -73,14 +66,26 @@ namespace Entities.Concrete
         [Display(Name = "Kitap Stok Sayısı")]
         public int BookStock { get; set; }
 
-        [Required(ErrorMessage = "Kitap basım tarihi boş geçilemez!")]
-        [Range(1900, 2023, ErrorMessage = "Kitap basım tarihi 1900-2023 arasında olabilir!")]
-        [Display(Name = "Kitap Basım Tarihi")]
-        public int BookPublishDate { get; set; }
 
         [Required(ErrorMessage = "Kitap durumu boş geçilemez!")]
         [Display(Name = "Kitap Durumu")]
         public bool BookStatus { get; set; }
+
+
+
+        [NotMapped]
+        public string TranslatorFullName { get; set; }
+
+        [NotMapped]
+        public string AuthorFullName { get; set; }
+
+        [NotMapped]
+        public string PublisherName { get; set; }
+
+        [NotMapped]
+        public string CategoryName { get; set; }
+
+
 
 
         // Navigation Property

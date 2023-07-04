@@ -62,21 +62,6 @@ namespace BookStore.Areas.Admin.Controllers
                     CityName = item.CityName,
                 });
             }
-
-            //var query = (from a in manager.GetAll()
-            //             join c in countryManager.GetAll() on a.AuthorCountryID equals c.ID
-            //             join ci in cityManager.GetAll() on a.AuthorCityID equals ci.ID
-            //             select new Author
-            //             {
-            //                 ID = a.ID,
-            //                 AuthorName = a.AuthorName,
-            //                 AuthorSurname = a.AuthorSurname,
-            //                 AuthorBiography = a.AuthorBiography,
-            //                 AuthorImage = a.AuthorImage,
-            //                 AuthorCountryCity = c.CountryName + (ci.CityName == null ? " / Şehir Yok" : " / " + ci.CityName)
-
-            //             }).ToPagedList(_sayfaNo, 5);
-
             return View(model.ToPagedList(_sayfaNo, 5));
         }
 
