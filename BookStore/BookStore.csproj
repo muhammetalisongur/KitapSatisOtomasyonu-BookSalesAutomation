@@ -144,6 +144,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BookController.cs" />
     <Compile Include="Areas\Admin\Controllers\BookTranslatorController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
@@ -546,6 +547,7 @@
     <Folder Include="Areas\Admin\Images\Author\" />
     <Folder Include="Areas\Admin\Images\BookTranslator\" />
     <Folder Include="Areas\Admin\Images\Publisher\" />
+    <Folder Include="Areas\Admin\Views\Book\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

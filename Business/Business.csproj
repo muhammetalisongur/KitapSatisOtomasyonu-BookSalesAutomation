@@ -42,12 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAuthorService.cs" />
+    <Compile Include="Abstract\IBookService.cs" />
     <Compile Include="Abstract\IBookTranslatorService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\ICityService.cs" />
     <Compile Include="Abstract\ICountryService.cs" />
     <Compile Include="Abstract\IPublisherService.cs" />
     <Compile Include="Concrete\AuthorManager.cs" />
+    <Compile Include="Concrete\BookManager.cs" />
     <Compile Include="Concrete\BookTranslatorManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\CityManager.cs" />

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAuthorDal.cs" />
+    <Compile Include="Abstract\IBookDal.cs" />
     <Compile Include="Abstract\IBookTranslatorDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\ICityDal.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Abstract\IPublisherDal.cs" />
     <Compile Include="Concrete\BookStoreContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfAuthorDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBookDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfBookTranslatorDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCityDal.cs" />
