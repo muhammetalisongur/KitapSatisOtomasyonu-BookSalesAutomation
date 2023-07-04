@@ -112,3 +112,4 @@ D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateAuthorCount
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateAuthorCity.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateCity.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdatePublisherCountryCity.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateBookTranslatorCountryandCity.resources

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,24 +32,33 @@ namespace Entities.Concrete
         [Display(Name = "Çevirmen Biyografisi")]
         public string TranslatorBiography { get; set; }
 
-        [Required(ErrorMessage = "Çevirmen resmi boş geçilemez!")]
-        [StringLength(250, ErrorMessage = "Çevirmen resmi en fazla 250 karakter olabilir!")]
+
         [Display(Name = "Çevirmen Resmi")]
         public string TranslatorImage { get; set; }
 
         [Required(ErrorMessage = "Çevirmen ülkesi boş geçilemez!")]
         [Display(Name = "Çevirmen Ülkesi")]
-        public string TranslatorCountry { get; set; }
+        [ForeignKey("Country")]
+        public int TranslatorCountryID { get; set; }
 
-        [Required(ErrorMessage = "Çevirmen şehri boş geçilemez!")]
         [Display(Name = "Çevirmen Şehri")]
-        public string TranslatorCity { get; set; }
+        [ForeignKey("City")]
+        public int? TranslatorCityID { get; set; }
 
+
+        [NotMapped]
+        public string CountryName { get; set; }
+        [NotMapped]
+        public string CityName { get; set; }
+
+        [NotMapped]
         [Display(Name = "Çevirmen Ülke / Şehir")]
-        public string TranslatorCountryCity => $"{TranslatorCountry} / {TranslatorCity}";
+        public string TranslatorCountryCity => CountryName + " / " + (CityName == null ? "Şehir Yok" : CityName);
 
 
         // Navigation Property
         public virtual ICollection<Book> Books { get; set; }
+        public virtual Country Country { get; set; }
+        public virtual City City { get; set; }
     }
 }

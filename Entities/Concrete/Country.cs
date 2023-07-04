@@ -22,5 +22,6 @@ namespace Entities.Concrete
         public virtual ICollection<City> Cities { get; set; }
         public virtual ICollection<Author> Authors { get; set; }
         public virtual ICollection<Publisher> Publishers { get; set; }
+        public virtual ICollection<BookTranslator> BookTranslator { get; set; }
     }
 }

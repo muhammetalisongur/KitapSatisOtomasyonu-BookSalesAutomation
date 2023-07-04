@@ -39,10 +39,8 @@ namespace Entities.Concrete
         [Required(ErrorMessage = "Yazar ülkesi boş geçilemez!")]
         [Display(Name = "Yazar Ülkesi")]
         [ForeignKey("Country")]
-
         public int AuthorCountryID { get; set; }
 
-        //[Required(ErrorMessage = "Yazar şehri boş geçilemez!")]
         [Display(Name = "Yazar Şehri")]
         [ForeignKey("City")]
         public int? AuthorCityID { get; set; }

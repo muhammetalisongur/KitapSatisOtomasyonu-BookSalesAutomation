@@ -13,7 +13,7 @@ using System.Web.Mvc;
 
 namespace BookStore.Areas.Admin.Controllers
 {
-
+    /*
     [RouteArea("Admin")]
     public class BookTranslatorController : Controller
     {
@@ -228,4 +228,6 @@ namespace BookStore.Areas.Admin.Controllers
 
         }
     }
+
+    */
 }
