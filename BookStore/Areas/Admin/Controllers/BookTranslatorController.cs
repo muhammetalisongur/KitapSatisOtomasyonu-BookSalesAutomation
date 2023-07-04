@@ -1,6 +1,9 @@
 ﻿using BookStore.Areas.Admin.ViewModel;
 using Business.Concrete;
+using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,93 +14,143 @@ using System.Web.Mvc;
 namespace BookStore.Areas.Admin.Controllers
 {
 
-
-    /*
-
     [RouteArea("Admin")]
     public class BookTranslatorController : Controller
     {
         // GET: Admin/BookTranslator
         BookTranslatorManager manager = new BookTranslatorManager(new EfBookTranslatorDal());
         MessageViewModel messageViewModel = new MessageViewModel();
+        CountryManager countryManager = new CountryManager(new EfCountryDal());
+        CityManager cityManager = new CityManager(new EfCityDal());
 
 
-        [Route("Yazar")]
-        [Route("Yazar/Index")]
+        [Route("kitapcevirmen")]
+        [Route("Kitapcevirmen/Index")]
         public ActionResult Index(int? SayfaNo)
         {
             int _sayfaNo = SayfaNo ?? 1;
-            var result = manager.GetAll().OrderByDescending(x => x.ID).ToPagedList<BookTranslator>(_sayfaNo, 5);
-            return View(result);
+
+            var context = new BookStoreContext();
+
+            var List = context.Database.SqlQuery<AuthorViewModel>(@"SELECT Authors.*, 
+                                                                    Countries.CountryName, 
+                                                                    Cities.CityName FROM Authors 
+                                                                    LEFT OUTER JOIN Countries ON Authors.AuthorCountryID = Countries.ID 
+                                                                    LEFT OUTER JOIN Cities ON Authors.AuthorCityID = Cities.ID");
+
+            var model = new List<Author>();
+
+            foreach (var item in List)
+            {
+                model.Add(new Author
+                {
+                    ID = item.ID,
+                    AuthorName = item.AuthorName,
+                    AuthorSurname = item.AuthorSurname,
+                    AuthorBiography = item.AuthorBiography,
+                    AuthorImage = item.AuthorImage,
+                    AuthorCountryID = item.AuthorCountryID,
+                    AuthorCityID = item.AuthorCityID,
+                    CountryName = item.CountryName,
+                    CityName = item.CityName,
+                });
+            }
+
+            return View(model.ToPagedList(_sayfaNo, 5));
         }
 
-        [Route("Yazar/YeniYazar")]
+
+        public List<Country> GetCountries()
+        {
+            // Country-City
+            CountryManager countryManager = new CountryManager(new EfCountryDal());
+            List<Country> result = countryManager.GetAll();
+            return result;
+        }
+
+        public ActionResult GetCity(int id)
+        {
+            CityManager cityManager = new CityManager(new EfCityDal());
+            var result = cityManager.GetAll().Where(x => x.CountryID == id).OrderBy(x => x.CityName).ToList();
+            if (result.Count == 0)
+            {
+                ViewBag.CityList = null;
+            }
+            else
+            {
+                ViewBag.CityList = new SelectList(result, "ID", "CityName");
+            }
+            return PartialView("DisplayCity");
+        }
+
+        [Route("kitapcevirmen/Yenikitapcevirmen")]
         [HttpGet]
         public ActionResult New()
         {
-            return View("AuthorForm", new Author());
+            ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+            return View("BookTranslatorForm", new BookTranslator());
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(Author author)
+        public ActionResult Save(BookTranslator bookTranslator)
         {
             if (!ModelState.IsValid)
             {
-                return View("AuthorForm");
+                return View("BookTranslatorForm");
             }
 
-
-            if (author.ID == 0)
+            if (bookTranslator.ID == 0)
             {
                 var name = manager.GetAll();
                 foreach (var item in name)
                 {
-                    if (author.AuthorFullName == item.AuthorFullName)
+                    if (bookTranslator.TranslatorFullName == item.TranslatorFullName)
                     {
                         messageViewModel.Status = false;
-                        messageViewModel.LinkText = "Yazar Listesi";
-                        messageViewModel.Url = "/Admin/Yazar";
-                        messageViewModel.Message = "Bu yazar zaten mevcut...";
+                        messageViewModel.LinkText = "Kitap Çevirmen Listesi";
+                        messageViewModel.Url = "/Admin/kitapçevirmen";
+                        messageViewModel.Message = "Bu çevirmen zaten mevcut...";
                         TempData["message"] = messageViewModel;
 
-                        return View("AuthorForm");
+                        return View("BookTranslatorForm");
                     }
 
                 }
+
                 if (Path.GetFileName(Request.Files[0].FileName).Length > 0)
                 {
                     var extension = Path.GetExtension(Request.Files[0].FileName);
-                    var newFileName = author.AuthorFullName + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
-                    var path = "~/Areas/Admin/Images/Author/" + newFileName;
+                    var newFileName = bookTranslator.TranslatorFullName + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
+                    var path = "~/Areas/Admin/Images/BookTranslator/" + newFileName;
                     Request.Files[0].SaveAs(Server.MapPath(path));
-                    author.AuthorImage = "/Areas/Admin/Images/Author/" + newFileName;
+                    bookTranslator.TranslatorImage = "/Areas/Admin/Images/BookTranslator/" + newFileName;
 
-                    manager.Add(author);
-                    messageViewModel.Message = author.AuthorFullName + " yazarı başarıyle eklendi...";
+                    manager.Add(bookTranslator);
+                    messageViewModel.Message = bookTranslator.TranslatorFullName + " çevirmen başarıyle eklendi...";
                 }
                 else
                 {
                     messageViewModel.Status = false;
-                    messageViewModel.Message = "Yazar resmi boş geçilemez!";
+                    messageViewModel.Message = "Çevirmen resmi boş geçilemez!";
                     TempData["message"] = messageViewModel;
-                    return View("AuthorForm", new Author());
+                    return View("BookTranslatorForm", new BookTranslator());
                 }
             }
             else
             {
-                var updateAuthor = manager.GetById(author.ID);
-                if (updateAuthor == null)
+                var updateBookTranslator = manager.GetById(bookTranslator.ID);
+
+                if (updateBookTranslator == null)
                 {
                     return HttpNotFound();
                 }
 
-                var oldAuthorFullName = updateAuthor.AuthorFullName;
-                var oldBiography = updateAuthor.AuthorBiography;
-                var oldCountryCity = updateAuthor.AuthorCountryCity;
-
-                string oldImage = updateAuthor.AuthorImage;
-
+                var oldAuthorFullName = updateBookTranslator.TranslatorFullName;
+                var oldBiography = updateBookTranslator.TranslatorBiography;
+                var oldCountry = updateBookTranslator.AuthorCountryID;
+                var oldCity = updateBookTranslator.AuthorCityID;
+                string oldImage = updateBookTranslator.AuthorImage;
 
                 var extension = Path.GetExtension(Request.Files[0].FileName);
                 var newFileName = author.AuthorFullName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
@@ -116,14 +169,17 @@ namespace BookStore.Areas.Admin.Controllers
 
                 }
 
-                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryCity == oldCountryCity && extension == "")
+                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryID == oldCountry && author.AuthorCityID == oldCity && extension == "")
                 {
                     messageViewModel.Status = false;
                     messageViewModel.LinkText = "Yazar Listesi";
                     messageViewModel.Url = "/Admin/Yazar";
                     messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
+
+                    ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+                    GetCity(author.AuthorCountryID);
                     TempData["message"] = messageViewModel;
-                    return View("AuthorForm", new Author());
+                    return View("BookTranslatorForm", new Author());
 
                 }
                 else
@@ -147,7 +203,9 @@ namespace BookStore.Areas.Admin.Controllers
             var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
-            return View("AuthorForm", model);
+            ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+            GetCity(model.AuthorCountryID);
+            return View("BookTranslatorForm", model);
         }
 
         [Route("Yazar/Sil/{id}")]
@@ -162,7 +220,6 @@ namespace BookStore.Areas.Admin.Controllers
             {
                 System.IO.File.Delete(fullPath);
             }
-
             manager.Delete(deleteAuthor);
             messageViewModel.Status = true;
             messageViewModel.Message = deleteAuthor.AuthorFullName + " isimli yazar silindi...";
@@ -171,7 +228,4 @@ namespace BookStore.Areas.Admin.Controllers
 
         }
     }
-
-
-    */
 }

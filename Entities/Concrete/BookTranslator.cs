@@ -10,6 +10,7 @@ namespace Entities.Concrete
 {
     public class BookTranslator : IEntity
     {
+     
         public int ID { get; set; }
 
         [Required(ErrorMessage = "Çevirmen adı boş geçilemez!")]
