@@ -62,7 +62,7 @@ namespace Entities.Concrete
         public string BookISBN { get; set; }
 
         [Required(ErrorMessage = "Kitap stok sayısı boş geçilemez!")]
-        [Range(1, int.MaxValue, ErrorMessage = "Kitap stok sayısı en az 1 olabilir!")]
+        [Range(0, int.MaxValue, ErrorMessage = "Kitap stok sayısı en az 0 olabilir!")]
         [Display(Name = "Kitap Stok Sayısı")]
         public int BookStock { get; set; }
 
