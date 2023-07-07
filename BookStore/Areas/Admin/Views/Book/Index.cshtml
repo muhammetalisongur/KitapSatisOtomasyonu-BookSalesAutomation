@@ -64,6 +64,7 @@
                         <th>Sayfa Sayısı</th>
                         <th>Fiyat</th>
                         <th>Satış Durumu</th>
+                        <th>Kitap Stok</th>
                         <th>Guncelle</th>
                         <th>Sil</th>
 
@@ -106,7 +107,8 @@
                             {
                                 <td>Stokta Yok</td>
                             }
-                            <td><a href="/Admin/Yazar/Guncelle/@book.ID" class="btn btn-success">Guncelle</a></td>
+                            <td>@book.BookStock</td>
+                            <td><a href="/Admin/Kitap/Guncelle/@book.ID" class="btn btn-success">Guncelle</a></td>
                             <td><a class="btn btn-danger" onclick="if (confirm('Kitabı Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Yazar/Sil/@book.ID">Sil</a></td>
                         </tr>
                     }
