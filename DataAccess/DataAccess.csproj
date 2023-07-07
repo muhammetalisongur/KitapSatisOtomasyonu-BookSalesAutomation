@@ -119,6 +119,10 @@
     <Compile Include="Migrations\202307041323105_UpdateBooknullabebooktranslator.designer.cs">
       <DependentUpon>202307041323105_UpdateBooknullabebooktranslator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307071159533_UpdateBookPrice.cs" />
+    <Compile Include="Migrations\202307071159533_UpdateBookPrice.designer.cs">
+      <DependentUpon>202307071159533_UpdateBookPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -175,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307041323105_UpdateBooknullabebooktranslator.resx">
       <DependentUpon>202307041323105_UpdateBooknullabebooktranslator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071159533_UpdateBookPrice.resx">
+      <DependentUpon>202307071159533_UpdateBookPrice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

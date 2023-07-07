@@ -109,7 +109,7 @@
                             }
                             <td>@book.BookStock</td>
                             <td><a href="/Admin/Kitap/Guncelle/@book.ID" class="btn btn-success">Guncelle</a></td>
-                            <td><a class="btn btn-danger" onclick="if (confirm('Kitabı Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Yazar/Sil/@book.ID">Sil</a></td>
+                            <td><a class="btn btn-danger" onclick="if (confirm('Kitabı Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Kitap/Sil/@book.ID">Sil</a></td>
                         </tr>
                     }
                 </tbody>

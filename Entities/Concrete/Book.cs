@@ -54,7 +54,7 @@ namespace Entities.Concrete
         [Required(ErrorMessage = "Kitap fiyatı boş geçilemez!")]
         [Range(1, int.MaxValue, ErrorMessage = "Kitap fiyatı en az 1 olabilir!")]
         [Display(Name = "Kitap Fiyatı")]
-        public decimal BookPrice { get; set; }
+        public int BookPrice { get; set; }
 
         [Required(ErrorMessage = "Kitap ISBN numarası boş geçilemez!")]
         [StringLength(20, ErrorMessage = "Kitap ISBN numarası en fazla 20 karakter olabilir!")]

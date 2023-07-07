@@ -48,7 +48,15 @@
                     @Html.LabelFor(model => model.BookImage)
                     <div style="display:flex" class="col-2">
                         @Html.EditorFor(x => x.BookImage, new { htmlAttributes = new { @class = "form-control", type = "file", style = "height:auto", accept = "image/*", title = "Resim Yukle", onchange = "prewIMG(event)" } })
-                        <img src="@Model.BookImage" height="52" width="52" style="position: absolute; left: calc(100% - 9.8em); " id="imgPrew" alt="Resim Yukle" />
+                        @if (Model.BookImage != null)
+                        {
+                            <img src="@Model.BookImage" height="52" width="52" style="position: absolute; left: calc(100% - 9.8em); " id="imgPrew" alt="Resim Yukle"/>
+                        }
+                        else
+                        {
+                            <img src="@ViewBag.image" height="52" width="52" style="position: absolute; left: calc(100% - 9.8em); " id="imgPrew" alt="Resim Yukle"/>
+
+                        }
                     </div>
                     <br />
 
@@ -163,26 +171,8 @@
     var prewIMG = function (event) {
         var result = document.getElementById("imgPrew");
         result.src = URL.createObjectURL(event.target.files[0]);
+    
+
     };
-
-
-    // Ülke Seçildiğinde Şehirleri Getir
-
-    $(document).ready(function () {
-        $("#AuthorCountryID").change(function () {
-            var countryId = $(this).val();
-            $.ajax({
-                url: "/Admin/Author/GetCity?id=" + countryId,
-                type: "POST",
-                contentType: "html",
-                success: function (response) {
-                    debugger
-                    $("#AuthorCityID").empty();
-                    $("#AuthorCityID").append(response);
-
-                }
-            });
-        });
-    });
 
 </script>

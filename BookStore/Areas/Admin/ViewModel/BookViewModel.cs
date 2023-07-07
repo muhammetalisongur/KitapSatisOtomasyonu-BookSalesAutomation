@@ -16,7 +16,7 @@ namespace BookStore.Areas.Admin.ViewModel
         public int BookCategoryID { get; set; }
         public int? BookTranslatorID { get; set; }
         public int BookPage { get; set; }
-        public decimal BookPrice { get; set; }
+        public int BookPrice { get; set; }
         public string BookISBN { get; set; }
         public int BookStock { get; set; }
         public bool BookStatus { get; set; }

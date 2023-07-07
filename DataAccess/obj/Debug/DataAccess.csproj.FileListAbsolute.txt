@@ -116,3 +116,4 @@ D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateBookTransla
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateBook.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateBookPublisherDate.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateBooknullabebooktranslator.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateBookPrice.resources
