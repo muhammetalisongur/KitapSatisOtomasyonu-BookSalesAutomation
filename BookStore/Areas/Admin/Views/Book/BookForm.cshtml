@@ -65,7 +65,7 @@
                     @if (ViewBag.BookCategory != null)
                     {
                         @Html.LabelFor(m => m.BookCategoryID)
-                        @Html.DropDownListFor(m => m.BookCategoryID, new SelectList(ViewBag.BookCategory), "-- Kategori Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.DropDownListFor(m => m.BookCategoryID, new SelectList(ViewBag.BookCategory, "Value", "Text"), "-- Kategori Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
                         @Html.ValidationMessageFor(x => x.BookCategoryID)
                     }
                     else
@@ -79,7 +79,7 @@
                     @if (ViewBag.BookPublisher != null)
                     {
                         @Html.LabelFor(m => m.BookPublisherID)
-                        @Html.DropDownListFor(m => m.BookPublisherID, new SelectList(ViewBag.BookPublisher as SelectList, "-- YayınEvi Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.DropDownListFor(m => m.BookPublisherID, new SelectList(ViewBag.BookPublisher, "Value", "Text"), "-- YayınEvi Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
                         @Html.ValidationMessageFor(x => x.BookPublisherID)
                     }
                     else
@@ -94,7 +94,7 @@
                     @if (ViewBag.BookAuthor != null)
                     {
                         @Html.LabelFor(m => m.BookAuthorID)
-                        @Html.DropDownListFor(m => m.BookAuthorID, ViewBag.BookAuthor as SelectList, "-- Yazar Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.DropDownListFor(m => m.BookAuthorID, new SelectList(ViewBag.BookAuthor, "Value", "Text"), "-- Yazar Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
                         @Html.ValidationMessageFor(x => x.BookAuthorID)
                     }
                     else
@@ -109,7 +109,7 @@
                     @if (ViewBag.BookTranslator != null)
                     {
                         @Html.LabelFor(m => m.BookTranslatorID)
-                        @Html.DropDownListFor(m => m.BookTranslatorID, ViewBag.BookTranslator as SelectList, "-- Çevirmen Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                        @Html.DropDownListFor(m => m.BookTranslatorID, new SelectList(ViewBag.BookTranslator, "Value", "Text"), "-- Çevirmen Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
                         @Html.ValidationMessageFor(x => x.BookTranslatorID)
                     }
                     else
@@ -119,6 +119,7 @@
                         @Html.ValidationMessageFor(x => x.BookTranslatorID)
                     }
 
+                    <br />
                     @Html.LabelFor(m => m.BookPage)
                     @Html.TextBoxFor(m => m.BookPage, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.BookPage)

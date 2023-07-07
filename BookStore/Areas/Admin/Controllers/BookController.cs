@@ -9,6 +9,8 @@ using DataAccess.Concrete;
 using Entities.Concrete;
 using System.IO;
 using System;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace BookStore.Areas.Admin.Controllers
 {
@@ -133,6 +135,10 @@ namespace BookStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Book book)
         {
+
+            book.BookISBN = DateTime.Now.ToString("ddMMyyyyHHmmss");
+            book.BookStatus = true;
+
             if (!ModelState.IsValid)
             {
                 return View("BookForm");
@@ -151,8 +157,6 @@ namespace BookStore.Areas.Admin.Controllers
                         messageViewModel.Url = "/Admin/Kitap";
                         messageViewModel.Message = "Bu kitap zaten mevcut...";
                         TempData["message"] = messageViewModel;
-
-
                         return View("BookForm");
                     }
 
@@ -166,8 +170,6 @@ namespace BookStore.Areas.Admin.Controllers
                     Request.Files[0].SaveAs(Server.MapPath(path));
                     book.BookImage = "/Areas/Admin/Images/Book/" + newFileName;
 
-
-                    book.BookStatus = true;
                     manager.Add(book);
                     messageViewModel.Message = book.BookName + " kitabı başarıyle eklendi...";
                 }
@@ -180,6 +182,7 @@ namespace BookStore.Areas.Admin.Controllers
                     return View("BookForm", new Book());
                 }
             }
+
             // Kitap guncelleme
             /*
             else
@@ -274,21 +277,6 @@ namespace BookStore.Areas.Admin.Controllers
 
         }
         */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
