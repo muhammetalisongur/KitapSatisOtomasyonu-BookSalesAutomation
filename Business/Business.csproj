@@ -47,6 +47,7 @@
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\ICityService.cs" />
     <Compile Include="Abstract\ICountryService.cs" />
+    <Compile Include="Abstract\IEmployeeService.cs" />
     <Compile Include="Abstract\IPublisherService.cs" />
     <Compile Include="Concrete\AuthorManager.cs" />
     <Compile Include="Concrete\BookManager.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\CityManager.cs" />
     <Compile Include="Concrete\CountryManager.cs" />
+    <Compile Include="Concrete\EmployeeManager.cs" />
     <Compile Include="Concrete\PublisherManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -58,3 +58,15 @@ D:\GitHub\BookStore\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
 D:\GitHub\BookStore\Entities\obj\Debug\Entities.csproj.CopyComplete
 D:\GitHub\BookStore\Entities\obj\Debug\Entities.dll
 D:\GitHub\BookStore\Entities\obj\Debug\Entities.pdb
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\bin\Debug\Entities.dll
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\bin\Debug\Entities.pdb
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\bin\Debug\Core.dll
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\bin\Debug\EntityFramework.dll
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\bin\Debug\Core.pdb
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\bin\Debug\Core.dll.config
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\bin\Debug\EntityFramework.xml
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\obj\Debug\Entities.csproj.AssemblyReference.cache
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\obj\Debug\Entities.csproj.CopyComplete
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\obj\Debug\Entities.dll
+C:\Users\muhammetalisongur\Source\Repos\BookStore\Entities\obj\Debug\Entities.pdb

@@ -147,6 +147,7 @@
     <Compile Include="Areas\Admin\Controllers\BookController.cs" />
     <Compile Include="Areas\Admin\Controllers\BookTranslatorController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
     <Compile Include="Areas\Admin\ViewModel\AuthorViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\BookTranslatorViewModel.cs" />
@@ -407,6 +408,7 @@
     <Content Include="Areas\Admin\Views\BookTranslator\BookTranslatorForm.cshtml" />
     <Content Include="Areas\Admin\Views\Book\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Book\BookForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
