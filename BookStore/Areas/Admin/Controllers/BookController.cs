@@ -129,8 +129,8 @@ namespace BookStore.Areas.Admin.Controllers
                     Request.Files[0].SaveAs(Server.MapPath(path));
                     book.BookImage = "/Areas/Admin/Images/Book/" + newFileName;
 
-
-                    book.BookISBN = DateTime.Now.ToString("ddMMyyyyHHmmss");
+                   
+                    book.BookISBN = ISBNGenerator.GenerateISBN();
                     book.BookStatus = true;
                     manager.Add(book);
                     messageViewModel.Message = book.BookName + " kitabı başarıyle eklendi...";
@@ -298,6 +298,38 @@ namespace BookStore.Areas.Admin.Controllers
             ViewBag.BookTranslator = translatorItems;
 
         }
+
+
+        // ISBN
+        public class ISBNGenerator
+        {
+            public static string GenerateISBN()
+            {
+                Random random = new Random();
+
+                // Generate 9 random digits
+                int[] digits = new int[9];
+                for (int i = 0; i < 9; i++)
+                {
+                    digits[i] = random.Next(0, 10);
+                }
+
+                // Calculate the checksum digit
+                int checksum = 0;
+                for (int i = 0; i < 9; i++)
+                {
+                    checksum += (i + 1) * digits[i];
+                }
+                checksum %= 11;
+
+                // Append the checksum digit
+                string isbn = string.Join("", digits) + (checksum == 10 ? "X" : checksum.ToString());
+
+                // Format the ISBN with hyphens
+                return $"{isbn.Substring(0, 3)}-{isbn.Substring(3, 1)}-{isbn.Substring(4, 4)}-{isbn.Substring(8)}";
+            }
+        }
+
 
 
     }
