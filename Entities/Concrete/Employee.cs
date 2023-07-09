@@ -20,6 +20,8 @@ namespace Entities.Concrete
         [Display(Name = "Ad Soyad")]
         public string FullName => $"{Name} {Surname}";
 
+        [Display(Name = "Personel Resmi")]
+        public string AuthorImage { get; set; }
         [Display(Name = "Departman")]
         public string Department { get; set; }
 
