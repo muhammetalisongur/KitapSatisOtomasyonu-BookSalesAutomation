@@ -6,6 +6,7 @@ using Entities.Concrete;
 using PagedList;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -31,7 +32,167 @@ namespace BookStore.Areas.Admin.Controllers
                                                                         FROM Employees JOIN
                                                                         Departments ON Employees.DepartmentID = Departments.ID").ToList();
 
+
             return View(result);
         }
+
+
+        [Route("Personel/YeniPersonel")]
+        [HttpGet]
+        public ActionResult New()
+        {
+            var list = context.Departments.ToList();
+            ViewBag.Department = new SelectList(list, "ID", "DepartmentName");
+            return View("SignUpForm", new Employee());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(Employee employee)
+        {
+
+
+            if (employee.ID == 0)
+            {
+                var list = manager.GetAll();
+                foreach (var item in list)
+                {
+                    if (employee.FullName == item.FullName)
+                    {
+                        messageViewModel.Status = false;
+                        messageViewModel.LinkText = "Personel Listesi";
+                        messageViewModel.Url = "/Admin/Personel";
+                        messageViewModel.Message = "Bu personel zaten mevcut...";
+                        TempData["message"] = messageViewModel;
+                        ViewBag.image = employee.EmployeeImage;
+                        var departments = context.Departments.ToList();
+                        ViewBag.Department = new SelectList(departments, "ID", "DepartmentName");
+                        return View("SignUpForm",new Employee());
+                    }
+
+                }
+
+                if (Path.GetFileName(Request.Files[0].FileName).Length > 0)
+                {
+                    var extension = Path.GetExtension(Request.Files[0].FileName);
+                    var newFileName = employee.FullName + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
+                    var path = "~/Areas/Admin/Images/Employee/" + newFileName;
+                    Request.Files[0].SaveAs(Server.MapPath(path));
+                    employee.EmployeeImage = "/Areas/Admin/Images/Employee/" + newFileName;
+
+                    ViewBag.image = employee.EmployeeImage;
+                    employee.Status = true;
+                    manager.Add(employee);
+                    var departments = context.Departments.ToList();
+                    ViewBag.Department = new SelectList(departments, "ID", "DepartmentName");
+
+                    messageViewModel.Status = true;
+                    messageViewModel.Message = employee.FullName + " personeli başarıyle eklendi...";
+                    messageViewModel.LinkText = "Giriş Yap";
+                    messageViewModel.Url = "/Admin/Personelgiris";
+                    TempData["message"] = messageViewModel;
+                    return View("SignUpForm", new Employee());
+                }
+                else
+                {
+                    messageViewModel.Status = false;
+                    messageViewModel.Message = "Personel resmi boş geçilemez!";
+                    TempData["message"] = messageViewModel;
+                    var departments = context.Departments.ToList();
+                    ViewBag.Department = new SelectList(departments, "ID", "DepartmentName");
+                    return View("SignUpForm", new Employee());
+                }
+            }
+            else
+            {
+                //var updateAuthor = manager.GetById(author.ID);
+
+                //if (updateAuthor == null)
+                //{
+                //    return HttpNotFound();
+                //}
+
+                //var oldAuthorFullName = updateAuthor.AuthorFullName;
+                //var oldBiography = updateAuthor.AuthorBiography;
+                //var oldCountry = updateAuthor.AuthorCountryID;
+                //var oldCity = updateAuthor.AuthorCityID;
+                //string oldImage = updateAuthor.AuthorImage;
+
+                //var extension = Path.GetExtension(Request.Files[0].FileName);
+                //var newFileName = author.AuthorFullName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
+                //var path = "~/Areas/Admin/Images/Author/" + newFileName;
+
+                //if (Path.GetFileName(Request.Files[0].FileName) != "")
+                //{
+                //    string fullPath = Request.MapPath("~" + oldImage);
+                //    if (System.IO.File.Exists(fullPath))
+                //    {
+                //        System.IO.File.Delete(fullPath);
+                //    }
+
+                //    Request.Files[0].SaveAs(Server.MapPath(path));
+                //    author.AuthorImage = "/Areas/Admin/Images/Author/" + newFileName;
+
+                //}
+
+                //if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryID == oldCountry && author.AuthorCityID == oldCity && extension == "")
+                //{
+                //    messageViewModel.Status = false;
+                //    messageViewModel.LinkText = "Yazar Listesi";
+                //    messageViewModel.Url = "/Admin/Yazar";
+                //    messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
+
+                //    ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+                //    GetCity(author.AuthorCountryID);
+                //    TempData["message"] = messageViewModel;
+                //    return View("AuthorForm", new Author());
+
+                //}
+                //else
+                //{
+                //    if (extension == "")
+                //        author.AuthorImage = oldImage;
+                //    manager.Update(author);
+                //    messageViewModel.Status = true;
+                //    messageViewModel.Message = "Bilgiler başarıyla güncellendi...";
+                //    TempData["message"] = messageViewModel;
+
+                //}
+            }
+
+            return View();
+        }
+
+        [Route("Personel/Guncelle/{id}")]
+        public ActionResult Update(int id)
+        {
+            var model = manager.GetById(id);
+            if (model == null)
+                return HttpNotFound();
+           
+            return View("SignUpForm", model);
+        }
+
+        [Route("Personel/Sil/{id}")]
+        public ActionResult Delete(int id)
+        {
+            var delete = manager.GetById(id);
+            if (delete == null)
+                return HttpNotFound();
+            string oldImage = delete.EmployeeImage;
+            string fullPath = Request.MapPath("~" + oldImage);
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+            }
+            manager.Delete(delete);
+            messageViewModel.Status = true;
+            messageViewModel.Message = delete.FullName + " isimli personel silindi...";
+            TempData["message"] = messageViewModel;
+            return RedirectToAction("Index", "Personel");
+
+        }
+
+
     }
 }

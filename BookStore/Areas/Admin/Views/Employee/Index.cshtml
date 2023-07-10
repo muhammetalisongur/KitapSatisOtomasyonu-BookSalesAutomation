@@ -10,7 +10,6 @@
 <link href="~/Areas/Content/Css/CustomCard.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="~/Content/css/table-style.css" />
 <link rel="stylesheet" type="text/css" href="~/Content/css/basictable.css" />
-
 <!-- breadcrumbs -->
 <div class="w3l_agileits_breadcrumbs">
     <div class="w3l_agileits_breadcrumbs_inner">
@@ -48,31 +47,29 @@
         </b>
         <div class="w3l-table-info agile_info_shadow">
             <h3 class="w3_inner_tittle two">
-                @*<a class="btn btn-success" href="/Admin/Personel/YeniPersonel">Yeni Personel Ekle</a>*@
+                <a class="btn btn-success" href="/Admin/Personel/YeniPersonel">Yeni Personel Ekle</a>
             </h3>
 
 
             <div class="container">
                 <div class="row">
                     @foreach (var employee in Model)
-                    {                  
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="our-team">
-                            <div class="picture">
-                                <img class="img-fluid" src="@employee.AuthorImage">
+                    {
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="our-team">
+                                <div class="picture">
+                                    <img class="img-fluid" src="@employee.EmployeeImage" style="height:130px; width:130px">
+                                </div>
+                                <div class="team-content">
+                                    <h3 class="name">@employee.FullName</h3>
+                                    <h4 class="title">@employee.DepartmentName</h4>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-edit" aria-hidden="true"> Guncelle</a></li>
+                                    <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-trash" aria-hidden="true"> Sil</a></li>
+                                </ul>
                             </div>
-                            <div class="team-content">
-                                <h3 class="name">@employee.FullName</h3>
-                                <h4 class="title">@employee.DepartmentName</h4>
-                            </div>
-                            <ul class="social">
-                                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-facebook" aria-hidden="true"></a></li>
-                                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-twitter" aria-hidden="true"></a></li>
-                                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus" aria-hidden="true"></a></li>
-                                <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-linkedin" aria-hidden="true"></a></li>
-                            </ul>
                         </div>
-                    </div>
                     }
                 </div>
             </div>

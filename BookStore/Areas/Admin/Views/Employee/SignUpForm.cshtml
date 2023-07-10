@@ -1,0 +1,189 @@
+﻿@using Entities.Concrete
+@model Employee
+@{
+    Layout = null;
+    var result = (BookStore.Areas.Admin.ViewModel.MessageViewModel)TempData["message"];
+}
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Personel Üye Formu | Kitap Satış Admin Panel</title>
+    <!-- custom-theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Esteem Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //custom-theme -->
+    <link href="~/Areas/Content/Css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Content/Css/snow.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Content/Css/component.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Content/Css/style_grid.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Content/Css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <!-- font-awesome-icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+<body>
+    <!-- /pages_agile_info_w3l -->
+
+    <div class="pages_agile_info_w3l">
+
+        <!-- /login -->
+        <div class="over_lay_agile_pages_w3ls two">
+            <div class="registration">
+
+                <div class="signin-form profile">
+                    @if (TempData["message"] != null)
+                    {
+                        if (!result.Status)
+                        {
+
+                            <div class="alert alert-danger">
+                                <b style="font-size:16px">@result.Message</b>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-success">
+                                @result.Message <b style="font-size:16px"><a href="@result.Url">@result.LinkText</a></b>
+                            </div>
+                        }
+
+                    }
+                    <h2>Personel Kayıt Formu</h2>
+                    <div class="login-form">
+                        @using (Html.BeginForm("Save", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="login-form">
+
+                                <div style="display:flex" class="col-2">
+                                    @Html.EditorFor(x => x.EmployeeImage, new { htmlAttributes = new { @class = "form-control", type = "file", style = "height:auto", accept = "image/*", title = "Resim Yukle", onchange = "prewIMG(event)" } })
+                                    @if (Model.EmployeeImage != null)
+                                    {
+                                        <img src="@Model.EmployeeImage" height="52" width="52" style="position: absolute; left: calc(100% - 41.5em); " id="imgPrew" alt="Resim Yukle" />
+                                    }
+                                    else
+                                    {
+                                        <img src="@ViewBag.image" height="52" width="52" style="position: absolute; left: calc(100% - 41.5em); " id="imgPrew" alt="Resim Yukle" />
+
+                                    }
+                                </div>
+                                <br />
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Adınız" })
+                                @Html.ValidationMessageFor(x => x.Name)
+                                <br />
+
+                                @Html.TextBoxFor(m => m.Surname, new { @class = "form-control", placeholder = "Soyadınız" })
+                                @Html.ValidationMessageFor(x => x.Surname)
+
+                                <br />
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Mail adresiniz" })
+                                @Html.ValidationMessageFor(x => x.Email)
+
+                                <br />
+                                @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Şifreniz", type = "password" })
+                                @Html.ValidationMessageFor(x => x.Password)
+
+                                <br />
+                                <br />
+                                @if (ViewBag.Department != null)
+                                {
+                                    @Html.DropDownListFor(m => m.DepartmentID, ViewBag.Department as SelectList, "-- Departman Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                                    @Html.ValidationMessageFor(x => x.DepartmentID)
+                                }
+                                else
+                                {
+                                    @Html.DropDownListFor(m => m.DepartmentID, new SelectList(""), "-- Departman Bulunumadı --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                                    @Html.ValidationMessageFor(x => x.DepartmentID)
+                                }
+
+
+                            </div>
+
+                            @Html.HiddenFor(x => x.ID)
+                            <button type="submit" class="btn btn-success">Kaydet</button>
+                        }
+                    </div>
+
+
+                    <h6><a href="main-page.html">Anasayfaya dön</a><h6>
+                </div>
+            </div>
+            <!--copy rights start here-->
+            <div class="copyrights_agile two">
+                <p>© @DateTime.Now.Year Kitap Satış. Tüm Hakları Saklıdır | Design by  <a href="https://muhammetalisongur.com/" target="_blank">Muhammet Ali Songur</a> </p>
+            </div>
+            <!--copy rights end here-->
+        </div>
+    </div>
+    <!-- /login -->
+    <!-- //pages_agile_info_w3l -->
+    <!-- js -->
+    <script type="text/javascript" src="~/Areas/Content/JS/jquery-2.1.4.min.js"></script>
+    <script src="~/Areas/Content/JS/modernizr.custom.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Areas/Content/JS/classie.js"></script>
+    <script src="~/Areas/Content/JS/gnmenu.js"></script>
+    <script>
+        new gnMenu(document.getElementById('gn-menu'));
+    </script>
+
+    <!-- //js -->
+
+    <script src="~/Areas/Content/JS/screenfull.js"></script>
+    <script>
+        $(function () {
+            $('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+
+            if (!screenfull.enabled) {
+                return false;
+            }
+
+
+
+            $('#toggle').click(function () {
+                screenfull.toggle($('#container')[0]);
+            });
+        });
+    </script>
+    <script src="~/Areas/Content/JS/jquery.nicescroll.js"></script>
+    <script src="~/Areas/Content/JS/scripts.js"></script>
+    <script src="~/Areas/Content/JS/snow.js"></script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <script type="text/javascript" src="~/Areas/Content/JS/bootstrap-3.1.1.min.js"></script>
+
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+
+    <script>
+        // Resim Önizleme
+        var prewIMG = function (event) {
+            var result = document.getElementById("imgPrew");
+            result.src = URL.createObjectURL(event.target.files[0]);
+        };
+
+    </script>
+</body>
+</html>

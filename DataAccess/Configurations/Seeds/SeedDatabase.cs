@@ -1015,7 +1015,7 @@ namespace DataAccess.Configurations.Seeds
                 Email = "songur@gmail.com",
                 Password = "123",
                 Status = true,
-                AuthorImage = "https://picsum.photos/400?id=0",
+                EmployeeImage = "https://picsum.photos/400?id=0",
                 DepartmentID = 1,
             });
             employeeList.Add(new Employee()
@@ -1026,7 +1026,7 @@ namespace DataAccess.Configurations.Seeds
                 Email = "yilmaz@gmail.com",
                 Password = "123",
                 Status = true,
-                AuthorImage = "https://picsum.photos/400?id=1",
+                EmployeeImage = "https://picsum.photos/400?id=1",
                 DepartmentID = 2,
             });
             employeeList.Add(new Employee()
@@ -1037,7 +1037,7 @@ namespace DataAccess.Configurations.Seeds
                 Email = "kaya@gmail.com",
                 Password = "123",
                 Status = true,
-                AuthorImage = "https://picsum.photos/400?id=2",
+                EmployeeImage = "https://picsum.photos/400?id=2",
                 DepartmentID = 3,
             });
             employeeList.Add(new Employee()
@@ -1048,7 +1048,7 @@ namespace DataAccess.Configurations.Seeds
                 Email = "demir@gmail.com",
                 Password = "123",
                 Status = true,
-                AuthorImage = "https://picsum.photos/400?id=3",
+                EmployeeImage = "https://picsum.photos/400?id=3",
                 DepartmentID = 2,
             });
             #endregion

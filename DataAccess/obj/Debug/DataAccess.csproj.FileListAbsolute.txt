@@ -152,3 +152,4 @@ C:\Users\muhammetalisongur\Source\Repos\BookStore\DataAccess\obj\Debug\DataAcces
 C:\Users\muhammetalisongur\Source\Repos\BookStore\DataAccess\obj\Debug\DataAccess.pdb
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.AddEmployee.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.AddDepartment.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateEmployee.resources

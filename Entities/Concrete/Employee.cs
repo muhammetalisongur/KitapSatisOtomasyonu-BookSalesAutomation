@@ -22,7 +22,7 @@ namespace Entities.Concrete
         public string FullName => $"{Name} {Surname}";
 
         [Display(Name = "Personel Resmi")]
-        public string AuthorImage { get; set; }
+        public string EmployeeImage { get; set; }
 
 
         [Display(Name = "Departman")]
@@ -31,6 +31,7 @@ namespace Entities.Concrete
 
         [Required(ErrorMessage = "Email boş geçilemez!")]
         [StringLength(50, ErrorMessage = "Email en fazla 50 karakter olabilir!")]
+        [EmailAddress(ErrorMessage = "Geçerli bir email adresi giriniz!")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
@@ -41,10 +42,6 @@ namespace Entities.Concrete
 
         [Display(Name = "Durum")]
         public bool Status { get; set; }
-
-
-        [NotMapped]
-        public string DepartmentName { get; set; }
 
 
         // Navigation Properties

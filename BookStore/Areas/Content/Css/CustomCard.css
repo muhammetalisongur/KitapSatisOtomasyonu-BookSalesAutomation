@@ -96,7 +96,14 @@
             text-decoration: none;
         }
 
-            .our-team .social li a:hover {
-                color: #1369ce;
-                background-color: #f7f5ec;
-            }
+        .our-team .social li .fa-edit:hover {
+            color: white;
+            background-color: #009933;
+        }
+
+
+        .our-team .social li .fa-trash:hover {
+            color: white;
+            background-color: #ff3300;
+        }
+
