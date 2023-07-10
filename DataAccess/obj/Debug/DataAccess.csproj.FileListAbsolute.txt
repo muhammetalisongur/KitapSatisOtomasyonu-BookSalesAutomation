@@ -150,3 +150,5 @@ C:\Users\muhammetalisongur\Source\Repos\BookStore\DataAccess\obj\Debug\DataAcces
 C:\Users\muhammetalisongur\Source\Repos\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 C:\Users\muhammetalisongur\Source\Repos\BookStore\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\muhammetalisongur\Source\Repos\BookStore\DataAccess\obj\Debug\DataAccess.pdb
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.AddEmployee.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.AddDepartment.resources

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Core.Entities;
 
 namespace Entities.Concrete
@@ -22,8 +23,11 @@ namespace Entities.Concrete
 
         [Display(Name = "Personel Resmi")]
         public string AuthorImage { get; set; }
+
+
         [Display(Name = "Departman")]
-        public string Department { get; set; }
+        [ForeignKey("Department")]
+        public int DepartmentID { get; set; }
 
         [Required(ErrorMessage = "Email boş geçilemez!")]
         [StringLength(50, ErrorMessage = "Email en fazla 50 karakter olabilir!")]
@@ -38,6 +42,9 @@ namespace Entities.Concrete
         [Display(Name = "Durum")]
         public bool Status { get; set; }
 
+
+        // Navigation Properties
+        public virtual Department Department { get; set; }
 
     }
 }

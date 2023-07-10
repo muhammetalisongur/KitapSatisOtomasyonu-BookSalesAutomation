@@ -976,6 +976,86 @@ namespace DataAccess.Configurations.Seeds
 
             context.BookTranslators.AddRange(bookTranslators);
 
+
+            IList<Department> departmentList = new List<Department>();
+
+            #region Departments    
+            departmentList.Add(new Department()
+            {
+                ID = 1,
+                DepartmentName = "Yönetici",
+
+            });
+            departmentList.Add(new Department()
+            {
+                ID = 2,
+                DepartmentName = "Editör",
+
+            });
+            departmentList.Add(new Department()
+            {
+                ID = 3,
+                DepartmentName = "Satış Temsilcisi",
+
+            });
+            #endregion
+
+            context.Departments.AddRange(departmentList);
+
+
+
+            IList<Employee> employeeList = new List<Employee>();
+
+            #region Employees
+            employeeList.Add(new Employee()
+            {
+                ID = 1,
+                Name = "Muhammet Ali",
+                Surname = "Songur",
+                Email = "songur@gmail.com",
+                Password = "123",
+                Status = true,
+                AuthorImage = "https://picsum.photos/400?id=0",
+                DepartmentID = 1,
+            });
+            employeeList.Add(new Employee()
+            {
+                ID = 2,
+                Name = "Mehmet",
+                Surname = "Yılmaz",
+                Email = "yilmaz@gmail.com",
+                Password = "123",
+                Status = true,
+                AuthorImage = "https://picsum.photos/400?id=1",
+                DepartmentID = 2,
+            });
+            employeeList.Add(new Employee()
+            {
+                ID = 3,
+                Name = "Ayşe",
+                Surname = "Kaya",
+                Email = "kaya@gmail.com",
+                Password = "123",
+                Status = true,
+                AuthorImage = "https://picsum.photos/400?id=2",
+                DepartmentID = 3,
+            });
+            employeeList.Add(new Employee()
+            {
+                ID = 4,
+                Name = "Ali",
+                Surname = "Demir",
+                Email = "demir@gmail.com",
+                Password = "123",
+                Status = true,
+                AuthorImage = "https://picsum.photos/400?id=3",
+                DepartmentID = 2,
+            });
+            #endregion
+
+            context.Employees.AddRange(employeeList);
+
+
             base.Seed(context);
         }
     }

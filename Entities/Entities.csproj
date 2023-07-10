@@ -48,6 +48,7 @@
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\City.cs" />
     <Compile Include="Concrete\Country.cs" />
+    <Compile Include="Concrete\Department.cs" />
     <Compile Include="Concrete\Employee.cs" />
     <Compile Include="Concrete\Publisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

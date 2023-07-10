@@ -152,6 +152,7 @@
     <Compile Include="Areas\Admin\ViewModel\AuthorViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\BookTranslatorViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\BookViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModel\EmployeeViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\MessageViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\PublisherViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />

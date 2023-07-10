@@ -129,6 +129,10 @@
     <Compile Include="Migrations\202307071413093_AddEmployee.designer.cs">
       <DependentUpon>202307071413093_AddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307100728388_AddDepartment.cs" />
+    <Compile Include="Migrations\202307100728388_AddDepartment.designer.cs">
+      <DependentUpon>202307100728388_AddDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -191,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307071413093_AddEmployee.resx">
       <DependentUpon>202307071413093_AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307100728388_AddDepartment.resx">
+      <DependentUpon>202307100728388_AddDepartment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

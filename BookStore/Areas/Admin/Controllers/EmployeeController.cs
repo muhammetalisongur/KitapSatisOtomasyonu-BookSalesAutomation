@@ -1,5 +1,6 @@
 ﻿using BookStore.Areas.Admin.ViewModel;
 using Business.Concrete;
+using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using PagedList;
@@ -17,15 +18,34 @@ namespace BookStore.Areas.Admin.Controllers
         // GET: Admin/Employee
         EmployeeManager manager = new EmployeeManager(new EfEmployeeDal());
         MessageViewModel messageViewModel = new MessageViewModel();
+        BookStoreContext context = new BookStoreContext();
+        
 
 
         [Route("Personel")]
         [Route("Personel/Index")]
-        public ActionResult Index(int? SayfaNo)
+        public ActionResult Index()
         {
-            int _sayfaNo = SayfaNo ?? 1;
-            var result = manager.GetAll().ToPagedList<Employee>(_sayfaNo, 5);
-            return View(result);
+            var query = (from x in manager.GetAll()
+                         join c in context.Departments on x.ID equals c.ID
+                         select new EmployeeViewModel
+                         {            
+                             ID = x.ID,
+                             Name = x.Name,
+                             Surname = x.Surname,
+                             FullName = x.Name + " " + x.Surname,
+                             Email = x.Email,
+                             Password = x.Password,
+                             Status = x.Status,
+                             AuthorImage = x.AuthorImage,
+                             Departman = c.DepartmentName,                      
+
+                         }).ToList();
+
+
+
+            //var result = manager.GetAll().ToList();
+            return View(query);
         }
     }
 }
