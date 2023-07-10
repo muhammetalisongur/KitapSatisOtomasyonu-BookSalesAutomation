@@ -43,6 +43,10 @@ namespace Entities.Concrete
         public bool Status { get; set; }
 
 
+        [NotMapped]
+        public string DepartmentName { get; set; }
+
+
         // Navigation Properties
         public virtual Department Department { get; set; }
 

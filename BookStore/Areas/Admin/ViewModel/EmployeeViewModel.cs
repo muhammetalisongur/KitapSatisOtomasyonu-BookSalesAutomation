@@ -15,6 +15,6 @@ namespace BookStore.Areas.Admin.ViewModel
         public string Password { get; set; }
         public bool Status { get; set; }
         public string AuthorImage { get; set; }
-        public string Departman { get; set; }
+        public string DepartmentName { get; set; }
     }
 }
