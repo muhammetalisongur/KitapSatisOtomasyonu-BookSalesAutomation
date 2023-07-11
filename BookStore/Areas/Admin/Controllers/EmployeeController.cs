@@ -68,9 +68,19 @@ namespace BookStore.Areas.Admin.Controllers
                         var departments = context.Departments.ToList();
                         ViewBag.Department = new SelectList(departments, "ID", "DepartmentName");
                         TempData["message"] = messageViewModel;
-                        return View("SignUpForm",new Employee());
+                        return View("SignUpForm", new Employee());
                     }
 
+                }
+
+                if (employee.DepartmentID == 1)
+                {
+                    messageViewModel.Status = false;
+                    messageViewModel.Message = "Yetkisiz departman seçimi!";
+                    TempData["message"] = messageViewModel;
+                    var departments = context.Departments.ToList();
+                    ViewBag.Department = new SelectList(departments, "ID", "DepartmentName");
+                    return View("SignUpForm", new Employee());
                 }
 
                 if (Path.GetFileName(Request.Files[0].FileName).Length > 0)
@@ -170,7 +180,7 @@ namespace BookStore.Areas.Admin.Controllers
             var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
-           
+
             return View("SignUpForm", model);
         }
 
