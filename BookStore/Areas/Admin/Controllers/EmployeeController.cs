@@ -67,6 +67,7 @@ namespace BookStore.Areas.Admin.Controllers
                         ViewBag.image = employee.EmployeeImage;
                         var departments = context.Departments.ToList();
                         ViewBag.Department = new SelectList(departments, "ID", "DepartmentName");
+                        TempData["message"] = messageViewModel;
                         return View("SignUpForm",new Employee());
                     }
 
