@@ -116,59 +116,59 @@ namespace BookStore.Areas.Admin.Controllers
             }
             else
             {
-                //var updateAuthor = manager.GetById(author.ID);
+                var update = manager.GetById(employee.ID);
 
-                //if (updateAuthor == null)
-                //{
-                //    return HttpNotFound();
-                //}
+                if (update == null)
+                {
+                    return HttpNotFound();
+                }
 
-                //var oldAuthorFullName = updateAuthor.AuthorFullName;
-                //var oldBiography = updateAuthor.AuthorBiography;
-                //var oldCountry = updateAuthor.AuthorCountryID;
-                //var oldCity = updateAuthor.AuthorCityID;
-                //string oldImage = updateAuthor.AuthorImage;
+                var oldFullName = update.FullName;
+                var oldBiography = update.AuthorBiography;
+                var oldCountry = update.AuthorCountryID;
+                var oldCity = update.AuthorCityID;
+                string oldImage = update.AuthorImage;
 
-                //var extension = Path.GetExtension(Request.Files[0].FileName);
-                //var newFileName = author.AuthorFullName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
-                //var path = "~/Areas/Admin/Images/Author/" + newFileName;
+                var extension = Path.GetExtension(Request.Files[0].FileName);
+                var newFileName = author.AuthorFullName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
+                var path = "~/Areas/Admin/Images/Author/" + newFileName;
 
-                //if (Path.GetFileName(Request.Files[0].FileName) != "")
-                //{
-                //    string fullPath = Request.MapPath("~" + oldImage);
-                //    if (System.IO.File.Exists(fullPath))
-                //    {
-                //        System.IO.File.Delete(fullPath);
-                //    }
+                if (Path.GetFileName(Request.Files[0].FileName) != "")
+                {
+                    string fullPath = Request.MapPath("~" + oldImage);
+                    if (System.IO.File.Exists(fullPath))
+                    {
+                        System.IO.File.Delete(fullPath);
+                    }
 
-                //    Request.Files[0].SaveAs(Server.MapPath(path));
-                //    author.AuthorImage = "/Areas/Admin/Images/Author/" + newFileName;
+                    Request.Files[0].SaveAs(Server.MapPath(path));
+                    author.AuthorImage = "/Areas/Admin/Images/Author/" + newFileName;
 
-                //}
+                }
 
-                //if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryID == oldCountry && author.AuthorCityID == oldCity && extension == "")
-                //{
-                //    messageViewModel.Status = false;
-                //    messageViewModel.LinkText = "Yazar Listesi";
-                //    messageViewModel.Url = "/Admin/Yazar";
-                //    messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
+                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryID == oldCountry && author.AuthorCityID == oldCity && extension == "")
+                {
+                    messageViewModel.Status = false;
+                    messageViewModel.LinkText = "Yazar Listesi";
+                    messageViewModel.Url = "/Admin/Yazar";
+                    messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
 
-                //    ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
-                //    GetCity(author.AuthorCountryID);
-                //    TempData["message"] = messageViewModel;
-                //    return View("AuthorForm", new Author());
+                    ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
+                    GetCity(author.AuthorCountryID);
+                    TempData["message"] = messageViewModel;
+                    return View("AuthorForm", new Author());
 
-                //}
-                //else
-                //{
-                //    if (extension == "")
-                //        author.AuthorImage = oldImage;
-                //    manager.Update(author);
-                //    messageViewModel.Status = true;
-                //    messageViewModel.Message = "Bilgiler başarıyla güncellendi...";
-                //    TempData["message"] = messageViewModel;
+                }
+                else
+                {
+                    if (extension == "")
+                        author.AuthorImage = oldImage;
+                    manager.Update(author);
+                    messageViewModel.Status = true;
+                    messageViewModel.Message = "Bilgiler başarıyla güncellendi...";
+                    TempData["message"] = messageViewModel;
 
-                //}
+                }
             }
 
             return View();
@@ -180,7 +180,8 @@ namespace BookStore.Areas.Admin.Controllers
             var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
-
+            var list = context.Departments.ToList();
+            ViewBag.Department = new SelectList(list, "ID", "DepartmentName");
             return View("SignUpForm", model);
         }
 
@@ -191,11 +192,15 @@ namespace BookStore.Areas.Admin.Controllers
             if (delete == null)
                 return HttpNotFound();
             string oldImage = delete.EmployeeImage;
-            string fullPath = Request.MapPath("~" + oldImage);
-            if (System.IO.File.Exists(fullPath))
+            if (!oldImage.Contains("http"))
             {
-                System.IO.File.Delete(fullPath);
+                string fullPath = Request.MapPath("~" + oldImage);
+                if (System.IO.File.Exists(fullPath))
+                {
+                    System.IO.File.Delete(fullPath);
+                }
             }
+           
             manager.Delete(delete);
             messageViewModel.Status = true;
             messageViewModel.Message = delete.FullName + " isimli personel silindi...";
