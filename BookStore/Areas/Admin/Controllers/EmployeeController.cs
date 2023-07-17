@@ -124,46 +124,47 @@ namespace BookStore.Areas.Admin.Controllers
                 }
 
                 var oldFullName = update.FullName;
-                var oldBiography = update.AuthorBiography;
-                var oldCountry = update.AuthorCountryID;
-                var oldCity = update.AuthorCityID;
-                string oldImage = update.AuthorImage;
+                var oldEmail = update.Email;
+                var oldPassword = update.Password;
+                var oldDepartment = update.DepartmentID;
+                string oldImage = update.EmployeeImage;
 
                 var extension = Path.GetExtension(Request.Files[0].FileName);
-                var newFileName = author.AuthorFullName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
-                var path = "~/Areas/Admin/Images/Author/" + newFileName;
+                var newFileName = employee.FullName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
+                var path = "~/Areas/Admin/Images/Employee/" + newFileName;
 
                 if (Path.GetFileName(Request.Files[0].FileName) != "")
                 {
-                    string fullPath = Request.MapPath("~" + oldImage);
-                    if (System.IO.File.Exists(fullPath))
+                    if (!oldImage.Contains("http"))
                     {
-                        System.IO.File.Delete(fullPath);
+                        string fullPath = Request.MapPath("~" + oldImage);
+                        if (System.IO.File.Exists(fullPath))
+                        {
+                            System.IO.File.Delete(fullPath);
+                        }
                     }
-
                     Request.Files[0].SaveAs(Server.MapPath(path));
-                    author.AuthorImage = "/Areas/Admin/Images/Author/" + newFileName;
+                    employee.EmployeeImage = "/Areas/Admin/Images/Employee/" + newFileName;
 
                 }
 
-                if (author.AuthorFullName == oldAuthorFullName && author.AuthorBiography == oldBiography && author.AuthorCountryID == oldCountry && author.AuthorCityID == oldCity && extension == "")
+                if (employee.FullName == oldFullName && employee.Email == oldEmail && employee.Password == oldPassword && employee.DepartmentID == oldDepartment && extension == "")
                 {
                     messageViewModel.Status = false;
-                    messageViewModel.LinkText = "Yazar Listesi";
-                    messageViewModel.Url = "/Admin/Yazar";
+                    messageViewModel.LinkText = "Personel Listesi";
+                    messageViewModel.Url = "/Admin/Personel";
                     messageViewModel.Message = "Herhangi bir değişiklik yapılmadı...";
-
-                    ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
-                    GetCity(author.AuthorCountryID);
+                    var departments = context.Departments.ToList();
+                    ViewBag.Department = new SelectList(departments, "ID", "DepartmentName");
                     TempData["message"] = messageViewModel;
-                    return View("AuthorForm", new Author());
+                    return View("SignUpForm", new Employee());
 
                 }
                 else
                 {
                     if (extension == "")
-                        author.AuthorImage = oldImage;
-                    manager.Update(author);
+                        employee.EmployeeImage = oldImage;
+                    manager.Update(employee);
                     messageViewModel.Status = true;
                     messageViewModel.Message = "Bilgiler başarıyla güncellendi...";
                     TempData["message"] = messageViewModel;
@@ -171,7 +172,7 @@ namespace BookStore.Areas.Admin.Controllers
                 }
             }
 
-            return View();
+            return RedirectToAction("Index", "Personel");
         }
 
         [Route("Personel/Guncelle/{id}")]
@@ -200,7 +201,7 @@ namespace BookStore.Areas.Admin.Controllers
                     System.IO.File.Delete(fullPath);
                 }
             }
-           
+
             manager.Delete(delete);
             messageViewModel.Status = true;
             messageViewModel.Message = delete.FullName + " isimli personel silindi...";
