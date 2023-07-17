@@ -21,9 +21,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="~/Areas/Content/Css/snow.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/Areas/Content/Css/component.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/Areas/Content/Css/style_grid.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="~/Areas/Content/Css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Content/Css/style.css" rel="stylesheet" />
     <!-- font-awesome-icons -->
-    <link href="~/Areas/Content/Css/font-awesome.css" rel="stylesheet">
+    <link href="~/Areas/Content/Css/font-awesome.css" rel="stylesheet" />
     <!-- //font-awesome-icons -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 </head>
@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="registration">
 
                 <div class="signin-form profile">
-                    <h2>Sign in Form</h2>
+                    <h2>Personel Giriş</h2>
                     <div class="login-form">
                         <form action="#" method="post">
                             <input type="email" name="email" placeholder="E-mail" required="">
@@ -46,21 +46,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </form>
                     </div>
-                    <div class="login-social-grids">
+                    @*<div class="login-social-grids">
                         <ul>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-rss"></i></a></li>
                         </ul>
-                    </div>
-                    <p><a href="signup.html"> Don't have an account?</a></p>
+                    </div>*@
+                    <p><a href="/Admin/Personel/YeniPersonel">Yeni hesap oluştur?</a></p>
 
-                    <h6><a href="main-page.html">Back To Home</a><h6>
+                    <h6><a href="main-page.html">ANASAYFAYA DÖN</a><h6>
                 </div>
             </div>
             <!--copy rights start here-->
             <div class="copyrights_agile">
-                <p>© 2017 Esteem. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+                <p>© @DateTime.Now.Year Kitap Satış. Tüm Hakları Saklıdır | Design by  <a href="https://muhammetalisongur.com/" target="_blank">Muhammet Ali Songur</a> </p>
             </div>
             <!--copy rights end here-->
         </div>

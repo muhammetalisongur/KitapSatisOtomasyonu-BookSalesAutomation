@@ -496,14 +496,14 @@ li.second.w3l_search input:-ms-input-placeholder {
 }
 /*-- /agile_top_w3_post_sections --*/
 .img_wthee_post {
-	background: url(../images/pic.jpg)no-repeat center;
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	min-height: 420px;
-	padding: 5em 3em 4em 3em;
+    background: url(../images/pic.jpg)no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    min-height: 420px;
+    padding: 5em 3em 4em 3em;
 }
 .img_wthee_post1{
     background: url(../images/pic1.jpg)no-repeat center;
