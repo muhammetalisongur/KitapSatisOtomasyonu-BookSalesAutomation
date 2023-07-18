@@ -150,6 +150,7 @@
     <Compile Include="Areas\Admin\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
+    <Compile Include="Areas\Admin\Rollers\AdminRoleProvider.cs" />
     <Compile Include="Areas\Admin\ViewModel\AuthorViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\BookTranslatorViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\BookViewModel.cs" />

@@ -14,6 +14,7 @@ using System.Text;
 
 namespace BookStore.Areas.Admin.Controllers
 {
+    [Authorize]
     [RouteArea("Admin")]
     public class BookController : Controller
     {

@@ -175,6 +175,7 @@ namespace BookStore.Areas.Admin.Controllers
             return RedirectToAction("Index", "Personel");
         }
 
+        [Authorize(Roles = "Yönetici")]
         [Route("Personel/Guncelle/{id}")]
         public ActionResult Update(int id)
         {
@@ -186,6 +187,7 @@ namespace BookStore.Areas.Admin.Controllers
             return View("SignUpForm", model);
         }
 
+        [Authorize(Roles = "Yönetici")]
         [Route("Personel/Sil/{id}")]
         public ActionResult Delete(int id)
         {
