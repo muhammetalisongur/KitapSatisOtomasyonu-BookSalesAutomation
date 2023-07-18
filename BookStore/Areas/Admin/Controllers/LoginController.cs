@@ -33,6 +33,9 @@ namespace BookStore.Areas.Admin.Controllers
             {
                 FormsAuthentication.SetAuthCookie(result.Email, false);
                 Session["Email"] = result.FullName.ToString();
+               
+                Session["Image"] = result.EmployeeImage;
+
                 return RedirectToAction("Index", "Book");
             }
             else
@@ -59,8 +62,12 @@ namespace BookStore.Areas.Admin.Controllers
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
-            Session.Abandon();
+            //Session.Abandon();
+            messageViewModel.Status = true;
+            messageViewModel.Message = "Başarıyla çıkış yaptınız...";
+            TempData["message"] = messageViewModel;
             return RedirectToAction("Index", "Login");
         }
+
     }
 }
