@@ -176,6 +176,7 @@ namespace BookStore.Areas.Admin.Controllers
             return RedirectToAction("Index", "Personel");
         }
 
+      
         [Authorize(Roles = "Yönetici")]
         [Route("Personel/Guncelle/{id}")]
         public ActionResult Update(int id)

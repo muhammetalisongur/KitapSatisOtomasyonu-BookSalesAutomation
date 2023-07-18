@@ -1,4 +1,5 @@
-﻿using DataAccess.Concrete;
+﻿using BookStore.Areas.Admin.ViewModel;
+using DataAccess.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,7 @@ namespace BookStore.Areas.Admin.Rollers
         public override string[] FindUsersInRole(string roleName, string usernameToMatch)
         {
             throw new NotImplementedException();
+
         }
 
         public override string[] GetAllRoles()
@@ -39,8 +41,9 @@ namespace BookStore.Areas.Admin.Rollers
         public override string[] GetRolesForUser(string username)
         {
             BookStoreContext c = new BookStoreContext();
-            var x = c.Departments.FirstOrDefault(y => y.DepartmentName == username);
-            return new string[] { x.DepartmentName };
+            var x = c.Employees.FirstOrDefault(y => y.Email == username);
+            return new string[] { x.Department.DepartmentName };
+
         }
 
         public override string[] GetUsersInRole(string roleName)
