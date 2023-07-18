@@ -13,6 +13,7 @@ using System.Web.Mvc;
 
 namespace BookStore.Areas.Admin.Controllers
 {
+    [Authorize]
     [RouteArea("Admin")]
     public class EmployeeController : Controller
     {
