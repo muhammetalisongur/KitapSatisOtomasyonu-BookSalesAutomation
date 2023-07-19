@@ -1,0 +1,114 @@
+﻿@using BookStore.Areas.Admin.ViewModel
+@model  List<EmployeeViewModel>
+
+
+<div class="social_media_w3ls" style="margin-bottom:200px;">
+
+    @foreach (var item in Model)
+    {
+
+        switch (item.ID)
+        {
+            case 1:
+                <div class="col-md-3 socail_grid_agile facebook" style="height:186.69px; width:313.5px">
+                    <ul class="icon_w3_info">
+                        <li></li>
+                    </ul>
+                    <ul class="icon_w3_social">
+
+                        <li><a href="/Admin/Personel"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <div class="bottom_info_social">
+                        <div class="col-md-4 agile_w3l_social_media_text_img">
+                            <img src="@item.EmployeeImage" style="height: 60px; width: 60px; " alt="">
+                        </div>
+                        <div class="col-md-8 agile_w3l_social_media_text">
+                            <h4>@item.FullName</h4>
+                            <p>@item.DepartmentName</p>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                break;
+            case 2:
+                <div class="col-md-3 socail_grid_agile twitter" style="height:186.69px; width:313.5px">
+                    <ul class="icon_w3_info">
+                        <li></li>
+                    </ul>
+                    <ul class="icon_w3_social">
+
+                        <li><a href="/Admin/Personel"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <div class="bottom_info_social">
+                        <div class="col-md-4 agile_w3l_social_media_text_img">
+                            <img src="@item.EmployeeImage" style="height: 60px; width: 60px; " alt="">
+                        </div>
+                        <div class="col-md-8 agile_w3l_social_media_text">
+                            <h4>@item.FullName</h4>
+                            <p>@item.DepartmentName</p>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                break;
+            case 3:
+                <div class="col-md-3 socail_grid_agile gmail" style="height:186.69px; width:313.5px">
+                    <ul class="icon_w3_info">
+                        <li></li>
+                    </ul>
+                    <ul class="icon_w3_social">
+
+                        <li><a href="/Admin/Personel"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <div class="bottom_info_social">
+                        <div class="col-md-4 agile_w3l_social_media_text_img">
+                            <img src="@item.EmployeeImage" style="height: 60px; width: 60px; " alt="">
+                        </div>
+                        <div class="col-md-8 agile_w3l_social_media_text">
+                            <h4>@item.FullName</h4>
+                            <p>@item.DepartmentName</p>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                break;
+            case 4:
+                <div class="col-md-3 socail_grid_agile dribble" style="height:186.69px; width:313.5px">
+                    <ul class="icon_w3_info">
+                        <li></li>
+                    </ul>
+                    <ul class="icon_w3_social">
+
+                        <li><a href="/Admin/Personel"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <div class="bottom_info_social">
+                        <div class="col-md-4 agile_w3l_social_media_text_img">
+                            <img src="@item.EmployeeImage" style="height: 60px; width: 60px; " alt="">
+                        </div>
+                        <div class="col-md-8 agile_w3l_social_media_text">
+                            <h4>@item.FullName</h4>
+                            <p>@item.DepartmentName</p>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                
+                break;
+
+            default:
+                break;
+        }
+
+
+
+    }
+
+</div>

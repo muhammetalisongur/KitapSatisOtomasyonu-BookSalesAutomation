@@ -35,52 +35,54 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <!-- /inner_content_w3_agile_info-->
     <div class="inner_content_w3_agile_info">
+
+        @*Admin Panel Bilgisi*@
         <!-- /agile_top_w3_grids-->
         <div class="agile_top_w3_grids">
             <ul class="ca-menu">
                 <li>
-                    <a href="#">
+                    <a href="/Admin/Kategori">
 
-                        <i class="fa fa-building-o" aria-hidden="true"></i>
+                        <i class="fa fa-folder-open" aria-hidden="true"></i>
                         <div class="ca-content">
-                            <h4 class="ca-main">16,808</h4>
-                            <h3 class="ca-sub">New Companies</h3>
+                            <h4 class="ca-main">@ViewBag.CategoryCount</h4>
+                            <h3 class="ca-sub">Toplam Kategori</h3>
                         </div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/Admin/Yayinevi">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <div class="ca-content">
+                            <h4 class="ca-main one">@ViewBag.PublisherCount</h4>
+                            <h3 class="ca-sub one">Toplam YayınEvi</h3>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Yazar">
                         <i class="fa fa-user" aria-hidden="true"></i>
                         <div class="ca-content">
-                            <h4 class="ca-main one">26,808</h4>
-                            <h3 class="ca-sub one">New Clients</h3>
+                            <h4 class="ca-main two">@ViewBag.AuthorCount</h4>
+                            <h3 class="ca-sub two">Toplam Yazar</h3>
                         </div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-database" aria-hidden="true"></i>
+                    <a href="/Admin/kitapcevirmen">
+                        <i class="fa fa-globe" aria-hidden="true"></i>
                         <div class="ca-content">
-                            <h4 class="ca-main two">29,008</h4>
-                            <h3 class="ca-sub two">New Projects</h3>
+                            <h4 class="ca-main three">@ViewBag.BookTranslatorCount</h4>
+                            <h3 class="ca-sub three">Toplam Çevirmen</h3>
                         </div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-tasks" aria-hidden="true"></i>
+                    <a href="/Admin/kitap">
+                        <i class="fa fa-book" aria-hidden="true"></i>
                         <div class="ca-content">
-                            <h4 class="ca-main three">49,436</h4>
-                            <h3 class="ca-sub three">Old Projects</h3>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-clone" aria-hidden="true"></i>
-                        <div class="ca-content">
-                            <h4 class="ca-main four">30,808</h4>
-                            <h3 class="ca-sub four">New Orders</h3>
+                            <h4 class="ca-main four">@ViewBag.BookCount</h4>
+                            <h3 class="ca-sub four">Toplam Kitap</h3>
                         </div>
                     </a>
                 </li>
@@ -373,112 +375,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <!-- //weather_w3_agile_info-->
         <!-- /social_media-->
-        <div class="social_media_w3ls">
-
-            <div class="col-md-3 socail_grid_agile facebook">
-                <ul class="icon_w3_info">
-                    <li><a href="#" class="wthree_facebook"> <i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li>Facebook</li>
-                </ul>
-                <ul class="icon_w3_social">
-                    <li><i class="fa fa-comment-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-user" aria-hidden="true"></i></li>
-                </ul>
-                <div class="clearfix"></div>
-                <div class="bottom_info_social">
-                    <div class="col-md-4 agile_w3l_social_media_text_img">
-                        <img src="~/Areas/Content/images/admin.jpg" alt="">
-                    </div>
-                    <div class="col-md-8 agile_w3l_social_media_text">
-                        <h4>Hurisa Joe</h4>
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="col-md-3 socail_grid_agile twitter">
-                <ul class="icon_w3_info">
-                    <li><a href="#" class="wthree_facebook"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li>Twitter</li>
-                </ul>
-                <ul class="icon_w3_social">
-                    <li><i class="fa fa-comment-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-user" aria-hidden="true"></i></li>
-                </ul>
-                <div class="clearfix"></div>
-                <div class="bottom_info_social">
-                    <div class="col-md-4 agile_w3l_social_media_text_img">
-                        <img src="~/Areas/Content/images/a1.jpg" alt="">
-                    </div>
-                    <div class="col-md-8 agile_w3l_social_media_text">
-                        <h4>Jasmin Joe</h4>
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="col-md-3 socail_grid_agile gmail">
-                <ul class="icon_w3_info">
-                    <li><a href="#" class="wthree_facebook"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                    <li>Google+</li>
-                </ul>
-                <ul class="icon_w3_social">
-                    <li><i class="fa fa-comment-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-user" aria-hidden="true"></i></li>
-                </ul>
-                <div class="clearfix"></div>
-                <div class="bottom_info_social">
-                    <div class="col-md-4 agile_w3l_social_media_text_img">
-                        <img src="~/Areas/Content/images/a2.jpg" alt="">
-                    </div>
-                    <div class="col-md-8 agile_w3l_social_media_text">
-                        <h4>John Pal</h4>
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="col-md-3 socail_grid_agile dribble">
-
-                <ul class="icon_w3_info">
-                    <li><a href="#" class="wthree_facebook"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                    <li>Dribbble</li>
-                </ul>
-                <ul class="icon_w3_social">
-                    <li><i class="fa fa-comment-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-user" aria-hidden="true"></i></li>
-                </ul>
-                <div class="clearfix"></div>
-                <div class="bottom_info_social">
-                    <div class="col-md-4 agile_w3l_social_media_text_img">
-                        <img src="~/Areas/Content/images/a4.jpg" alt="">
-                    </div>
-                    <div class="col-md-8 agile_w3l_social_media_text">
-                        <h4>Honey Pal</h4>
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-
-                    <div class="clearfix"></div>
-                </div>
-
-            </div>
-            <div class="clearfix"></div>
-
-        </div>
+            @Html.Action("_SocialMedia", "Home")
         <!-- //social_media-->
     </div>
     <!-- //inner_content_w3_agile_info-->
     <!-- js -->
 
-  
-        <script type="text/javascript" src="~/Areas/Content/JS/jquery-2.1.4.min.js"></script>
+
+    <script type="text/javascript" src="~/Areas/Content/JS/jquery-2.1.4.min.js"></script>
 
     <!-- /amcharts -->
     <script src="~/Areas/Content/JS/amcharts.js"></script>

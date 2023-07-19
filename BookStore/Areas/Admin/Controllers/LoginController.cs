@@ -42,7 +42,7 @@ namespace BookStore.Areas.Admin.Controllers
 
                 Session["ID"] = result.ID;
 
-                return RedirectToAction("Index", "Book");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
