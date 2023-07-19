@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace BookStore.Areas.Admin.Controllers
 {
@@ -23,6 +24,17 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Kategori/Index")]
         public ActionResult Index(int? SayfaNo)
         {
+
+
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "login");
+            }
+
+
             int _sayfaNo = SayfaNo ?? 1;
             var result = manager.GetAll().OrderByDescending(x => x.ID).ToPagedList<Category>(_sayfaNo, 5);
             return View(result);

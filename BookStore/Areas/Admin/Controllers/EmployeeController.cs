@@ -10,13 +10,15 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace BookStore.Areas.Admin.Controllers
 {
-    [Authorize]
+  
     [RouteArea("Admin")]
     public class EmployeeController : Controller
     {
+
         // GET: Admin/Employee
         EmployeeManager manager = new EmployeeManager(new EfEmployeeDal());
         MessageViewModel messageViewModel = new MessageViewModel();
@@ -176,12 +178,33 @@ namespace BookStore.Areas.Admin.Controllers
             return RedirectToAction("Index", "Personel");
         }
 
-      
-        [Authorize(Roles = "Yönetici")]
+
+
         [Route("Personel/Guncelle/{id}")]
         public ActionResult Update(int id)
         {
             var model = manager.GetById(id);
+
+            var deneme = User.Identity.Name;
+
+            if (deneme==model.Email | !User.IsInRole("Yönetici"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Personel");
+            }
+
+            if (model.DepartmentID == 1 && !User.IsInRole("Yönetici"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Personel");
+            }
+
+
+
             if (model == null)
                 return HttpNotFound();
             var list = context.Departments.ToList();
@@ -213,7 +236,6 @@ namespace BookStore.Areas.Admin.Controllers
             return RedirectToAction("Index", "Personel");
 
         }
-
 
     }
 }

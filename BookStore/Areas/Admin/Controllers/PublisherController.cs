@@ -28,6 +28,16 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Yayinevi/Index")]
         public ActionResult Index(int? SayfaNo)
         {
+
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "login");
+            }
+
+
             int _sayfaNo = SayfaNo ?? 1;
 
 

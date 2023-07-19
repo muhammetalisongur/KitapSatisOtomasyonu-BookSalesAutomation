@@ -14,7 +14,7 @@ using System.Text;
 
 namespace BookStore.Areas.Admin.Controllers
 {
-    [Authorize]
+
     [RouteArea("Admin")]
     public class BookController : Controller
     {
@@ -34,8 +34,17 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Kitap/Index")]
         public ActionResult Index(int? SayfaNo)
         {
-            int _sayfaNo = SayfaNo ?? 1;
+            // editor değilse girebilsin
+            if (User.IsInRole("Editör"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "login");
+            }
 
+
+            int _sayfaNo = SayfaNo ?? 1;
 
             var context = new BookStoreContext();
 
@@ -48,7 +57,11 @@ namespace BookStore.Areas.Admin.Controllers
                          Publishers ON Books.BookPublisherID = Publishers.ID LEFT OUTER JOIN
                          Categories ON Books.BookCategoryID = Categories.ID").ToList();
 
+
+          
             var model = new List<Book>();
+
+          
 
             foreach (var bookViewModel in List)
             {
@@ -74,6 +87,8 @@ namespace BookStore.Areas.Admin.Controllers
 
                 });
             }
+
+
 
             return View(model.ToPagedList(_sayfaNo, 5));
 
