@@ -14,7 +14,7 @@ using System.Web.Security;
 
 namespace BookStore.Areas.Admin.Controllers
 {
-  
+
     [RouteArea("Admin")]
     public class EmployeeController : Controller
     {
@@ -103,7 +103,7 @@ namespace BookStore.Areas.Admin.Controllers
                     messageViewModel.Status = true;
                     messageViewModel.Message = employee.FullName + " personeli başarıyle eklendi...";
                     messageViewModel.LinkText = "Giriş Yap";
-                    messageViewModel.Url = "/Admin/Personelgiris";
+                    messageViewModel.Url = "/Admin/Girisyap";
                     TempData["message"] = messageViewModel;
                     return View("SignUpForm", new Employee());
                 }
@@ -136,6 +136,19 @@ namespace BookStore.Areas.Admin.Controllers
                 var newFileName = employee.FullName + "-" + "Update" + "-" + DateTime.Now.ToString("dd-MM-yyyy-H-mm") + extension;
                 var path = "~/Areas/Admin/Images/Employee/" + newFileName;
 
+
+                //if (oldDepartment != 1 | !User.IsInRole("Yönetici"))
+                //{
+                //    messageViewModel.Status = false;
+                //    messageViewModel.LinkText = "Personel Listesi";
+                //    messageViewModel.Url = "/Admin/Personel";
+                //    messageViewModel.Message = "Yetkisiz departman seçimi!";
+                //    var departments = context.Departments.ToList();
+                //    ViewBag.Department = new SelectList(departments, "ID", "DepartmentName");
+                //    TempData["message"] = messageViewModel;
+                //    return View("SignUpForm", new Employee());
+                //}
+
                 if (Path.GetFileName(Request.Files[0].FileName) != "")
                 {
                     if (!oldImage.Contains("http"))
@@ -167,6 +180,7 @@ namespace BookStore.Areas.Admin.Controllers
                 {
                     if (extension == "")
                         employee.EmployeeImage = oldImage;
+                    //employee.DepartmentID = oldDepartment;
                     manager.Update(employee);
                     messageViewModel.Status = true;
                     messageViewModel.Message = "Bilgiler başarıyla güncellendi...";
@@ -185,9 +199,21 @@ namespace BookStore.Areas.Admin.Controllers
         {
             var model = manager.GetById(id);
 
-            var deneme = User.Identity.Name;
+            ViewBag.updateDepartman = model.DepartmentID;
 
-            if (deneme==model.Email | !User.IsInRole("Yönetici"))
+            var deneme = User.Identity.Name;
+            var list = context.Departments.ToList();
+            ViewBag.Department = new SelectList(list, "ID", "DepartmentName");
+
+            if (model == null)
+                return HttpNotFound();
+
+            if (User.IsInRole("Yönetici"))
+            {
+                return View("SignUpForm", model);
+
+            }
+            else if (model.Email != deneme)
             {
                 messageViewModel.Status = false;
                 messageViewModel.Message = "Yetkisiz işlem...";
@@ -205,10 +231,8 @@ namespace BookStore.Areas.Admin.Controllers
 
 
 
-            if (model == null)
-                return HttpNotFound();
-            var list = context.Departments.ToList();
-            ViewBag.Department = new SelectList(list, "ID", "DepartmentName");
+
+
             return View("SignUpForm", model);
         }
 

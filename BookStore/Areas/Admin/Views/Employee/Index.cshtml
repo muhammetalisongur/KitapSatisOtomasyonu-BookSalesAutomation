@@ -67,8 +67,10 @@
                                 <ul class="social">
 
                                     <li>
-                                      
-                                    <a href="/Admin/Personel/Guncelle/@employee.ID" class="fa fa-edit" aria-hidden="true"> Guncelle</a>
+                                        @if (User.Identity.Name == employee.Email | User.IsInRole("Yönetici"))
+                                        {
+                                            <a href="/Admin/Personel/Guncelle/@employee.ID" class="fa fa-edit" aria-hidden="true"> Guncelle</a>
+                                        }
                                     </li>
 
                                     <li>

@@ -21,6 +21,9 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Girisyap/Index")]
         public ActionResult Index()
         {
+            Session.Abandon();
+            Session.Clear();
+            Session.RemoveAll();
             return View();
         }
 
@@ -35,6 +38,8 @@ namespace BookStore.Areas.Admin.Controllers
                 Session["Email"] = result.FullName.ToString();
                
                 Session["Image"] = result.EmployeeImage;
+
+                Session["ID"] = result.ID;
 
                 return RedirectToAction("Index", "Book");
             }
@@ -68,6 +73,8 @@ namespace BookStore.Areas.Admin.Controllers
             TempData["message"] = messageViewModel;
             return RedirectToAction("Index", "Login");
         }
+
+      
               
 
     }

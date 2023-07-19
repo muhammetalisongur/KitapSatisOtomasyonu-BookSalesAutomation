@@ -53,7 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         else
                         {
                             <div class="alert alert-success">
-                                @result.Message <b style="font-size:16px"><a href="@result.Url">@result.LinkText</a></b>
+                                <b style="font-size:14px"> @result.Message </b> <b style="font-size:14px"><a href="@result.Url">@result.LinkText</a></b>
                             </div>
                         }
 
@@ -93,19 +93,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Şifreniz", type = "password" })
                                 @Html.ValidationMessageFor(x => x.Password)
 
-                                <br />
-                                <br />
-                                @if (ViewBag.Department != null)
-                                {
-                                    @Html.DropDownListFor(m => m.DepartmentID, ViewBag.Department as SelectList, "-- Departman Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
-                                    @Html.ValidationMessageFor(x => x.DepartmentID)
-                                }
-                                else
-                                {
-                                    @Html.DropDownListFor(m => m.DepartmentID, new SelectList(""), "-- Departman Bulunumadı --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
-                                    @Html.ValidationMessageFor(x => x.DepartmentID)
-                                }
 
+                                @if (ViewBag.updateDepartman == null | User.IsInRole("Yönetici"))
+                                {
+                                    <br />
+
+                                    if (ViewBag.Department != null)
+                                    {
+                                        @Html.DropDownListFor(m => m.DepartmentID, ViewBag.Department as SelectList, "-- Departman Seçiniz --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                                        @Html.ValidationMessageFor(x => x.DepartmentID)
+                                    }
+                                    else
+                                    {
+                                        @Html.DropDownListFor(m => m.DepartmentID, new SelectList(""), "-- Departman Bulunumadı --", new { @class = "form-control select-add-placeholder", @style = "height:auto", })
+                                        @Html.ValidationMessageFor(x => x.DepartmentID)
+                                    }
+                                }
 
                             </div>
 

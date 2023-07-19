@@ -35,13 +35,13 @@ namespace BookStore.Areas.Admin.Controllers
         public ActionResult Index(int? SayfaNo)
         {
             // editor değilse girebilsin
-            if (User.IsInRole("Editör"))
-            {
-                messageViewModel.Status = false;
-                messageViewModel.Message = "Yetkisiz işlem...";
-                TempData["message"] = messageViewModel;
-                return RedirectToAction("Index", "login");
-            }
+            //if (User.IsInRole("Editör"))
+            //{
+            //    messageViewModel.Status = false;
+            //    messageViewModel.Message = "Yetkisiz işlem...";
+            //    TempData["message"] = messageViewModel;
+            //    return RedirectToAction("Index", "login");
+            //}
 
 
             int _sayfaNo = SayfaNo ?? 1;
