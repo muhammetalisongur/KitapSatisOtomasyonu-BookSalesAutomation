@@ -35,7 +35,9 @@ namespace BookStore.Areas.Admin.Controllers
             if (result != null)
             {
                 FormsAuthentication.SetAuthCookie(result.Email, false);
-                Session["Email"] = result.FullName.ToString();
+                Session["Name"] = result.FullName;
+                Session["Department"] = result.Department.DepartmentName;
+                Session["Email"] = result.Email;
 
                 Session["Image"] = result.EmployeeImage;
 

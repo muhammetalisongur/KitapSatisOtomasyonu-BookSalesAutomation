@@ -618,6 +618,7 @@
     <Folder Include="Areas\Admin\Images\Book\" />
     <Folder Include="Areas\Admin\Images\Employee\" />
     <Folder Include="Areas\Admin\Images\Publisher\" />
+    <Folder Include="Areas\Admin\Views\Search\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
