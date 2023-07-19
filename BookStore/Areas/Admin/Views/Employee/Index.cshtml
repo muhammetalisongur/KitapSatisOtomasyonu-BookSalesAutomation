@@ -14,7 +14,7 @@
 <div class="w3l_agileits_breadcrumbs">
     <div class="w3l_agileits_breadcrumbs_inner">
         <ul>
-            <li><a href="~/Admin/Kategori">Anasayfa</a><span>«</span></li>
+            <li><a href="~/Admin/Anasayfa/Index">Anasayfa</a><span>«</span></li>
 
             <li>Personeller</li>
         </ul>
@@ -75,7 +75,7 @@
 
                                     <li>
                                         @if (User.IsInRole("Yönetici"))
-                                        {<a href="/Admin/Personel/Sil/@employee.ID" class="fa fa-trash" aria-hidden="true"> Sil</a>}
+                                        {<a onclick="if (confirm('Personeli Silmek Istiyor musunuz?')){return true;}else{evetn.stopPropagation(); event.preventDefault();};" href="/Admin/Personel/Sil/@employee.ID" class="fa fa-trash" aria-hidden="true"> Sil</a>}
                                     </li>
 
                                 </ul>

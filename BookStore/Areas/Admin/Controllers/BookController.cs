@@ -27,22 +27,19 @@ namespace BookStore.Areas.Admin.Controllers
         PublisherManager publisher = new PublisherManager(new EfPublisherDal());
         BookTranslatorManager translator = new BookTranslatorManager(new EfBookTranslatorDal());
 
-
-
-
+   
         [Route("Kitap")]
         [Route("Kitap/Index")]
         public ActionResult Index(int? SayfaNo)
         {
-            // editor değilse girebilsin
+            //editor değilse girsin
             //if (User.IsInRole("Editör"))
             //{
             //    messageViewModel.Status = false;
             //    messageViewModel.Message = "Yetkisiz işlem...";
             //    TempData["message"] = messageViewModel;
-            //    return RedirectToAction("Index", "login");
+            //    return RedirectToAction("Index", "Login");
             //}
-
 
             int _sayfaNo = SayfaNo ?? 1;
 
@@ -58,10 +55,10 @@ namespace BookStore.Areas.Admin.Controllers
                          Categories ON Books.BookCategoryID = Categories.ID").ToList();
 
 
-          
+
             var model = new List<Book>();
 
-          
+
 
             foreach (var bookViewModel in List)
             {
@@ -102,7 +99,14 @@ namespace BookStore.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult New()
         {
-
+            //editor değilse girsin
+            if (User.IsInRole("Editör"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
 
             ViewBagResult();
 
@@ -145,7 +149,7 @@ namespace BookStore.Areas.Admin.Controllers
                     Request.Files[0].SaveAs(Server.MapPath(path));
                     book.BookImage = "/Areas/Admin/Images/Book/" + newFileName;
 
-                   
+
                     book.BookISBN = ISBNGenerator.GenerateISBN();
                     book.BookStatus = true;
                     manager.Add(book);
@@ -238,6 +242,15 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Kitap/Guncelle/{id}")]
         public ActionResult Update(int id)
         {
+            //editor değilse girsin
+            if (User.IsInRole("Editör"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
             var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
@@ -249,6 +262,15 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Kitap/Sil/{id}")]
         public ActionResult Delete(int id)
         {
+            //editor değilse girsin
+            if (User.IsInRole("Editör"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
             var delete = manager.GetById(id);
             if (delete == null)
                 return HttpNotFound();

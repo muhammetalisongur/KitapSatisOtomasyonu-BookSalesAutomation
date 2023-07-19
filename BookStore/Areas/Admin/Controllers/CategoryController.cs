@@ -24,6 +24,14 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Kategori/Index")]
         public ActionResult Index(int? SayfaNo)
         {
+            //Satış Temsilcisi değilse girsin
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
 
 
             if (User.IsInRole("Satış Temsilcisi"))
@@ -44,6 +52,15 @@ namespace BookStore.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult NewCategory()
         {
+            //Satış Temsilcisi değilse girsin
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
             return View("CategoryForm", new Category());
         }
 
@@ -113,6 +130,15 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Kategori/Guncelle/{id}")]
         public ActionResult Update(int id)
         {
+            //Satış Temsilcisi değilse girsin
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
             var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
@@ -122,6 +148,15 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Kategori/Sil/{id}")]
         public ActionResult Delete(int id)
         {
+            //Satış Temsilcisi değilse girsin
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
             var deleteCategory = manager.GetById(id);
             if (deleteCategory == null)
                 return HttpNotFound();

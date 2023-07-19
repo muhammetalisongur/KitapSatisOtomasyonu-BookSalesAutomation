@@ -2461,12 +2461,12 @@ var FlipClock;
 	 
 	FlipClock.Lang.English = {
 		
-		'years'   : 'Years',
-		'months'  : 'Months',
-		'days'    : 'Days',
-		'hours'   : 'Hours',
-		'minutes' : 'Minutes',
-		'seconds' : 'Seconds'	
+		'years'   : 'Yıl',
+		'months'  : 'Ay',
+		'days'    : 'Gün',
+		'hours'   : 'Saat',
+		'minutes' : 'Dakika',
+		'seconds' : 'Saniye'	
 
 	};
 	

@@ -36,8 +36,9 @@ namespace BookStore.Areas.Admin.Controllers
             {
                 FormsAuthentication.SetAuthCookie(result.Email, false);
                 Session["Email"] = result.FullName.ToString();
-               
+
                 Session["Image"] = result.EmployeeImage;
+
 
                 Session["ID"] = result.ID;
 
@@ -74,8 +75,6 @@ namespace BookStore.Areas.Admin.Controllers
             return RedirectToAction("Index", "Login");
         }
 
-      
-              
 
     }
 }

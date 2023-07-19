@@ -35,20 +35,20 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Yazar/Index")]
         public ActionResult Index(int? SayfaNo)
         {
-
-
+            //Satış Temsilcisi değilse girsin
             if (User.IsInRole("Satış Temsilcisi"))
             {
                 messageViewModel.Status = false;
                 messageViewModel.Message = "Yetkisiz işlem...";
                 TempData["message"] = messageViewModel;
-                return RedirectToAction("Index", "login");
+                return RedirectToAction("Index", "Login");
             }
 
 
-            int _sayfaNo = SayfaNo ?? 1;           
 
-            var context = new BookStoreContext();           
+            int _sayfaNo = SayfaNo ?? 1;
+
+            var context = new BookStoreContext();
 
             var List = context.Database.SqlQuery<AuthorViewModel>(@"SELECT Authors.*, 
                                                                     Countries.CountryName, 
@@ -60,11 +60,11 @@ namespace BookStore.Areas.Admin.Controllers
 
             foreach (var item in List)
             {
-                model.Add( new Author
+                model.Add(new Author
                 {
                     ID = item.ID,
                     AuthorName = item.AuthorName,
-                    AuthorSurname = item.AuthorSurname,                    
+                    AuthorSurname = item.AuthorSurname,
                     AuthorBiography = item.AuthorBiography,
                     AuthorImage = item.AuthorImage,
                     AuthorCountryID = item.AuthorCountryID,
@@ -104,6 +104,15 @@ namespace BookStore.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult New()
         {
+            //Satış Temsilcisi değilse girsin
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
             ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
             return View("AuthorForm", new Author());
         }
@@ -221,6 +230,15 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Yazar/Guncelle/{id}")]
         public ActionResult Update(int id)
         {
+            //Satış Temsilcisi değilse girsin
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
             var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
@@ -232,6 +250,15 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Yazar/Sil/{id}")]
         public ActionResult Delete(int id)
         {
+            //Satış Temsilcisi değilse girsin
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
             var deleteAuthor = manager.GetById(id);
             if (deleteAuthor == null)
                 return HttpNotFound();

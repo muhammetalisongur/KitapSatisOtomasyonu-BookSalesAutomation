@@ -28,6 +28,15 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Yayinevi/Index")]
         public ActionResult Index(int? SayfaNo)
         {
+            //Satış Temsilcisi değilse girsin
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
 
             if (User.IsInRole("Satış Temsilcisi"))
             {
@@ -110,6 +119,15 @@ namespace BookStore.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult New()
         {
+            //Satış Temsilcisi değilse girsin
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
             ViewBag.Country = new SelectList(GetCountries(), "ID", "CountryName");
             return View("PublisherForm", new Publisher());
         }
@@ -230,6 +248,15 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Yayinevi/Guncelle/{id}")]
         public ActionResult Update(int id)
         {
+            //Satış Temsilcisi değilse girsin
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
             var model = manager.GetById(id);
             if (model == null)
                 return HttpNotFound();
@@ -241,6 +268,15 @@ namespace BookStore.Areas.Admin.Controllers
         [Route("Yayinevi/Sil/{id}")]
         public ActionResult Delete(int id)
         {
+            //Satış Temsilcisi değilse girsin
+            if (User.IsInRole("Satış Temsilcisi"))
+            {
+                messageViewModel.Status = false;
+                messageViewModel.Message = "Yetkisiz işlem...";
+                TempData["message"] = messageViewModel;
+                return RedirectToAction("Index", "Login");
+            }
+
             var deletePublisher = manager.GetById(id);
             if (deletePublisher == null)
                 return HttpNotFound();
