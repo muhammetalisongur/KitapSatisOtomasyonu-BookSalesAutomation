@@ -28,6 +28,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //font-awesome-icons -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 
+
+    <!--TODO-->
+    <link href="~/Areas/Content/css/todo.css" rel="stylesheet" />
+
+
     <style>
         li.second.full-screen {
             display: none;
@@ -54,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 @Html.Partial("_Arama")
 
-             
+
                 <li class="second full-screen">
                     <section class="full-top">
                         <button id="toggle"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
@@ -81,7 +86,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <!--copy rights end here-->
     <!-- js -->
-
     @*Flip Clock da hata veriyor baska yerde varmi kontrol edilecek*@
     <script src="~/Areas/Content/js/jquery-2.1.4.min.js"></script>
 
@@ -116,6 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <script src="~/Areas/Content/js/scripts.js"></script>
     <script type="text/javascript" src="~/Areas/Content/js/bootstrap-3.1.1.min.js"></script>
+    <script src="~/Areas/Content/js/todo.js"></script>
 
     @RenderSection("scripts", required: false)
 

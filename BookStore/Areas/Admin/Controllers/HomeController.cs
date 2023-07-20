@@ -46,5 +46,14 @@ namespace BookStore.Areas.Admin.Controllers
                                                                         Departments ON Employees.DepartmentID = Departments.ID").ToList();
             return PartialView("_SocialMedia", result);
         }
+
+
+        public PartialViewResult TodoPartial()
+        {
+            return PartialView();
+        }
+
+    
+
     }
 }

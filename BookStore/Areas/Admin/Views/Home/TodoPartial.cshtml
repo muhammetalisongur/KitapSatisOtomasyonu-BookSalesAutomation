@@ -1,0 +1,51 @@
+﻿
+<link href="~/Areas/Content/css/todo.css" rel="stylesheet" />
+
+<div class="graph-form agile_info_shadow">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+
+                <h3 class="w3_inner_tittle two">Yapılacaklar Listesi </h3>
+
+                <div class="form-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="txtTaskName" placeholder="Yeni Görevler">
+
+                            <div class="button" id="btnAddNewTask" style="margin-left: initial;">
+                                <p class="btnText">Ekle</p>
+                                <div class="btnTwo" style="background-color:green">
+                                    <p class="btnText2">+</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="card-header controls">
+                    <div class="filters">
+                        <b><span class="active" id="all">Hepsi</span></b>
+                        <b> <span id="pending">Yapılacaklar</span></b>
+                        <b><span id="completed">Tamamlananlar</span></b>
+                    </div>
+                    <div class="button" id="btnClear" style=" margin-right: initial;">
+                        <p class="btnText">Temizle</p>
+                        <div class="btnTwo">
+                            <p class="btnText2">X</p>
+                        </div>
+                    </div>
+                </div>
+                <ul id="task-list" class="list-group list-group-flush">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Areas/Content/js/todo.js"></script>

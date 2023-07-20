@@ -158,6 +158,7 @@
     <Compile Include="Areas\Admin\ViewModel\EmployeeViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\MessageViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModel\PublisherViewModel.cs" />
+    <Content Include="Areas\Content\css\todo.css" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -216,6 +217,7 @@
     <Content Include="Areas\Content\js\scripts.js" />
     <Content Include="Areas\Content\js\serial.js" />
     <Content Include="Areas\Content\js\skycons.js" />
+    <Content Include="Areas\Content\js\todo.js" />
     <Content Include="Areas\Content\js\valida.2.1.6.min.js" />
     <Content Include="Areas\Content\js\validator.min.js" />
     <Content Include="Areas\Content\js\xy.js" />
@@ -473,6 +475,8 @@
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\_SocialMedia.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\TodoPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Gorevler2.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
