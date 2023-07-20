@@ -12,8 +12,6 @@ if (localStorage.getItem("gorevListesi") !== null) {
 let editId;
 let isEditTask = false;
 
-var x = localStorage.getItem("gorevListesi");
-console.log(x);
 const taskInput = document.querySelector("#txtTaskName");
 const btnClear = document.querySelector("#btnClear");
 const filters = document.querySelectorAll(".filters span")
@@ -37,7 +35,7 @@ function displayTasks(filter) {
                 let li = `
     <li class="task list-group-item">
         <div class="form-check">
-            <input type="checkbox" onclick="updateStatus(this)" id="${gorev.id}" class="form-check-input" ${completed}>
+            <input type="checkbox" onclick="updateStatus(this)" id="${gorev.id}" class="form-check-input" ${completed} style="margin: 0px 5px 0px 7px;">
                 <label for="${gorev.id}" class="form-check-label ${completed}">${gorev.gorevAdi}</label>
         </div>
         <div class="dropdown">
