@@ -2,26 +2,16 @@
 <li class="second top_bell_nav">
     <ul class="top_dp_agile ">
         <li class="dropdown head-dpdn">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" ><i class="fa fa-tasks"></i><span class="badge blue" id="toplamTODO"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue" id="toplamTODO"></span></a>
             <ul class="dropdown-menu">
                 <li>
                     <div class="notification_header">
                         <h3>Yapılacaklar Listesi</h3>
                     </div>
                 </li>
-
-                
-                        <li class="filters">
-                            <span class="active" id="all">Hepsi</span>
-                            <span id="pending">Yapılacaklar</span>
-                            <span id="completed">Tamamlananlar</span>
-                        </li>
-                        
-                        <li>
-                            <ul id="task-list" class="list-group list-group-flush" style=" padding: 5px 5px;">
-                            </ul>
-                        </li>
-
+                <li>
+                    <ul id="task-list" class="list-group list-group-flush" style=" padding: 5px 5px;"></ul>
+                </li>
                 <li>
                     <div class="notification_bottom">
                         <a href="~/Admin/Anasayfa">Bütün Görevler</a>
@@ -32,20 +22,20 @@
     </ul>
 </li>
 
-<script>
-    //sayi = 0;
 
-    //var gorevListesi = JSON.parse(localStorage.getItem("gorevListesi");
-    //for (var i = 0; i < gorevListesi.length; i++) {
-    //        sayi++;
-    //}
-    //document.getElementById("toplamTODO").innerHTML = sayi;
+<script>
+
+    var localData = JSON.parse(localStorage.getItem("gorevListesi"));
+    sayi = 0;
+    for (var i = 0; i < localData.length; i++) {
+
+        if (localData[i].durum == "pending")
+            sayi++;
+    };
+    document.getElementById("toplamTODO").innerHTML = sayi;
 
 
 </script>
-
-
-
 
 
 
