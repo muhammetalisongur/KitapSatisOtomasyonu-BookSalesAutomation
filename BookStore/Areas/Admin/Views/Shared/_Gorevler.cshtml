@@ -10,8 +10,18 @@
                     </div>
                 </li>
                 <li>
+                    <div class="card-header controls" style="display:none">
+                        <div class="filters">
+                            <b><span class="active" id="all">Hepsi</span></b>
+                            <b> <span id="pending">Yapılacaklar</span></b>
+                            <b><span id="completed">Tamamlananlar</span></b>
+                        </div>
+                    </div>
+                </li>
+                <li>
                     <ul id="task-list" class="list-group list-group-flush" style=" padding: 5px 5px;"></ul>
                 </li>
+
                 <li>
                     <div class="notification_bottom">
                         <a href="~/Admin/Anasayfa">Bütün Görevler</a>
@@ -32,6 +42,7 @@
         if (localData[i].durum == "pending")
             sayi++;
     };
+
     document.getElementById("toplamTODO").innerHTML = sayi;
 
 

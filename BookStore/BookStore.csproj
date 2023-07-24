@@ -477,7 +477,6 @@
     <Content Include="Areas\Admin\Views\Home\_SocialMedia.cshtml" />
     <Content Include="Areas\Admin\Views\Home\TodoPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Gorevler2.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\WeatherPartial.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
