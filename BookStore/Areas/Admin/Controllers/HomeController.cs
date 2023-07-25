@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace BookStore.Areas.Admin.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [RouteArea("Admin")]
     public class HomeController : Controller
     {

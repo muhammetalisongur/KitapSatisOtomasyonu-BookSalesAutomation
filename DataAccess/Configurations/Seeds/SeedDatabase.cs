@@ -1056,6 +1056,515 @@ namespace DataAccess.Configurations.Seeds
             context.Employees.AddRange(employeeList);
 
 
+            IList<Book> bookList = new List<Book>();
+
+            #region Books
+            bookList.Add(new Book
+            {
+                ID = 1,
+                BookName = "Sefiller",
+                BookDescription = "Sefiller, Fransız yazar Victor Hugo'nun 1862 yılında yayımlanan romanıdır. Fransız Devrimi'nden sonra geçen roman, 19. yüzyıl Fransa'sının sosyal ve siyasi yapısını anlatır. Romanın ana karakteri Jean Valjean, 19 yıl hapis yattıktan sonra şartlı tahliye ile serbest bırakılır. Ancak, toplum onu hâlâ bir suçlu olarak görür. Bu yüzden Valjean, kendisine yeni bir hayat kurmakta zorlanır. Bu sırada, Valjean'ın hayatını değiştirecek bir olay yaşanır. Valjean, bir piskopos tarafından kurtarılır ve onun sayesinde yeni bir hayata başlar. Ancak, Valjean'ın peşindeki polis müfettişi Javert, onu yakalamak için her şeyi yapacaktır.",
+                BookImage = "https://picsum.photos/400?id=1",
+                BookPage = 1000,
+                BookPrice = 50,
+                BookPublisherID = 1,
+                BookCategoryID = 1,
+                BookAuthorID = 1,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 100,
+                BookISBN = "9789750728955",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 2,
+                BookName = "Sherlock Holmes",
+                BookDescription = "Sherlock Holmes, Sir Arthur Conan Doyle tarafından yaratılan kurgusal bir karakterdir. İlk olarak 1887 yılında A Study in Scarlet adlı romanda yer almıştır. Sherlock Holmes, 221B Baker Street adresinde yaşayan, kendi adını taşıyan dedektiflik bürosunda çalışan bir dedektiftir. Sherlock Holmes, olayları çözümleme ve gözlemleme yeteneğiyle tanınır. Ayrıca, kimya, anatomiyi de iyi bilir. Sherlock Holmes, birçok olayı çözmüştür. Bunlardan bazıları; Kızıl Dosya, Baskerville Köpeği, Son Vaka, Boş Ev, Altın P",
+                BookImage = "https://picsum.photos/400?id=2",
+                BookPage = 1000,
+                BookPrice = 50,
+                BookPublisherID = 1,
+                BookCategoryID = 1,
+                BookAuthorID = 1,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 100,
+                BookISBN = "9789750728955",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 3,
+                BookName = "Cesur Yeni Dünya",
+                BookDescription = "Cesur Yeni Dünya, Aldous Huxley tarafından yazılan ve ilk olarak 1932 yılında yayımlanan distopya türündeki roman. Huxley, romanı yazarken, H.G. Wells'in Dünyalar Savaşı adlı romanından etkilenmiştir. Roman, 26. yüzyılda geçer. İnsanlar, kendi kaderlerini tayin etme özgürlüğünden vazgeçmişlerdir. İnsanlar, doğumdan itibaren kendi kaderlerini tayin eden bir sisteme göre yetiştirilirler. Bu sistem, insanları 5 farklı kastta yetiştirir. Bu kastlar; Alfa, Beta, Gama, Delta ve Epsilon'dur. Alfa, en üst kasttır. Epsilon ise en alt kasttır. Romanın ana karakteri Bernard Marx, bir Alfa'dır. Ancak, fiziksel olarak diğer Alfa'lardan farklıdır. Bu yüzden, diğer Alfa'lar tarafından dışlanır. Bernard Marx, bu durumdan rahatsızdır. Bu yüzden, bir yolculuğa çıkar. Bu yolculukta, John adında biriyle tanışır. John, bir rezervde yaşamaktadır. Bernard Marx, John'u getirir ve onu insanların arasına bırakır. Ancak, John, bu durumdan rahatsız olur. Çünkü, insanların yaşam tarzı ona göre değildir. Bu yüzden, John, intihar eder.",
+                BookImage = "https://picsum.photos/400?id=3",
+                BookPage = 1000,
+                BookPrice = 50,
+                BookPublisherID = 1,
+                BookCategoryID = 1,
+                BookAuthorID = 1,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 100,
+                BookISBN = "9789750728955",
+            });
+
+
+            bookList.Add(new Book
+            {
+                ID = 4,
+                BookName = "Sefiller",
+                BookDescription = "Sefiller, Fransız yazar Victor Hugo'nun 1862 yılında yayımlanan romanıdır. Fransız Devrimi'nden sonra geçen roman, 19. yüzyıl Fransa'sının sosyal ve siyasi yapısını anlatır. Romanın ana karakteri Jean Valjean, 19 yıl hapis yattıktan sonra şartlı tahliye ile serbest bırakılır. Ancak, toplum onu hâlâ bir suçlu olarak görür. Bu yüzden Valjean, kendisine yeni bir hayat kurmakta zorlanır. Bu sırada, Valjean'ın hayatını değiştirecek bir olay yaşanır. Valjean, bir piskopos tarafından kurtarılır ve onun sayesinde yeni bir hayata başlar. Ancak, Valjean'ın peşindeki polis müfettişi Javert, onu yakalamak için her şeyi yapacaktır.",
+                BookImage = "https://picsum.photos/400?id=4",
+                BookPage = 1000,
+                BookPrice = 50,
+                BookPublisherID = 1,
+                BookCategoryID = 1,
+                BookAuthorID = 1,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 100,
+                BookISBN = "9789750728955",
+            });
+            bookList.Add(new Book
+            {
+                ID = 5,
+                BookName = "Pride and Prejudice",
+                BookDescription = "Pride and Prejudice is a novel by Jane Austen published in 1813. The story follows the romantic entanglements of the Bennet sisters, particularly the strong-willed Elizabeth Bennet and the wealthy, aloof Mr. Darcy. The novel explores themes of love, class, and societal expectations.",
+                BookImage = "https://picsum.photos/400?id=5",
+                BookPage = 432,
+                BookPrice = 30,
+                BookPublisherID = 2,
+                BookCategoryID = 2,
+                BookAuthorID = 2,
+                BookTranslatorID = 2,
+                BookStatus = true,
+                BookStock = 150,
+                BookISBN = "9781503290563",
+            });
+            bookList.Add(new Book
+            {
+                ID = 6,
+                BookName = "1984",
+                BookDescription = "1984 is a dystopian novel by George Orwell published in 1949. It is set in a totalitarian society where the government, led by Big Brother, exercises total control over every aspect of people's lives. The novel explores themes of surveillance, propaganda, and the loss of individuality.",
+                BookImage = "https://picsum.photos/400?id=6",
+                BookPage = 328,
+                BookPrice = 25,
+                BookPublisherID = 3,
+                BookCategoryID = 4,
+                BookAuthorID = 3,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 120,
+                BookISBN = "9780451524935",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 7,
+                BookName = "The Great Gatsby",
+                BookDescription = "The Great Gatsby is a novel by American writer F. Scott Fitzgerald. Set in the Roaring Twenties, the novel tells the story of the mysterious millionaire Jay Gatsby and his obsession with the beautiful Daisy Buchanan. It explores themes of wealth, love, and the American Dream.",
+                BookImage = "https://picsum.photos/400?id=7",
+                BookPage = 320,
+                BookPrice = 35,
+                BookPublisherID = 4,
+                BookCategoryID = 3,
+                BookAuthorID = 4,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 80,
+                BookISBN = "9780743273565",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 8,
+                BookName = "To Kill a Mockingbird",
+                BookDescription = "To Kill a Mockingbird is a novel by Harper Lee published in 1960. Set in the American South during the Great Depression, the story follows young Scout Finch as she learns about racial injustice and moral growth. Her father, Atticus Finch, is a lawyer who defends an African American man accused of raping a white woman.",
+                BookImage = "https://picsum.photos/400?id=8",
+                BookPage = 281,
+                BookPrice = 40,
+                BookPublisherID = 5,
+                BookCategoryID = 2,
+                BookAuthorID = 5,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 90,
+                BookISBN = "9780061120084",
+            });
+            bookList.Add(new Book
+            {
+                ID = 9,
+                BookName = "Harry Potter and the Sorcerer's Stone",
+                BookDescription = "Harry Potter and the Sorcerer's Stone is the first book in the Harry Potter series written by J.K. Rowling. It follows the journey of a young wizard, Harry Potter, as he discovers his magical heritage and attends Hogwarts School of Witchcraft and Wizardry. Harry learns about friendship, courage, and the battle between good and evil.",
+                BookImage = "https://picsum.photos/400?id=9",
+                BookPage = 320,
+                BookPrice = 45,
+                BookPublisherID = 6,
+                BookCategoryID = 5,
+                BookAuthorID = 6,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 200,
+                BookISBN = "9780590353427",
+            });
+            bookList.Add(new Book
+            {
+                ID = 10,
+                BookName = "The Catcher in the Rye",
+                BookDescription = "The Catcher in the Rye is a novel by J.D. Salinger published in 1951. It follows the experiences of Holden Caulfield, a disaffected teenager who leaves his prep school and explores the complexities of adolescence and identity. The book has become a classic of modern literature.",
+                BookImage = "https://picsum.photos/400?id=10",
+                BookPage = 224,
+                BookPrice = 28,
+                BookPublisherID = 7,
+                BookCategoryID = 3,
+                BookAuthorID = 7,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 110,
+                BookISBN = "9780316769488",
+            });
+            bookList.Add(new Book
+            {
+                ID = 11,
+                BookName = "The Lord of the Rings: The Fellowship of the Ring",
+                BookDescription = "The Fellowship of the Ring is the first volume of J.R.R. Tolkien's epic fantasy novel, The Lord of the Rings. It follows the journey of a hobbit named Frodo Baggins as he sets out to destroy a powerful ring that could bring darkness to the world. He is accompanied by a diverse group of companions known as the Fellowship of the Ring.",
+                BookImage = "https://picsum.photos/400?id=11",
+                BookPage = 432,
+                BookPrice = 55,
+                BookPublisherID = 8,
+                BookCategoryID = 5,
+                BookAuthorID = 8,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 75,
+                BookISBN = "9780618346257",
+            });
+            bookList.Add(new Book
+            {
+                ID = 12,
+                BookName = "Crime and Punishment",
+                BookDescription = "Crime and Punishment is a novel by Fyodor Dostoevsky first published in 1866. It tells the story of Rodion Raskolnikov, a poor ex-student in Saint Petersburg who commits a heinous crime and grapples with his guilt and the moral consequences of his actions. The novel explores themes of redemption and the nature of evil.",
+                BookImage = "https://picsum.photos/400?id=12",
+                BookPage = 576,
+                BookPrice = 38,
+                BookPublisherID = 9,
+                BookCategoryID = 4,
+                BookAuthorID = 9,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 95,
+                BookISBN = "9780140449136",
+            });
+            bookList.Add(new Book
+            {
+                ID = 13,
+                BookName = "Brave New World",
+                BookDescription = "Brave New World is a dystopian novel by Aldous Huxley published in 1932. It is set in a futuristic society where people are genetically engineered and conditioned to be content with their roles in society. The novel explores themes of conformity, technology, and the cost of progress.",
+                BookImage = "https://picsum.photos/400?id=13",
+                BookPage = 288,
+                BookPrice = 33,
+                BookPublisherID = 10,
+                BookCategoryID = 4,
+                BookAuthorID = 10,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 70,
+                BookISBN = "9780060850524",
+            });
+            bookList.Add(new Book
+            {
+                ID = 14,
+                BookName = "Harry Potter",
+                BookDescription = "Harry Potter is a series of fantasy novels written by British author J.K. Rowling. The books chronicle the adventures of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry. The main story arc concerns Harry's struggle against Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic, and subjugate all wizards and Muggles (non-magical people).",
+                BookImage = "https://picsum.photos/400?id=14",
+                BookPage = 320,
+                BookPrice = 35,
+                BookPublisherID = 4,
+                BookCategoryID = 3,
+                BookAuthorID = 4,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 80,
+                BookISBN = "9780743273565",
+
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 15,
+                BookName = "Kürk Mantolu Madonna",
+                BookDescription = "Kürk Mantolu Madonna, Sabahattin Ali'nin 1943 yılında yayımlanan romanıdır. Roman, 1940'lı yıllarda İstanbul'da yaşayan Raif Efendi'nin, İtalya'da bir tren yolculuğu sırasında tanıştığı Maria Puder ile yaşadığı aşkı konu edinir. Romanın adı, Maria Puder'in Raif Efendi'ye hediye ettiği kürk mantoya atıfta bulunur.",
+                BookImage = "https://picsum.photos/400?id=15",
+                BookPage = 320,
+                BookPrice = 35,
+                BookPublisherID = 4,
+                BookCategoryID = 3,
+                BookAuthorID = 4,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 80,
+                BookISBN = "9780743273563",
+            });
+            bookList.Add(new Book
+            {
+                ID = 16,
+                BookName = "Simyacı",
+                BookDescription = "Simyacı, Paulo Coelho'nun 1988 yılında yayımlanan romanıdır. Kitap, Santiago adlı bir Endülüslü çobanın, Mısır'da Piramitler'de gördüğü rüyayı yorumlamak için yaptığı yolculuğu konu edinir. Kitap, 1993 yılında Türkiye'de de yayımlanmıştır.",
+                BookImage = "https://picsum.photos/400?id=16",
+                BookPage = 320,
+                BookPrice = 35,
+                BookPublisherID = 4,
+                BookCategoryID = 3,
+                BookAuthorID = 4,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 80,
+                BookISBN = "9780743273562",
+            });
+            bookList.Add(new Book
+            {
+                ID = 17,
+                BookName = "Şeker Portakalı",
+                BookDescription = "Şeker Portakalı, Brezilyalı yazar José Mauro de Vasconcelos'un 1968 yılında yayımlanan romanıdır. Roman, küçük bir çocuğun, Portekiz'den Brezilya'ya göç etmesiyle başlayan hikâyesini konu edinir. Roman, 1970'li yıllarda Türkiye'de de yayımlanmıştır.",
+                BookImage = "https://picsum.photos/400?id=17",
+                BookPage = 320,
+                BookPrice = 35,
+                BookPublisherID = 4,
+                BookCategoryID = 3,
+                BookAuthorID = 4,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 80,
+                BookISBN = "9780743273561",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 18,
+                BookName = "Dönüşüm",
+                BookDescription = "Dönüşüm, Franz Kafka'nın 1915 yılında yayımlanan öyküsüdür. Öykü, Gregor Samsa adlı bir seyyar satıcının bir sabah kendini dev bir böceğe dönüşmüş olarak bulmasıyla başlar. Öykü, 1925 yılında Türkiye'de de yayımlanmıştır.",
+                BookImage = "https://picsum.photos/400?id=18",
+                BookPage = 320,
+                BookPrice = 35,
+                BookPublisherID = 4,
+                BookCategoryID = 3,
+                BookAuthorID = 4,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 80,
+                BookISBN = "9780743273560",
+
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 19,
+                BookName = "Sineklerin Tanrısı",
+                BookDescription = "Sineklerin Tanrısı, William Golding'in 1954 yılında yayımlanan romanıdır. Roman, bir grup İngiliz çocuğun, bir uçak kazasının ardından ıssız bir adaya düşmesiyle başlar. Roman, 1960'lı yıllarda Türkiye'de de yayımlanmıştır.",
+                BookImage = "https://picsum.photos/400?id=19",
+                BookPage = 320,
+                BookPrice = 35,
+                BookPublisherID = 4,
+                BookCategoryID = 3,
+                BookAuthorID = 4,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 80,
+                BookISBN = "9780743273569",
+            });
+            bookList.Add(new Book
+            {
+                ID = 20,
+                BookName = "Küçük Prens",
+                BookDescription = "Küçük Prens, Antoine de Saint-Exupéry'nin 1943 yılında yayımlanan romanıdır. Roman, bir pilotun Sahra Çölü'nde bir çocukla karşılaşmasıyla başlar. Roman, 1950'li yıllarda Türkiye'de de yayımlanmıştır.",
+                BookImage = "https://picsum.photos/400?id=20",
+                BookPage = 320,
+                BookPrice = 35,
+                BookPublisherID = 4,
+                BookCategoryID = 3,
+                BookAuthorID = 4,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 80,
+                BookISBN = "9780743273568",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 21,
+                BookName = "Bir Ömür Nasıl Yaşanır?",
+                BookDescription = "Bir Ömür Nasıl Yaşanır?, İlber Ortaylı'nın 2016 yılında yayımlanan deneme kitabıdır. Kitap, yazarın 2015 yılında verdiği bir konferansın metninden oluşur. Kitap, 2016 yılında Türkiye'de en çok satan kitaplar listesinde bir numaraya yükselmiştir.",
+                BookImage = "https://picsum.photos/400?id=21",
+                BookPage = 320,
+                BookPrice = 35,
+                BookPublisherID = 4,
+                BookCategoryID = 4,
+                BookAuthorID = 4,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 80,
+                BookISBN = "9780743273567",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 22,
+                BookName = "Kayıp Tanrılar Ülkesinde",
+                BookDescription = "Kayıp Tanrılar Ülkesinde, Ahmet Ümit'in 2016 yılında yayımlanan romanıdır. Roman, İstanbul'da yaşanan bir cinayetin ardından başlayan olayları konu edinir. Roman, 2016 yılında Türkiye'de en çok satan kitaplar listesinde ikinci sıraya yükselmiştir.",
+                BookImage = "https://picsum.photos/400?id=22",
+                BookPage = 320,
+                BookPrice = 35,
+                BookPublisherID = 4,
+                BookAuthorID = 4,
+                BookCategoryID = 4,
+                BookTranslatorID = 2,
+                BookStatus = true,
+                BookStock = 80,
+                BookISBN = "9780743273566",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 23,
+                BookName = "Ay'a Yolculuk",
+                BookDescription = "Ay'a Yolculuk, Jules Verne'in 1865 yılında yayımlanan bilimkurgu romanıdır. Roman, bir grup Amerikalı'nın Ay'a yapacağı yolculuğu konu edinir. Roman, 1960'lı yıllarda Türkiye'de de yayımlanmıştır.",
+                BookImage = "https://picsum.photos/400?id=23",
+                BookPage = 320,
+                BookPrice = 35,
+                BookPublisherID = 4,
+                BookAuthorID = 4,
+                BookCategoryID = 4,
+                BookTranslatorID = 2,
+                BookStatus = true,
+                BookStock = 80,
+                BookISBN = "9780743273565",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 24,
+                BookName = "Dune",
+                BookDescription = "Dune is a science fiction novel by Frank Herbert, published in 1965. It is set in the distant future where noble families control planets and a valuable spice called melange is at the center of power struggles. The book explores themes of politics, religion, and environmentalism.",
+                BookImage = "https://picsum.photos/400?id=24",
+                BookPage = 688,
+                BookPrice = 42,
+                BookPublisherID = 5,
+                BookAuthorID = 11,
+                BookCategoryID = 4,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 90,
+                BookISBN = "9780593099322",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 25,
+                BookName = "The Picture of Dorian Gray",
+                BookDescription = "The Picture of Dorian Gray is a novel by Oscar Wilde, published in 1890. It tells the story of a young man named Dorian Gray who sells his soul to keep his youthful appearance while a portrait of him ages instead. The novel explores themes of beauty, decadence, and morality.",
+                BookImage = "https://picsum.photos/400?id=25",
+                BookPage = 254,
+                BookPrice = 28,
+                BookPublisherID = 6,
+                BookAuthorID = 12,
+                BookCategoryID = 2,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 120,
+                BookISBN = "9780486278070",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 26,
+                BookName = "The Martian",
+                BookDescription = "The Martian is a science fiction novel by Andy Weir, published in 2011. It follows the story of an astronaut stranded on Mars and his struggle for survival. The novel combines elements of adventure, science, and humor.",
+                BookImage = "https://picsum.photos/400?id=26",
+                BookPage = 369,
+                BookPrice = 32,
+                BookPublisherID = 7,
+                BookAuthorID = 13,
+                BookCategoryID = 4,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 100,
+                BookISBN = "9780553418026",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 27,
+                BookName = "The Alchemist",
+                BookDescription = "The Alchemist is a novel by Paulo Coelho, first published in 1988. It tells the story of a young Andalusian shepherd named Santiago who goes on a journey to find a hidden treasure. The book explores themes of destiny, purpose, and the pursuit of dreams.",
+                BookImage = "https://picsum.photos/400?id=27",
+                BookPage = 208,
+                BookPrice = 25,
+                BookPublisherID = 8,
+                BookAuthorID = 14,
+                BookCategoryID = 2,
+                BookTranslatorID = 3,
+                BookStatus = true,
+                BookStock = 85,
+                BookISBN = "9780062315007",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 28,
+                BookName = "The Handmaid's Tale",
+                BookDescription = "The Handmaid's Tale is a dystopian novel by Margaret Atwood, published in 1985. It is set in the Republic of Gilead, a theocratic and totalitarian society where fertile women are forced to bear children for the ruling class. The novel explores themes of gender, power, and resistance.",
+                BookImage = "https://picsum.photos/400?id=28",
+                BookPage = 311,
+                BookPrice = 30,
+                BookPublisherID = 9,
+                BookAuthorID = 15,
+                BookCategoryID = 4,
+                BookTranslatorID = 2,
+                BookStatus = true,
+                BookStock = 110,
+                BookISBN = "9780385490818",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 29,
+                BookName = "The Odyssey",
+                BookDescription = "The Odyssey is an ancient Greek epic poem attributed to Homer, believed to have been composed in the 8th century BCE. It follows the journey of Odysseus, the king of Ithaca, as he returns home after the fall of Troy. The poem explores themes of heroism, temptation, and homecoming.",
+                BookImage = "https://picsum.photos/400?id=29",
+                BookPage = 416,
+                BookPrice = 38,
+                BookPublisherID = 10,
+                BookAuthorID = 16,
+                BookCategoryID = 1,
+                BookTranslatorID = 1,
+                BookStatus = true,
+                BookStock = 95,
+                BookISBN = "9780140268867",
+            });
+
+            bookList.Add(new Book
+            {
+                ID = 30,
+                BookName = "Masumiyet Müzesi",
+                BookDescription = "Masumiyet Müzesi, Orhan Pamuk'un 2008 yılında yayımlanan romanıdır. Roman, İstanbul'da yaşayan bir adamın, bir müzede sergilenen eşyaları toplayarak bir müze kurmasını konu edinir. Roman, 2008 yılında İngilizceye çevrilmiştir.",
+                BookImage = "https://picsum.photos/400?id=30",
+                BookPage = 728,
+                BookPrice = 45,
+                BookPublisherID = 11,
+                BookAuthorID = 17,
+                BookCategoryID = 2,
+                BookStatus = true,
+            });
+
+            
+
+
+
+            #endregion
+
+
             base.Seed(context);
         }
     }
