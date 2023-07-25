@@ -1138,7 +1138,7 @@ namespace DataAccess.Configurations.Seeds
                 BookPublisherID = 2,
                 BookCategoryID = 2,
                 BookAuthorID = 2,
-                BookTranslatorID = 2,
+                BookTranslatorID = 1,
                 BookStatus = true,
                 BookStock = 150,
                 BookISBN = "9781503290563",
@@ -1555,14 +1555,20 @@ namespace DataAccess.Configurations.Seeds
                 BookPublisherID = 11,
                 BookAuthorID = 17,
                 BookCategoryID = 2,
+                BookTranslatorID = 1,
                 BookStatus = true,
+                BookStock = 100,
+                BookISBN = "9789751019643",
+
             });
 
-            
+
 
 
 
             #endregion
+
+            context.Books.AddRange(bookList);
 
 
             base.Seed(context);

@@ -117,7 +117,7 @@
 
             </table>
 
-            @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Yazar", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
+            @Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Kitap", new { SayfaNo = _sayfaNo }), new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
 
 
 

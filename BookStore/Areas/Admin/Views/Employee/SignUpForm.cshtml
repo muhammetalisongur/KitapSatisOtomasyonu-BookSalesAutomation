@@ -65,17 +65,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             @Html.AntiForgeryToken()
                             <div class="login-form">
 
-                                <div style="display:flex" class="col-2">
-                                    @Html.EditorFor(x => x.EmployeeImage, new { htmlAttributes = new { @class = "form-control", type = "file", style = "height:auto", accept = "image/*", title = "Resim Yukle", onchange = "prewIMG(event)" } })
-                                    @if (Model.EmployeeImage != null)
-                                    {
-                                        <img src="@Model.EmployeeImage" height="52" width="52" style="position: absolute; left: calc(100% - 41.5em); " id="imgPrew" alt="Resim Yukle" />
-                                    }
-                                    else
-                                    {
-                                        <img src="@ViewBag.image" height="52" width="52" style="position: absolute; left: calc(100% - 41.5em); " id="imgPrew" alt="Resim Yukle" />
+                                <div class="form-group">
+                                    <div style="display: flex; justify-content: end;">
+                                        @Html.EditorFor(x => x.EmployeeImage, new { htmlAttributes = new { @class = "form-control", type = "file", style = "height:auto", accept = "image/*", title = "Resim Yukle", onchange = "prewIMG(event)" } })
+                                        @if (Model.EmployeeImage != null)
+                                        {
+                                            <img src="@Model.EmployeeImage" height="52" width="52" style="position: absolute;  " id="imgPrew" alt="Resim Yukle" />
+                                        }
+                                        else
+                                        {
+                                            <img src="@ViewBag.image" height="52" width="52" style="position: absolute; " id="imgPrew" alt="Resim Yukle" />
 
-                                    }
+                                        }
+                                    </div>
                                 </div>
                                 <br />
                                 @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Adınız" })
