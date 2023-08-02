@@ -2410,6 +2410,53 @@ li.second.logo.admin {
     color:#696969;
 }
 
+
+/*--Header Responsive--*/
+@media screen and ( max-width:1250px) {
+	
+	li.second.w3l_search {
+		display: none ;
+	}
+	.admin-pic{
+		display:block !important;
+	}
+	li.second.top_bell_nav {
+		width: auto !important;
+	}
+	#ww_8e6812028598d .ww-box[max-width~="230px"] .ww_icon {		
+		visibility: collapse !important;
+	}
+}
+
+@media screen and (max-width:830px){
+	li.second.top_bell_nav div#ww_8e6812028598d {
+		display: none !important;
+	}
+}
+@media screen and (max-width:668px ) {
+	.w3_agileits_top_nav {
+		height: 60px !important;
+	}
+
+	li.second.admin-pic {
+		display: block;
+		float: left !important;
+	}
+}
+
+
+@media screen and (max-width:591px){
+	li.second.top_bell_nav {
+		display: none !important;
+	}
+}
+
+@media screen and (max-width:515px) {
+	.admin-pic {
+		display: none !important;
+	}
+}
+
 /*--Responsive--*/
 @media (max-width:1440px){
 	.registration.admin_agile {
