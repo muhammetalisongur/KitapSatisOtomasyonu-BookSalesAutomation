@@ -2411,6 +2411,16 @@ li.second.logo.admin {
 }
 
 
+/*--Weather--*/
+#ww_8e6812028598d .ww_source svg {
+	height: 0 !important;
+	width: 0 !important;
+	opacity: 0 !important;
+}
+.ww_source {
+	visibility: hidden;
+}
+
 /*--Header Responsive--*/
 @media screen and ( max-width:1250px) {
 	
