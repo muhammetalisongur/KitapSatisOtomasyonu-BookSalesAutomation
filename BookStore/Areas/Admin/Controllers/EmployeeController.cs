@@ -16,6 +16,7 @@ namespace BookStore.Areas.Admin.Controllers
 {
 
     [RouteArea("Admin")]
+    [Authorize]
     public class EmployeeController : Controller
     {
 

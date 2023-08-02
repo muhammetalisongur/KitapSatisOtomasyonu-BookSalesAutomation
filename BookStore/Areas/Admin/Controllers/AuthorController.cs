@@ -21,6 +21,7 @@ using System.Web.Profile;
 namespace BookStore.Areas.Admin.Controllers
 {
     [RouteArea("Admin")]
+    [Authorize]
     public class AuthorController : Controller
     {
 

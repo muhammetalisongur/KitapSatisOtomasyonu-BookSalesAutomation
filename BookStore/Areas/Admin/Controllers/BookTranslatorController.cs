@@ -15,6 +15,7 @@ namespace BookStore.Areas.Admin.Controllers
 {
     
     [RouteArea("Admin")]
+    [Authorize]
     public class BookTranslatorController : Controller
     {
         // GET: Admin/BookTranslator

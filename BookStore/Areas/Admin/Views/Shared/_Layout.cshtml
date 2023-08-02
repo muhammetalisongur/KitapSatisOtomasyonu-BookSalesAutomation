@@ -17,20 +17,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
                function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- //custom-theme -->
-    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="~/Content/css/component.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="~/Content/css/style_grid.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="~/Areas/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="~/Content/PagedList.css" rel="stylesheet" />
-    <link href="~/Content/site.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Admin/Content/css/component.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Admin/Content/css/style_grid.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Admin/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Areas/Admin/Content/css/PagedList.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/css/site.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/css/table-style.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/css/basictable.css" rel="stylesheet" />
     <!-- font-awesome-icons -->
-    <link href="~/Content/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Areas/Admin/Content/css/font-awesome.css" rel="stylesheet" />
     <!-- //font-awesome-icons -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 
 
     <!--TODO-->
-    <link href="~/Areas/Content/css/todo.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/css/todo.css" rel="stylesheet" />
 
 
     <style>
@@ -87,18 +89,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--copy rights end here-->
     <!-- js -->
     @*Flip Clock da hata veriyor baska yerde varmi kontrol edilecek*@
-    <script src="~/Areas/Content/js/jquery-2.1.4.min.js"></script>
-
-    <script src="~/Areas/Content/js/modernizr.custom.js"></script>
-
-    <script src="~/Areas/Content/js/classie.js"></script>
-    <script src="~/Areas/Content/js/gnmenu.js"></script>
+    <script src="~/Areas/Admin/Content/js/jquery-2.1.4.min.js"></script>
+    <script src="~/Areas/Admin/Content/js/modernizr.custom.js"></script>
+    <script src="~/Areas/Admin/Content/js/classie.js"></script>
+    <script src="~/Areas/Admin/Content/js/gnmenu.js"></script>
     <script>
         new gnMenu(document.getElementById('gn-menu'));
     </script>
     <!-- tables -->
     <!-- //js -->
-    <script src="~/Areas/Content/js/screenfull.js"></script>
+    <script src="~/Areas/Admin/Content/js/screenfull.js"></script>
     <script>
         $(function () {
             $('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
@@ -116,11 +116,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
 
     @*hata var duzetilecek*@
-    <script src="~/Areas/Content/js/jquery.nicescroll.js"></script>
-
-    <script src="~/Areas/Content/js/scripts.js"></script>
-    <script type="text/javascript" src="~/Areas/Content/js/bootstrap-3.1.1.min.js"></script>
-    <script src="~/Areas/Content/js/todo.js"></script>
+    <script src="~/Areas/Admin/Content/js/jquery.nicescroll.js"></script>
+    <script src="~/Areas/Admin/Content/js/scripts.js"></script>
+    <script src="~/Areas/Admin/Content/js/bootstrap-3.1.1.min.js"></script>
+    <script src="~/Areas/Admin/Content/js/todo.js"></script>
+    <script src="~/Areas/Admin/Content/js/jquery.basictable.min.js"></script>
 
     @RenderSection("scripts", required: false)
 

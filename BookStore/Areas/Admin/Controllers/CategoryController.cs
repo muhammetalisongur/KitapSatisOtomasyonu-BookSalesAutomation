@@ -14,6 +14,7 @@ using System.Web.Security;
 namespace BookStore.Areas.Admin.Controllers
 {
     [RouteArea("Admin")]
+    [Authorize]
     public class CategoryController : Controller
     {
         CategoryManager manager = new CategoryManager(new EfCategoryDal());

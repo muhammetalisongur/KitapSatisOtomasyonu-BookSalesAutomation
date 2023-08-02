@@ -14,6 +14,7 @@ using System.Web.Mvc;
 namespace BookStore.Areas.Admin.Controllers
 {
     [RouteArea("Admin")]
+    [Authorize]
     public class PublisherController : Controller
     {
 
