@@ -11,10 +11,10 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Furnitica - Minimalist Furniture HTML Template</title>
+    <title>MAS - Kitap Satış Sitesi</title>
 
-    <meta name="keywords" content="Furniture, Decor, Interior">
-    <meta name="description" content="Furnitica - Minimalist Furniture HTML Template">
+    <meta name="keywords" content="Kitap Satış">
+    <meta name="description" content="MAS - En Uygun ve Hesaplı Kitap Satış Sitesi">
     <meta name="author" content="tivatheme">
 
     <!-- Mobile Meta -->
@@ -24,17 +24,17 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
 
     <!-- Vendor CSS -->
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="libs/font-material/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="libs/nivo-slider/css/nivo-slider.css">
-    <link rel="stylesheet" href="libs/nivo-slider/css/animate.css">
-    <link rel="stylesheet" href="libs/nivo-slider/css/style.css">
-    <link rel="stylesheet" href="libs/owl-carousel/assets/owl.carousel.min.css">
-
+    <link rel="stylesheet" href="~/Content/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/libs/font-material/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="~/Content/libs/nivo-slider/css/nivo-slider.css">
+    <link rel="stylesheet" href="~/Content/libs/nivo-slider/css/animate.css">
+    <link rel="stylesheet" href="~/Content/libs/nivo-slider/css/style.css">
+    <link rel="stylesheet" href="~/Content/libs/owl-carousel/assets/owl.carousel.min.css">
+    <link href="~/Content/css/CustomStyle.css" rel="stylesheet" />
     <!-- Template CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/reponsive.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/reponsive.css">
 </head>
 
 <body id="home5">
@@ -50,8 +50,11 @@
 
                 <!-- logo -->
                 <div class="mobile-logo">
-                    <a href="home5.html">
-                        <img class="logo-mobile img-fluid" src="img/home/logo-mobie.png" alt="Prestashop_Furnitica">
+                    <a href="/">
+                        @*<img class="logo-mobile img-fluid" src="~/Content/img/home/logo-mobie.png" alt="Prestashop_Furnitica">*@
+                        <div class="logo-mobile img-fluid" style="font-size: large; color: white; font-weight: bolder;">
+                            MAS - Kitap Satış Sitesi                            
+                        </div>
                     </a>
                 </div>
 
@@ -85,7 +88,7 @@
                                         <tr>
                                             <td class="product-image">
                                                 <a href="product-detail.html">
-                                                    <img src="img/product/5.jpg" alt="Product">
+                                                    <img src="~/Content/img/product/5.jpg" alt="Product">
                                                 </a>
                                             </td>
                                             <td>
@@ -140,9 +143,18 @@
                 <!-- logo -->
                 <div class="d-flex align-items-center  flex-2">
                     <div id="logo">
-                        <a href="home5.html">
-                            <img src="img/home/logo.png" alt="logo" class="img-fluid">
+                        <a href="/" style="font-weight: bold; font-size: xx-large;">
+                            @*<img src="#" alt="logo" class="img-fluid">*@
+                            <div class="containerim">
+                                <p>MAS-</p>
+                                <section class="animationum">
+                                    <div class="ilk"><div>En Uygun</div></div>
+                                    <div class="ikinci"><div>Kitap Satış</div></div>
+                                    <div class="ucuncu"><div>Sitesi</div></div>
+                                </section>
+                            </div>
                         </a>
+                        @*<span style="display: block; color: purple;">En Uygun Kitap Satış Sitesi</span>*@
                     </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-center navbar-expand-md main-menu">
@@ -312,22 +324,22 @@
                                     <ul class="list-inline">
                                         <li class="list-inline-item current">
                                             <a href="#">
-                                                <img class="img-fluid" src="img/home/home1-flas.jpg" alt="English" width="16" height="11">
+                                                <img class="img-fluid" src="~/Content/img/home/home1-flas.jpg" alt="English" width="16" height="11">
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a href="#">
-                                                <img class="img-fluid" src="img/home/home1-flas2.jpg" alt="Italiano" width="16" height="11">
+                                                <img class="img-fluid" src="~/Content/img/home/home1-flas2.jpg" alt="Italiano" width="16" height="11">
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a href="#">
-                                                <img class="img-fluid" src="img/home/home1-flas3.jpg" alt="Français" width="16" height="11">
+                                                <img class="img-fluid" src="~/Content/img/home/home1-flas3.jpg" alt="Français" width="16" height="11">
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a href="#">
-                                                <img class="img-fluid" src="img/home/home1-flas4.jpg" alt="Español" width="16" height="11">
+                                                <img class="img-fluid" src="~/Content/img/home/home1-flas4.jpg" alt="Español" width="16" height="11">
                                             </a>
                                         </li>
                                     </ul>
@@ -348,7 +360,7 @@
                                             <tr>
                                                 <td class="product-image">
                                                     <a href="product-detail.html">
-                                                        <img src="img/product/5.jpg" alt="Product">
+                                                        <img src="~/Content/img/product/5.jpg" alt="Product">
                                                     </a>
                                                 </td>
                                                 <td>
@@ -404,7 +416,7 @@
                             <div class="block-content">
                                 <div class="policy-item text-center">
                                     <div class="policy-content iconpolicy1 text-center">
-                                        <img src="img/home/home1-policy.png" alt="img">
+                                        <img src="~/Content/img/home/home1-policy.png" alt="img">
                                         <div class="description">
                                             <div class="policy-name mb-5">FREE DELIVERY FROM $ 250</div>
                                             <div class="policy-des">Lorem ipsum dolor Sed ut perspiciatis unde omnis</div>
@@ -419,7 +431,7 @@
                             <div class="block-content">
                                 <div class="policy-item">
                                     <div class="policy-content iconpolicy2 text-center">
-                                        <img src="img/home/home1-policy2.png" alt="img">
+                                        <img src="~/Content/img/home/home1-policy2.png" alt="img">
                                         <div class="discription">
                                             <div class="policy-name mb-5">FREE INSTALLATION</div>
                                             <div class="policy-des">Lorem ipsum dolor Sed ut perspiciatis unde omnis</div>
@@ -434,7 +446,7 @@
                             <div class="block-content">
                                 <div class="policy-item">
                                     <div class="policy-content iconpolicy3 text-center">
-                                        <img src="img/home/home1-policy3.png" alt="img">
+                                        <img src="~/Content/img/home/home1-policy3.png" alt="img">
                                         <div class="discription">
                                             <div class="policy-name mb-5">MONEY BACK GUARANTEED</div>
                                             <div class="policy-des">Lorem ipsum dolor Sed ut perspiciatis unde omnis</div>
@@ -454,7 +466,7 @@
                             <div class="block-content">
                                 <div class="title-block">
                                     <a href="#">
-                                        <img src="img/home/logo-mobie.png" alt="img">
+                                        <img src="~/Content/img/home/logo-mobie.png" alt="img">
                                     </a>
                                 </div>
                                 <div class="contact-content">
@@ -587,7 +599,7 @@
                     </span>
                 </div>
                 <div class="payment-image col-md-6 align-items-center justify-content-md-end justify-content-sm-center d-flex flex-center">
-                    <img src="img/home/payment.png" alt="img">
+                    <img src="~/Content/img/home/payment.png" alt="img">
                 </div>
             </div>
         </div>
@@ -610,7 +622,7 @@
                     <ul class="menu level1">
                         <li class="item  parent">
                             <a href="#" class="hasicon" title="SIDE TABLE">
-                                <img src="img/home/table-lamp.png" alt="img">SIDE TABLE
+                                <img src="~/Content/img/home/table-lamp.png" alt="img">SIDE TABLE
                             </a>
                             <span class="arrow collapsed" data-toggle="collapse" data-target="#SIDE-TABLE" aria-expanded="false" role="status">
                                 <i class="zmdi zmdi-minus"></i>
@@ -661,7 +673,7 @@
                         </li>
                         <li class="item  parent group">
                             <a href="#" class="hasicon" title="FI">
-                                <img src="img/home/fireplace.png" alt="img">FIREPLACE
+                                <img src="~/Content/img/home/fireplace.png" alt="img">FIREPLACE
                             </a>
                             <span class="arrow collapsed" data-toggle="collapse" data-target="#fi" aria-expanded="false" role="status">
                                 <i class="zmdi zmdi-minus"></i>
@@ -913,7 +925,7 @@
                         </li>
                         <li class="item group-category-img parent group">
                             <a href="#" class="hasicon" title="TABLE LAMP">
-                                <img src="img/home/table-lamp.png" alt="img">TABLE LAMP
+                                <img src="~/Content/img/home/table-lamp.png" alt="img">TABLE LAMP
                             </a>
                             <span class="arrow collapsed" data-toggle="collapse" data-target="#table-lamp" aria-expanded="false" role="status">
                                 <i class="zmdi zmdi-minus"></i>
@@ -1032,27 +1044,27 @@
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="OTTOMAN">
-                                <img src="img/home/ottoman.png" alt="img">OTTOMAN
+                                <img src="~/Content/img/home/ottoman.png" alt="img">OTTOMAN
                             </a>
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="ARMCHAIR">
-                                <img src="img/home/armchair.png" alt="img">ARMCHAIR
+                                <img src="~/Content/img/home/armchair.png" alt="img">ARMCHAIR
                             </a>
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="CUSHION">
-                                <img src="img/home/cushion.png" alt="img">CUSHION
+                                <img src="~/Content/img/home/cushion.png" alt="img">CUSHION
                             </a>
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="COFFEE TABLE">
-                                <img src="img/home/coffee_table.png" alt="img">COFFEE TABLE
+                                <img src="~/Content/img/home/coffee_table.png" alt="img">COFFEE TABLE
                             </a>
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="SHELF">
-                                <img src="img/home/shelf.png" alt="img">SHELF
+                                <img src="~/Content/img/home/shelf.png" alt="img">SHELF
                             </a>
                         </li>
                         <li class="item">
@@ -1062,7 +1074,7 @@
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="DRESSING TABLE">
-                                <img src="img/home/dressing.png" alt="img">DRESSING TABLE
+                                <img src="~/Content/img/home/dressing.png" alt="img">DRESSING TABLE
                             </a>
                         </li>
                         <li class="item">
@@ -1072,42 +1084,42 @@
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="CHANDELIER">
-                                <img src="img/home/chandelier.png" alt="img">CHANDELIER
+                                <img src="~/Content/img/home/chandelier.png" alt="img">CHANDELIER
                             </a>
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="CEILING FAN">
-                                <img src="img/home/ceiling_fan.png" alt="img">CEILING FAN
+                                <img src="~/Content/img/home/ceiling_fan.png" alt="img">CEILING FAN
                             </a>
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="WARDROBE">
-                                <img src="img/home/wardrobe.png" alt="img">WARDROBE
+                                <img src="~/Content/img/home/wardrobe.png" alt="img">WARDROBE
                             </a>
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="FLOOR LAMP">
-                                <img src="img/home/floor_lamp.png" alt="img">FLOOR LAMP
+                                <img src="~/Content/img/home/floor_lamp.png" alt="img">FLOOR LAMP
                             </a>
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="VASE-FLOWER ">
-                                <img src="img/home/vase-flower.png" alt="img">VASE-FLOWER
+                                <img src="~/Content/img/home/vase-flower.png" alt="img">VASE-FLOWER
                             </a>
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="BED">
-                                <img src="img/home/bed.png" alt="img">BED
+                                <img src="~/Content/img/home/bed.png" alt="img">BED
                             </a>
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="BED GIRL">
-                                <img src="img/home/bed.png" alt="img">BED GIRL
+                                <img src="~/Content/img/home/bed.png" alt="img">BED GIRL
                             </a>
                         </li>
                         <li class="item">
                             <a href="#" class="hasicon" title="BED BOY">
-                                <img src="img/home/bed.png" alt="img">BED BOY
+                                <img src="~/Content/img/home/bed.png" alt="img">BED BOY
                             </a>
                         </li>
                     </ul>
@@ -1301,14 +1313,14 @@
         </div>
     </div>
     <!-- Vendor JS -->
-    <script src="libs/jquery/jquery.min.js"></script>
-    <script src="libs/popper/popper.min.js"></script>
-    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="libs/nivo-slider/js/jquery.nivo.slider.js"></script>
-    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/Content/libs/jquery/jquery.min.js"></script>
+    <script src="~/Content/libs/popper/popper.min.js"></script>
+    <script src="~/Content/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/libs/nivo-slider/js/jquery.nivo.slider.js"></script>
+    <script src="~/Content/libs/owl-carousel/owl.carousel.min.js"></script>
 
     <!-- Template JS -->
-    <script src="js/theme.js"></script>
+    <script src="~/Content/js/theme.js"></script>
 </body>
 
 
