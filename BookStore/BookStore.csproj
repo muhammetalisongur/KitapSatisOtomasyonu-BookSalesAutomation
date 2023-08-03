@@ -801,6 +801,9 @@
     <Content Include="Views\Shared\_FooterBottom.cshtml" />
     <Content Include="Views\Shared\_FooterTop.cshtml" />
     <Content Include="Views\Shared\_PolicyHome.cshtml" />
+    <Content Include="Views\Shared\_CartPartial.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_MenuPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
