@@ -796,6 +796,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Search.cshtml" />
     <Content Include="Views\Shared\_PageLoader.cshtml" />
+    <Content Include="Views\Shared\_MenuRight.cshtml" />
+    <Content Include="Views\Shared\_MenuLeft.cshtml" />
+    <Content Include="Views\Shared\_FooterBottom.cshtml" />
+    <Content Include="Views\Shared\_FooterTop.cshtml" />
+    <Content Include="Views\Shared\_PolicyHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
