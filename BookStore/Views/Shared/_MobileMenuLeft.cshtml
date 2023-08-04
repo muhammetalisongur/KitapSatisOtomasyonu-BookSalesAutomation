@@ -1,4 +1,13 @@
-﻿
+﻿@using Business.Concrete
+@using DataAccess.Concrete.EntityFramework
+@{
+    CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+    var categories = categoryManager.GetAll();
+
+    AuthorManager authorManager = new AuthorManager(new EfAuthorDal());
+    var authors = authorManager.GetAll();
+
+}
 <div class="mobile-top-menu d-md-none">
     <button type="button" class="close" aria-label="Close">
         <i class="zmdi zmdi-close"></i>
@@ -8,60 +17,30 @@
             <div class="verticalmenu" role="navigation">
                 <ul class="menu level1">
                     <li class="item  parent">
-                        <a href="#" class="hasicon" title="SIDE TABLE">
-                            <img src="~/Content/img/home/table-lamp.png" alt="img">SIDE TABLE
-                        </a>
+                        <div class="hasicon" title="Kategoriler">
+                            <i class="fa fa-duotone fa fa-list-ul"></i>  Kategoriler
+                            @*<img src="~/Content/img/home/table-lamp.png" alt="img">Kategoriler*@
+                        </div>
                         <span class="arrow collapsed" data-toggle="collapse" data-target="#SIDE-TABLE" aria-expanded="false" role="status">
                             <i class="zmdi zmdi-minus"></i>
                             <i class="zmdi zmdi-plus"></i>
                         </span>
                         <div class="subCategory collapse" id="SIDE-TABLE" aria-expanded="true" role="status">
                             <ul>
-                                <li class="item">
-                                    <a href="#" title="Aliquam lobortis">Aliquam lobortis</a>
-                                </li>
-                                <li class="item  parent-submenu parent">
-                                    <a href="#" title="Duis Reprehenderit">Duis Reprehenderit</a>
-                                    <span class="arrow collapsed" data-toggle="collapse" data-target="#sub-Category" aria-expanded="false" role="status">
-                                        <i class="zmdi zmdi-minus"></i>
-                                        <i class="zmdi zmdi-plus"></i>
-                                    </span>
-                                    <div class="subCategory collapse" id="sub-Category" aria-expanded="true" role="status">
-                                        <ul>
-                                            <li class="item">
-                                                <a href="#" title="Aliquam lobortis">Aliquam lobortis</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="#" title="Duis Reprehenderit">Duis Reprehenderit</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="#" title="Voluptate">Voluptate</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="#" title="Tongue Est">Tongue Est</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="#" title="Venison Andouille">Venison Andouille</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="item">
-                                    <a href="#" title="Voluptate">Voluptate</a>
-                                </li>
-                                <li class="item">
-                                    <a href="#" title="Tongue Est">Tongue Est</a>
-                                </li>
-                                <li class="item">
-                                    <a href="#" title="Venison Andouille">Venison Andouille</a>
-                                </li>
+                                @foreach (var item in categories)
+                                {
+                                    <li class="item">
+                                        <a href="@Url.Action("Index", "Book", new { categoryId = item.ID })" title="@item.CategoryName">@item.CategoryName</a>
+                                    </li>
+                                }                              
+
                             </ul>
                         </div>
                     </li>
                     <li class="item  parent group">
-                        <a href="#" class="hasicon" title="FI">
-                            <img src="~/Content/img/home/fireplace.png" alt="img">FIREPLACE
-                        </a>
+                        <div class="hasicon" title="FI">
+                            <i class="fa fa-pencil"></i> Yazarlar
+                        </div>
                         <span class="arrow collapsed" data-toggle="collapse" data-target="#fi" aria-expanded="false" role="status">
                             <i class="zmdi zmdi-minus"></i>
                             <i class="zmdi zmdi-plus"></i>
