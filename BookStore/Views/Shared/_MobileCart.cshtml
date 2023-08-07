@@ -20,8 +20,9 @@
                                     <a href="product-detail.html">Organic Strawberry Fruits</a>
                                 </div>
                                 <div>
-                                    2 x
-                                    <span class="product-price">£28.98</span>
+                                    <input type="number" value="2" min="1" max="1000" id="value1" style="width: 50px;">
+                                    x
+                                    <span class="product-price" id="value2">50</span> TL
                                 </div>
                             </td>
                             <td class="action">
@@ -31,8 +32,8 @@
                             </td>
                         </tr>
                         <tr class="total">
-                            <td colspan="2">Total:</td>
-                            <td>£92.96</td>
+                            <td colspan="2">Toplam:</td>
+                            <td id="total" onchange="myFunction()">0</td> TL
                         </tr>
 
                         <tr>
@@ -49,3 +50,14 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    function myFunction() {
+        var x = document.getElementById("value1").value;
+        var y = document.getElementById("value2").innerHTML;
+        document.getElementById("total").innerHTML = x * y;
+    }
+
+
+</script>
