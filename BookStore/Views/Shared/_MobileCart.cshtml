@@ -1,5 +1,5 @@
 ﻿
-<div class="desktop_cart">
+<div class="desktop_cart" onmousemove="myFunction()">
     <div class="blockcart block-cart cart-preview tiva-toggle">
         <div class="header-cart tiva-toggle-btn">
             <span class="cart-products-count">1</span>
@@ -20,9 +20,9 @@
                                     <a href="product-detail.html">Organic Strawberry Fruits</a>
                                 </div>
                                 <div>
-                                    <input type="number" value="2" min="1" max="1000" id="value1" style="width: 50px;">
+                                    <input type="number" value="1" min="1" max="1000" id="value1" style="width: 50px;" onchange="myFunction()">
                                     x
-                                    <span class="product-price" id="value2">50</span> TL
+                                    <span class="product-price" id="value2" onchange="myFunction()">45</span> TL
                                 </div>
                             </td>
                             <td class="action">
@@ -33,14 +33,14 @@
                         </tr>
                         <tr class="total">
                             <td colspan="2">Toplam:</td>
-                            <td id="total" onchange="myFunction()">0</td> TL
+                            <td id="total">0</td>
                         </tr>
 
                         <tr>
                             <td colspan="3" class="d-flex justify-content-center">
                                 <div class="cart-button">
-                                    <a href="product-cart.html" title="View Cart">View Cart</a>
-                                    <a href="product-checkout.html" title="Checkout">Checkout</a>
+                                    <a href="product-cart.html" title="View Cart">Sepetim</a>
+                                    <a href="product-checkout.html" title="Checkout">Son Kontrol</a>
                                 </div>
                             </td>
                         </tr>
@@ -56,7 +56,8 @@
     function myFunction() {
         var x = document.getElementById("value1").value;
         var y = document.getElementById("value2").innerHTML;
-        document.getElementById("total").innerHTML = x * y;
+        var sonuc = parseInt(x) * parseInt(y)
+        document.getElementById("total").innerHTML = sonuc + " TL";
     }
 
 
