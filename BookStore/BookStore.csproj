@@ -809,13 +809,15 @@
     <Content Include="Views\Shared\_MobileCart.cshtml" />
     <Content Include="Views\Shared\_LogoPartial.cshtml" />
     <Content Include="Views\Shared\_MobileLogoPartial.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\BookDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Images\Author\" />
     <Folder Include="Areas\Admin\Images\BookTranslator\" />
-    <Folder Include="Areas\Admin\Images\Book\" />
+    <Folder Include="Areas\Admin\Images\Book\Calikusu\" />
     <Folder Include="Areas\Admin\Images\Employee\" />
     <Folder Include="Areas\Admin\Images\Publisher\" />
     <Folder Include="Areas\Admin\Views\Search\" />

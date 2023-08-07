@@ -189,12 +189,14 @@ namespace BookStore.Areas.Admin.Controllers
 
                 if (Path.GetFileName(Request.Files[0].FileName) != "")
                 {
-                    string fullPath = Request.MapPath("~" + oldImage);
-                    if (System.IO.File.Exists(fullPath))
+                    if (!oldImage.Contains("https"))
                     {
-                        System.IO.File.Delete(fullPath);
+                        string fullPath = Request.MapPath("~" + oldImage);
+                        if (System.IO.File.Exists(fullPath))
+                        {
+                            System.IO.File.Delete(fullPath);
+                        }
                     }
-
                     Request.Files[0].SaveAs(Server.MapPath(path));
                     author.AuthorImage = "/Areas/Admin/Images/Author/" + newFileName;
 

@@ -206,12 +206,14 @@ namespace BookStore.Areas.Admin.Controllers
                 var path = "~/Areas/Admin/Images/Publisher/" + newFileName;
                 if (Path.GetFileName(Request.Files[0].FileName) != "")
                 {
-                    string fullPath = Request.MapPath("~" + oldImage);
-                    if (System.IO.File.Exists(fullPath))
+                    if (!oldImage.Contains("https"))
                     {
-                        System.IO.File.Delete(fullPath);
+                        string fullPath = Request.MapPath("~" + oldImage);
+                        if (System.IO.File.Exists(fullPath))
+                        {
+                            System.IO.File.Delete(fullPath);
+                        }
                     }
-
                     Request.Files[0].SaveAs(Server.MapPath(path));
                     publisher.PublisherImage = "/Areas/Admin/Images/Publisher/" + newFileName;
 

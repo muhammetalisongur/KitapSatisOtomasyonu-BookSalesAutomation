@@ -19,6 +19,7 @@ namespace BookStore.Areas.Admin.Controllers
 
         [Route("Girisyap")]
         [Route("Girisyap/Index")]
+        [Route("")]
         public ActionResult Index()
         {
             Session.Abandon();
