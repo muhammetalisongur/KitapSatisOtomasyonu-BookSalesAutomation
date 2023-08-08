@@ -801,7 +801,8 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_MobileLeftMenu.cshtml" />
     <Content Include="Views\Shared\_MobileRightMenu.cshtml" />
-    <Content Include="Views\Shared\_MobileCart.cshtml" />
+    <Content Include="Views\Shared\_Cart.cshtml" />
+    <Content Include="Views\Shared\_Account.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
