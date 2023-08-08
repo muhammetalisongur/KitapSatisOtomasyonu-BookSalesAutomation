@@ -1,21 +1,14 @@
 ﻿<!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--<![endif]-->
-<html lang="en">
-
-
-<!-- home509:49-->
+<html lang="tr">
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MAS - Kitap Satış Sitesi</title>
+    <title>MAS-Kitap Satış</title>
 
-    <meta name="keywords" content="Kitap Satış">
-    <meta name="description" content="MAS - En Uygun ve Hesaplı Kitap Satış Sitesi">
-    <meta name="author" content="tivatheme">
+    <meta name="keywords" content="Kitap, Satış">
+    <meta name="description" content="MAS-Kitap Satış">
+    <meta name="author" content="MAS">
 
     <!-- Mobile Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -24,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
 
     <!-- Vendor CSS -->
+
     <link rel="stylesheet" href="~/Content/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/Content/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/Content/libs/font-material/css/material-design-iconic-font.min.css">
@@ -31,118 +25,34 @@
     <link rel="stylesheet" href="~/Content/libs/nivo-slider/css/animate.css">
     <link rel="stylesheet" href="~/Content/libs/nivo-slider/css/style.css">
     <link rel="stylesheet" href="~/Content/libs/owl-carousel/assets/owl.carousel.min.css">
+
+    <!--Custom CSS-->
     <link href="~/Content/css/CustomStyle.css" rel="stylesheet" />
+
     <!-- Template CSS -->
     <link rel="stylesheet" type="text/css" href="~/Content/css/style.css">
     <link rel="stylesheet" type="text/css" href="~/Content/css/reponsive.css">
-
-    <!--PagedList-->
-    <link href="~/Areas/Admin/Content/css/PagedList.css" rel="stylesheet" />
-
-
-
 </head>
 
-<body id="home5">
+<body id="home">
     <header>
-        <!-- header left mobie -->
-        <div class="header-mobile d-md-none">
-            <div class="mobile hidden-md-up text-xs-center d-flex align-items-center justify-content-around">
+        <!-- header left mobile -->
+        @Html.Partial("_MobileLeftHeader")
 
-                <!-- menu left -->
-                <div id="mobile_mainmenu" class="item-mobile-top">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </div>
-
-                <!--mobil logo -->
-                @Html.Partial("_MobileLogoPartial")
-                
-
-                <!-- menu right -->
-                <div class="mobile-menutop" data-target="#mobile-pagemenu">
-                    <i class="zmdi zmdi-more"></i>
-                </div>
-            </div>
-
-            <!--Mobileee search -->
-            <div id="mobile_search" class="d-flex">
-               <!--Mobile Search-->
-                @Html.Partial("_MobileSearch")
-                
-                <!--Mobile Cart-->
-                @Html.Partial("_MobileCart")
-                
-            </div>
-        </div>
 
         <!-- header desktop -->
-        <div class="header-top d-xs-none">
-            <div class="margin-0 row">
+        @Html.Partial("_DesktopHeader")
 
-                <!-- menu -->
-
-                <div class="d-flex icon-menu align-items-center justify-content-center" id="icon-menu" style="cursor:pointer;">
-                    <a href="#">
-                        <i class="fa fa-bars" aria-hidden="true" id="icon-menu"></i>
-                    </a>
-                </div>
-
-
-                <!-- logo -->
-                @Html.Partial("_LogoPartial")
-                
-
-                <!--Main Menu-->
-                @Html.Partial("_MenuPartial")
-
-                <!-- search and acount -->
-                <div class="d-flex align-items-center justify-content-end " id="search_widget">
-                    <div class="search d-flex align-items-center justify-content-center search-header-top">
-                        <i class="fa fa-search search"></i>
-                    </div>
-
-                    <!--Login-->
-                    @Html.Partial("_LoginPartial")
-
-
-                    <!--Satin Alma-->
-                    @Html.Partial("_CartPartial")
-
-                </div>
-            </div>
-        </div>
     </header>
 
     <!-- main content -->
-
-    <div class="main-content">
-        <div class="wrap-banner">
-            <!-- menu category -->
-            @Html.Partial("_CategoryPartial")
-            
-        </div>
-
-        <!-- main -->
-        @RenderBody()
-
-    </div>
+    @RenderBody()
 
 
     <!-- footer -->
-    <footer class="footer-one">
-        <div class="inner-footer">
-            <!-- delivery form -->
-            <!-- Policy Home-->
-            @Html.Partial("_PolicyHome")
+    @Html.Partial("_Footer")
 
-            <!-- Footer Top -->
-            @Html.Partial("_FooterTop")
 
-        </div>
-
-        @Html.Partial("_FooterBottom")
-
-    </footer>
     <!-- back top top -->
     <div class="back-to-top">
         <a href="#">
@@ -151,18 +61,22 @@
     </div>
 
     <!-- menu mobile left -->
-    @Html.Partial("_MobileMenuLeft")
+    @Html.Partial("_MobileLeftMenu")
 
 
     <!-- menu mobile right -->
-    @Html.Partial("_MobileMenuRight")
-
+    @Html.Partial("_MobileRightMenu")
 
     <!-- Page Loader -->
-    @Html.Partial("_PageLoader")
-
-    <!-- search -->
-    @Html.Partial("_Search")
+    <div id="page-preloader">
+        <div class="page-loading">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
     <!-- Vendor JS -->
     <script src="~/Content/libs/jquery/jquery.min.js"></script>
     <script src="~/Content/libs/popper/popper.min.js"></script>
@@ -175,5 +89,5 @@
 </body>
 
 
-<!-- home510:09-->
+
 </html>

@@ -791,27 +791,16 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\js\js" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\_Search.cshtml" />
-    <Content Include="Views\Shared\_PageLoader.cshtml" />
-    <Content Include="Views\Shared\_MobileMenuRight.cshtml" />
-    <Content Include="Views\Shared\_MobileMenuLeft.cshtml" />
-    <Content Include="Views\Shared\_FooterBottom.cshtml" />
-    <Content Include="Views\Shared\_FooterTop.cshtml" />
-    <Content Include="Views\Shared\_PolicyHome.cshtml" />
-    <Content Include="Views\Shared\_CartPartial.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_MenuPartial.cshtml" />
-    <Content Include="Views\Shared\_CategoryPartial.cshtml" />
-    <Content Include="Views\Shared\_MobileSearch.cshtml" />
-    <Content Include="Views\Shared\_MobileCart.cshtml" />
-    <Content Include="Views\Shared\_LogoPartial.cshtml" />
-    <Content Include="Views\Shared\_MobileLogoPartial.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\BookDetail.cshtml" />
-    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_MobileLeftHeader.cshtml" />
+    <Content Include="Views\Shared\_DesktopHeader.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_MobileLeftMenu.cshtml" />
+    <Content Include="Views\Shared\_MobileRightMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
