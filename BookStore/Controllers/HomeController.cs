@@ -69,6 +69,7 @@ namespace BookStore.Controllers
             return View(model.ToPagedList(_sayfaNo, 8));
         }
 
+
         public ActionResult BookDetail(int id)
         {
             var model = bookManager.GetById(id);
@@ -81,5 +82,15 @@ namespace BookStore.Controllers
         {
             return View();
         }
+
+
+        [Route("Anasayfa/KategoriEnIyiSatis")]
+        public PartialViewResult BookCategoryBestSalePartialView(int id)
+        {
+            var model = bookManager.GetAll().Where(x => x.BookCategoryID == id).OrderByDescending(x => x.BookSale).Take(3).ToList();
+
+            return PartialView(model);
+        }
+
     }
 }

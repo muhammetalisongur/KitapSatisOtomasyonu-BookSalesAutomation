@@ -806,6 +806,7 @@
     <Content Include="Views\Shared\_MobileRightMenu.cshtml" />
     <Content Include="Views\Shared\_Cart.cshtml" />
     <Content Include="Views\Shared\_Account.cshtml" />
+    <Content Include="Views\Home\BookCategoryBestSalePartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
