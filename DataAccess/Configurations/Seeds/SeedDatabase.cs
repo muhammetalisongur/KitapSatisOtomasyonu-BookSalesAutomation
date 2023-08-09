@@ -1074,6 +1074,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 100,
                 BookISBN = "9789750728955",
+                BookSale = 100,
             });
 
             bookList.Add(new Book
@@ -1091,6 +1092,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 100,
                 BookISBN = "9789750728955",
+                BookSale = 10,
             });
 
             bookList.Add(new Book
@@ -1108,6 +1110,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 100,
                 BookISBN = "9789750728955",
+                BookSale = 120,
             });
 
 
@@ -1126,6 +1129,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 100,
                 BookISBN = "9789750728955",
+                BookSale = 200,
             });
             bookList.Add(new Book
             {
@@ -1142,6 +1146,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 150,
                 BookISBN = "9781503290563",
+                BookSale = 50,
             });
             bookList.Add(new Book
             {
@@ -1158,6 +1163,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 120,
                 BookISBN = "9780451524935",
+                BookSale = 80,
             });
 
             bookList.Add(new Book
@@ -1175,6 +1181,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 80,
                 BookISBN = "9780743273565",
+                BookSale = 100,
             });
 
             bookList.Add(new Book
@@ -1192,6 +1199,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 90,
                 BookISBN = "9780061120084",
+                BookSale = 150,
             });
             bookList.Add(new Book
             {
@@ -1208,6 +1216,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 200,
                 BookISBN = "9780590353427",
+                BookSale = 300,
             });
             bookList.Add(new Book
             {
@@ -1224,6 +1233,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 110,
                 BookISBN = "9780316769488",
+                BookSale = 250,
             });
             bookList.Add(new Book
             {
@@ -1240,6 +1250,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 75,
                 BookISBN = "9780618346257",
+                BookSale = 200,
             });
             bookList.Add(new Book
             {
@@ -1256,6 +1267,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 95,
                 BookISBN = "9780140449136",
+                BookSale = 150,
             });
             bookList.Add(new Book
             {
@@ -1272,6 +1284,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 70,
                 BookISBN = "9780060850524",
+                BookSale = 360,
             });
             bookList.Add(new Book
             {
@@ -1288,6 +1301,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 80,
                 BookISBN = "9780743273565",
+                BookSale = 400,
 
             });
 
@@ -1306,6 +1320,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 80,
                 BookISBN = "9780743273563",
+                BookSale = 309,
             });
             bookList.Add(new Book
             {
@@ -1322,6 +1337,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 80,
                 BookISBN = "9780743273562",
+                BookSale = 290,
             });
             bookList.Add(new Book
             {
@@ -1338,6 +1354,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 80,
                 BookISBN = "9780743273561",
+                BookSale = 700,
             });
 
             bookList.Add(new Book
@@ -1355,6 +1372,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 80,
                 BookISBN = "9780743273560",
+                BookSale = 500,
 
             });
 
@@ -1373,6 +1391,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 80,
                 BookISBN = "9780743273569",
+                BookSale = 700,
             });
             bookList.Add(new Book
             {
@@ -1389,6 +1408,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 80,
                 BookISBN = "9780743273568",
+                BookSale = 333,
             });
 
             bookList.Add(new Book
@@ -1406,6 +1426,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 80,
                 BookISBN = "9780743273567",
+                BookSale = 1000,
             });
 
             bookList.Add(new Book
@@ -1423,6 +1444,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 80,
                 BookISBN = "9780743273566",
+                BookSale = 1500,
             });
 
             bookList.Add(new Book
@@ -1440,6 +1462,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 80,
                 BookISBN = "9780743273565",
+                BookSale = 2000,
             });
 
             bookList.Add(new Book
@@ -1457,6 +1480,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 90,
                 BookISBN = "9780593099322",
+                BookSale = 575,
             });
 
             bookList.Add(new Book
@@ -1474,6 +1498,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 120,
                 BookISBN = "9780486278070",
+                BookSale = 1200,
             });
 
             bookList.Add(new Book
@@ -1491,6 +1516,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 100,
                 BookISBN = "9780553418026",
+                BookSale = 1300,
             });
 
             bookList.Add(new Book
@@ -1508,6 +1534,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 85,
                 BookISBN = "9780062315007",
+                BookSale = 1500,
             });
 
             bookList.Add(new Book
@@ -1525,6 +1552,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 110,
                 BookISBN = "9780385490818",
+                BookSale = 750,
             });
 
             bookList.Add(new Book
@@ -1542,6 +1570,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 95,
                 BookISBN = "9780140268867",
+                BookSale = 10,
             });
 
             bookList.Add(new Book
@@ -1559,6 +1588,7 @@ namespace DataAccess.Configurations.Seeds
                 BookStatus = true,
                 BookStock = 100,
                 BookISBN = "9789751019643",
+                BookSale = 99,
 
             });
 

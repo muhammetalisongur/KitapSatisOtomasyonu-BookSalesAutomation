@@ -153,3 +153,5 @@ D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cac
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.dll
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.pdb
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.BookSaleTableAdd.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.update.resources

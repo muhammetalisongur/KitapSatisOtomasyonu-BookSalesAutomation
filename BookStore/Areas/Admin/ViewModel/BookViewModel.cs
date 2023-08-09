@@ -26,5 +26,6 @@ namespace BookStore.Areas.Admin.ViewModel
         public string AuthorName { get; set; }
         public string AuthorSurname { get; set; }
         public string PublisherName { get; set; }
+        public int? BookSale { get; set; }
     }
 }

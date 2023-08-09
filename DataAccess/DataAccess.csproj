@@ -137,6 +137,14 @@
     <Compile Include="Migrations\202307101150100_UpdateEmployee.designer.cs">
       <DependentUpon>202307101150100_UpdateEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202308091214284_BookSaleTableAdd.cs" />
+    <Compile Include="Migrations\202308091214284_BookSaleTableAdd.designer.cs">
+      <DependentUpon>202308091214284_BookSaleTableAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308091235284_update.cs" />
+    <Compile Include="Migrations\202308091235284_update.designer.cs">
+      <DependentUpon>202308091235284_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -205,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307101150100_UpdateEmployee.resx">
       <DependentUpon>202307101150100_UpdateEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308091214284_BookSaleTableAdd.resx">
+      <DependentUpon>202308091214284_BookSaleTableAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308091235284_update.resx">
+      <DependentUpon>202308091235284_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -66,6 +66,10 @@ namespace Entities.Concrete
         [Display(Name = "Kitap Stok Sayısı")]
         public int BookStock { get; set; }
 
+        
+        [Display(Name = "Kitap Satış Sayısı")]
+        public int? BookSale { get; set; }
+
 
         [Required(ErrorMessage = "Kitap durumu boş geçilemez!")]
         [Display(Name = "Kitap Durumu")]

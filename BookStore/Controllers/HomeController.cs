@@ -27,8 +27,7 @@ namespace BookStore.Controllers
             var context = new BookStoreContext();
 
             var List = context.Database.SqlQuery<BookViewModel>(
-                @"SELECT Books.ID, Books.BookName, Books.BookDescription, Books.BookImage, Books.BookPublisherID, Books.BookAuthorID, Books.BookCategoryID, Books.BookTranslatorID, Books.BookPage, Books.BookPrice, Books.BookISBN, 
-                         Books.BookStock, Books.BookStatus, Categories.CategoryName, BookTranslators.TranslatorName, BookTranslators.TranslatorSurname, Authors.AuthorName, Authors.AuthorSurname, Publishers.PublisherName
+                @"SELECT Books.*, Categories.CategoryName, BookTranslators.TranslatorName, BookTranslators.TranslatorSurname, Authors.AuthorName, Authors.AuthorSurname, Publishers.PublisherName
                            FROM            BookTranslators RIGHT OUTER JOIN
                          Books ON BookTranslators.ID = Books.BookTranslatorID LEFT OUTER JOIN
                          Authors ON Books.BookAuthorID = Authors.ID LEFT OUTER JOIN
@@ -61,19 +60,18 @@ namespace BookStore.Controllers
                     TranslatorFullName = bookViewModel.TranslatorName + " " + bookViewModel.TranslatorSurname,
                     AuthorFullName = bookViewModel.AuthorName + " " + bookViewModel.AuthorSurname,
                     PublisherName = bookViewModel.PublisherName,
-                    CategoryName = bookViewModel.CategoryName
+                    CategoryName = bookViewModel.CategoryName,
+                    BookSale = bookViewModel.BookSale
 
                 });
             }
-
-
 
             return View(model.ToPagedList(_sayfaNo, 8));
         }
 
         public ActionResult BookDetail(int id)
         {
-            var model = bookManager.GetById(id);           
+            var model = bookManager.GetById(id);
 
             return View(model);
         }
