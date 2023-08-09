@@ -3047,7 +3047,7 @@ footer [class~=title-block] {
 }
 
 #wrapper-site #content-wrapper #main [class~=living-room] {
-    background: url("../img/home/home1-background1.jpg");
+    background-color: #eeeeee;
 }
 
 #block_price_filter [class~=tiva-filter] [class~=price-filter] {
