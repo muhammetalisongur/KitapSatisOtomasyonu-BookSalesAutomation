@@ -417,6 +417,9 @@
     <Content Include="Content\img\blog\user.jpg" />
     <Content Include="Content\img\blog\user1.jpg" />
     <Content Include="Content\img\blog\user2.jpg" />
+    <Content Include="Content\img\custom\banner1.jpg" />
+    <Content Include="Content\img\custom\banner2.jpg" />
+    <Content Include="Content\img\custom\banner3.jpg" />
     <Content Include="Content\img\home\armchair.png" />
     <Content Include="Content\img\home\bed.png" />
     <Content Include="Content\img\home\ceiling_fan.png" />
