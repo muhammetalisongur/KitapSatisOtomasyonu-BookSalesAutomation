@@ -1,0 +1,65 @@
+﻿
+<div class="desktop_cart">
+    <div class="blockcart block-cart cart-preview tiva-toggle">
+        <div class="header-cart tiva-toggle-btn" onmousemove="myFunction()">
+            <span class="cart-products-count">1</span>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </div>
+        <div class="dropdown-content">
+            <div class="cart-content">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="product-image">
+                                <a href="product-detail.html">
+                                    <img src="~/Content/img/product/5.jpg" alt="Product">
+                                </a>
+                            </td>
+                            <td>
+                                <div class="product-name">
+                                    <a href="product-detail.html">Organic Strawberry Fruits</a>
+                                </div>
+                                <div>
+                                    <input type="number" value="1" min="1" max="1000" id="value1" style="width: 50px;" onchange="myFunction()">
+                                    x
+                                    <span class="product-price" id="value2" onchange="myFunction()">45</span> TL
+                                </div>
+                            </td>
+                            <td class="action">
+                                <a class="remove" href="#">
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="total">
+                            <td colspan="2">Toplam:</td>
+                            <td id="total">0</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3" class="d-flex justify-content-center">
+                                <div class="cart-button">
+                                    <a href="product-cart.html" title="View Cart">Sepetim</a>
+                                    <a href="product-checkout.html" title="Checkout">Son Kontrol</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    function myFunction() {
+        var x = document.getElementById("value1").value;
+        var y = document.getElementById("value2").innerHTML;
+        var sonuc = parseInt(x) * parseInt(y)
+        document.getElementById("total").innerHTML = sonuc + " TL";
+    }
+
+
+</script>

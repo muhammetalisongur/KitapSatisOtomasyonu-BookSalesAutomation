@@ -16,7 +16,7 @@ namespace BookStore.Areas.Admin.Controllers
 {
 
     [RouteArea("Admin")]
-    [Authorize]
+    
     public class EmployeeController : Controller
     {
 
@@ -27,6 +27,7 @@ namespace BookStore.Areas.Admin.Controllers
 
 
 
+        [Authorize]
         [Route("Personel")]
         [Route("Personel/Index")]
         public ActionResult Index()
@@ -194,7 +195,7 @@ namespace BookStore.Areas.Admin.Controllers
         }
 
 
-
+        [Authorize]
         [Route("Personel/Guncelle/{id}")]
         public ActionResult Update(int id)
         {

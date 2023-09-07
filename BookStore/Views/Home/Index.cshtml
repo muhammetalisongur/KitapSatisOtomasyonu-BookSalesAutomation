@@ -233,12 +233,23 @@
                                             <!-- <div class="btn dropdown-toggle toggle-cate-child-vertical hidden-md-up mr-auto">Select category</div> -->
                                             <div class="cate-child-vertical">
                                                 <ul class="d-flex align-items-start flex-column">
-
-                                                    @foreach (var item in categories.Take(11))
+                                                    @if (categories.Count > 11)
                                                     {
-                                                        <li>
-                                                            <a href="/Anasayfa/KategoriEnIyiSatis?id=@item.ID">@item.CategoryName</a>
-                                                        </li>
+                                                        foreach (var item in categories.Take(11))
+                                                        {
+                                                            <li>
+                                                                <a href="/Anasayfa/KategoriEnIyiSatis?id=@item.ID">@item.CategoryName</a>
+                                                            </li>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        foreach (var item in categories)
+                                                        {
+                                                            <li>
+                                                                <a href="/Anasayfa/KategoriEnIyiSatis?id=@item.ID">@item.CategoryName</a>
+                                                            </li>
+                                                        }
                                                     }
 
                                                     <li class="last float-right">

@@ -148,10 +148,10 @@ D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateBookPrice.r
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.AddEmployee.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.AddDepartment.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.UpdateEmployee.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.BookSaleTableAdd.resources
+D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.update.resources
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.cache
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.dll
 D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.pdb
-D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.BookSaleTableAdd.resources
-D:\GitHub\BookStore\DataAccess\obj\Debug\DataAccess.Migrations.update.resources
