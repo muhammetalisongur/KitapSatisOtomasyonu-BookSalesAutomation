@@ -32,10 +32,47 @@
     <link rel="stylesheet" type="text/css" href="~/Content/css/reponsive.css">
     <!--Custom CSS-->
     <link href="~/Content/css/CustomStyle.css" rel="stylesheet" />
+
+
+
+    <style>
+        #customButtonAdmin {
+            padding: 10px 10px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: #04AA6D;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+            #customButtonAdmin:hover {
+                background-color: #3e8e41
+            }
+
+            #customButtonAdmin:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+    </style>
+
+
+
 </head>
+
+
+
 
 <body id="home">
     <header>
+        <div>
+            <a id="customButtonAdmin" href="~/Admin" style="margin:auto; text-align:center; display:block;" role="button">
+                Admin Panel
+            </a>
+        </div>
         <!-- header left mobile  ->> Cart ->>Account -->
         @Html.Partial("_MobileLeftHeader")
 
